@@ -9,11 +9,11 @@ on:
 jobs:
   build:
     runs-on: windows-latest
+    env:
+      Test_Sandbox_DeviceKey: ${{ secrets.Test_Sandbox_DeviceKey }}    
+      Test_Sandbox_MerchantId: ${{ secrets.Test_Sandbox_MerchantId }}    
+      Test_Sandbox_DeviceId: ${{ secrets.Test_Sandbox_DeviceId }}    
     steps:
-    - name: Dump GitHub context
-      env:
-        GITHUB_CONTEXT: ${{ toJson(github) }}
-      run: echo "$GITHUB_CONTEXT"
     - name: Checkout
     - uses: actions/checkout@v2
     - name: Setup .NET Core
