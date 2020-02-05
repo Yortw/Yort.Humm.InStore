@@ -40,7 +40,7 @@ jobs:
       with:
         dotnet-version: 3.0.101
     - name: Determine version
-      run: echo "$Env:Version=$(git describe --tags --dirty)"
+      run: "$Env:Version=$(git describe --tags --dirty)"
     - name: Pack
       run: dotnet pack src\Yort.Humm.InStore.sln --output ./artifacts --configuration Release -p:PackageVersion=$Env:VERSION
     - uses: actions/upload-artifact@v1
