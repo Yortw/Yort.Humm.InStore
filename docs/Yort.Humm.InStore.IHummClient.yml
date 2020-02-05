@@ -1,0 +1,956 @@
+### YamlMime:ManagedReference
+items:
+- uid: Yort.Humm.InStore.IHummClient
+  commentId: T:Yort.Humm.InStore.IHummClient
+  id: IHummClient
+  parent: Yort.Humm.InStore
+  children:
+  - Yort.Humm.InStore.IHummClient.CreateKeyAsync(Yort.Humm.InStore.CreateKeyRequest)
+  - Yort.Humm.InStore.IHummClient.InviteAsync(Yort.Humm.InStore.InviteRequest)
+  - Yort.Humm.InStore.IHummClient.PendingAuthorisation
+  - Yort.Humm.InStore.IHummClient.ProcessAuthorisationAsync(Yort.Humm.InStore.ProcessAuthorisationRequest)
+  - Yort.Humm.InStore.IHummClient.ProcessSalesAdjustmentAsync(Yort.Humm.InStore.ProcessSalesAdjustmentRequest)
+  - Yort.Humm.InStore.IHummClient.ProcessSalesAdjustmentReversalAsync(Yort.Humm.InStore.ProcessSalesAdjustmentReversalRequest)
+  - Yort.Humm.InStore.IHummClient.SendReceiptAsync(Yort.Humm.InStore.SendReceiptRequest)
+  - Yort.Humm.InStore.IHummClient.SetDeviceKey(System.String)
+  langs:
+  - csharp
+  - vb
+  name: IHummClient
+  nameWithType: IHummClient
+  fullName: Yort.Humm.InStore.IHummClient
+  type: Interface
+  source:
+    remote:
+      path: C:/Projects/GitHub/Yort.Humm.InStore/src/IHummClient.cs
+    id: IHummClient
+    path: IHummClient.cs
+    startLine: 9
+  assemblies:
+  - Yort.Humm.InStore
+  namespace: Yort.Humm.InStore
+  summary: "\nAn interface for the <xref href=\"Yort.Humm.InStore.HummClient\" data-throw-if-not-resolved=\"false\"></xref> provided to allow mocking/stubbing etc.\n"
+  example: []
+  syntax:
+    content: public interface IHummClient
+    content.vb: Public Interface IHummClient
+  seealso:
+  - linkId: Yort.Humm.InStore.HummClient
+    commentId: T:Yort.Humm.InStore.HummClient
+  modifiers.csharp:
+  - public
+  - interface
+  modifiers.vb:
+  - Public
+  - Interface
+- uid: Yort.Humm.InStore.IHummClient.PendingAuthorisation
+  commentId: E:Yort.Humm.InStore.IHummClient.PendingAuthorisation
+  id: PendingAuthorisation
+  parent: Yort.Humm.InStore.IHummClient
+  langs:
+  - csharp
+  - vb
+  name: PendingAuthorisation
+  nameWithType: IHummClient.PendingAuthorisation
+  fullName: Yort.Humm.InStore.IHummClient.PendingAuthorisation
+  type: Event
+  source:
+    remote:
+      path: C:/Projects/GitHub/Yort.Humm.InStore/src/IHummClient.cs
+    id: PendingAuthorisation
+    path: IHummClient.cs
+    startLine: 18
+  assemblies:
+  - Yort.Humm.InStore
+  namespace: Yort.Humm.InStore
+  summary: "\nRaised when a <xref href=\"Yort.Humm.InStore.ProcessAuthorisationResponse\" data-throw-if-not-resolved=\"false\"></xref> is received with a status of <xref href=\"Yort.Humm.InStore.RequestStates.Pending\" data-throw-if-not-resolved=\"false\"></xref> and the <xref href=\"Yort.Humm.InStore.ProcessAuthorisationRequest.AutoHandlePendingResponse\" data-throw-if-not-resolved=\"false\"></xref> property of the request was true.\n"
+  remarks: "\n<p>While the <xref href=\"Yort.Humm.InStore.ProcessAuthorisationRequest.AutoHandlePendingResponse\" data-throw-if-not-resolved=\"false\"></xref> option frees the client from having to handle the repeat API call logic to Humm in the case of a pending &apos;big things&apos; purchase flow, \nthis event can be used by the client to update it&apos;s UI to indicate the pending status and/or when the next recheck will occur if it desires.</p>\n"
+  example: []
+  syntax:
+    content: event EventHandler<PendingAuthorisationEventArgs> PendingAuthorisation
+    return:
+      type: System.EventHandler{Yort.Humm.InStore.PendingAuthorisationEventArgs}
+    content.vb: Event PendingAuthorisation As EventHandler(Of PendingAuthorisationEventArgs)
+- uid: Yort.Humm.InStore.IHummClient.SetDeviceKey(System.String)
+  commentId: M:Yort.Humm.InStore.IHummClient.SetDeviceKey(System.String)
+  id: SetDeviceKey(System.String)
+  parent: Yort.Humm.InStore.IHummClient
+  langs:
+  - csharp
+  - vb
+  name: SetDeviceKey(String)
+  nameWithType: IHummClient.SetDeviceKey(String)
+  fullName: Yort.Humm.InStore.IHummClient.SetDeviceKey(System.String)
+  type: Method
+  source:
+    remote:
+      path: C:/Projects/GitHub/Yort.Humm.InStore/src/IHummClient.cs
+    id: SetDeviceKey
+    path: IHummClient.cs
+    startLine: 30
+  assemblies:
+  - Yort.Humm.InStore
+  namespace: Yort.Humm.InStore
+  summary: "\nSets the device key used for generating digital signatures.\n"
+  remarks: "\n<p>The device key is usually provided via the <xref href=\"Yort.Humm.InStore.HummClientConfiguration\" data-throw-if-not-resolved=\"false\"></xref> constructor argument if known before client is created. This method is typically used when registering a new device via <xref href=\"Yort.Humm.InStore.IHummClient.CreateKeyAsync(Yort.Humm.InStore.CreateKeyRequest)\" data-throw-if-not-resolved=\"false\"></xref> and not electing to have the token automatically applied.</p>\n<p>Null can be provided to clear the currently assigned device key (if any), prior to calling <xref href=\"Yort.Humm.InStore.IHummClient.CreateKeyAsync(Yort.Humm.InStore.CreateKeyRequest)\" data-throw-if-not-resolved=\"false\"></xref> to generate a new device key.</p>\n"
+  example: []
+  syntax:
+    content: void SetDeviceKey(string deviceKey)
+    parameters:
+    - id: deviceKey
+      type: System.String
+      description: A string containing the device key previously returns by a <xref href="Yort.Humm.InStore.IHummClient.CreateKeyAsync(Yort.Humm.InStore.CreateKeyRequest)" data-throw-if-not-resolved="false"></xref> request.
+    content.vb: Sub SetDeviceKey(deviceKey As String)
+  overload: Yort.Humm.InStore.IHummClient.SetDeviceKey*
+  seealso:
+  - linkId: Yort.Humm.InStore.IHummClient.CreateKeyAsync(Yort.Humm.InStore.CreateKeyRequest)
+    commentId: M:Yort.Humm.InStore.IHummClient.CreateKeyAsync(Yort.Humm.InStore.CreateKeyRequest)
+  - linkId: Yort.Humm.InStore.HummClientConfiguration
+    commentId: T:Yort.Humm.InStore.HummClientConfiguration
+- uid: Yort.Humm.InStore.IHummClient.CreateKeyAsync(Yort.Humm.InStore.CreateKeyRequest)
+  commentId: M:Yort.Humm.InStore.IHummClient.CreateKeyAsync(Yort.Humm.InStore.CreateKeyRequest)
+  id: CreateKeyAsync(Yort.Humm.InStore.CreateKeyRequest)
+  parent: Yort.Humm.InStore.IHummClient
+  langs:
+  - csharp
+  - vb
+  name: CreateKeyAsync(CreateKeyRequest)
+  nameWithType: IHummClient.CreateKeyAsync(CreateKeyRequest)
+  fullName: Yort.Humm.InStore.IHummClient.CreateKeyAsync(Yort.Humm.InStore.CreateKeyRequest)
+  type: Method
+  source:
+    remote:
+      path: C:/Projects/GitHub/Yort.Humm.InStore/src/IHummClient.cs
+    id: CreateKeyAsync
+    path: IHummClient.cs
+    startLine: 44
+  assemblies:
+  - Yort.Humm.InStore
+  namespace: Yort.Humm.InStore
+  summary: "\nRequests a new device key from Humm using the (initialisation) device token created in the Humm Seller (merchant) portal.\n"
+  remarks: "\n<p>If the <xref href=\"Yort.Humm.InStore.CreateKeyRequest.AutoUpdateClientToken\" data-throw-if-not-resolved=\"false\"></xref> argument is true and the request is successsful, the client will automatically call <xref href=\"Yort.Humm.InStore.IHummClient.SetDeviceKey(System.String)\" data-throw-if-not-resolved=\"false\"></xref> with the value of <xref href=\"Yort.Humm.InStore.CreateKeyResponse.Key\" data-throw-if-not-resolved=\"false\"></xref> for you, ensuring all future calls made with this client instance use the new token.</p>\n"
+  example: []
+  syntax:
+    content: Task<CreateKeyResponse> CreateKeyAsync(CreateKeyRequest request)
+    parameters:
+    - id: request
+      type: Yort.Humm.InStore.CreateKeyRequest
+      description: A <xref href="Yort.Humm.InStore.CreateKeyRequest" data-throw-if-not-resolved="false"></xref> instance containing details of the request to make.
+    return:
+      type: System.Threading.Tasks.Task{Yort.Humm.InStore.CreateKeyResponse}
+      description: A <xref href="Yort.Humm.InStore.CreateKeyResponse" data-throw-if-not-resolved="false"></xref> instance containing the Humm response.
+    content.vb: Function CreateKeyAsync(request As CreateKeyRequest) As Task(Of CreateKeyResponse)
+  overload: Yort.Humm.InStore.IHummClient.CreateKeyAsync*
+  exceptions:
+  - type: System.ArgumentNullException
+    commentId: T:System.ArgumentNullException
+    description: Thrown if <code data-dev-comment-type="paramref" class="paramref">request</code> is null.
+  seealso:
+  - linkId: Yort.Humm.InStore.CreateKeyRequest
+    commentId: T:Yort.Humm.InStore.CreateKeyRequest
+  - linkId: Yort.Humm.InStore.CreateKeyResponse
+    commentId: T:Yort.Humm.InStore.CreateKeyResponse
+  - linkId: Yort.Humm.InStore.IHummClient.SetDeviceKey(System.String)
+    commentId: M:Yort.Humm.InStore.IHummClient.SetDeviceKey(System.String)
+- uid: Yort.Humm.InStore.IHummClient.InviteAsync(Yort.Humm.InStore.InviteRequest)
+  commentId: M:Yort.Humm.InStore.IHummClient.InviteAsync(Yort.Humm.InStore.InviteRequest)
+  id: InviteAsync(Yort.Humm.InStore.InviteRequest)
+  parent: Yort.Humm.InStore.IHummClient
+  langs:
+  - csharp
+  - vb
+  name: InviteAsync(InviteRequest)
+  nameWithType: IHummClient.InviteAsync(InviteRequest)
+  fullName: Yort.Humm.InStore.IHummClient.InviteAsync(Yort.Humm.InStore.InviteRequest)
+  type: Method
+  source:
+    remote:
+      path: C:/Projects/GitHub/Yort.Humm.InStore/src/IHummClient.cs
+    id: InviteAsync
+    path: IHummClient.cs
+    startLine: 57
+  assemblies:
+  - Yort.Humm.InStore
+  namespace: Yort.Humm.InStore
+  summary: "\nSends an SMS to the customer&apos;s mobile phone inviting them to sign-up as a Humm customer.\n"
+  example: []
+  syntax:
+    content: Task<InviteResponse> InviteAsync(InviteRequest request)
+    parameters:
+    - id: request
+      type: Yort.Humm.InStore.InviteRequest
+      description: A <xref href="Yort.Humm.InStore.InviteRequest" data-throw-if-not-resolved="false"></xref> instance.
+    return:
+      type: System.Threading.Tasks.Task{Yort.Humm.InStore.InviteResponse}
+      description: A <xref href="Yort.Humm.InStore.InviteResponse" data-throw-if-not-resolved="false"></xref>.
+    content.vb: Function InviteAsync(request As InviteRequest) As Task(Of InviteResponse)
+  overload: Yort.Humm.InStore.IHummClient.InviteAsync*
+  exceptions:
+  - type: System.ArgumentNullException
+    commentId: T:System.ArgumentNullException
+    description: Thrown if <code data-dev-comment-type="paramref" class="paramref">request</code> is null.
+  - type: Yort.Humm.InStore.HummResponseSignatureException
+    commentId: T:Yort.Humm.InStore.HummResponseSignatureException
+    description: Thrown if the response signature cannot be validated.
+  - type: System.ObjectDisposedException
+    commentId: T:System.ObjectDisposedException
+    description: Thrown if this instance has been disposed.
+  - type: System.InvalidOperationException
+    commentId: T:System.InvalidOperationException
+    description: Thrown if this instance has not been initialised with a non-null device key (<xref href="Yort.Humm.InStore.IHummClient.SetDeviceKey(System.String)" data-throw-if-not-resolved="false"></xref> and <xref href="Yort.Humm.InStore.HummClientConfiguration.DeviceKey" data-throw-if-not-resolved="false"></xref>)..
+  seealso:
+  - linkId: Yort.Humm.InStore.InviteRequest
+    commentId: T:Yort.Humm.InStore.InviteRequest
+  - linkId: Yort.Humm.InStore.InviteResponse
+    commentId: T:Yort.Humm.InStore.InviteResponse
+- uid: Yort.Humm.InStore.IHummClient.ProcessAuthorisationAsync(Yort.Humm.InStore.ProcessAuthorisationRequest)
+  commentId: M:Yort.Humm.InStore.IHummClient.ProcessAuthorisationAsync(Yort.Humm.InStore.ProcessAuthorisationRequest)
+  id: ProcessAuthorisationAsync(Yort.Humm.InStore.ProcessAuthorisationRequest)
+  parent: Yort.Humm.InStore.IHummClient
+  langs:
+  - csharp
+  - vb
+  name: ProcessAuthorisationAsync(ProcessAuthorisationRequest)
+  nameWithType: IHummClient.ProcessAuthorisationAsync(ProcessAuthorisationRequest)
+  fullName: Yort.Humm.InStore.IHummClient.ProcessAuthorisationAsync(Yort.Humm.InStore.ProcessAuthorisationRequest)
+  type: Method
+  source:
+    remote:
+      path: C:/Projects/GitHub/Yort.Humm.InStore/src/IHummClient.cs
+    id: ProcessAuthorisationAsync
+    path: IHummClient.cs
+    startLine: 85
+  assemblies:
+  - Yort.Humm.InStore
+  namespace: Yort.Humm.InStore
+  summary: "\nRequests an authorisation (for payment) be processed.\n"
+  remarks: "\n<p>This method is used to request a payment contract be setup for a specified amount using an approval code generated by the customer&apos;s device.\nIt is the most common API call made to Humm in a &apos;happy path&apos;.\n</p>\n<p>If the <xref href=\"Yort.Humm.InStore.ProcessAuthorisationRequest.AutoHandlePendingResponse\" data-throw-if-not-resolved=\"false\"></xref> value is true and the response indicates a <xref href=\"Yort.Humm.InStore.RequestStates.Pending\" data-throw-if-not-resolved=\"false\"></xref> status then\nthis call will raise the <xref href=\"Yort.Humm.InStore.IHummClient.PendingAuthorisation\" data-throw-if-not-resolved=\"false\"></xref> event, wait for the specified retry interval, and the re-make the request again. This will be repeated until a \nnon-pending status is returned, or an error is thrown from one of the handlers for the <xref href=\"Yort.Humm.InStore.IHummClient.PendingAuthorisation\" data-throw-if-not-resolved=\"false\"></xref> event. In this case the response returned \nto the caller will be the final status (success/failure/error).\n</p>\n<p>\nIf <xref href=\"Yort.Humm.InStore.ProcessAuthorisationRequest.AutoHandlePendingResponse\" data-throw-if-not-resolved=\"false\"></xref> is false then the first response will be returned to the caller and if the status is <xref href=\"Yort.Humm.InStore.RequestStates.Pending\" data-throw-if-not-resolved=\"false\"></xref> \nit is up to the caller to repeat the request until a final state is reached.\n</p>\n"
+  example: []
+  syntax:
+    content: Task<ProcessAuthorisationResponse> ProcessAuthorisationAsync(ProcessAuthorisationRequest request)
+    parameters:
+    - id: request
+      type: Yort.Humm.InStore.ProcessAuthorisationRequest
+      description: A <xref href="Yort.Humm.InStore.ProcessAuthorisationRequest" data-throw-if-not-resolved="false"></xref> instance.
+    return:
+      type: System.Threading.Tasks.Task{Yort.Humm.InStore.ProcessAuthorisationResponse}
+      description: A <xref href="Yort.Humm.InStore.ProcessAuthorisationResponse" data-throw-if-not-resolved="false"></xref> instance.
+    content.vb: Function ProcessAuthorisationAsync(request As ProcessAuthorisationRequest) As Task(Of ProcessAuthorisationResponse)
+  overload: Yort.Humm.InStore.IHummClient.ProcessAuthorisationAsync*
+  exceptions:
+  - type: System.ArgumentNullException
+    commentId: T:System.ArgumentNullException
+    description: Thrown if <code data-dev-comment-type="paramref" class="paramref">request</code> is null.
+  - type: Yort.Humm.InStore.HummResponseSignatureException
+    commentId: T:Yort.Humm.InStore.HummResponseSignatureException
+    description: Thrown if the response signature cannot be validated.
+  - type: System.ObjectDisposedException
+    commentId: T:System.ObjectDisposedException
+    description: Thrown if this instance has been disposed.
+  - type: System.InvalidOperationException
+    commentId: T:System.InvalidOperationException
+    description: Thrown if this instance has not been initialised with a non-null device key (<xref href="Yort.Humm.InStore.IHummClient.SetDeviceKey(System.String)" data-throw-if-not-resolved="false"></xref> and <xref href="Yort.Humm.InStore.HummClientConfiguration.DeviceKey" data-throw-if-not-resolved="false"></xref>)..
+  seealso:
+  - linkId: Yort.Humm.InStore.IHummClient.PendingAuthorisation
+    commentId: E:Yort.Humm.InStore.IHummClient.PendingAuthorisation
+  - linkId: Yort.Humm.InStore.ProcessAuthorisationRequest
+    commentId: T:Yort.Humm.InStore.ProcessAuthorisationRequest
+  - linkId: Yort.Humm.InStore.ProcessAuthorisationResponse
+    commentId: T:Yort.Humm.InStore.ProcessAuthorisationResponse
+- uid: Yort.Humm.InStore.IHummClient.SendReceiptAsync(Yort.Humm.InStore.SendReceiptRequest)
+  commentId: M:Yort.Humm.InStore.IHummClient.SendReceiptAsync(Yort.Humm.InStore.SendReceiptRequest)
+  id: SendReceiptAsync(Yort.Humm.InStore.SendReceiptRequest)
+  parent: Yort.Humm.InStore.IHummClient
+  langs:
+  - csharp
+  - vb
+  name: SendReceiptAsync(SendReceiptRequest)
+  nameWithType: IHummClient.SendReceiptAsync(SendReceiptRequest)
+  fullName: Yort.Humm.InStore.IHummClient.SendReceiptAsync(Yort.Humm.InStore.SendReceiptRequest)
+  type: Method
+  source:
+    remote:
+      path: C:/Projects/GitHub/Yort.Humm.InStore/src/IHummClient.cs
+    id: SendReceiptAsync
+    path: IHummClient.cs
+    startLine: 87
+  assemblies:
+  - Yort.Humm.InStore
+  namespace: Yort.Humm.InStore
+  syntax:
+    content: Task<SendReceiptResponse> SendReceiptAsync(SendReceiptRequest request)
+    parameters:
+    - id: request
+      type: Yort.Humm.InStore.SendReceiptRequest
+    return:
+      type: System.Threading.Tasks.Task{Yort.Humm.InStore.SendReceiptResponse}
+    content.vb: Function SendReceiptAsync(request As SendReceiptRequest) As Task(Of SendReceiptResponse)
+  overload: Yort.Humm.InStore.IHummClient.SendReceiptAsync*
+- uid: Yort.Humm.InStore.IHummClient.ProcessSalesAdjustmentAsync(Yort.Humm.InStore.ProcessSalesAdjustmentRequest)
+  commentId: M:Yort.Humm.InStore.IHummClient.ProcessSalesAdjustmentAsync(Yort.Humm.InStore.ProcessSalesAdjustmentRequest)
+  id: ProcessSalesAdjustmentAsync(Yort.Humm.InStore.ProcessSalesAdjustmentRequest)
+  parent: Yort.Humm.InStore.IHummClient
+  langs:
+  - csharp
+  - vb
+  name: ProcessSalesAdjustmentAsync(ProcessSalesAdjustmentRequest)
+  nameWithType: IHummClient.ProcessSalesAdjustmentAsync(ProcessSalesAdjustmentRequest)
+  fullName: Yort.Humm.InStore.IHummClient.ProcessSalesAdjustmentAsync(Yort.Humm.InStore.ProcessSalesAdjustmentRequest)
+  type: Method
+  source:
+    remote:
+      path: C:/Projects/GitHub/Yort.Humm.InStore/src/IHummClient.cs
+    id: ProcessSalesAdjustmentAsync
+    path: IHummClient.cs
+    startLine: 89
+  assemblies:
+  - Yort.Humm.InStore
+  namespace: Yort.Humm.InStore
+  syntax:
+    content: Task<ProcessSalesAdjustmentResponse> ProcessSalesAdjustmentAsync(ProcessSalesAdjustmentRequest request)
+    parameters:
+    - id: request
+      type: Yort.Humm.InStore.ProcessSalesAdjustmentRequest
+    return:
+      type: System.Threading.Tasks.Task{Yort.Humm.InStore.ProcessSalesAdjustmentResponse}
+    content.vb: Function ProcessSalesAdjustmentAsync(request As ProcessSalesAdjustmentRequest) As Task(Of ProcessSalesAdjustmentResponse)
+  overload: Yort.Humm.InStore.IHummClient.ProcessSalesAdjustmentAsync*
+- uid: Yort.Humm.InStore.IHummClient.ProcessSalesAdjustmentReversalAsync(Yort.Humm.InStore.ProcessSalesAdjustmentReversalRequest)
+  commentId: M:Yort.Humm.InStore.IHummClient.ProcessSalesAdjustmentReversalAsync(Yort.Humm.InStore.ProcessSalesAdjustmentReversalRequest)
+  id: ProcessSalesAdjustmentReversalAsync(Yort.Humm.InStore.ProcessSalesAdjustmentReversalRequest)
+  parent: Yort.Humm.InStore.IHummClient
+  langs:
+  - csharp
+  - vb
+  name: ProcessSalesAdjustmentReversalAsync(ProcessSalesAdjustmentReversalRequest)
+  nameWithType: IHummClient.ProcessSalesAdjustmentReversalAsync(ProcessSalesAdjustmentReversalRequest)
+  fullName: Yort.Humm.InStore.IHummClient.ProcessSalesAdjustmentReversalAsync(Yort.Humm.InStore.ProcessSalesAdjustmentReversalRequest)
+  type: Method
+  source:
+    remote:
+      path: C:/Projects/GitHub/Yort.Humm.InStore/src/IHummClient.cs
+    id: ProcessSalesAdjustmentReversalAsync
+    path: IHummClient.cs
+    startLine: 91
+  assemblies:
+  - Yort.Humm.InStore
+  namespace: Yort.Humm.InStore
+  syntax:
+    content: Task<ProcessSalesAdjustmentReversalResponse> ProcessSalesAdjustmentReversalAsync(ProcessSalesAdjustmentReversalRequest request)
+    parameters:
+    - id: request
+      type: Yort.Humm.InStore.ProcessSalesAdjustmentReversalRequest
+    return:
+      type: System.Threading.Tasks.Task{Yort.Humm.InStore.ProcessSalesAdjustmentReversalResponse}
+    content.vb: Function ProcessSalesAdjustmentReversalAsync(request As ProcessSalesAdjustmentReversalRequest) As Task(Of ProcessSalesAdjustmentReversalResponse)
+  overload: Yort.Humm.InStore.IHummClient.ProcessSalesAdjustmentReversalAsync*
+references:
+- uid: Yort.Humm.InStore.HummClient
+  commentId: T:Yort.Humm.InStore.HummClient
+  name: HummClient
+  nameWithType: HummClient
+  fullName: Yort.Humm.InStore.HummClient
+- uid: Yort.Humm.InStore
+  commentId: N:Yort.Humm.InStore
+  name: Yort.Humm.InStore
+  nameWithType: Yort.Humm.InStore
+  fullName: Yort.Humm.InStore
+- uid: Yort.Humm.InStore.ProcessAuthorisationResponse
+  commentId: T:Yort.Humm.InStore.ProcessAuthorisationResponse
+  name: ProcessAuthorisationResponse
+  nameWithType: ProcessAuthorisationResponse
+  fullName: Yort.Humm.InStore.ProcessAuthorisationResponse
+- uid: Yort.Humm.InStore.RequestStates.Pending
+  commentId: F:Yort.Humm.InStore.RequestStates.Pending
+  isExternal: true
+- uid: Yort.Humm.InStore.ProcessAuthorisationRequest.AutoHandlePendingResponse
+  commentId: P:Yort.Humm.InStore.ProcessAuthorisationRequest.AutoHandlePendingResponse
+  isExternal: true
+- uid: System.EventHandler{Yort.Humm.InStore.PendingAuthorisationEventArgs}
+  commentId: T:System.EventHandler{Yort.Humm.InStore.PendingAuthorisationEventArgs}
+  parent: System
+  definition: System.EventHandler`1
+  name: EventHandler<PendingAuthorisationEventArgs>
+  nameWithType: EventHandler<PendingAuthorisationEventArgs>
+  fullName: System.EventHandler<Yort.Humm.InStore.PendingAuthorisationEventArgs>
+  nameWithType.vb: EventHandler(Of PendingAuthorisationEventArgs)
+  fullName.vb: System.EventHandler(Of Yort.Humm.InStore.PendingAuthorisationEventArgs)
+  name.vb: EventHandler(Of PendingAuthorisationEventArgs)
+  spec.csharp:
+  - uid: System.EventHandler`1
+    name: EventHandler
+    nameWithType: EventHandler
+    fullName: System.EventHandler
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Yort.Humm.InStore.PendingAuthorisationEventArgs
+    name: PendingAuthorisationEventArgs
+    nameWithType: PendingAuthorisationEventArgs
+    fullName: Yort.Humm.InStore.PendingAuthorisationEventArgs
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.EventHandler`1
+    name: EventHandler
+    nameWithType: EventHandler
+    fullName: System.EventHandler
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: Yort.Humm.InStore.PendingAuthorisationEventArgs
+    name: PendingAuthorisationEventArgs
+    nameWithType: PendingAuthorisationEventArgs
+    fullName: Yort.Humm.InStore.PendingAuthorisationEventArgs
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.EventHandler`1
+  commentId: T:System.EventHandler`1
+  isExternal: true
+  name: EventHandler<TEventArgs>
+  nameWithType: EventHandler<TEventArgs>
+  fullName: System.EventHandler<TEventArgs>
+  nameWithType.vb: EventHandler(Of TEventArgs)
+  fullName.vb: System.EventHandler(Of TEventArgs)
+  name.vb: EventHandler(Of TEventArgs)
+  spec.csharp:
+  - uid: System.EventHandler`1
+    name: EventHandler
+    nameWithType: EventHandler
+    fullName: System.EventHandler
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TEventArgs
+    nameWithType: TEventArgs
+    fullName: TEventArgs
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.EventHandler`1
+    name: EventHandler
+    nameWithType: EventHandler
+    fullName: System.EventHandler
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TEventArgs
+    nameWithType: TEventArgs
+    fullName: TEventArgs
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: Yort.Humm.InStore.HummClientConfiguration
+  commentId: T:Yort.Humm.InStore.HummClientConfiguration
+  parent: Yort.Humm.InStore
+  name: HummClientConfiguration
+  nameWithType: HummClientConfiguration
+  fullName: Yort.Humm.InStore.HummClientConfiguration
+- uid: Yort.Humm.InStore.IHummClient.CreateKeyAsync(Yort.Humm.InStore.CreateKeyRequest)
+  commentId: M:Yort.Humm.InStore.IHummClient.CreateKeyAsync(Yort.Humm.InStore.CreateKeyRequest)
+  parent: Yort.Humm.InStore.IHummClient
+  name: CreateKeyAsync(CreateKeyRequest)
+  nameWithType: IHummClient.CreateKeyAsync(CreateKeyRequest)
+  fullName: Yort.Humm.InStore.IHummClient.CreateKeyAsync(Yort.Humm.InStore.CreateKeyRequest)
+  spec.csharp:
+  - uid: Yort.Humm.InStore.IHummClient.CreateKeyAsync(Yort.Humm.InStore.CreateKeyRequest)
+    name: CreateKeyAsync
+    nameWithType: IHummClient.CreateKeyAsync
+    fullName: Yort.Humm.InStore.IHummClient.CreateKeyAsync
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Yort.Humm.InStore.CreateKeyRequest
+    name: CreateKeyRequest
+    nameWithType: CreateKeyRequest
+    fullName: Yort.Humm.InStore.CreateKeyRequest
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Yort.Humm.InStore.IHummClient.CreateKeyAsync(Yort.Humm.InStore.CreateKeyRequest)
+    name: CreateKeyAsync
+    nameWithType: IHummClient.CreateKeyAsync
+    fullName: Yort.Humm.InStore.IHummClient.CreateKeyAsync
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Yort.Humm.InStore.CreateKeyRequest
+    name: CreateKeyRequest
+    nameWithType: CreateKeyRequest
+    fullName: Yort.Humm.InStore.CreateKeyRequest
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Yort.Humm.InStore.IHummClient.SetDeviceKey*
+  commentId: Overload:Yort.Humm.InStore.IHummClient.SetDeviceKey
+  name: SetDeviceKey
+  nameWithType: IHummClient.SetDeviceKey
+  fullName: Yort.Humm.InStore.IHummClient.SetDeviceKey
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: Yort.Humm.InStore.IHummClient
+  commentId: T:Yort.Humm.InStore.IHummClient
+  parent: Yort.Humm.InStore
+  name: IHummClient
+  nameWithType: IHummClient
+  fullName: Yort.Humm.InStore.IHummClient
+- uid: Yort.Humm.InStore.CreateKeyRequest.AutoUpdateClientToken
+  commentId: P:Yort.Humm.InStore.CreateKeyRequest.AutoUpdateClientToken
+  isExternal: true
+- uid: Yort.Humm.InStore.IHummClient.SetDeviceKey(System.String)
+  commentId: M:Yort.Humm.InStore.IHummClient.SetDeviceKey(System.String)
+  parent: Yort.Humm.InStore.IHummClient
+  isExternal: true
+  name: SetDeviceKey(String)
+  nameWithType: IHummClient.SetDeviceKey(String)
+  fullName: Yort.Humm.InStore.IHummClient.SetDeviceKey(System.String)
+  spec.csharp:
+  - uid: Yort.Humm.InStore.IHummClient.SetDeviceKey(System.String)
+    name: SetDeviceKey
+    nameWithType: IHummClient.SetDeviceKey
+    fullName: Yort.Humm.InStore.IHummClient.SetDeviceKey
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Yort.Humm.InStore.IHummClient.SetDeviceKey(System.String)
+    name: SetDeviceKey
+    nameWithType: IHummClient.SetDeviceKey
+    fullName: Yort.Humm.InStore.IHummClient.SetDeviceKey
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Yort.Humm.InStore.CreateKeyResponse.Key
+  commentId: P:Yort.Humm.InStore.CreateKeyResponse.Key
+  isExternal: true
+- uid: Yort.Humm.InStore.CreateKeyRequest
+  commentId: T:Yort.Humm.InStore.CreateKeyRequest
+  parent: Yort.Humm.InStore
+  name: CreateKeyRequest
+  nameWithType: CreateKeyRequest
+  fullName: Yort.Humm.InStore.CreateKeyRequest
+- uid: Yort.Humm.InStore.CreateKeyResponse
+  commentId: T:Yort.Humm.InStore.CreateKeyResponse
+  name: CreateKeyResponse
+  nameWithType: CreateKeyResponse
+  fullName: Yort.Humm.InStore.CreateKeyResponse
+- uid: System.ArgumentNullException
+  commentId: T:System.ArgumentNullException
+  isExternal: true
+- uid: Yort.Humm.InStore.IHummClient.CreateKeyAsync*
+  commentId: Overload:Yort.Humm.InStore.IHummClient.CreateKeyAsync
+  name: CreateKeyAsync
+  nameWithType: IHummClient.CreateKeyAsync
+  fullName: Yort.Humm.InStore.IHummClient.CreateKeyAsync
+- uid: System.Threading.Tasks.Task{Yort.Humm.InStore.CreateKeyResponse}
+  commentId: T:System.Threading.Tasks.Task{Yort.Humm.InStore.CreateKeyResponse}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
+  name: Task<CreateKeyResponse>
+  nameWithType: Task<CreateKeyResponse>
+  fullName: System.Threading.Tasks.Task<Yort.Humm.InStore.CreateKeyResponse>
+  nameWithType.vb: Task(Of CreateKeyResponse)
+  fullName.vb: System.Threading.Tasks.Task(Of Yort.Humm.InStore.CreateKeyResponse)
+  name.vb: Task(Of CreateKeyResponse)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    nameWithType: Task
+    fullName: System.Threading.Tasks.Task
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Yort.Humm.InStore.CreateKeyResponse
+    name: CreateKeyResponse
+    nameWithType: CreateKeyResponse
+    fullName: Yort.Humm.InStore.CreateKeyResponse
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    nameWithType: Task
+    fullName: System.Threading.Tasks.Task
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: Yort.Humm.InStore.CreateKeyResponse
+    name: CreateKeyResponse
+    nameWithType: CreateKeyResponse
+    fullName: Yort.Humm.InStore.CreateKeyResponse
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Threading.Tasks.Task`1
+  commentId: T:System.Threading.Tasks.Task`1
+  isExternal: true
+  name: Task<TResult>
+  nameWithType: Task<TResult>
+  fullName: System.Threading.Tasks.Task<TResult>
+  nameWithType.vb: Task(Of TResult)
+  fullName.vb: System.Threading.Tasks.Task(Of TResult)
+  name.vb: Task(Of TResult)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    nameWithType: Task
+    fullName: System.Threading.Tasks.Task
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TResult
+    nameWithType: TResult
+    fullName: TResult
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    nameWithType: Task
+    fullName: System.Threading.Tasks.Task
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TResult
+    nameWithType: TResult
+    fullName: TResult
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Threading.Tasks
+  commentId: N:System.Threading.Tasks
+  isExternal: true
+  name: System.Threading.Tasks
+  nameWithType: System.Threading.Tasks
+  fullName: System.Threading.Tasks
+- uid: Yort.Humm.InStore.InviteRequest
+  commentId: T:Yort.Humm.InStore.InviteRequest
+  parent: Yort.Humm.InStore
+  name: InviteRequest
+  nameWithType: InviteRequest
+  fullName: Yort.Humm.InStore.InviteRequest
+- uid: Yort.Humm.InStore.InviteResponse
+  commentId: T:Yort.Humm.InStore.InviteResponse
+  name: InviteResponse
+  nameWithType: InviteResponse
+  fullName: Yort.Humm.InStore.InviteResponse
+- uid: Yort.Humm.InStore.HummClientConfiguration.DeviceKey
+  commentId: P:Yort.Humm.InStore.HummClientConfiguration.DeviceKey
+  isExternal: true
+- uid: Yort.Humm.InStore.HummResponseSignatureException
+  commentId: T:Yort.Humm.InStore.HummResponseSignatureException
+  name: HummResponseSignatureException
+  nameWithType: HummResponseSignatureException
+  fullName: Yort.Humm.InStore.HummResponseSignatureException
+- uid: System.ObjectDisposedException
+  commentId: T:System.ObjectDisposedException
+  isExternal: true
+- uid: System.InvalidOperationException
+  commentId: T:System.InvalidOperationException
+  isExternal: true
+- uid: Yort.Humm.InStore.IHummClient.InviteAsync*
+  commentId: Overload:Yort.Humm.InStore.IHummClient.InviteAsync
+  name: InviteAsync
+  nameWithType: IHummClient.InviteAsync
+  fullName: Yort.Humm.InStore.IHummClient.InviteAsync
+- uid: System.Threading.Tasks.Task{Yort.Humm.InStore.InviteResponse}
+  commentId: T:System.Threading.Tasks.Task{Yort.Humm.InStore.InviteResponse}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
+  name: Task<InviteResponse>
+  nameWithType: Task<InviteResponse>
+  fullName: System.Threading.Tasks.Task<Yort.Humm.InStore.InviteResponse>
+  nameWithType.vb: Task(Of InviteResponse)
+  fullName.vb: System.Threading.Tasks.Task(Of Yort.Humm.InStore.InviteResponse)
+  name.vb: Task(Of InviteResponse)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    nameWithType: Task
+    fullName: System.Threading.Tasks.Task
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Yort.Humm.InStore.InviteResponse
+    name: InviteResponse
+    nameWithType: InviteResponse
+    fullName: Yort.Humm.InStore.InviteResponse
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    nameWithType: Task
+    fullName: System.Threading.Tasks.Task
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: Yort.Humm.InStore.InviteResponse
+    name: InviteResponse
+    nameWithType: InviteResponse
+    fullName: Yort.Humm.InStore.InviteResponse
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Yort.Humm.InStore.IHummClient.PendingAuthorisation
+  commentId: E:Yort.Humm.InStore.IHummClient.PendingAuthorisation
+  parent: Yort.Humm.InStore.IHummClient
+  name: PendingAuthorisation
+  nameWithType: IHummClient.PendingAuthorisation
+  fullName: Yort.Humm.InStore.IHummClient.PendingAuthorisation
+- uid: Yort.Humm.InStore.ProcessAuthorisationRequest
+  commentId: T:Yort.Humm.InStore.ProcessAuthorisationRequest
+  parent: Yort.Humm.InStore
+  name: ProcessAuthorisationRequest
+  nameWithType: ProcessAuthorisationRequest
+  fullName: Yort.Humm.InStore.ProcessAuthorisationRequest
+- uid: Yort.Humm.InStore.IHummClient.ProcessAuthorisationAsync*
+  commentId: Overload:Yort.Humm.InStore.IHummClient.ProcessAuthorisationAsync
+  name: ProcessAuthorisationAsync
+  nameWithType: IHummClient.ProcessAuthorisationAsync
+  fullName: Yort.Humm.InStore.IHummClient.ProcessAuthorisationAsync
+- uid: System.Threading.Tasks.Task{Yort.Humm.InStore.ProcessAuthorisationResponse}
+  commentId: T:System.Threading.Tasks.Task{Yort.Humm.InStore.ProcessAuthorisationResponse}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
+  name: Task<ProcessAuthorisationResponse>
+  nameWithType: Task<ProcessAuthorisationResponse>
+  fullName: System.Threading.Tasks.Task<Yort.Humm.InStore.ProcessAuthorisationResponse>
+  nameWithType.vb: Task(Of ProcessAuthorisationResponse)
+  fullName.vb: System.Threading.Tasks.Task(Of Yort.Humm.InStore.ProcessAuthorisationResponse)
+  name.vb: Task(Of ProcessAuthorisationResponse)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    nameWithType: Task
+    fullName: System.Threading.Tasks.Task
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Yort.Humm.InStore.ProcessAuthorisationResponse
+    name: ProcessAuthorisationResponse
+    nameWithType: ProcessAuthorisationResponse
+    fullName: Yort.Humm.InStore.ProcessAuthorisationResponse
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    nameWithType: Task
+    fullName: System.Threading.Tasks.Task
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: Yort.Humm.InStore.ProcessAuthorisationResponse
+    name: ProcessAuthorisationResponse
+    nameWithType: ProcessAuthorisationResponse
+    fullName: Yort.Humm.InStore.ProcessAuthorisationResponse
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Yort.Humm.InStore.IHummClient.SendReceiptAsync*
+  commentId: Overload:Yort.Humm.InStore.IHummClient.SendReceiptAsync
+  name: SendReceiptAsync
+  nameWithType: IHummClient.SendReceiptAsync
+  fullName: Yort.Humm.InStore.IHummClient.SendReceiptAsync
+- uid: Yort.Humm.InStore.SendReceiptRequest
+  commentId: T:Yort.Humm.InStore.SendReceiptRequest
+  parent: Yort.Humm.InStore
+  name: SendReceiptRequest
+  nameWithType: SendReceiptRequest
+  fullName: Yort.Humm.InStore.SendReceiptRequest
+- uid: System.Threading.Tasks.Task{Yort.Humm.InStore.SendReceiptResponse}
+  commentId: T:System.Threading.Tasks.Task{Yort.Humm.InStore.SendReceiptResponse}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
+  name: Task<SendReceiptResponse>
+  nameWithType: Task<SendReceiptResponse>
+  fullName: System.Threading.Tasks.Task<Yort.Humm.InStore.SendReceiptResponse>
+  nameWithType.vb: Task(Of SendReceiptResponse)
+  fullName.vb: System.Threading.Tasks.Task(Of Yort.Humm.InStore.SendReceiptResponse)
+  name.vb: Task(Of SendReceiptResponse)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    nameWithType: Task
+    fullName: System.Threading.Tasks.Task
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Yort.Humm.InStore.SendReceiptResponse
+    name: SendReceiptResponse
+    nameWithType: SendReceiptResponse
+    fullName: Yort.Humm.InStore.SendReceiptResponse
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    nameWithType: Task
+    fullName: System.Threading.Tasks.Task
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: Yort.Humm.InStore.SendReceiptResponse
+    name: SendReceiptResponse
+    nameWithType: SendReceiptResponse
+    fullName: Yort.Humm.InStore.SendReceiptResponse
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Yort.Humm.InStore.IHummClient.ProcessSalesAdjustmentAsync*
+  commentId: Overload:Yort.Humm.InStore.IHummClient.ProcessSalesAdjustmentAsync
+  name: ProcessSalesAdjustmentAsync
+  nameWithType: IHummClient.ProcessSalesAdjustmentAsync
+  fullName: Yort.Humm.InStore.IHummClient.ProcessSalesAdjustmentAsync
+- uid: Yort.Humm.InStore.ProcessSalesAdjustmentRequest
+  commentId: T:Yort.Humm.InStore.ProcessSalesAdjustmentRequest
+  parent: Yort.Humm.InStore
+  name: ProcessSalesAdjustmentRequest
+  nameWithType: ProcessSalesAdjustmentRequest
+  fullName: Yort.Humm.InStore.ProcessSalesAdjustmentRequest
+- uid: System.Threading.Tasks.Task{Yort.Humm.InStore.ProcessSalesAdjustmentResponse}
+  commentId: T:System.Threading.Tasks.Task{Yort.Humm.InStore.ProcessSalesAdjustmentResponse}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
+  name: Task<ProcessSalesAdjustmentResponse>
+  nameWithType: Task<ProcessSalesAdjustmentResponse>
+  fullName: System.Threading.Tasks.Task<Yort.Humm.InStore.ProcessSalesAdjustmentResponse>
+  nameWithType.vb: Task(Of ProcessSalesAdjustmentResponse)
+  fullName.vb: System.Threading.Tasks.Task(Of Yort.Humm.InStore.ProcessSalesAdjustmentResponse)
+  name.vb: Task(Of ProcessSalesAdjustmentResponse)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    nameWithType: Task
+    fullName: System.Threading.Tasks.Task
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Yort.Humm.InStore.ProcessSalesAdjustmentResponse
+    name: ProcessSalesAdjustmentResponse
+    nameWithType: ProcessSalesAdjustmentResponse
+    fullName: Yort.Humm.InStore.ProcessSalesAdjustmentResponse
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    nameWithType: Task
+    fullName: System.Threading.Tasks.Task
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: Yort.Humm.InStore.ProcessSalesAdjustmentResponse
+    name: ProcessSalesAdjustmentResponse
+    nameWithType: ProcessSalesAdjustmentResponse
+    fullName: Yort.Humm.InStore.ProcessSalesAdjustmentResponse
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Yort.Humm.InStore.IHummClient.ProcessSalesAdjustmentReversalAsync*
+  commentId: Overload:Yort.Humm.InStore.IHummClient.ProcessSalesAdjustmentReversalAsync
+  name: ProcessSalesAdjustmentReversalAsync
+  nameWithType: IHummClient.ProcessSalesAdjustmentReversalAsync
+  fullName: Yort.Humm.InStore.IHummClient.ProcessSalesAdjustmentReversalAsync
+- uid: Yort.Humm.InStore.ProcessSalesAdjustmentReversalRequest
+  commentId: T:Yort.Humm.InStore.ProcessSalesAdjustmentReversalRequest
+  parent: Yort.Humm.InStore
+  name: ProcessSalesAdjustmentReversalRequest
+  nameWithType: ProcessSalesAdjustmentReversalRequest
+  fullName: Yort.Humm.InStore.ProcessSalesAdjustmentReversalRequest
+- uid: System.Threading.Tasks.Task{Yort.Humm.InStore.ProcessSalesAdjustmentReversalResponse}
+  commentId: T:System.Threading.Tasks.Task{Yort.Humm.InStore.ProcessSalesAdjustmentReversalResponse}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
+  name: Task<ProcessSalesAdjustmentReversalResponse>
+  nameWithType: Task<ProcessSalesAdjustmentReversalResponse>
+  fullName: System.Threading.Tasks.Task<Yort.Humm.InStore.ProcessSalesAdjustmentReversalResponse>
+  nameWithType.vb: Task(Of ProcessSalesAdjustmentReversalResponse)
+  fullName.vb: System.Threading.Tasks.Task(Of Yort.Humm.InStore.ProcessSalesAdjustmentReversalResponse)
+  name.vb: Task(Of ProcessSalesAdjustmentReversalResponse)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    nameWithType: Task
+    fullName: System.Threading.Tasks.Task
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Yort.Humm.InStore.ProcessSalesAdjustmentReversalResponse
+    name: ProcessSalesAdjustmentReversalResponse
+    nameWithType: ProcessSalesAdjustmentReversalResponse
+    fullName: Yort.Humm.InStore.ProcessSalesAdjustmentReversalResponse
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    nameWithType: Task
+    fullName: System.Threading.Tasks.Task
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: Yort.Humm.InStore.ProcessSalesAdjustmentReversalResponse
+    name: ProcessSalesAdjustmentReversalResponse
+    nameWithType: ProcessSalesAdjustmentReversalResponse
+    fullName: Yort.Humm.InStore.ProcessSalesAdjustmentReversalResponse
+  - name: )
+    nameWithType: )
+    fullName: )

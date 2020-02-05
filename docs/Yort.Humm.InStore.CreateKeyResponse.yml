@@ -1,0 +1,513 @@
+### YamlMime:ManagedReference
+items:
+- uid: Yort.Humm.InStore.CreateKeyResponse
+  commentId: T:Yort.Humm.InStore.CreateKeyResponse
+  id: CreateKeyResponse
+  parent: Yort.Humm.InStore
+  children:
+  - Yort.Humm.InStore.CreateKeyResponse.Key
+  langs:
+  - csharp
+  - vb
+  name: CreateKeyResponse
+  nameWithType: CreateKeyResponse
+  fullName: Yort.Humm.InStore.CreateKeyResponse
+  type: Class
+  source:
+    remote:
+      path: C:/Projects/GitHub/Yort.Humm.InStore/src/CreateKeyResponse.cs
+    id: CreateKeyResponse
+    path: CreateKeyResponse.cs
+    startLine: 14
+  assemblies:
+  - Yort.Humm.InStore
+  namespace: Yort.Humm.InStore
+  summary: "\nContains details of a response to a <xref href=\"Yort.Humm.InStore.CreateKeyRequest\" data-throw-if-not-resolved=\"false\"></xref>.\n"
+  example: []
+  syntax:
+    content: 'public sealed class CreateKeyResponse : ResponseBase'
+    content.vb: >-
+      Public NotInheritable Class CreateKeyResponse
+          Inherits ResponseBase
+  seealso:
+  - linkId: Yort.Humm.InStore.Infrastructure.ResponseBase
+    commentId: T:Yort.Humm.InStore.Infrastructure.ResponseBase
+  - linkId: Yort.Humm.InStore.HummClient.CreateKeyAsync(Yort.Humm.InStore.CreateKeyRequest)
+    commentId: M:Yort.Humm.InStore.HummClient.CreateKeyAsync(Yort.Humm.InStore.CreateKeyRequest)
+  - linkId: Yort.Humm.InStore.CreateKeyRequest
+    commentId: T:Yort.Humm.InStore.CreateKeyRequest
+  inheritance:
+  - System.Object
+  - Yort.Humm.InStore.Infrastructure.ResponseBase
+  inheritedMembers:
+  - Yort.Humm.InStore.Infrastructure.ResponseBase.Status
+  - Yort.Humm.InStore.Infrastructure.ResponseBase.Code
+  - Yort.Humm.InStore.Infrastructure.ResponseBase.Message
+  - Yort.Humm.InStore.Infrastructure.ResponseBase.TrackingData
+  - Yort.Humm.InStore.Infrastructure.ResponseBase.Signature
+  - Yort.Humm.InStore.Infrastructure.ResponseBase.VerifySignature(Yort.Humm.InStore.Infrastructure.ISignatureGenerator)
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+  modifiers.csharp:
+  - public
+  - sealed
+  - class
+  modifiers.vb:
+  - Public
+  - NotInheritable
+  - Class
+- uid: Yort.Humm.InStore.CreateKeyResponse.Key
+  commentId: P:Yort.Humm.InStore.CreateKeyResponse.Key
+  id: Key
+  parent: Yort.Humm.InStore.CreateKeyResponse
+  langs:
+  - csharp
+  - vb
+  name: Key
+  nameWithType: CreateKeyResponse.Key
+  fullName: Yort.Humm.InStore.CreateKeyResponse.Key
+  type: Property
+  source:
+    remote:
+      path: C:/Projects/GitHub/Yort.Humm.InStore/src/CreateKeyResponse.cs
+    id: Key
+    path: CreateKeyResponse.cs
+    startLine: 27
+  assemblies:
+  - Yort.Humm.InStore
+  namespace: Yort.Humm.InStore
+  summary: "\nThe device key to use for all future API requests using the merchant id and device id associated with the request that generated this response.\n"
+  remarks: "\n<p>This key is required to generate signatures for all future requests to the Humm API that use the same merchant id and device id as the request that generated this response.\nUser code should ensure this value is persisted to disk and re-loaded as required, and ensure any relevant <xref href=\"Yort.Humm.InStore.HummClient\" data-throw-if-not-resolved=\"false\"></xref> instance is initialised with this key.\n</p>\n"
+  example: []
+  syntax:
+    content: >-
+      [JsonProperty("x_key")]
+
+      public string Key { get; set; }
+    parameters: []
+    return:
+      type: System.String
+      description: "\nThe key as a string.\n"
+    content.vb: >-
+      <JsonProperty("x_key")>
+
+      Public Property Key As String
+  overload: Yort.Humm.InStore.CreateKeyResponse.Key*
+  attributes:
+  - type: Newtonsoft.Json.JsonPropertyAttribute
+    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: x_key
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+references:
+- uid: Yort.Humm.InStore.CreateKeyRequest
+  commentId: T:Yort.Humm.InStore.CreateKeyRequest
+  parent: Yort.Humm.InStore
+  name: CreateKeyRequest
+  nameWithType: CreateKeyRequest
+  fullName: Yort.Humm.InStore.CreateKeyRequest
+- uid: Yort.Humm.InStore.Infrastructure.ResponseBase
+  commentId: T:Yort.Humm.InStore.Infrastructure.ResponseBase
+  parent: Yort.Humm.InStore.Infrastructure
+  name: ResponseBase
+  nameWithType: ResponseBase
+  fullName: Yort.Humm.InStore.Infrastructure.ResponseBase
+- uid: Yort.Humm.InStore.HummClient.CreateKeyAsync(Yort.Humm.InStore.CreateKeyRequest)
+  commentId: M:Yort.Humm.InStore.HummClient.CreateKeyAsync(Yort.Humm.InStore.CreateKeyRequest)
+  isExternal: true
+- uid: Yort.Humm.InStore
+  commentId: N:Yort.Humm.InStore
+  name: Yort.Humm.InStore
+  nameWithType: Yort.Humm.InStore
+  fullName: Yort.Humm.InStore
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: Yort.Humm.InStore.Infrastructure.ResponseBase.Status
+  commentId: P:Yort.Humm.InStore.Infrastructure.ResponseBase.Status
+  parent: Yort.Humm.InStore.Infrastructure.ResponseBase
+  name: Status
+  nameWithType: ResponseBase.Status
+  fullName: Yort.Humm.InStore.Infrastructure.ResponseBase.Status
+- uid: Yort.Humm.InStore.Infrastructure.ResponseBase.Code
+  commentId: P:Yort.Humm.InStore.Infrastructure.ResponseBase.Code
+  parent: Yort.Humm.InStore.Infrastructure.ResponseBase
+  name: Code
+  nameWithType: ResponseBase.Code
+  fullName: Yort.Humm.InStore.Infrastructure.ResponseBase.Code
+- uid: Yort.Humm.InStore.Infrastructure.ResponseBase.Message
+  commentId: P:Yort.Humm.InStore.Infrastructure.ResponseBase.Message
+  parent: Yort.Humm.InStore.Infrastructure.ResponseBase
+  name: Message
+  nameWithType: ResponseBase.Message
+  fullName: Yort.Humm.InStore.Infrastructure.ResponseBase.Message
+- uid: Yort.Humm.InStore.Infrastructure.ResponseBase.TrackingData
+  commentId: P:Yort.Humm.InStore.Infrastructure.ResponseBase.TrackingData
+  parent: Yort.Humm.InStore.Infrastructure.ResponseBase
+  name: TrackingData
+  nameWithType: ResponseBase.TrackingData
+  fullName: Yort.Humm.InStore.Infrastructure.ResponseBase.TrackingData
+- uid: Yort.Humm.InStore.Infrastructure.ResponseBase.Signature
+  commentId: P:Yort.Humm.InStore.Infrastructure.ResponseBase.Signature
+  parent: Yort.Humm.InStore.Infrastructure.ResponseBase
+  name: Signature
+  nameWithType: ResponseBase.Signature
+  fullName: Yort.Humm.InStore.Infrastructure.ResponseBase.Signature
+- uid: Yort.Humm.InStore.Infrastructure.ResponseBase.VerifySignature(Yort.Humm.InStore.Infrastructure.ISignatureGenerator)
+  commentId: M:Yort.Humm.InStore.Infrastructure.ResponseBase.VerifySignature(Yort.Humm.InStore.Infrastructure.ISignatureGenerator)
+  parent: Yort.Humm.InStore.Infrastructure.ResponseBase
+  name: VerifySignature(ISignatureGenerator)
+  nameWithType: ResponseBase.VerifySignature(ISignatureGenerator)
+  fullName: Yort.Humm.InStore.Infrastructure.ResponseBase.VerifySignature(Yort.Humm.InStore.Infrastructure.ISignatureGenerator)
+  spec.csharp:
+  - uid: Yort.Humm.InStore.Infrastructure.ResponseBase.VerifySignature(Yort.Humm.InStore.Infrastructure.ISignatureGenerator)
+    name: VerifySignature
+    nameWithType: ResponseBase.VerifySignature
+    fullName: Yort.Humm.InStore.Infrastructure.ResponseBase.VerifySignature
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Yort.Humm.InStore.Infrastructure.ISignatureGenerator
+    name: ISignatureGenerator
+    nameWithType: ISignatureGenerator
+    fullName: Yort.Humm.InStore.Infrastructure.ISignatureGenerator
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Yort.Humm.InStore.Infrastructure.ResponseBase.VerifySignature(Yort.Humm.InStore.Infrastructure.ISignatureGenerator)
+    name: VerifySignature
+    nameWithType: ResponseBase.VerifySignature
+    fullName: Yort.Humm.InStore.Infrastructure.ResponseBase.VerifySignature
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Yort.Humm.InStore.Infrastructure.ISignatureGenerator
+    name: ISignatureGenerator
+    nameWithType: ISignatureGenerator
+    fullName: Yort.Humm.InStore.Infrastructure.ISignatureGenerator
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Yort.Humm.InStore.Infrastructure
+  commentId: N:Yort.Humm.InStore.Infrastructure
+  name: Yort.Humm.InStore.Infrastructure
+  nameWithType: Yort.Humm.InStore.Infrastructure
+  fullName: Yort.Humm.InStore.Infrastructure
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: Yort.Humm.InStore.HummClient
+  commentId: T:Yort.Humm.InStore.HummClient
+  name: HummClient
+  nameWithType: HummClient
+  fullName: Yort.Humm.InStore.HummClient
+- uid: Yort.Humm.InStore.CreateKeyResponse.Key*
+  commentId: Overload:Yort.Humm.InStore.CreateKeyResponse.Key
+  name: Key
+  nameWithType: CreateKeyResponse.Key
+  fullName: Yort.Humm.InStore.CreateKeyResponse.Key
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String

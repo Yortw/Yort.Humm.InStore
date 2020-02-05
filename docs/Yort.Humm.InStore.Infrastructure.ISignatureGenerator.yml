@@ -1,0 +1,275 @@
+### YamlMime:ManagedReference
+items:
+- uid: Yort.Humm.InStore.Infrastructure.ISignatureGenerator
+  commentId: T:Yort.Humm.InStore.Infrastructure.ISignatureGenerator
+  id: ISignatureGenerator
+  parent: Yort.Humm.InStore.Infrastructure
+  children:
+  - Yort.Humm.InStore.Infrastructure.ISignatureGenerator.GenerateSignature(System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{System.String,System.Object}})
+  langs:
+  - csharp
+  - vb
+  name: ISignatureGenerator
+  nameWithType: ISignatureGenerator
+  fullName: Yort.Humm.InStore.Infrastructure.ISignatureGenerator
+  type: Interface
+  source:
+    remote:
+      path: C:/Projects/GitHub/Yort.Humm.InStore/src/Infrastructure/ISignatureGenerator.cs
+    id: ISignatureGenerator
+    path: Infrastructure/ISignatureGenerator.cs
+    startLine: 10
+  assemblies:
+  - Yort.Humm.InStore
+  namespace: Yort.Humm.InStore.Infrastructure
+  summary: "\nA generic interface for components that can calculate a digital signature for values from a Humm request or response.\n"
+  example: []
+  syntax:
+    content: 'public interface ISignatureGenerator : IDisposable'
+    content.vb: >-
+      Public Interface ISignatureGenerator
+          Inherits IDisposable
+  seealso:
+  - linkId: System.IDisposable
+    commentId: T:System.IDisposable
+  inheritedMembers:
+  - System.IDisposable.Dispose
+  modifiers.csharp:
+  - public
+  - interface
+  modifiers.vb:
+  - Public
+  - Interface
+- uid: Yort.Humm.InStore.Infrastructure.ISignatureGenerator.GenerateSignature(System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{System.String,System.Object}})
+  commentId: M:Yort.Humm.InStore.Infrastructure.ISignatureGenerator.GenerateSignature(System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{System.String,System.Object}})
+  id: GenerateSignature(System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{System.String,System.Object}})
+  parent: Yort.Humm.InStore.Infrastructure.ISignatureGenerator
+  langs:
+  - csharp
+  - vb
+  name: GenerateSignature(IEnumerable<KeyValuePair<String, Object>>)
+  nameWithType: ISignatureGenerator.GenerateSignature(IEnumerable<KeyValuePair<String, Object>>)
+  fullName: Yort.Humm.InStore.Infrastructure.ISignatureGenerator.GenerateSignature(System.Collections.Generic.IEnumerable<System.Collections.Generic.KeyValuePair<System.String, System.Object>>)
+  type: Method
+  source:
+    remote:
+      path: C:/Projects/GitHub/Yort.Humm.InStore/src/Infrastructure/ISignatureGenerator.cs
+    id: GenerateSignature
+    path: Infrastructure/ISignatureGenerator.cs
+    startLine: 25
+  assemblies:
+  - Yort.Humm.InStore
+  namespace: Yort.Humm.InStore.Infrastructure
+  summary: "\nGenerates the signature and returns it as a string.\n"
+  remarks: "\n<p>Humm signatures are currently case-insensitive hexadecimal strings.</p>\n<p>Only values from the <code data-dev-comment-type=\"paramref\" class=\"paramref\">properties</code> argument where the key starts with &quot;x_&quot; will be used, so the caller may pass the full property set if desired.\nValues of type decimal are treated as dollar values and will be automatically multiplied by 100, so should be passed as their decimal dollar representation.\nValues that are null will be ignored (treated as a missing/undeclared property and excluded from the signature generation).\n</p>\n"
+  example: []
+  syntax:
+    content: string GenerateSignature(IEnumerable<KeyValuePair<string, object>> properties)
+    parameters:
+    - id: properties
+      type: System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{System.String,System.Object}}
+      description: A dictionary of values to be considered for use in the signature generation. See remarks for more details.
+    return:
+      type: System.String
+      description: A string containing the signature calculated from the properties provided.
+    content.vb: Function GenerateSignature(properties As IEnumerable(Of KeyValuePair(Of String, Object))) As String
+  overload: Yort.Humm.InStore.Infrastructure.ISignatureGenerator.GenerateSignature*
+  exceptions:
+  - type: System.ArgumentNullException
+    commentId: T:System.ArgumentNullException
+    description: Thrown if <code data-dev-comment-type="paramref" class="paramref">properties</code> is null.
+  nameWithType.vb: ISignatureGenerator.GenerateSignature(IEnumerable(Of KeyValuePair(Of String, Object)))
+  fullName.vb: Yort.Humm.InStore.Infrastructure.ISignatureGenerator.GenerateSignature(System.Collections.Generic.IEnumerable(Of System.Collections.Generic.KeyValuePair(Of System.String, System.Object)))
+  name.vb: GenerateSignature(IEnumerable(Of KeyValuePair(Of String, Object)))
+references:
+- uid: System.IDisposable
+  commentId: T:System.IDisposable
+  parent: System
+  isExternal: true
+  name: IDisposable
+  nameWithType: IDisposable
+  fullName: System.IDisposable
+- uid: Yort.Humm.InStore.Infrastructure
+  commentId: N:Yort.Humm.InStore.Infrastructure
+  name: Yort.Humm.InStore.Infrastructure
+  nameWithType: Yort.Humm.InStore.Infrastructure
+  fullName: Yort.Humm.InStore.Infrastructure
+- uid: System.IDisposable.Dispose
+  commentId: M:System.IDisposable.Dispose
+  parent: System.IDisposable
+  isExternal: true
+  name: Dispose()
+  nameWithType: IDisposable.Dispose()
+  fullName: System.IDisposable.Dispose()
+  spec.csharp:
+  - uid: System.IDisposable.Dispose
+    name: Dispose
+    nameWithType: IDisposable.Dispose
+    fullName: System.IDisposable.Dispose
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.IDisposable.Dispose
+    name: Dispose
+    nameWithType: IDisposable.Dispose
+    fullName: System.IDisposable.Dispose
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: System.ArgumentNullException
+  commentId: T:System.ArgumentNullException
+  isExternal: true
+- uid: Yort.Humm.InStore.Infrastructure.ISignatureGenerator.GenerateSignature*
+  commentId: Overload:Yort.Humm.InStore.Infrastructure.ISignatureGenerator.GenerateSignature
+  name: GenerateSignature
+  nameWithType: ISignatureGenerator.GenerateSignature
+  fullName: Yort.Humm.InStore.Infrastructure.ISignatureGenerator.GenerateSignature
+- uid: System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{System.String,System.Object}}
+  commentId: T:System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{System.String,System.Object}}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.IEnumerable`1
+  name: IEnumerable<KeyValuePair<String, Object>>
+  nameWithType: IEnumerable<KeyValuePair<String, Object>>
+  fullName: System.Collections.Generic.IEnumerable<System.Collections.Generic.KeyValuePair<System.String, System.Object>>
+  nameWithType.vb: IEnumerable(Of KeyValuePair(Of String, Object))
+  fullName.vb: System.Collections.Generic.IEnumerable(Of System.Collections.Generic.KeyValuePair(Of System.String, System.Object))
+  name.vb: IEnumerable(Of KeyValuePair(Of String, Object))
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    nameWithType: KeyValuePair
+    fullName: System.Collections.Generic.KeyValuePair
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    nameWithType: KeyValuePair
+    fullName: System.Collections.Generic.KeyValuePair
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: System.Collections.Generic.IEnumerable`1
+  commentId: T:System.Collections.Generic.IEnumerable`1
+  isExternal: true
+  name: IEnumerable<T>
+  nameWithType: IEnumerable<T>
+  fullName: System.Collections.Generic.IEnumerable<T>
+  nameWithType.vb: IEnumerable(Of T)
+  fullName.vb: System.Collections.Generic.IEnumerable(Of T)
+  name.vb: IEnumerable(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: true
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic

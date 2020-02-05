@@ -1,0 +1,1331 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Yort.Humm.InStore</name>
+    </assembly>
+    <members>
+        <member name="T:Yort.Humm.InStore.CreateKeyRequest">
+            <summary>
+            Represents a request to swap a device (initialisation) token for a device key used to sign future requests.
+            </summary>
+            <seealso cref="T:Yort.Humm.InStore.Infrastructure.RequestBase" />
+            <seealso cref="M:Yort.Humm.InStore.HummClient.CreateKeyAsync(Yort.Humm.InStore.CreateKeyRequest)"/>
+            <seealso cref="T:Yort.Humm.InStore.CreateKeyResponse"/>
+        </member>
+        <member name="M:Yort.Humm.InStore.CreateKeyRequest.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Yort.Humm.InStore.CreateKeyRequest"/> class.
+            </summary>
+        </member>
+        <member name="P:Yort.Humm.InStore.CreateKeyRequest.DeviceToken">
+            <summary>
+            Required. Gets or sets the one-time use device token generated in the Humm Seller/merchant portal.
+            </summary>
+            <remarks>
+            Maximum legth of 64 characters.
+            </remarks>
+            <value>
+            The device token generated in the Humm Seller/merchant portal.
+            </value>
+        </member>
+        <member name="P:Yort.Humm.InStore.CreateKeyRequest.PosVendor">
+            <summary>
+            Required. Gets or sets the name of the company that suppliers the POS hardware or software.
+            </summary>
+            <remarks>
+            <para>Maximum length of 100 characters.</para>
+            </remarks>
+            <value>
+            The company name of the POS supplier.
+            </value>
+        </member>
+        <member name="P:Yort.Humm.InStore.CreateKeyRequest.AutoUpdateClientToken">
+            <summary>
+            Gets or sets a value indicating whether the client automatically initialises itself with the returned device token (if the request is successful) so it is used on all future requests.
+            </summary>
+            <value>
+            <para>If true the <see cref="T:Yort.Humm.InStore.HummClient"/> performing this request will automatically update itself to use the returned token from a succesful request as well as returning the response to the caller so the token can be persisted for future calls.</para>
+            <para>If false the the response is returned to the caller, and <see cref="M:Yort.Humm.InStore.HummClient.SetDeviceKey(System.String)"/> must be manually called on whichever client instance should use the new token.</para>
+            </value>
+            <remarks>
+            <para>Even when <see cref="P:Yort.Humm.InStore.CreateKeyRequest.AutoUpdateClientToken"/> is true, it is still up to the calling application to persist the device key returned in the response so it can be used in the event of a process/machine restart etc.</para>
+            </remarks>
+        </member>
+        <member name="M:Yort.Humm.InStore.CreateKeyRequest.Validate">
+            <summary>
+            Validates this instance.
+            </summary>
+            <remarks>
+            <para>Ensures <seealso cref="P:Yort.Humm.InStore.CreateKeyRequest.DeviceToken"/> and <see cref="P:Yort.Humm.InStore.CreateKeyRequest.PosVendor"/> are not null, empty strings or contain only whitespace. Also ensures they are not longer than allowed.</para>
+            <para>Also ensures all base properties are valid, see <see cref="M:Yort.Humm.InStore.Infrastructure.RequestBase.Validate"/>.</para>
+            </remarks>
+        </member>
+        <member name="T:Yort.Humm.InStore.CreateKeyResponse">
+            <summary>
+            Contains details of a response to a <see cref="T:Yort.Humm.InStore.CreateKeyRequest"/>.
+            </summary>
+            <seealso cref="T:Yort.Humm.InStore.Infrastructure.ResponseBase" />
+            <seealso cref="M:Yort.Humm.InStore.HummClient.CreateKeyAsync(Yort.Humm.InStore.CreateKeyRequest)"/>
+            <seealso cref="T:Yort.Humm.InStore.CreateKeyRequest"/>
+        </member>
+        <member name="P:Yort.Humm.InStore.CreateKeyResponse.Key">
+            <summary>
+            The device key to use for all future API requests using the merchant id and device id associated with the request that generated this response.
+            </summary>
+            <value>
+            The key as a string.
+            </value>
+            <remarks>
+            <para>This key is required to generate signatures for all future requests to the Humm API that use the same merchant id and device id as the request that generated this response.
+            User code should ensure this value is persisted to disk and re-loaded as required, and ensure any relevant <see cref="T:Yort.Humm.InStore.HummClient"/> instance is initialised with this key.
+            </para>
+            </remarks>
+        </member>
+        <member name="T:Yort.Humm.InStore.ErrorMessages">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:Yort.Humm.InStore.ErrorMessages.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:Yort.Humm.InStore.ErrorMessages.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:Yort.Humm.InStore.ErrorMessages.InvalidConfig_NoDeviceKey">
+            <summary>
+              Looks up a localized string similar to DeviceKey not set..
+            </summary>
+        </member>
+        <member name="P:Yort.Humm.InStore.ErrorMessages.Response_SignatureMismatch">
+            <summary>
+              Looks up a localized string similar to Response signature mismatch..
+            </summary>
+        </member>
+        <member name="P:Yort.Humm.InStore.ErrorMessages.UnknownApiEnvironment">
+            <summary>
+              Looks up a localized string similar to Unknown Humm API environment specified..
+            </summary>
+        </member>
+        <member name="P:Yort.Humm.InStore.ErrorMessages.UnknownCountry">
+            <summary>
+              Looks up a localized string similar to Unknown Humm country specified..
+            </summary>
+        </member>
+        <member name="T:Yort.Humm.InStore.HummApiUrlSelector">
+            <summary>
+            Determines the correct base URI for calling Humm based on a country and API enviroment.
+            </summary>
+        </member>
+        <member name="P:Yort.Humm.InStore.HummApiUrlSelector.Country">
+            <summary>
+            Gets or sets the country the system is operating in.
+            </summary>
+            <value>
+            A value from the <see cref="T:Yort.Humm.InStore.HummCountry"/> enum.
+            </value>
+        </member>
+        <member name="P:Yort.Humm.InStore.HummApiUrlSelector.Environment">
+            <summary>
+            Gets or sets the API environment to use.
+            </summary>
+            <value>
+            A value from the <see cref="T:Yort.Humm.InStore.HummEnvironment"/> specifying a test or live environment to use.
+            </value>
+        </member>
+        <member name="M:Yort.Humm.InStore.HummApiUrlSelector.GetUrl">
+            <summary>
+            Gets the base URL to use for Humm API calls.
+            </summary>
+            <returns>
+            A <see cref="T:System.Uri" /> representing the base API address to be used.
+            </returns>
+            <exception cref="T:System.InvalidOperationException">Thrown if a unknown <see cref="P:Yort.Humm.InStore.HummApiUrlSelector.Country"/> or <see cref="P:Yort.Humm.InStore.HummApiUrlSelector.Environment"/> value is specified..</exception>
+        </member>
+        <member name="T:Yort.Humm.InStore.HummCountry">
+            <summary>
+            Provides a list of countries in which Humm/Oxipay API's are available.
+            </summary>
+            <remarks>
+            <para>You must call the API for the country your Humm merchant was registered in (NZ merchants must use NZ endpoints, AU merchants must use AU endpoints etc).</para>
+            </remarks>
+        </member>
+        <member name="F:Yort.Humm.InStore.HummCountry.Australia">
+            <summary>
+            The Australian API's.
+            </summary>
+        </member>
+        <member name="F:Yort.Humm.InStore.HummCountry.NewZealand">
+            <summary>
+            The New Zealand API's.
+            </summary>
+        </member>
+        <member name="T:Yort.Humm.InStore.HummEnvironment">
+            <summary>
+            Specifies which Humm API endpoints should be used.
+            </summary>
+        </member>
+        <member name="F:Yort.Humm.InStore.HummEnvironment.Dummy">
+            <summary>
+            Default. The dummy API environment is suitable for automated testing, with fixed responses sent based on specific request inputs.
+            </summary>
+            <remarks>
+            <para>Not typically used by application code, but the default value for the enum to avoid accidental usage of the production environment.</para>
+            </remarks>
+        </member>
+        <member name="F:Yort.Humm.InStore.HummEnvironment.Sandbox">
+            <summary>
+            The sandbox API environment is suitable for manual testing, user-acceptance testing and demo systems where real financial transactions are not desired but human interactive and realistic worflows are.
+            </summary>
+        </member>
+        <member name="F:Yort.Humm.InStore.HummEnvironment.Production">
+            <summary>
+            The production API environment is the live API used for conducting real financial transactions.
+            </summary>
+        </member>
+        <member name="T:Yort.Humm.InStore.HummClient">
+            <summary>
+            The primary object used to make requests to Humm.
+            </summary>
+            <remarks>
+            <para>Each instance of this class represents a single POS device, if being used from a centralised service or a web server then you will need to create an instance for each device, either per-request or pooled as neccesary.</para>
+            <para>Details about the device the instance represents are provided via the <see cref="T:Yort.Humm.InStore.HummClientConfiguration"/> instance passed into the constructor.</para>
+            <para>Note that financial/dollar values should be expressed as <see cref="T:System.Decimal"/> in their dollar &amp; cents format, i.e $20.50 should be set as 20.50 on 
+            a request object, the library will take care of converting this to a cents value for Humm.</para>
+            <para>This object makes requests via the REST interface, SOAP is not currently supported by this library.</para>
+            <para>See the Humm API documentation at; https://docs.shophumm.com.au/pos/getting-started/ </para>
+            </remarks>
+            <_Config cref="T:Yort.Humm.InStore.IHummClient" />
+            <seealso cref="T:Yort.Humm.InStore.HummClientConfiguration"/>
+            <seealso cref="T:System.IDisposable" />
+        </member>
+        <member name="E:Yort.Humm.InStore.HummClient.PendingAuthorisation">
+            <summary>
+            Raised when a <see cref="T:Yort.Humm.InStore.ProcessAuthorisationResponse"/> is received with a status of <see cref="F:Yort.Humm.InStore.RequestStates.Pending"/> and the <see cref="P:Yort.Humm.InStore.ProcessAuthorisationRequest.AutoHandlePendingResponse"/> property of the request was true.
+            </summary>
+            <remarks>
+            <para>While the <see cref="P:Yort.Humm.InStore.ProcessAuthorisationRequest.AutoHandlePendingResponse"/> option frees the client from having to handle the repeat API call logic to Humm in the case of a pending 'big things' purchase flow, 
+            this event can be used by the client to update it's UI to indicate the pending status and/or when the next recheck will occur if it desires.</para>
+            </remarks>
+        </member>
+        <member name="M:Yort.Humm.InStore.HummClient.#ctor(Yort.Humm.InStore.HummClientConfiguration)">
+            <summary>
+            Constructs a new instance using the specified configuration.
+            </summary>
+            <param name="config">A <see cref="T:Yort.Humm.InStore.HummClientConfiguration"/> specifying details of how this instance is configured.</param>
+            <exception cref="T:System.ArgumentNullException">Thrown if <paramref name="config"/> is null, or <see cref="P:Yort.Humm.InStore.HummClientConfiguration.BaseApiUrl"/> is null.</exception>
+        </member>
+        <member name="M:Yort.Humm.InStore.HummClient.SetDeviceKey(System.String)">
+            <summary>
+            Sets the device key used for generating digital signatures.
+            </summary>
+            <param name="deviceKey">A string containing the device key previously returns by a <see cref="M:Yort.Humm.InStore.HummClient.CreateKeyAsync(Yort.Humm.InStore.CreateKeyRequest)" /> request.</param>
+            <remarks>
+            <para>The device key is usually provided via the <see cref="T:Yort.Humm.InStore.HummClientConfiguration" /> constructor argument if known before client is created. This method is typically used when registering a new device via <see cref="M:Yort.Humm.InStore.HummClient.CreateKeyAsync(Yort.Humm.InStore.CreateKeyRequest)" /> and not electing to have the token automatically applied.</para>
+            <para>Null can be provided to clear the currently assigned device key (if any), prior to calling <see cref="M:Yort.Humm.InStore.HummClient.CreateKeyAsync(Yort.Humm.InStore.CreateKeyRequest)" /> to generate a new device key.</para>
+            </remarks>
+            <seealso cref="M:Yort.Humm.InStore.HummClient.CreateKeyAsync(Yort.Humm.InStore.CreateKeyRequest)" />
+            <seealso cref="T:Yort.Humm.InStore.HummClientConfiguration" />
+        </member>
+        <member name="M:Yort.Humm.InStore.HummClient.CreateKeyAsync(Yort.Humm.InStore.CreateKeyRequest)">
+            <summary>
+            Requests a new device key from Humm using the (initialisation) device token created in the Humm Seller (merchant) portal.
+            </summary>
+            <param name="request">A <see cref="T:Yort.Humm.InStore.CreateKeyRequest" /> instance containing details of the request to make.</param>
+            <returns>
+            <para>A <see cref="T:Yort.Humm.InStore.CreateKeyResponse" /> instance containing the Humm response.</para>
+            <para>See the Humm documentation at https://docs.shophumm.com.au/pos/api/create_key/ </para>
+            </returns>
+            <remarks>
+            If the <see cref="P:Yort.Humm.InStore.CreateKeyRequest.AutoUpdateClientToken" /> argument is true and the request is successsful, the client will automatically call <see cref="M:Yort.Humm.InStore.HummClient.SetDeviceKey(System.String)" /> with the value of <see cref="P:Yort.Humm.InStore.CreateKeyResponse.Key" /> for you, ensuring all future calls made with this client instance use the new token.
+            </remarks>
+            <seealso cref="T:Yort.Humm.InStore.CreateKeyRequest" />
+            <seealso cref="T:Yort.Humm.InStore.CreateKeyResponse" />
+            <seealso cref="M:Yort.Humm.InStore.HummClient.SetDeviceKey(System.String)" />
+            <exception cref="T:System.ArgumentNullException">Thrown if <paramref name="request"/>, <see cref="P:Yort.Humm.InStore.CreateKeyRequest.DeviceToken"/> or <see cref="P:Yort.Humm.InStore.CreateKeyRequest.PosVendor"/> is null.</exception>
+            <exception cref="T:System.ArgumentException">Thrown if <see cref="P:Yort.Humm.InStore.CreateKeyRequest.DeviceToken"/> or <see cref="P:Yort.Humm.InStore.CreateKeyRequest.PosVendor"/> is an empty string or contain only whitespace characters.</exception>
+            <exception cref="T:System.ObjectDisposedException">Thrown if this instance has been disposed.</exception>
+            <exception cref="T:Yort.Humm.InStore.HummResponseSignatureException">Thrown if the response signature cannot be validated.</exception>
+            <exception cref="T:System.Net.Http.HttpRequestException">Thrown if an HTTP protocol level or <see cref="T:System.Net.Http.HttpClient"/> pipeline error occurs.</exception>
+        </member>
+        <member name="M:Yort.Humm.InStore.HummClient.InviteAsync(Yort.Humm.InStore.InviteRequest)">
+            <summary>
+            Sends an SMS to the customer's mobile phone inviting them to sign-up as a Humm customer.
+            </summary>
+            <param name="request">A <see cref="T:Yort.Humm.InStore.InviteRequest"/> instance.</param>
+            <para>See the Humm documentation at https://docs.shophumm.com.au/pos/api/invite/ </para>
+            <returns>A <see cref="T:Yort.Humm.InStore.InviteResponse"/>.</returns>
+            <seealso cref="T:Yort.Humm.InStore.InviteRequest"/>
+            <seealso cref="T:Yort.Humm.InStore.InviteResponse"/>
+            <exception cref="T:System.ArgumentNullException">Thrown if <paramref name="request"/> is null.</exception>
+            <exception cref="T:Yort.Humm.InStore.HummResponseSignatureException">Thrown if the response signature cannot be validated.</exception>
+            <exception cref="T:System.ObjectDisposedException">Thrown if this instance has been disposed.</exception>
+            <exception cref="T:System.InvalidOperationException">Thrown if this instance has not been initialised with a non-null device key (<see cref="M:Yort.Humm.InStore.HummClient.SetDeviceKey(System.String)"/> and <see cref="P:Yort.Humm.InStore.HummClientConfiguration.DeviceKey"/>)..</exception>
+            <exception cref="T:System.Net.Http.HttpRequestException">Thrown if an HTTP protocol level or <see cref="T:System.Net.Http.HttpClient"/> pipeline error occurs.</exception>
+        </member>
+        <member name="M:Yort.Humm.InStore.HummClient.ProcessAuthorisationAsync(Yort.Humm.InStore.ProcessAuthorisationRequest)">
+            <summary>
+            Requests an authorisation (for payment) be processed.
+            </summary>
+            <remarks>
+            <para>This method is used to request a payment contract be setup for a specified amount using an approval code generated by the customer's device.
+            It is the most common API call made to Humm in a 'happy path'.
+            </para>
+            <para>If the <see cref="P:Yort.Humm.InStore.ProcessAuthorisationRequest.AutoHandlePendingResponse"/> value is true and the response indicates a <see cref="F:Yort.Humm.InStore.RequestStates.Pending"/> status then
+            this call will raise the <see cref="E:Yort.Humm.InStore.HummClient.PendingAuthorisation"/> event, wait for the specified retry interval, and the re-make the request again. This will be repeated until a 
+            non-pending status is returned, or an error is thrown from one of the handlers for the <see cref="E:Yort.Humm.InStore.HummClient.PendingAuthorisation"/> event. In this case the response returned 
+            to the caller will be the final status (success/failure/error).
+            </para>
+            <para>
+            If <see cref="P:Yort.Humm.InStore.ProcessAuthorisationRequest.AutoHandlePendingResponse"/> is false then the first response will be returned to the caller and if the status is <see cref="F:Yort.Humm.InStore.RequestStates.Pending"/> 
+            it is up to the caller to repeat the request until a final state is reached.
+            </para>
+            <para>See the Humm documentation at https://docs.shophumm.com.au/pos/api/process_authorisation/ and https://docs.shophumm.com.au/pos/api_information/retries_and_idempotency/ </para>
+            </remarks>
+            <param name="request">A <see cref="T:Yort.Humm.InStore.ProcessAuthorisationRequest"/> instance.</param>
+            <returns>A <see cref="T:Yort.Humm.InStore.ProcessAuthorisationResponse"/> instance.</returns>
+            <seealso cref="E:Yort.Humm.InStore.HummClient.PendingAuthorisation"/>
+            <seealso cref="T:Yort.Humm.InStore.ProcessAuthorisationRequest"/>
+            <seealso cref="T:Yort.Humm.InStore.ProcessAuthorisationResponse"/>
+            <exception cref="T:System.ArgumentNullException">Thrown if <paramref name="request"/> is null.</exception>
+            <exception cref="T:Yort.Humm.InStore.HummResponseSignatureException">Thrown if the response signature cannot be validated.</exception>
+            <exception cref="T:System.ObjectDisposedException">Thrown if this instance has been disposed.</exception>
+            <exception cref="T:System.InvalidOperationException">Thrown if this instance has not been initialised with a non-null device key (<see cref="M:Yort.Humm.InStore.HummClient.SetDeviceKey(System.String)"/> and <see cref="P:Yort.Humm.InStore.HummClientConfiguration.DeviceKey"/>)..</exception>
+            <exception cref="T:System.Net.Http.HttpRequestException">Thrown if an HTTP protocol level or <see cref="T:System.Net.Http.HttpClient"/> pipeline error occurs.</exception>
+        </member>
+        <member name="M:Yort.Humm.InStore.HummClient.SendReceiptAsync(Yort.Humm.InStore.SendReceiptRequest)">
+            <summary>
+            Registers a POS transaction number against a prior authorisation.
+            </summary>
+            <remarks>
+            <para>This method is only used if the <see cref="P:Yort.Humm.InStore.ProcessAuthorisationRequest.ClientTransactionReference"/> was a temporary value and not a POS transaction number.
+            In this case, when the POS finally assigns a permanent transaction number this method can be called to update the payment with the relevant reference.</para>
+            <para>See the Humm documentation at https://docs.shophumm.com.au/pos/api/send_receipt/ and https://docs.shophumm.com.au/pos/api_information/retries_and_idempotency/ </para>
+            </remarks>
+            <param name="request">A <see cref="T:Yort.Humm.InStore.SendReceiptRequest"/> instance.</param>
+            <returns>A <see cref="T:Yort.Humm.InStore.SendReceiptResponse"/> instance containing the result of the request.</returns>
+            <seealso cref="M:Yort.Humm.InStore.HummClient.ProcessAuthorisationAsync(Yort.Humm.InStore.ProcessAuthorisationRequest)"/>
+            <exception cref="T:System.ArgumentNullException">Thrown if <paramref name="request"/> is null.</exception>
+            <exception cref="T:Yort.Humm.InStore.HummResponseSignatureException">Thrown if the response signature cannot be validated.</exception>
+            <exception cref="T:System.ObjectDisposedException">Thrown if this instance has been disposed.</exception>
+            <exception cref="T:System.InvalidOperationException">Thrown if this instance has not been initialised with a non-null device key (<see cref="M:Yort.Humm.InStore.HummClient.SetDeviceKey(System.String)"/> and <see cref="P:Yort.Humm.InStore.HummClientConfiguration.DeviceKey"/>)..</exception>
+            <exception cref="T:System.Net.Http.HttpRequestException">Thrown if an HTTP protocol level or <see cref="T:System.Net.Http.HttpClient"/> pipeline error occurs.</exception>
+        </member>
+        <member name="M:Yort.Humm.InStore.HummClient.ProcessSalesAdjustmentAsync(Yort.Humm.InStore.ProcessSalesAdjustmentRequest)">
+            <summary>
+            A sales adjustment is used to refund money in the case of an item that is returned or fails to ship etc. 
+            </summary>
+            <remarks>
+            <para>A sales adjustment can be used for full or partial refund of previously approved <see cref="M:Yort.Humm.InStore.HummClient.ProcessAuthorisationAsync(Yort.Humm.InStore.ProcessAuthorisationRequest)"/>.</para>
+            <para>See the Humm documentation at https://docs.shophumm.com.au/pos/api/process_sales_adjustment/ and https://docs.shophumm.com.au/pos/api_information/retries_and_idempotency/ </para>
+            </remarks>
+            <param name="request">A <see cref="T:Yort.Humm.InStore.ProcessSalesAdjustmentRequest"/> instance.</param>
+            <returns>A <see cref="T:Yort.Humm.InStore.ProcessSalesAdjustmentResponse"/> instance.</returns>
+            <seealso cref="M:Yort.Humm.InStore.HummClient.ProcessAuthorisationAsync(Yort.Humm.InStore.ProcessAuthorisationRequest)"/>
+            <seealso cref="M:Yort.Humm.InStore.HummClient.ProcessSalesAdjustmentReversalAsync(Yort.Humm.InStore.ProcessSalesAdjustmentReversalRequest)"/>
+            <exception cref="T:System.ArgumentNullException">Thrown if <paramref name="request"/> is null.</exception>
+            <exception cref="T:Yort.Humm.InStore.HummResponseSignatureException">Thrown if the response signature cannot be validated.</exception>
+            <exception cref="T:System.ObjectDisposedException">Thrown if this instance has been disposed.</exception>
+            <exception cref="T:System.InvalidOperationException">Thrown if this instance has not been initialised with a non-null device key (<see cref="M:Yort.Humm.InStore.HummClient.SetDeviceKey(System.String)"/> and <see cref="P:Yort.Humm.InStore.HummClientConfiguration.DeviceKey"/>)..</exception>
+            <exception cref="T:System.Net.Http.HttpRequestException">Thrown if an HTTP protocol level or <see cref="T:System.Net.Http.HttpClient"/> pipeline error occurs.</exception>
+        </member>
+        <member name="M:Yort.Humm.InStore.HummClient.ProcessSalesAdjustmentReversalAsync(Yort.Humm.InStore.ProcessSalesAdjustmentReversalRequest)">
+            <summary>
+            This endpoint is used to process a reversal of a <see cref="M:Yort.Humm.InStore.HummClient.ProcessSalesAdjustmentAsync(Yort.Humm.InStore.ProcessSalesAdjustmentRequest)"/> at the point-of-sale
+            </summary>
+            <remarks>
+            <para>This is typically used to undo a refund in the case where it was made in error, or where the outcome was unknown (due to a network timeout/error) 
+            and an idempotent retry is not desirable. See the Humm documentation at; https://docs.shophumm.com.au/pos/api_information/retries_and_idempotency/ </para>
+            </remarks>
+            <param name="request">A <see cref="T:Yort.Humm.InStore.ProcessSalesAdjustmentReversalRequest"/> instance.</param>
+            <returns>A <see cref="T:Yort.Humm.InStore.ProcessSalesAdjustmentReversalResponse"/> instance.</returns>
+            <seealso cref="M:Yort.Humm.InStore.HummClient.ProcessSalesAdjustmentAsync(Yort.Humm.InStore.ProcessSalesAdjustmentRequest)"/>
+            <exception cref="T:System.ArgumentNullException">Thrown if <paramref name="request"/> is null.</exception>
+            <exception cref="T:Yort.Humm.InStore.HummResponseSignatureException">Thrown if the response signature cannot be validated.</exception>
+            <exception cref="T:System.ObjectDisposedException">Thrown if this instance has been disposed.</exception>
+            <exception cref="T:System.InvalidOperationException">Thrown if this instance has not been initialised with a non-null device key (<see cref="M:Yort.Humm.InStore.HummClient.SetDeviceKey(System.String)"/> and <see cref="P:Yort.Humm.InStore.HummClientConfiguration.DeviceKey"/>)..</exception>
+            <exception cref="T:System.Net.Http.HttpRequestException">Thrown if an HTTP protocol level or <see cref="T:System.Net.Http.HttpClient"/> pipeline error occurs.</exception>
+        </member>
+        <member name="M:Yort.Humm.InStore.HummClient.Dispose">
+            <summary>
+            Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.
+            </summary>
+            <remarks>
+            <para>Once disposed, calls to most methods on this object with throw <see cref="T:System.ObjectDisposedException"/>.</para>
+            <para>This method is safe to call multiple times in series. It is not guarateed to call in parallel, though no known issues exist.</para>
+            </remarks>
+        </member>
+        <member name="T:Yort.Humm.InStore.HummClientConfiguration">
+            <summary>
+            Provides information to a <see cref="T:Yort.Humm.InStore.HummClient"/> about how to operate and default values to use for requests.
+            </summary>
+        </member>
+        <member name="P:Yort.Humm.InStore.HummClientConfiguration.MerchantId">
+            <summary>
+            Gets or sets the default merchant identifier for requests.
+            </summary>
+            <value>
+            The merchant identifier.
+            </value>
+            <remarks>
+            <para>Any request sent with a null or empty merchant id will have this value used instead.</para>
+            </remarks>
+            <seealso cref="P:Yort.Humm.InStore.Infrastructure.RequestBase.MerchantId"/>
+        </member>
+        <member name="P:Yort.Humm.InStore.HummClientConfiguration.DeviceId">
+            <summary>
+            Gets or sets the unique device identifier for the POS the <see cref="T:Yort.Humm.InStore.HummClient"/> represents.
+            </summary>
+            <value>
+            The device identifier.
+            </value>
+            <remarks>
+            <para>Any request sent with a null or empty device id will have this value used instead.</para>
+            </remarks>
+            <seealso cref="P:Yort.Humm.InStore.Infrastructure.RequestBase.DeviceId"/>
+        </member>
+        <member name="P:Yort.Humm.InStore.HummClientConfiguration.PosVersion">
+            <summary>
+            Gets or sets the POS version.
+            </summary>
+            <value>
+            The POS version.
+            </value>
+            <remarks>
+            <para>Any request sent with a null or empty POS version will have this value used instead.</para>
+            </remarks>
+            <seealso cref="P:Yort.Humm.InStore.Infrastructure.RequestBase.PosVersion"/>
+        </member>
+        <member name="P:Yort.Humm.InStore.HummClientConfiguration.BaseApiUrl">
+            <summary>
+            Gets or sets a <see cref="T:System.Uri"/> which is the base uri of the Humm API to call.
+            </summary>
+            <value>
+            A <see cref="T:System.Uri"/> containing the base address to use.
+            </value>
+            <remarks>
+            <para>The API address must be provided so the system knows whether to use a test or live environment, and for which country/region. Use the <see cref="T:Yort.Humm.InStore.HummApiUrlSelector"/> to decide on a URL if you'd rather not hard code the addreses yourself.</para>
+            <para>Changing this property will have no effect on <see cref="T:Yort.Humm.InStore.HummClient"/> instances that have already been constructed.</para>
+            </remarks>
+            <seealso cref="T:Yort.Humm.InStore.HummApiUrlSelector"/>
+        </member>
+        <member name="P:Yort.Humm.InStore.HummClientConfiguration.DeviceKey">
+            <summary>
+            Gets or sets the device key issued by Humm for creating digital signatures. 
+            </summary>
+            <value>
+            The device key.
+            </value>
+            <remarks>
+            <para>This value is must match the one returned by a prior <see cref="T:Yort.Humm.InStore.CreateKeyRequest"/> for the same <see cref="P:Yort.Humm.InStore.HummClientConfiguration.MerchantId"/> and <see cref="P:Yort.Humm.InStore.HummClientConfiguration.DeviceId"/>.</para>
+            <para>If you have not yet initialised the POS device and do not have a device key, use null as the device key property here and then initialise the client instance using a <see cref="M:Yort.Humm.InStore.HummClient.CreateKeyAsync(Yort.Humm.InStore.CreateKeyRequest)"/> call.</para>
+            <para>Changing this property will have no effect on <see cref="T:Yort.Humm.InStore.HummClient"/> instances that have already been constructed.</para>
+            </remarks>
+            <seealso cref="M:Yort.Humm.InStore.HummClient.CreateKeyAsync(Yort.Humm.InStore.CreateKeyRequest)"/>
+            <seealso cref="T:Yort.Humm.InStore.CreateKeyRequest"/>
+            <seealso cref="T:Yort.Humm.InStore.CreateKeyResponse"/>
+        </member>
+        <member name="P:Yort.Humm.InStore.HummClientConfiguration.UserAgentProductName">
+            <summary>
+            Optional. Gets or sets the name of the 'product' to use in the user agent header on HTTP calls to Humm.
+            </summary>
+            <value>
+            The name of the user agent product.
+            </value>
+            <remarks>
+            <para>If not supplied the Yort.Humm.InStore library name is used instead.</para>
+            <para>Changing this property will have no effect on <see cref="T:Yort.Humm.InStore.HummClient"/> instances that have already been constructed.</para>
+            </remarks>
+        </member>
+        <member name="P:Yort.Humm.InStore.HummClientConfiguration.UserAgentProductVersion">
+            <summary>
+            Optional. Gets or sets the version of the 'product' to use in the user agent header on HTTP calls to Humm.
+            </summary>
+            <value>
+            The user agent product version.
+            </value>
+            <remarks>
+            <para>If not supplied the Yort.Humm.InStore library version is used instead.</para>
+            <para>Changing this property will have no effect on <see cref="T:Yort.Humm.InStore.HummClient"/> instances that have already been constructed.</para>
+            </remarks>
+        </member>
+        <member name="P:Yort.Humm.InStore.HummClientConfiguration.AutoValidateRequests">
+            <summary>
+            Gets or sets a value indicating whether or not <see cref="T:Yort.Humm.InStore.HummClient"/> instances automatically perform client side validation of requests before sending them.
+            </summary>
+            <remarks>
+            <para>The default and recommended value is true, ensuring the simple validation such as required fields and minimum/maximum lengths of values are checked 
+            before making a request to Humm. This property exists to disable this feature in the future should Humm change the validation rules and a new, updated 
+            version of this library not yet be available.</para>
+            </remarks>
+            <value>
+              <c>true</c> to have <see cref="M:Yort.Humm.InStore.Infrastructure.RequestBase.Validate"/> called automatically before sending a request.<c>false</c>.
+            </value>
+        </member>
+        <member name="T:Yort.Humm.InStore.HummResponseSignatureException">
+            <summary>
+            Thrown if the signature on a <see cref="T:Yort.Humm.InStore.Infrastructure.ResponseBase"/> did not verify as correct.
+            </summary>
+            <seealso cref="T:System.Exception" />
+        </member>
+        <member name="M:Yort.Humm.InStore.HummResponseSignatureException.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Yort.Humm.InStore.HummResponseSignatureException"/> class.
+            </summary>
+        </member>
+        <member name="M:Yort.Humm.InStore.HummResponseSignatureException.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Yort.Humm.InStore.HummResponseSignatureException"/> class.
+            </summary>
+            <param name="message">The message that describes the error.</param>
+        </member>
+        <member name="M:Yort.Humm.InStore.HummResponseSignatureException.#ctor(System.String,System.Exception)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Yort.Humm.InStore.HummResponseSignatureException"/> class.
+            </summary>
+            <param name="message">The message.</param>
+            <param name="inner">The inner exception.</param>
+        </member>
+        <member name="M:Yort.Humm.InStore.HummResponseSignatureException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Yort.Humm.InStore.HummResponseSignatureException"/> class.
+            </summary>
+            <param name="info">The <see cref="T:System.Runtime.Serialization.SerializationInfo"></see> that holds the serialized object data about the exception being thrown.</param>
+            <param name="context">The <see cref="T:System.Runtime.Serialization.StreamingContext"></see> that contains contextual information about the source or destination.</param>
+        </member>
+        <member name="T:Yort.Humm.InStore.IHummApiUrlSelector">
+            <summary>
+            An interface for components that can decide on the base URL to call for Humm.
+            </summary>
+            <remarks>
+            <para>The default implementation is <see cref="T:Yort.Humm.InStore.IHummApiUrlSelector"/> and is likely all user code needs. 
+            However this interface allows custom versions to be built, such as one that allows user code to explicitly specify 
+            a raw URL or to read config settings from persistent storage which are used to make a choice of base address.</para>
+            </remarks>
+        </member>
+        <member name="M:Yort.Humm.InStore.IHummApiUrlSelector.GetUrl">
+            <summary>
+            Gets the base URL to use for Humm API calls.
+            </summary>
+            <returns>A <see cref="T:System.Uri"/> representing the base API address to be used.</returns>
+        </member>
+        <member name="T:Yort.Humm.InStore.IHummClient">
+            <summary>
+            An interface for the <see cref="T:Yort.Humm.InStore.HummClient"/> provided to allow mocking/stubbing etc.
+            </summary>
+            <seealso cref="T:Yort.Humm.InStore.HummClient"/>
+        </member>
+        <member name="E:Yort.Humm.InStore.IHummClient.PendingAuthorisation">
+            <summary>
+            Raised when a <see cref="T:Yort.Humm.InStore.ProcessAuthorisationResponse"/> is received with a status of <see cref="F:Yort.Humm.InStore.RequestStates.Pending"/> and the <see cref="P:Yort.Humm.InStore.ProcessAuthorisationRequest.AutoHandlePendingResponse"/> property of the request was true.
+            </summary>
+            <remarks>
+            <para>While the <see cref="P:Yort.Humm.InStore.ProcessAuthorisationRequest.AutoHandlePendingResponse"/> option frees the client from having to handle the repeat API call logic to Humm in the case of a pending 'big things' purchase flow, 
+            this event can be used by the client to update it's UI to indicate the pending status and/or when the next recheck will occur if it desires.</para>
+            </remarks>
+        </member>
+        <member name="M:Yort.Humm.InStore.IHummClient.SetDeviceKey(System.String)">
+            <summary>
+            Sets the device key used for generating digital signatures.
+            </summary>
+            <remarks>
+            <para>The device key is usually provided via the <see cref="T:Yort.Humm.InStore.HummClientConfiguration"/> constructor argument if known before client is created. This method is typically used when registering a new device via <see cref="M:Yort.Humm.InStore.IHummClient.CreateKeyAsync(Yort.Humm.InStore.CreateKeyRequest)"/> and not electing to have the token automatically applied.</para>
+            <para>Null can be provided to clear the currently assigned device key (if any), prior to calling <see cref="M:Yort.Humm.InStore.IHummClient.CreateKeyAsync(Yort.Humm.InStore.CreateKeyRequest)"/> to generate a new device key.</para>
+            </remarks>
+            <param name="deviceKey">A string containing the device key previously returns by a <see cref="M:Yort.Humm.InStore.IHummClient.CreateKeyAsync(Yort.Humm.InStore.CreateKeyRequest)"/> request.</param>
+            <seealso cref="M:Yort.Humm.InStore.IHummClient.CreateKeyAsync(Yort.Humm.InStore.CreateKeyRequest)"/>
+            <seealso cref="T:Yort.Humm.InStore.HummClientConfiguration"/>
+        </member>
+        <member name="M:Yort.Humm.InStore.IHummClient.CreateKeyAsync(Yort.Humm.InStore.CreateKeyRequest)">
+            <summary>
+            Requests a new device key from Humm using the (initialisation) device token created in the Humm Seller (merchant) portal.
+            </summary>
+            <remarks>
+            <para>If the <see cref="P:Yort.Humm.InStore.CreateKeyRequest.AutoUpdateClientToken"/> argument is true and the request is successsful, the client will automatically call <see cref="M:Yort.Humm.InStore.IHummClient.SetDeviceKey(System.String)"/> with the value of <see cref="P:Yort.Humm.InStore.CreateKeyResponse.Key"/> for you, ensuring all future calls made with this client instance use the new token.</para>
+            </remarks>
+            <param name="request">A <see cref="T:Yort.Humm.InStore.CreateKeyRequest"/> instance containing details of the request to make.</param>
+            <returns>A <see cref="T:Yort.Humm.InStore.CreateKeyResponse"/> instance containing the Humm response.</returns>
+            <seealso cref="T:Yort.Humm.InStore.CreateKeyRequest"/>
+            <seealso cref="T:Yort.Humm.InStore.CreateKeyResponse"/>
+            <seealso cref="M:Yort.Humm.InStore.IHummClient.SetDeviceKey(System.String)"/>
+            <exception cref="T:System.ArgumentNullException">Thrown if <paramref name="request"/> is null.</exception>
+        </member>
+        <member name="M:Yort.Humm.InStore.IHummClient.InviteAsync(Yort.Humm.InStore.InviteRequest)">
+            <summary>
+            Sends an SMS to the customer's mobile phone inviting them to sign-up as a Humm customer.
+            </summary>
+            <param name="request">A <see cref="T:Yort.Humm.InStore.InviteRequest"/> instance.</param>
+            <returns>A <see cref="T:Yort.Humm.InStore.InviteResponse"/>.</returns>
+            <seealso cref="T:Yort.Humm.InStore.InviteRequest"/>
+            <seealso cref="T:Yort.Humm.InStore.InviteResponse"/>
+            <exception cref="T:System.ArgumentNullException">Thrown if <paramref name="request"/> is null.</exception>
+            <exception cref="T:Yort.Humm.InStore.HummResponseSignatureException">Thrown if the response signature cannot be validated.</exception>
+            <exception cref="T:System.ObjectDisposedException">Thrown if this instance has been disposed.</exception>
+            <exception cref="T:System.InvalidOperationException">Thrown if this instance has not been initialised with a non-null device key (<see cref="M:Yort.Humm.InStore.IHummClient.SetDeviceKey(System.String)"/> and <see cref="P:Yort.Humm.InStore.HummClientConfiguration.DeviceKey"/>)..</exception>
+        </member>
+        <member name="M:Yort.Humm.InStore.IHummClient.ProcessAuthorisationAsync(Yort.Humm.InStore.ProcessAuthorisationRequest)">
+            <summary>
+            Requests an authorisation (for payment) be processed.
+            </summary>
+            <remarks>
+            <para>This method is used to request a payment contract be setup for a specified amount using an approval code generated by the customer's device.
+            It is the most common API call made to Humm in a 'happy path'.
+            </para>
+            <para>If the <see cref="P:Yort.Humm.InStore.ProcessAuthorisationRequest.AutoHandlePendingResponse"/> value is true and the response indicates a <see cref="F:Yort.Humm.InStore.RequestStates.Pending"/> status then
+            this call will raise the <see cref="E:Yort.Humm.InStore.IHummClient.PendingAuthorisation"/> event, wait for the specified retry interval, and the re-make the request again. This will be repeated until a 
+            non-pending status is returned, or an error is thrown from one of the handlers for the <see cref="E:Yort.Humm.InStore.IHummClient.PendingAuthorisation"/> event. In this case the response returned 
+            to the caller will be the final status (success/failure/error).
+            </para>
+            <para>
+            If <see cref="P:Yort.Humm.InStore.ProcessAuthorisationRequest.AutoHandlePendingResponse"/> is false then the first response will be returned to the caller and if the status is <see cref="F:Yort.Humm.InStore.RequestStates.Pending"/> 
+            it is up to the caller to repeat the request until a final state is reached.
+            </para>
+            </remarks>
+            <param name="request">A <see cref="T:Yort.Humm.InStore.ProcessAuthorisationRequest"/> instance.</param>
+            <returns>A <see cref="T:Yort.Humm.InStore.ProcessAuthorisationResponse"/> instance.</returns>
+            <seealso cref="E:Yort.Humm.InStore.IHummClient.PendingAuthorisation"/>
+            <seealso cref="T:Yort.Humm.InStore.ProcessAuthorisationRequest"/>
+            <seealso cref="T:Yort.Humm.InStore.ProcessAuthorisationResponse"/>
+            <exception cref="T:System.ArgumentNullException">Thrown if <paramref name="request"/> is null.</exception>
+            <exception cref="T:Yort.Humm.InStore.HummResponseSignatureException">Thrown if the response signature cannot be validated.</exception>
+            <exception cref="T:System.ObjectDisposedException">Thrown if this instance has been disposed.</exception>
+            <exception cref="T:System.InvalidOperationException">Thrown if this instance has not been initialised with a non-null device key (<see cref="M:Yort.Humm.InStore.IHummClient.SetDeviceKey(System.String)"/> and <see cref="P:Yort.Humm.InStore.HummClientConfiguration.DeviceKey"/>)..</exception>
+        </member>
+        <member name="M:Yort.Humm.InStore.IHummClient.SendReceiptAsync(Yort.Humm.InStore.SendReceiptRequest)">
+            <summary>
+            Registers a POS transaction number against a prior authorisation.
+            </summary>
+            <remarks>
+            <para>This method is only used if the <see cref="P:Yort.Humm.InStore.ProcessAuthorisationRequest.ClientTransactionReference"/> was a temporary value and not a POS transaction number.
+            In this case, when the POS finally assigns a permanent transaction number this method can be called to update the payment with the relevant reference.</para>
+            <para>See the Humm documentation at https://docs.shophumm.com.au/pos/api/send_receipt/ and https://docs.shophumm.com.au/pos/api_information/retries_and_idempotency/ </para>
+            </remarks>
+            <param name="request">A <see cref="T:Yort.Humm.InStore.SendReceiptRequest"/> instance.</param>
+            <returns>A <see cref="T:Yort.Humm.InStore.SendReceiptResponse"/> instance containing the result of the request.</returns>
+        </member>
+        <member name="M:Yort.Humm.InStore.IHummClient.ProcessSalesAdjustmentAsync(Yort.Humm.InStore.ProcessSalesAdjustmentRequest)">
+            <summary>
+            A sales adjustment is used to refund money in the case of an item that is returned or fails to ship etc. 
+            </summary>
+            <remarks>
+            <para>A sales adjustment can be used for full or partial refund of previously approved <see cref="M:Yort.Humm.InStore.IHummClient.ProcessAuthorisationAsync(Yort.Humm.InStore.ProcessAuthorisationRequest)"/>.</para>
+            <para>See the Humm documentation at https://docs.shophumm.com.au/pos/api/process_sales_adjustment/ and https://docs.shophumm.com.au/pos/api_information/retries_and_idempotency/ </para>
+            </remarks>
+            <param name="request">A <see cref="T:Yort.Humm.InStore.ProcessSalesAdjustmentRequest"/> instance.</param>
+            <returns>A <see cref="T:Yort.Humm.InStore.ProcessSalesAdjustmentResponse"/> instance.</returns>
+        </member>
+        <member name="M:Yort.Humm.InStore.IHummClient.ProcessSalesAdjustmentReversalAsync(Yort.Humm.InStore.ProcessSalesAdjustmentReversalRequest)">
+            <summary>
+            This endpoint is used to process a reversal of a <see cref="M:Yort.Humm.InStore.IHummClient.ProcessSalesAdjustmentAsync(Yort.Humm.InStore.ProcessSalesAdjustmentRequest)"/> at the point-of-sale
+            </summary>
+            <remarks>
+            <para>This is typically used to undo a refund in the case where it was made in error, or where the outcome was unknown (due to a network timeout/error) 
+            and an idempotent retry is not desirable. See the Humm documentation at; https://docs.shophumm.com.au/pos/api_information/retries_and_idempotency/ </para>
+            </remarks>
+            <param name="request">A <see cref="T:Yort.Humm.InStore.ProcessSalesAdjustmentReversalRequest"/> instance.</param>
+            <returns>A <see cref="T:Yort.Humm.InStore.ProcessSalesAdjustmentReversalResponse"/> instance.</returns>
+        </member>
+        <member name="T:Yort.Humm.InStore.Infrastructure.Hmac256SignatureGenerator">
+            <summary>
+            Used to generate signatures using the <see cref="T:System.Security.Cryptography.HMACSHA256"/> hash algorithm, currently the default and only supported algorithm by Humm.
+            </summary>
+            <seealso cref="T:Yort.Humm.InStore.Infrastructure.ISignatureGenerator" />
+        </member>
+        <member name="M:Yort.Humm.InStore.Infrastructure.Hmac256SignatureGenerator.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Yort.Humm.InStore.Infrastructure.Hmac256SignatureGenerator"/> class.
+            </summary>
+            <param name="apiKey">The secret key to use when generating the signature. This should be a Humm Device Key (<see cref="P:Yort.Humm.InStore.HummClientConfiguration.DeviceKey"/>).</param>
+        </member>
+        <member name="M:Yort.Humm.InStore.Infrastructure.Hmac256SignatureGenerator.GenerateSignature(System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{System.String,System.Object}})">
+            <summary>
+            Generates the signature and returns it as a string.
+            </summary>
+            <param name="properties">A dictionary of values to be considered for use in the signature generation. See remarks for more details.</param>
+            <returns>
+            A string containing the signature calculated from the properties provided.
+            </returns>
+            <exception cref="T:System.ObjectDisposedException">Hmac256SignatureGenerator</exception>
+            <remarks>
+            <para>Humm signatures are currently case-insensitive hexadecimal strings.</para>
+            <para>Only values from the <paramref name="properties" /> argument where the key starts with "x_" will be used, so the caller may pass the full property set if desired.
+            Values of type decimal are treated as dollar values and will be automatically multiplied by 100, so should be passed as their decimal dollar representation.
+            Values that are null will be ignored (treated as a missing/undeclared property and excluded from the signature generation).
+            </para>
+            </remarks>
+            <exception cref="T:System.ArgumentNullException">Thrown if <paramref name="properties"/> is null.</exception>
+        </member>
+        <member name="M:Yort.Humm.InStore.Infrastructure.Hmac256SignatureGenerator.Dispose">
+            <summary>
+            Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.
+            </summary>
+        </member>
+        <member name="T:Yort.Humm.InStore.Infrastructure.ISignatureGenerator">
+            <summary>
+            A generic interface for components that can calculate a digital signature for values from a Humm request or response.
+            </summary>
+            <seealso cref="T:System.IDisposable" />
+        </member>
+        <member name="M:Yort.Humm.InStore.Infrastructure.ISignatureGenerator.GenerateSignature(System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{System.String,System.Object}})">
+            <summary>
+            Generates the signature and returns it as a string.
+            </summary>
+            <remarks>
+            <para>Humm signatures are currently case-insensitive hexadecimal strings.</para>
+            <para>Only values from the <paramref name="properties"/> argument where the key starts with "x_" will be used, so the caller may pass the full property set if desired.
+            Values of type decimal are treated as dollar values and will be automatically multiplied by 100, so should be passed as their decimal dollar representation.
+            Values that are null will be ignored (treated as a missing/undeclared property and excluded from the signature generation).
+            </para>
+            </remarks>
+            <param name="properties">A dictionary of values to be considered for use in the signature generation. See remarks for more details.</param>
+            <returns>A string containing the signature calculated from the properties provided.</returns>
+            <exception cref="T:System.ArgumentNullException">Thrown if <paramref name="properties"/> is null.</exception>
+        </member>
+        <member name="T:Yort.Humm.InStore.Infrastructure.NamespaceDoc">
+            <summary>
+            This name space contains types used by the Yort.Humm.InStore library itself and are not typically used directly by user code.
+            </summary>
+            <remarks>
+            <para>Some types in this namespace have been made public to ease automated testing, and also to be reused by user code in advanced 
+            scenarios. This includes clients making their own network requests and only wanting to re-use the signature generation, or 
+            if the library should fall behind the Humm API in terms of features and user code is written to temporarily fill the gap.
+            </para>
+            </remarks>
+        </member>
+        <member name="T:Yort.Humm.InStore.Infrastructure.RequestBase">
+            <summary>
+            Contains properties common to all requests.
+            </summary>
+            <remarks>
+            <para>Many of these properties have an equivalent property on <see cref="T:Yort.Humm.InStore.HummClientConfiguration"/>. If the property on a request 
+            is null or emptry string, the value from the configuration instance passed to the <see cref="T:Yort.Humm.InStore.HummClient"/> will be copied into the 
+            request prior to sending the request. This minimises the number of properties that have to be explicitly set for every request.
+            </para>
+            </remarks>
+        </member>
+        <member name="P:Yort.Humm.InStore.Infrastructure.RequestBase.MerchantId">
+            <summary>
+            Required. Gets or sets the unique merchant identifier assigned by Humm to the retailer/organisation making requests.
+            </summary>
+            <value>
+            The merchant identifier assigned by Humm.
+            </value>
+            <remarks>
+            <para>Maximum length of 10 characters.</para>
+            </remarks>
+        </member>
+        <member name="P:Yort.Humm.InStore.Infrastructure.RequestBase.DeviceId">
+            <summary>
+            Required. Gets or sets the device identifier for the POS making the request, must match the device id used when the <see cref="P:Yort.Humm.InStore.HummClientConfiguration.DeviceKey"/> in use was requested.
+            </summary>
+            <value>
+            The device identifier.
+            </value>
+            <remarks>
+            <para>Maximum length of 64 characters.</para>
+            </remarks>
+        </member>
+        <member name="P:Yort.Humm.InStore.Infrastructure.RequestBase.PosVersion">
+            <summary>
+            Required. Gets or sets the POS version.
+            </summary>
+            <value>
+            The POS version.
+            </value>
+            <remarks>
+            <para>Maximum length of 64 characters.</para>
+            </remarks>
+        </member>
+        <member name="P:Yort.Humm.InStore.Infrastructure.RequestBase.OperatorId">
+            <summary>
+            Gets or sets the unique identifier of the POS operator.
+            </summary>
+            <value>
+            The operator identifier.
+            </value>
+            <remarks>
+            <para>Maximum length of 64 characters.</para>
+            </remarks>
+        </member>
+        <member name="P:Yort.Humm.InStore.Infrastructure.RequestBase.TrackingData">
+            <summary>
+            Optional. Gets or sets custom information to return in the response.
+            </summary>
+            <value>
+            A dictionary of strings containing the tracking data.
+            </value>
+            <remarks>
+            <para>Tracking data can be used by the POS to provide additional information to return with the response, which can be 
+            useful for mapping responses back to specific clients/payments or managing other state.</para>
+            <para>Can be set to null (and should be if there is no tracking data). Null is the default value unless explicitly initialised to a new dictionary instance.</para>
+            <para>Limit of 1000000 items.</para>
+            </remarks>
+        </member>
+        <member name="M:Yort.Humm.InStore.Infrastructure.RequestBase.Validate">
+            <summary>
+            Validates this instance.
+            </summary>
+            <remarks>
+            <para>Ensures that <see cref="P:Yort.Humm.InStore.Infrastructure.RequestBase.MerchantId"/>, <see cref="P:Yort.Humm.InStore.Infrastructure.RequestBase.DeviceId"/>, <see cref="P:Yort.Humm.InStore.Infrastructure.RequestBase.PosVersion"/> and <see cref="P:Yort.Humm.InStore.Infrastructure.RequestBase.OperatorId"/> are not null, empty string or only whitespace.
+            Also ensure no property is larger than it's maximum allowed length (see individual property notes for details).
+            </para>
+            </remarks>
+        </member>
+        <member name="T:Yort.Humm.InStore.Infrastructure.ResponseBase">
+            <summary>
+            Provides properties common to all Humm responses. 
+            </summary>
+        </member>
+        <member name="P:Yort.Humm.InStore.Infrastructure.ResponseBase.Status">
+            <summary>
+            Gets or sets the status of the request, used to determine if the request was successful, declined, cancelled or resulted in an error.
+            </summary>
+            <value>
+            A string containig the status of the request.
+            </value>
+            <seealso cref="T:Yort.Humm.InStore.RequestStates" />
+            <seealso cref="P:Yort.Humm.InStore.Infrastructure.ResponseBase.Code"/>
+            <seealso cref="P:Yort.Humm.InStore.Infrastructure.ResponseBase.Message"/>
+        </member>
+        <member name="P:Yort.Humm.InStore.Infrastructure.ResponseBase.Code">
+            <summary>
+            A code providing more details about the <see cref="P:Yort.Humm.InStore.Infrastructure.ResponseBase.Status"/>, suitable for using user code to take programmtic action on or log as a language neutral description of the outcome.
+            </summary>
+            <value>
+            The code returned by Humm.
+            </value>
+            <remarks>
+            See <a href="https://docs.shophumm.com.au/pos/api_information/status_codes/" /> for a list of codes returned by Humm.
+            </remarks>
+            <seealso cref="P:Yort.Humm.InStore.Infrastructure.ResponseBase.Status"/>
+            <seealso cref="P:Yort.Humm.InStore.Infrastructure.ResponseBase.Message"/>
+        </member>
+        <member name="P:Yort.Humm.InStore.Infrastructure.ResponseBase.Message">
+            <summary>
+            Gets or sets a human readable message providing more details about the <see cref="P:Yort.Humm.InStore.Infrastructure.ResponseBase.Status"/>.
+            </summary>
+            <value>
+            The message.
+            </value>
+        </member>
+        <member name="P:Yort.Humm.InStore.Infrastructure.ResponseBase.TrackingData">
+            <summary>
+            Gets the tracking data that was sent with the request that generated this response.
+            </summary>
+            <value>
+            A dictionary of strings containing the tracking data.
+            </value>
+            <seealso cref="P:Yort.Humm.InStore.Infrastructure.RequestBase.TrackingData"/>
+        </member>
+        <member name="P:Yort.Humm.InStore.Infrastructure.ResponseBase.Signature">
+            <summary>
+            Gets or sets the signature of this response, used to verify the response is authentic.
+            </summary>
+            <value>
+            The signature as a string.
+            </value>
+            <seealso cref="M:Yort.Humm.InStore.Infrastructure.ResponseBase.VerifySignature(Yort.Humm.InStore.Infrastructure.ISignatureGenerator)"/>
+        </member>
+        <member name="M:Yort.Humm.InStore.Infrastructure.ResponseBase.VerifySignature(Yort.Humm.InStore.Infrastructure.ISignatureGenerator)">
+            <summary>
+            Verifies the signature of this response matches the expected signature using the <see cref="T:Yort.Humm.InStore.Infrastructure.ISignatureGenerator"/> provided. 
+            </summary>
+            <remarks>
+            <para>The <see cref="T:Yort.Humm.InStore.HummClient"/> automatically calls this method when a reponse is received, application code does not need to call this method explicitly unless performing it's own calls without using a <see cref="T:Yort.Humm.InStore.HummClient"/> instance.</para>
+            <para>The <paramref name="signatureGenerator"/> must have been created/initialised with the same device key as the request that generated this response.</para>
+            <para>If the <see cref="P:Yort.Humm.InStore.Infrastructure.ResponseBase.Signature"/> property is null or empty, this call is a no-op and will return without throwing an exception.</para>
+            </remarks>
+            <param name="signatureGenerator">The signature generator to use to confirm the response signature.</param>
+            <exception cref="T:System.ArgumentNullException">Thrown if <paramref name="signatureGenerator"/> is null.</exception>
+            <exception cref="T:Yort.Humm.InStore.HummResponseSignatureException">Thrown if the signature of the response does not match the expected signature.</exception>
+        </member>
+        <member name="T:Yort.Humm.InStore.Infrastructure.SignedRequestWriter">
+            <summary>
+            Used to write a Humm request as json including the relevant signature in the output.
+            </summary>
+            <seealso cref="T:System.IDisposable" />
+        </member>
+        <member name="M:Yort.Humm.InStore.Infrastructure.SignedRequestWriter.#ctor(Yort.Humm.InStore.Infrastructure.ISignatureGenerator)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Yort.Humm.InStore.Infrastructure.SignedRequestWriter"/> class.
+            </summary>
+            <param name="signatureGenerator">The signature generator.</param>
+        </member>
+        <member name="M:Yort.Humm.InStore.Infrastructure.SignedRequestWriter.WriteRequest``1(``0)">
+            <summary>
+            Writes the specified request as to a string and returns the result.
+            </summary>
+            <typeparam name="T">The type of request to be written, must be a .Net reference type.</typeparam>
+            <param name="request">The request to write.</param>
+            <returns>A string containing the request written as json and containing the required digital signature.</returns>
+            <exception cref="T:System.ObjectDisposedException">Thrown if this instance is disposed.</exception>
+            <exception cref="T:System.ArgumentNullException">Thrown if <paramref name="request"/> is null.</exception>
+            <seealso cref="M:Yort.Humm.InStore.Infrastructure.SignedRequestWriter.WriteRequest``1(``0,System.IO.Stream)"/>
+            <seealso cref="M:Yort.Humm.InStore.Infrastructure.SignedRequestWriter.Dispose"/>
+        </member>
+        <member name="M:Yort.Humm.InStore.Infrastructure.SignedRequestWriter.WriteRequest``1(``0,System.IO.Stream)">
+            <summary>
+            Writes the specified request to the specified stream.
+            </summary>
+            <typeparam name="T">The type of request to be written, must be a .Net reference type.</typeparam>
+            <param name="request">The request to write.</param>
+            <param name="outputStream">The stream to write to.</param>
+            <exception cref="T:System.ObjectDisposedException">Thrown if this instance is disposed.</exception>
+            <exception cref="T:System.ArgumentNullException">Thrown if <paramref name="request"/> or <paramref name="outputStream"/> is null.</exception>
+            <seealso cref="M:Yort.Humm.InStore.Infrastructure.SignedRequestWriter.WriteRequest``1(``0)"/>
+            <seealso cref="M:Yort.Humm.InStore.Infrastructure.SignedRequestWriter.Dispose"/>
+        </member>
+        <member name="M:Yort.Humm.InStore.Infrastructure.SignedRequestWriter.Dispose">
+            <summary>
+            Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.
+            </summary>
+            <remarks>
+            <para>Will dispose the <see cref="T:Yort.Humm.InStore.Infrastructure.ISignatureGenerator"/> passed into the constructor when this instance was created.</para>
+            </remarks>
+        </member>
+        <member name="T:Yort.Humm.InStore.InviteRequest">
+            <summary>
+            Represents a request to send an SMS to a mobile phone number inviting someone to sign up to Humm.
+            </summary>
+            <seealso cref="T:Yort.Humm.InStore.Infrastructure.RequestBase" />
+            <seealso cref="M:Yort.Humm.InStore.HummClient.InviteAsync(Yort.Humm.InStore.InviteRequest)"/>
+            <seealso cref="T:Yort.Humm.InStore.InviteResponse"/>
+        </member>
+        <member name="P:Yort.Humm.InStore.InviteRequest.MobileNumber">
+            <summary>
+            Required. Gets or sets the mobile number to send the invitation to.
+            </summary>
+            <value>
+            The mobile phone number.
+            </value>
+        </member>
+        <member name="P:Yort.Humm.InStore.InviteRequest.PurchaseAmount">
+            <summary>
+            Gets or sets the amount of a initial purchase amount to generate a pre-approval code for after sign-up is complete.
+            </summary>
+            <value>
+            The purchase amount as a dollar value (i.e $20 would be 20.00).
+            </value>
+        </member>
+        <member name="T:Yort.Humm.InStore.InviteResponse">
+            <summary>
+            Represents a response to a <see cref="T:Yort.Humm.InStore.InviteRequest"/>.
+            </summary>
+            <seealso cref="T:Yort.Humm.InStore.Infrastructure.ResponseBase" />
+            <seealso cref="M:Yort.Humm.InStore.HummClient.InviteAsync(Yort.Humm.InStore.InviteRequest)"/>
+            <seealso cref="T:Yort.Humm.InStore.InviteRequest"/>
+        </member>
+        <member name="T:Yort.Humm.InStore.NamespaceDoc">
+            <summary>
+            Contains types useful for integration with the Humm (formerly Oxipay) API (for payments and refunds).
+            See <a href="https://docs.shophumm.com.au/pos/getting-started/"/> for a description of the API, it's processes, how to apply for access and so on. Understanding the Humm API will help you to understand how to use this library, even though it is an unoffical C# client and not provided by or associated with Humm.
+            </summary>
+        </member>
+        <member name="T:Yort.Humm.InStore.PendingAuthorisationEventArgs">
+            <summary>
+            Arguments for the <see cref="E:Yort.Humm.InStore.HummClient.PendingAuthorisation"/> event.
+            </summary>
+            <seealso cref="T:System.EventArgs" />
+        </member>
+        <member name="M:Yort.Humm.InStore.PendingAuthorisationEventArgs.#ctor(System.String,System.Int32,System.Collections.Generic.Dictionary{System.String,System.String})">
+            <summary>
+            Initializes a new instance of the <see cref="T:Yort.Humm.InStore.PendingAuthorisationEventArgs"/> class.
+            </summary>
+            <param name="clientReference">The client reference of the request associated with this event.</param>
+            <param name="retryDuration">The minimum amount of time, in seconds, to wait before re-checking the request status.</param>
+            <param name="trackingData">The tracking data associated with the original request, if any (may be null).</param>
+        </member>
+        <member name="P:Yort.Humm.InStore.PendingAuthorisationEventArgs.ClientReference">
+            <summary>
+            Returns the client reference of the request that caused this event.
+            </summary>
+            <value>
+            The client reference of the <see cref="T:Yort.Humm.InStore.ProcessAuthorisationRequest"/> that is pending.
+            </value>
+        </member>
+        <member name="P:Yort.Humm.InStore.PendingAuthorisationEventArgs.RetryDuration">
+            <summary>
+            Returns the minimum number of seconds to wait until re-checking the request status.
+            </summary>
+            <value>
+            The duration of the retry interval (in seconds).
+            </value>
+        </member>
+        <member name="P:Yort.Humm.InStore.PendingAuthorisationEventArgs.TrackingData">
+            <summary>
+            Returns the tracking data associated with the original request, if any (may be null).
+            </summary>
+            <value>
+            The tracking data from the original <see cref="T:Yort.Humm.InStore.ProcessAuthorisationRequest"/>.
+            </value>
+        </member>
+        <member name="T:Yort.Humm.InStore.ProcessAuthorisationRequest">
+            <summary>
+            Represents a request to generate a payment plan/contract for the specified amount using the provided pre-approval code generated by a customer's device.
+            </summary>
+            <seealso cref="T:Yort.Humm.InStore.Infrastructure.RequestBase" />
+            <seealso cref="T:Yort.Humm.InStore.ProcessSalesAdjustmentResponse"/>
+            <seealso cref="M:Yort.Humm.InStore.HummClient.ProcessAuthorisationAsync(Yort.Humm.InStore.ProcessAuthorisationRequest)"/>
+        </member>
+        <member name="P:Yort.Humm.InStore.ProcessAuthorisationRequest.ClientTransactionReference">
+            <summary>
+            Required. Gets or sets the unique client transaction reference.
+            </summary>
+            <value>
+            The unique client transaction reference.
+            </value>
+            <remarks>
+            <para>This value should be unique and re-used on repeat calls for the same payment (in case of network/timeout errors etc) to ensure idempotency (and avoid duplicate procesing).</para>
+            <para>If the value used here a temporary value not associated with the invoice/receipt/transaction document generated by the POS, a subsequent <see cref="T:Yort.Humm.InStore.SendReceiptRequest"/> can be made to update the created payment plan/contract with the final POS transaction reference.</para>
+            <para>If the <see cref="P:Yort.Humm.InStore.ProcessAuthorisationRequest.BuyerConfirms"/> property is true then a 'big things' flow may occur which could take extra processing time. In this case one or more responses with a status of <see cref="F:Yort.Humm.InStore.RequestStates.Pending"/> may be received 
+            and require the request to be resent at a specified interval. The application code can choose to handle this itself, or set the <see cref="P:Yort.Humm.InStore.ProcessAuthorisationRequest.AutoHandlePendingResponse"/> property to true. In that case the 
+            library will automatically take care of handling the pending response, waiting the specified interval, an retrying the request until a final status is arrived at. The <see cref="E:Yort.Humm.InStore.HummClient.PendingAuthorisation"/>
+            can be used in this flow for logging and updating the POS UI to keep the operator informed of progress. The event is not used if <see cref="P:Yort.Humm.InStore.ProcessAuthorisationRequest.AutoHandlePendingResponse"/> is false (or a pending status response is not received).
+            <para>Maximum length of 64 characters.</para>
+            </para>
+            </remarks>
+        </member>
+        <member name="P:Yort.Humm.InStore.ProcessAuthorisationRequest.PreapprovalCode">
+            <summary>
+            Required. Gets or sets the preapproval code generated by the customer's device. Normally scanned as a barcode, or entered via keyboard if neccesary.
+            </summary>
+            <remarks>
+            <para>Expected length is between 6 and 10 digits, but this is not validated as per the Humm documentation, in order to allow for future changes.</para>
+            </remarks>
+            <value>
+            A string containing the preapproval code.
+            </value>
+        </member>
+        <member name="P:Yort.Humm.InStore.ProcessAuthorisationRequest.FinanceAmount">
+            <summary>
+            Required. Gets or sets the dollvar value the customer wants to pay via Humm.
+            </summary>
+            <value>
+            The finance amount as a dollar value in decimal format.
+            </value>
+            <remarks>
+            <para>Although the Humm API requires this value to be sent as a number of cents, this library uses a dollar value and will perform the conversion to cents for you.
+            For example, to send $119.50 set this value to 119.5.</para>
+            </remarks>
+        </member>
+        <member name="P:Yort.Humm.InStore.ProcessAuthorisationRequest.PurchaseAmount">
+            <summary>
+            Required. Gets or sets the total purchase amount (including any value paid via Humm).
+            </summary>
+            <value>
+            The full purchase amount.
+            </value>
+            <remarks>
+            <para>Although the Humm API requires this value to be sent as a number of cents, this library uses a dollar value and will perform the conversion to cents for you.
+            For example, to send $500 set this value to 500.</para>
+            </remarks>
+        </member>
+        <member name="P:Yort.Humm.InStore.ProcessAuthorisationRequest.PurchaseItems">
+            <summary>
+            Optional (may be null). Gets or sets details about what was purchased.
+            </summary>
+            <value>
+            The purchase items.
+            </value>
+            <remarks>
+            <para>This detail may appear on both the seller and customer's portal when looking at the transaction, providing greater detail about the purchase in that context.</para>
+            </remarks>
+            <seealso cref="T:Yort.Humm.InStore.PurchaseItemsCollection"/>
+        </member>
+        <member name="P:Yort.Humm.InStore.ProcessAuthorisationRequest.BuyerConfirms">
+            <summary>
+            Gets or sets a value indicating whether or not the 'big things' flow is supported.
+            </summary>
+            <value>True to indicate the calling system supports and wants to enable the 'big things' flow for this transaction.</value>
+            <remarks>
+            <para>The 'big things' flow occurs when making purchases over a certain dollar limit, determined by Humm, which may require additional 
+            credit checks, confirmaton by the customer and so on. In this case the calling system must be prepared to handle pending responses appropriately 
+            and potentially wait longer to receive an outcome. The default value is false to indicate this is not supported, set to true to indicate it is.</para>
+            </remarks>
+        </member>
+        <member name="P:Yort.Humm.InStore.ProcessAuthorisationRequest.AutoHandlePendingResponse">
+            <summary>
+            Gets or sets a value indicating whether the <see cref="M:Yort.Humm.InStore.HummClient.ProcessAuthorisationAsync(Yort.Humm.InStore.ProcessAuthorisationRequest)"/> automatically handles retries pending status responses.
+            </summary>
+            <value>True to have the <see cref="T:Yort.Humm.InStore.HummClient"/> instance handle pending status responses itself, or false to have the calling code handle them.</value>
+            <remarks>
+            <para>A pending status will only be received if the <see cref="P:Yort.Humm.InStore.ProcessAuthorisationRequest.BuyerConfirms"/> property is true and Humm needs additional time to process the request. In that case, 
+            if <see cref="P:Yort.Humm.InStore.ProcessAuthorisationRequest.AutoHandlePendingResponse"/> is true the <see cref="T:Yort.Humm.InStore.HummClient"/> instance will raise the <see cref="E:Yort.Humm.InStore.HummClient.PendingAuthorisation"/> event to advise the 
+            caller additional time is needed, then wait for the interval specified in the Humm response before retrying the request. This logic will be repeated until Humm returns a final response
+            or an error occurs.
+            </para>
+            <para>If <see cref="P:Yort.Humm.InStore.ProcessAuthorisationRequest.AutoHandlePendingResponse"/> is false and a pending status response is received, it is up to the calling user code to take the appropriate actions.</para>
+            </remarks>
+        </member>
+        <member name="M:Yort.Humm.InStore.ProcessAuthorisationRequest.Validate">
+            <summary>
+            Validates this request.
+            </summary>
+            <remarks>
+            <para>
+            Ensures that <see cref="P:Yort.Humm.InStore.ProcessAuthorisationRequest.ClientTransactionReference" /> and <see cref="P:Yort.Humm.InStore.ProcessAuthorisationRequest.PreapprovalCode" /> are not null, empty string or only whitespace.
+            Also ensure no property is larger than it's maximum allowed length (see individual property notes for details).
+            Also ensures all base properties are valid, see <see cref="M:Yort.Humm.InStore.Infrastructure.RequestBase.Validate"/>.
+            </para>
+            <para>Does not validate the pre-approval code or finance amounts, as rules for these are likely to vary over time. It is better to let the API respond with an 
+            error result than pre-validate these values.</para>
+            </remarks>
+        </member>
+        <member name="T:Yort.Humm.InStore.PurchaseItemsCollection">
+            <summary>
+            A collection representing a list of purchased items, used to provide extra details about a Humm transaction.
+            </summary>
+            <remarks>
+            <para>Each item in the collection is a string providing a simple description of the item purchased.</para>
+            </remarks>
+            <seealso cref="T:System.Collections.Generic.List`1" />
+        </member>
+        <member name="M:Yort.Humm.InStore.PurchaseItemsCollection.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Yort.Humm.InStore.PurchaseItemsCollection"/> class.
+            </summary>
+        </member>
+        <member name="M:Yort.Humm.InStore.PurchaseItemsCollection.#ctor(System.Int32)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Yort.Humm.InStore.PurchaseItemsCollection"/> class.
+            </summary>
+            <param name="capacity">The number of elements that the new list can initially store.</param>
+        </member>
+        <member name="M:Yort.Humm.InStore.PurchaseItemsCollection.#ctor(System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+            Initializes a new instance of the <see cref="T:Yort.Humm.InStore.PurchaseItemsCollection"/> class.
+            </summary>
+            <param name="items">A set of items to intialise the collection with.</param>
+        </member>
+        <member name="T:Yort.Humm.InStore.ProcessAuthorisationResponse">
+            <summary>
+            Contains details of a response to a <see cref="T:Yort.Humm.InStore.ProcessAuthorisationRequest"/>.
+            </summary>
+            <seealso cref="T:Yort.Humm.InStore.Infrastructure.ResponseBase" />
+            <seealso cref="M:Yort.Humm.InStore.HummClient.ProcessAuthorisationAsync(Yort.Humm.InStore.ProcessAuthorisationRequest)"/>
+            <seealso cref="T:Yort.Humm.InStore.ProcessAuthorisationRequest"/>
+        </member>
+        <member name="P:Yort.Humm.InStore.ProcessAuthorisationResponse.PurchaseNumber">
+            <summary>
+            Gets or sets the Humm generated purchase number.
+            </summary>
+            <value>
+            The purchase number assigned to this transaction by Humm.
+            </value>
+        </member>
+        <member name="P:Yort.Humm.InStore.ProcessAuthorisationResponse.RetryDuration">
+            <summary>
+            Gets or sets the interval to wait before retrying the request, if the <see cref="P:Yort.Humm.InStore.Infrastructure.ResponseBase.Status"/> is <see cref="F:Yort.Humm.InStore.RequestStates.Pending"/>.
+            </summary>
+            <value>
+            The duration of the retry delay, in seconds.
+            </value>
+        </member>
+        <member name="T:Yort.Humm.InStore.ProcessSalesAdjustmentRequest">
+            <summary>
+            Represents a request to full or partially refund a previously successful <see cref="M:Yort.Humm.InStore.HummClient.ProcessAuthorisationAsync(Yort.Humm.InStore.ProcessAuthorisationRequest)"/> request.
+            </summary>
+            <seealso cref="T:Yort.Humm.InStore.Infrastructure.RequestBase" />
+            <seealso cref="T:Yort.Humm.InStore.ProcessSalesAdjustmentResponse"/>
+            <seealso cref="M:Yort.Humm.InStore.HummClient.ProcessSalesAdjustmentAsync(Yort.Humm.InStore.ProcessSalesAdjustmentRequest)"/>
+        </member>
+        <member name="P:Yort.Humm.InStore.ProcessSalesAdjustmentRequest.ClientTransactionReference">
+            <summary>
+            Required. Gets or sets the client transaction reference for this adjustment. 
+            </summary>
+            <value>
+            This is the transaction reference of the sales adjustment.
+            </value>
+            <remarks>
+            <para>Be sure to read the notes on idempotency and retry logic at https://docs.shophumm.com.au/pos/api_information/retries_and_idempotency/ </para>
+            </remarks>
+        </member>
+        <member name="P:Yort.Humm.InStore.ProcessSalesAdjustmentRequest.PurchaseReference">
+            <summary>
+            Required. Gets or sets the purchase reference of the original transaction to be refunded.
+            </summary>
+            <value>A tranaction reference for the original authorisation to be refunded.</value>
+            <remarks>
+            <para>
+            The original transaction reference. It can either be the <see cref="P:Yort.Humm.InStore.ProcessAuthorisationRequest.ClientTransactionReference"/> that was passed through as part of the <see cref="M:Yort.Humm.InStore.HummClient.ProcessAuthorisationAsync(Yort.Humm.InStore.ProcessAuthorisationRequest)"/> 
+            request (or the <see cref="M:Yort.Humm.InStore.HummClient.SendReceiptAsync(Yort.Humm.InStore.SendReceiptRequest)"/> request), or the humm purchase number that was returned from the call to ProcessAuthorisationAsync. 
+            In the case of the former, the <see cref="P:Yort.Humm.InStore.ProcessAuthorisationRequest.ClientTransactionReference"/> must be unique among all sellers in a chain of sellers (unique among all devices sharing a merchant id).
+            In the case of the latter, the POS software would be required to store the <see cref="P:Yort.Humm.InStore.ProcessAuthorisationResponse.PurchaseNumber"/> retured by <see cref="M:Yort.Humm.InStore.HummClient.ProcessAuthorisationAsync(Yort.Humm.InStore.ProcessAuthorisationRequest)"/>.	
+            </para>
+            <para>Maximum length of 64 characters.</para>
+            </remarks>
+        </member>
+        <member name="P:Yort.Humm.InStore.ProcessSalesAdjustmentRequest.Amount">
+            <summary>
+            Gets or sets the amount of the refund.
+            </summary>
+            <value>
+            The refund amount as a dollar value in decimal format.
+            </value>
+            <remarks>
+            <para>Although the Humm API requires this value to be sent as a number of cents, this library uses a dollar value and will perform the conversion to cents for you.
+            For example, to send $119.50 set this value to 119.5.</para>
+            <para>Maximum length of 64 characters.</para>
+            </remarks>
+        </member>
+        <member name="M:Yort.Humm.InStore.ProcessSalesAdjustmentRequest.Validate">
+            <summary>
+            Validates this instance.
+            </summary>
+            <remarks>
+            <para>Ensures <seealso cref="P:Yort.Humm.InStore.ProcessSalesAdjustmentRequest.ClientTransactionReference"/> and <see cref="P:Yort.Humm.InStore.ProcessSalesAdjustmentRequest.PurchaseReference"/> are not null, empty strings or contain only whitespace. Also ensures they are not longer than allowed.</para>
+            <para>Also ensures all base properties are valid, see <see cref="M:Yort.Humm.InStore.Infrastructure.RequestBase.Validate"/>.</para>
+            </remarks>
+        </member>
+        <member name="T:Yort.Humm.InStore.ProcessSalesAdjustmentResponse">
+            <summary>
+            Contains details of a response to a <see cref="T:Yort.Humm.InStore.ProcessSalesAdjustmentRequest"/>.
+            </summary>
+            <seealso cref="T:Yort.Humm.InStore.Infrastructure.ResponseBase" />
+            <seealso cref="M:Yort.Humm.InStore.HummClient.ProcessSalesAdjustmentAsync(Yort.Humm.InStore.ProcessSalesAdjustmentRequest)"/>
+            <seealso cref="T:Yort.Humm.InStore.ProcessSalesAdjustmentRequest"/>
+        </member>
+        <member name="T:Yort.Humm.InStore.ProcessSalesAdjustmentReversalRequest">
+            <summary>
+            Represents a prior <see cref="M:Yort.Humm.InStore.HummClient.ProcessSalesAdjustmentAsync(Yort.Humm.InStore.ProcessSalesAdjustmentRequest)"/> request be reversed/undone/cancelled.
+            </summary>
+            <seealso cref="T:Yort.Humm.InStore.Infrastructure.RequestBase" />
+            <seealso cref="T:Yort.Humm.InStore.ProcessSalesAdjustmentReversalRequest"/>
+            <seealso cref="M:Yort.Humm.InStore.HummClient.ProcessSalesAdjustmentReversalAsync(Yort.Humm.InStore.ProcessSalesAdjustmentReversalRequest)"/>
+        </member>
+        <member name="P:Yort.Humm.InStore.ProcessSalesAdjustmentReversalRequest.ClientTransactionReference">
+            <summary>
+            Required. Gets or sets the client transaction reference for this reversal.
+            </summary>
+            <value>
+            This is the transaction reference of the sales adjustment reversal.
+            </value>
+            <remarks>
+            <para>
+            <para>Maximum length of 64 characters.</para>
+            </para>
+            </remarks>
+        </member>
+        <member name="P:Yort.Humm.InStore.ProcessSalesAdjustmentReversalRequest.AdjustmentSignature">
+            <summary>
+            Required. Gets or sets the adjustment signature.
+            </summary>
+            <value>
+            The adjustment signature.
+            </value>
+            <remarks>
+            <para>
+            The original adjustment signature that we are trying to reverse. We are using the Sales Adjustment Signature as we can not rely on the 
+            Sales Adjustment to return a result. (e.g.Network Issues). See the Humm documentation at https://docs.shophumm.com.au/pos/api/process_adjustment_reversal/
+            </para>
+            <para>Maximum length of 200 characters.</para>
+            </remarks>
+        </member>
+        <member name="M:Yort.Humm.InStore.ProcessSalesAdjustmentReversalRequest.Validate">
+            <summary>
+            Validates this instance.
+            </summary>
+            <remarks>
+            <para>Ensures <seealso cref="P:Yort.Humm.InStore.ProcessSalesAdjustmentReversalRequest.ClientTransactionReference"/> and <see cref="P:Yort.Humm.InStore.ProcessSalesAdjustmentReversalRequest.AdjustmentSignature"/> are not null, empty strings or contain only whitespace. Also ensures they are not longer than allowed.</para>
+            <para>Also ensures all base properties are valid, see <see cref="M:Yort.Humm.InStore.Infrastructure.RequestBase.Validate"/>.</para>
+            </remarks>
+        </member>
+        <member name="T:Yort.Humm.InStore.ProcessSalesAdjustmentReversalResponse">
+            <summary>
+            Contains details of a response to a <see cref="T:Yort.Humm.InStore.ProcessSalesAdjustmentReversalRequest"/>.
+            </summary>
+            <seealso cref="T:Yort.Humm.InStore.Infrastructure.ResponseBase" />
+            <seealso cref="M:Yort.Humm.InStore.HummClient.ProcessSalesAdjustmentReversalAsync(Yort.Humm.InStore.ProcessSalesAdjustmentReversalRequest)"/>
+            <seealso cref="T:Yort.Humm.InStore.ProcessSalesAdjustmentReversalRequest"/>
+        </member>
+        <member name="T:Yort.Humm.InStore.RequestStates">
+            <summary>
+            Provides a set of constants for possible <see cref="P:Yort.Humm.InStore.Infrastructure.ResponseBase.Status"/> values.
+            </summary>
+            <remarks>
+            <para>See the Humm documentation at <a href="https://docs.shophumm.com.au/pos/api_information/status_codes/"/>.</para>
+            <para>
+            The most common statuses are:
+            <list type="bullet">
+            <item><description><b>Success</b> When the intent of the request is successful e.g. an Approval from the ProcessAuthorisation API.</description></item>
+            <item><description><b>Failed</b> When the intent of the request is unsuccessful e.g. a Decline from the ProcessAuthorisation API.</description></item>
+            <item><description><b>Error</b> When there is a problem with the request or an unexpected error.</description></item>
+            </list>
+            </para>
+            </remarks>
+        </member>
+        <member name="F:Yort.Humm.InStore.RequestStates.Success">
+            <summary>
+            The request was succesfully processed and approved.
+            </summary>
+        </member>
+        <member name="F:Yort.Humm.InStore.RequestStates.Pending">
+            <summary>
+            The request is pending and needs more time to be processed. Wait for the specified interval and retry the request.
+            </summary>
+        </member>
+        <member name="F:Yort.Humm.InStore.RequestStates.Cancelled">
+            <summary>
+            The request was cancelled.
+            </summary>
+        </member>
+        <member name="F:Yort.Humm.InStore.RequestStates.Failed">
+            <summary>
+            The request failed or was declined.
+            </summary>
+        </member>
+        <member name="T:Yort.Humm.InStore.SendReceiptRequest">
+            <summary>
+            Represents a request to associate a POS receipt number with a prior authorisation request.
+            </summary>
+            <seealso cref="M:Yort.Humm.InStore.HummClient.SendReceiptAsync(Yort.Humm.InStore.SendReceiptRequest)"/>
+            <seealso cref="T:Yort.Humm.InStore.SendReceiptResponse"/>
+            <seealso cref="T:Yort.Humm.InStore.Infrastructure.RequestBase" />
+        </member>
+        <member name="P:Yort.Humm.InStore.SendReceiptRequest.ClientTransactionReference">
+            <summary>
+            Required. Gets or sets the client transaction reference of the authorisation to update.
+            </summary>
+            <value>
+            This must be the same reference used in the prior <see cref="M:Yort.Humm.InStore.HummClient.ProcessAuthorisationAsync(Yort.Humm.InStore.ProcessAuthorisationRequest)"/> request to be udpated.
+            </value>
+            <remarks>
+            <para>Maximum length of 64 characters.</para>
+            </remarks>
+        </member>
+        <member name="P:Yort.Humm.InStore.SendReceiptRequest.ReceiptNumber">
+            <summary>
+            Required. Gets or sets the receipt number.
+            </summary>
+            <value>
+            The new receipt number to associate with the authorisation.
+            </value>
+            <remarks>
+            <para>This must be the same reference (x_pos_transaction_ref) that would get passed through on future <see cref="M:Yort.Humm.InStore.HummClient.ProcessSalesAdjustmentAsync(Yort.Humm.InStore.ProcessSalesAdjustmentRequest)"/> requests.</para>
+            <para>Maximum length of 64 characters.</para>
+            </remarks>
+        </member>
+        <member name="M:Yort.Humm.InStore.SendReceiptRequest.Validate">
+            <summary>
+            Validates this instance.
+            </summary>
+            <remarks>
+            <para>Ensures <seealso cref="P:Yort.Humm.InStore.SendReceiptRequest.ClientTransactionReference"/> and <see cref="P:Yort.Humm.InStore.SendReceiptRequest.ReceiptNumber"/> are not null, empty strings or contain only whitespace. Also ensures they are not longer than allowed.</para>
+            <para>Also ensures all base properties are valid, see <see cref="M:Yort.Humm.InStore.Infrastructure.RequestBase.Validate"/>.</para>
+            </remarks>
+        </member>
+        <member name="T:Yort.Humm.InStore.SendReceiptResponse">
+            <summary>
+            Contains details of a response to a <see cref="T:Yort.Humm.InStore.ProcessAuthorisationRequest"/>.
+            </summary>
+            <seealso cref="T:Yort.Humm.InStore.Infrastructure.ResponseBase" />
+            <seealso cref="M:Yort.Humm.InStore.HummClient.SendReceiptAsync(Yort.Humm.InStore.SendReceiptRequest)"/>
+            <seealso cref="T:Yort.Humm.InStore.SendReceiptRequest"/>
+        </member>
+    </members>
+</doc>

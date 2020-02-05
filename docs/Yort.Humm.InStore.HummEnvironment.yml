@@ -1,0 +1,146 @@
+### YamlMime:ManagedReference
+items:
+- uid: Yort.Humm.InStore.HummEnvironment
+  commentId: T:Yort.Humm.InStore.HummEnvironment
+  id: HummEnvironment
+  parent: Yort.Humm.InStore
+  children:
+  - Yort.Humm.InStore.HummEnvironment.Dummy
+  - Yort.Humm.InStore.HummEnvironment.Production
+  - Yort.Humm.InStore.HummEnvironment.Sandbox
+  langs:
+  - csharp
+  - vb
+  name: HummEnvironment
+  nameWithType: HummEnvironment
+  fullName: Yort.Humm.InStore.HummEnvironment
+  type: Enum
+  source:
+    remote:
+      path: C:/Projects/GitHub/Yort.Humm.InStore/src/HummClientConfiguration.cs
+    id: HummEnvironment
+    path: HummClientConfiguration.cs
+    startLine: 93
+  assemblies:
+  - Yort.Humm.InStore
+  namespace: Yort.Humm.InStore
+  summary: "\nSpecifies which Humm API endpoints should be used.\n"
+  example: []
+  syntax:
+    content: public enum HummEnvironment
+    content.vb: Public Enum HummEnvironment
+  modifiers.csharp:
+  - public
+  - enum
+  modifiers.vb:
+  - Public
+  - Enum
+- uid: Yort.Humm.InStore.HummEnvironment.Dummy
+  commentId: F:Yort.Humm.InStore.HummEnvironment.Dummy
+  id: Dummy
+  parent: Yort.Humm.InStore.HummEnvironment
+  langs:
+  - csharp
+  - vb
+  name: Dummy
+  nameWithType: HummEnvironment.Dummy
+  fullName: Yort.Humm.InStore.HummEnvironment.Dummy
+  type: Field
+  source:
+    remote:
+      path: C:/Projects/GitHub/Yort.Humm.InStore/src/HummClientConfiguration.cs
+    id: Dummy
+    path: HummClientConfiguration.cs
+    startLine: 101
+  assemblies:
+  - Yort.Humm.InStore
+  namespace: Yort.Humm.InStore
+  summary: "\nDefault. The dummy API environment is suitable for automated testing, with fixed responses sent based on specific request inputs.\n"
+  remarks: "\n<p>Not typically used by application code, but the default value for the enum to avoid accidental usage of the production environment.</p>\n"
+  example: []
+  syntax:
+    content: Dummy = 0
+    return:
+      type: Yort.Humm.InStore.HummEnvironment
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: Yort.Humm.InStore.HummEnvironment.Sandbox
+  commentId: F:Yort.Humm.InStore.HummEnvironment.Sandbox
+  id: Sandbox
+  parent: Yort.Humm.InStore.HummEnvironment
+  langs:
+  - csharp
+  - vb
+  name: Sandbox
+  nameWithType: HummEnvironment.Sandbox
+  fullName: Yort.Humm.InStore.HummEnvironment.Sandbox
+  type: Field
+  source:
+    remote:
+      path: C:/Projects/GitHub/Yort.Humm.InStore/src/HummClientConfiguration.cs
+    id: Sandbox
+    path: HummClientConfiguration.cs
+    startLine: 105
+  assemblies:
+  - Yort.Humm.InStore
+  namespace: Yort.Humm.InStore
+  summary: "\nThe sandbox API environment is suitable for manual testing, user-acceptance testing and demo systems where real financial transactions are not desired but human interactive and realistic worflows are.\n"
+  example: []
+  syntax:
+    content: Sandbox = 1
+    return:
+      type: Yort.Humm.InStore.HummEnvironment
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: Yort.Humm.InStore.HummEnvironment.Production
+  commentId: F:Yort.Humm.InStore.HummEnvironment.Production
+  id: Production
+  parent: Yort.Humm.InStore.HummEnvironment
+  langs:
+  - csharp
+  - vb
+  name: Production
+  nameWithType: HummEnvironment.Production
+  fullName: Yort.Humm.InStore.HummEnvironment.Production
+  type: Field
+  source:
+    remote:
+      path: C:/Projects/GitHub/Yort.Humm.InStore/src/HummClientConfiguration.cs
+    id: Production
+    path: HummClientConfiguration.cs
+    startLine: 109
+  assemblies:
+  - Yort.Humm.InStore
+  namespace: Yort.Humm.InStore
+  summary: "\nThe production API environment is the live API used for conducting real financial transactions.\n"
+  example: []
+  syntax:
+    content: Production = 2
+    return:
+      type: Yort.Humm.InStore.HummEnvironment
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+references:
+- uid: Yort.Humm.InStore
+  commentId: N:Yort.Humm.InStore
+  name: Yort.Humm.InStore
+  nameWithType: Yort.Humm.InStore
+  fullName: Yort.Humm.InStore
+- uid: Yort.Humm.InStore.HummEnvironment
+  commentId: T:Yort.Humm.InStore.HummEnvironment
+  parent: Yort.Humm.InStore
+  name: HummEnvironment
+  nameWithType: HummEnvironment
+  fullName: Yort.Humm.InStore.HummEnvironment

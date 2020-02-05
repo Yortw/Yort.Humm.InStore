@@ -1,0 +1,510 @@
+{
+  "homepages": [],
+  "source_base_path": "C:/Projects/GitHub/Yort.Humm.InStore/src",
+  "xrefmap": "xrefmap.yml",
+  "files": [
+    {
+      "type": "Resource",
+      "output": {
+        "resource": {
+          "relative_path": "index.json"
+        }
+      },
+      "is_incremental": false
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Yort.Humm.InStore.CreateKeyRequest.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Yort.Humm.InStore.CreateKeyRequest.html",
+          "hash": "aI7z1M7z7jln1SBfXpz30Q=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Yort.Humm.InStore.CreateKeyResponse.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Yort.Humm.InStore.CreateKeyResponse.html",
+          "hash": "Ad02VDXABScVAim0Aqkr6g=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Yort.Humm.InStore.HummApiUrlSelector.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Yort.Humm.InStore.HummApiUrlSelector.html",
+          "hash": "cFoVe3BwoZn/ZatWypbh3g=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Yort.Humm.InStore.HummClient.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Yort.Humm.InStore.HummClient.html",
+          "hash": "PX/1n69qVLoC4JyV6DXrXg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Yort.Humm.InStore.HummClientConfiguration.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Yort.Humm.InStore.HummClientConfiguration.html",
+          "hash": "7BBA6PHdxAez6QW2i4HMHA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Yort.Humm.InStore.HummCountry.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Yort.Humm.InStore.HummCountry.html",
+          "hash": "7NklFr1SoyEE9uSDt41ymQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Yort.Humm.InStore.HummEnvironment.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Yort.Humm.InStore.HummEnvironment.html",
+          "hash": "H/3fo5qsIoQd543u9fCE5Q=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Yort.Humm.InStore.HummResponseSignatureException.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Yort.Humm.InStore.HummResponseSignatureException.html",
+          "hash": "JJkkp6ZHV1qvqX0Tajl0NA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Yort.Humm.InStore.IHummApiUrlSelector.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Yort.Humm.InStore.IHummApiUrlSelector.html",
+          "hash": "TYaHovH+w1h5WjayVi0IiA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Yort.Humm.InStore.IHummClient.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Yort.Humm.InStore.IHummClient.html",
+          "hash": "j8mqjVQyK46W6bsQb5BSCQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Yort.Humm.InStore.Infrastructure.Hmac256SignatureGenerator.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Yort.Humm.InStore.Infrastructure.Hmac256SignatureGenerator.html",
+          "hash": "xaJ2Sr+CeYqaz9R7ta4qEQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Yort.Humm.InStore.Infrastructure.ISignatureGenerator.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Yort.Humm.InStore.Infrastructure.ISignatureGenerator.html",
+          "hash": "+BldQSU7LXHy/l+ZOUiYdg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Yort.Humm.InStore.Infrastructure.RequestBase.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Yort.Humm.InStore.Infrastructure.RequestBase.html",
+          "hash": "Gt0i7d1xahi8DOVPTFOtmQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Yort.Humm.InStore.Infrastructure.ResponseBase.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Yort.Humm.InStore.Infrastructure.ResponseBase.html",
+          "hash": "bqDtDUteLEbDkYlN2lqkhQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Yort.Humm.InStore.Infrastructure.SignedRequestWriter.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Yort.Humm.InStore.Infrastructure.SignedRequestWriter.html",
+          "hash": "flN5yUU6F5Y93R1M4QyEww=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Yort.Humm.InStore.Infrastructure.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Yort.Humm.InStore.Infrastructure.html",
+          "hash": "Y3tSOm9LyR9DCNGxyH0fsQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Yort.Humm.InStore.InviteRequest.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Yort.Humm.InStore.InviteRequest.html",
+          "hash": "mTwOSy/B0A021wDULrTJjQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Yort.Humm.InStore.InviteResponse.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Yort.Humm.InStore.InviteResponse.html",
+          "hash": "Lkye1OM16ZRgvsYwqRh8ow=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Yort.Humm.InStore.PendingAuthorisationEventArgs.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Yort.Humm.InStore.PendingAuthorisationEventArgs.html",
+          "hash": "FbncwvXOuQZmfo+zoZGu+g=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Yort.Humm.InStore.ProcessAuthorisationRequest.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Yort.Humm.InStore.ProcessAuthorisationRequest.html",
+          "hash": "QWWgXM0Eyn56iOzb5eLD8g=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Yort.Humm.InStore.ProcessAuthorisationResponse.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Yort.Humm.InStore.ProcessAuthorisationResponse.html",
+          "hash": "UuRzGEmY0ZmnPTHR50/+XQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Yort.Humm.InStore.ProcessSalesAdjustmentRequest.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Yort.Humm.InStore.ProcessSalesAdjustmentRequest.html",
+          "hash": "GnB3gAigty1jhhbIkqIRvg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Yort.Humm.InStore.ProcessSalesAdjustmentResponse.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Yort.Humm.InStore.ProcessSalesAdjustmentResponse.html",
+          "hash": "wzs+E/AcXF4e0op5cFTRKw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Yort.Humm.InStore.ProcessSalesAdjustmentReversalRequest.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Yort.Humm.InStore.ProcessSalesAdjustmentReversalRequest.html",
+          "hash": "VmDz0+efDCCeWCMWY6uB9A=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Yort.Humm.InStore.ProcessSalesAdjustmentReversalResponse.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Yort.Humm.InStore.ProcessSalesAdjustmentReversalResponse.html",
+          "hash": "MzxdmfREq1kgD37aBKi+mw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Yort.Humm.InStore.PurchaseItemsCollection.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Yort.Humm.InStore.PurchaseItemsCollection.html",
+          "hash": "ZqFEkM8NeJnOuJbvv0eQdw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Yort.Humm.InStore.RequestStates.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Yort.Humm.InStore.RequestStates.html",
+          "hash": "TnjjBBEd0tsDZMRaHv5Ivg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Yort.Humm.InStore.SendReceiptRequest.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Yort.Humm.InStore.SendReceiptRequest.html",
+          "hash": "fzXBb1V5GzEeUeMuXy3MNQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Yort.Humm.InStore.SendReceiptResponse.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Yort.Humm.InStore.SendReceiptResponse.html",
+          "hash": "NvsW8sQqCqaKtK1xS6j4+Q=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Yort.Humm.InStore.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Yort.Humm.InStore.html",
+          "hash": "uobVrOE1oKjcONdGiwGGPA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "api/index.md",
+      "output": {
+        ".html": {
+          "relative_path": "api/index.html",
+          "hash": "NoMMbtMFnrmR5l+3TMVyCw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "articles/intro.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/intro.html",
+          "hash": "KdZMpueqNEK6NZBtn/IzFA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/projecticon.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/projecticon.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/projecticon.svg",
+      "output": {
+        "resource": {
+          "relative_path": "images/projecticon.svg"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/projecticon128.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/projecticon128.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/projecticonlarge.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/projecticonlarge.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "index.md",
+      "output": {
+        ".html": {
+          "relative_path": "index.html",
+          "hash": "bLG9MivmRlc+SbpbjJAjUA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    }
+  ],
+  "incremental_info": [
+    {
+      "status": {
+        "can_incremental": true,
+        "incrementalPhase": "build",
+        "total_file_count": 0,
+        "skipped_file_count": 0
+      },
+      "processors": {
+        "ResourceDocumentProcessor": {
+          "can_incremental": false,
+          "details": "Processor ResourceDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
+          "incrementalPhase": "build",
+          "total_file_count": 0,
+          "skipped_file_count": 0
+        },
+        "ManagedReferenceDocumentProcessor": {
+          "can_incremental": true,
+          "incrementalPhase": "build",
+          "total_file_count": 30,
+          "skipped_file_count": 30
+        },
+        "ConceptualDocumentProcessor": {
+          "can_incremental": true,
+          "incrementalPhase": "build",
+          "total_file_count": 3,
+          "skipped_file_count": 3
+        },
+        "TocDocumentProcessor": {
+          "can_incremental": false,
+          "details": "Processor TocDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
+          "incrementalPhase": "build",
+          "total_file_count": 0,
+          "skipped_file_count": 0
+        }
+      }
+    },
+    {
+      "status": {
+        "can_incremental": false,
+        "details": "Cannot support incremental post processing, the reason is: should not trace intermediate info.",
+        "incrementalPhase": "postProcessing",
+        "total_file_count": 0,
+        "skipped_file_count": 0
+      },
+      "processors": {}
+    }
+  ],
+  "version_info": {},
+  "groups": [
+    {
+      "xrefmap": "xrefmap.yml"
+    }
+  ]
+}

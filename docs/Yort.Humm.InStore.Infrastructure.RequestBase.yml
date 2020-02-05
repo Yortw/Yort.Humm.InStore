@@ -1,0 +1,839 @@
+### YamlMime:ManagedReference
+items:
+- uid: Yort.Humm.InStore.Infrastructure.RequestBase
+  commentId: T:Yort.Humm.InStore.Infrastructure.RequestBase
+  id: RequestBase
+  parent: Yort.Humm.InStore.Infrastructure
+  children:
+  - Yort.Humm.InStore.Infrastructure.RequestBase.DeviceId
+  - Yort.Humm.InStore.Infrastructure.RequestBase.MerchantId
+  - Yort.Humm.InStore.Infrastructure.RequestBase.OperatorId
+  - Yort.Humm.InStore.Infrastructure.RequestBase.PosVersion
+  - Yort.Humm.InStore.Infrastructure.RequestBase.TrackingData
+  - Yort.Humm.InStore.Infrastructure.RequestBase.Validate
+  langs:
+  - csharp
+  - vb
+  name: RequestBase
+  nameWithType: RequestBase
+  fullName: Yort.Humm.InStore.Infrastructure.RequestBase
+  type: Class
+  source:
+    remote:
+      path: C:/Projects/GitHub/Yort.Humm.InStore/src/Infrastructure/RequestBase.cs
+    id: RequestBase
+    path: Infrastructure/RequestBase.cs
+    startLine: 17
+  assemblies:
+  - Yort.Humm.InStore
+  namespace: Yort.Humm.InStore.Infrastructure
+  summary: "\nContains properties common to all requests.\n"
+  remarks: "\n<p>Many of these properties have an equivalent property on <xref href=\"Yort.Humm.InStore.HummClientConfiguration\" data-throw-if-not-resolved=\"false\"></xref>. If the property on a request \nis null or emptry string, the value from the configuration instance passed to the <xref href=\"Yort.Humm.InStore.HummClient\" data-throw-if-not-resolved=\"false\"></xref> will be copied into the \nrequest prior to sending the request. This minimises the number of properties that have to be explicitly set for every request.\n</p>\n"
+  example: []
+  syntax:
+    content: public abstract class RequestBase
+    content.vb: Public MustInherit Class RequestBase
+  inheritance:
+  - System.Object
+  derivedClasses:
+  - Yort.Humm.InStore.CreateKeyRequest
+  - Yort.Humm.InStore.InviteRequest
+  - Yort.Humm.InStore.ProcessAuthorisationRequest
+  - Yort.Humm.InStore.ProcessSalesAdjustmentRequest
+  - Yort.Humm.InStore.ProcessSalesAdjustmentReversalRequest
+  - Yort.Humm.InStore.SendReceiptRequest
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+  modifiers.csharp:
+  - public
+  - abstract
+  - class
+  modifiers.vb:
+  - Public
+  - MustInherit
+  - Class
+- uid: Yort.Humm.InStore.Infrastructure.RequestBase.MerchantId
+  commentId: P:Yort.Humm.InStore.Infrastructure.RequestBase.MerchantId
+  id: MerchantId
+  parent: Yort.Humm.InStore.Infrastructure.RequestBase
+  langs:
+  - csharp
+  - vb
+  name: MerchantId
+  nameWithType: RequestBase.MerchantId
+  fullName: Yort.Humm.InStore.Infrastructure.RequestBase.MerchantId
+  type: Property
+  source:
+    remote:
+      path: C:/Projects/GitHub/Yort.Humm.InStore/src/Infrastructure/RequestBase.cs
+    id: MerchantId
+    path: Infrastructure/RequestBase.cs
+    startLine: 28
+  assemblies:
+  - Yort.Humm.InStore
+  namespace: Yort.Humm.InStore.Infrastructure
+  summary: "\nRequired. Gets or sets the unique merchant identifier assigned by Humm to the retailer/organisation making requests.\n"
+  remarks: "\n<p>Maximum length of 10 characters.</p>\n"
+  example: []
+  syntax:
+    content: >-
+      [JsonProperty("x_merchant_id")]
+
+      public string MerchantId { get; set; }
+    parameters: []
+    return:
+      type: System.String
+      description: "\nThe merchant identifier assigned by Humm.\n"
+    content.vb: >-
+      <JsonProperty("x_merchant_id")>
+
+      Public Property MerchantId As String
+  overload: Yort.Humm.InStore.Infrastructure.RequestBase.MerchantId*
+  attributes:
+  - type: Newtonsoft.Json.JsonPropertyAttribute
+    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: x_merchant_id
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: Yort.Humm.InStore.Infrastructure.RequestBase.DeviceId
+  commentId: P:Yort.Humm.InStore.Infrastructure.RequestBase.DeviceId
+  id: DeviceId
+  parent: Yort.Humm.InStore.Infrastructure.RequestBase
+  langs:
+  - csharp
+  - vb
+  name: DeviceId
+  nameWithType: RequestBase.DeviceId
+  fullName: Yort.Humm.InStore.Infrastructure.RequestBase.DeviceId
+  type: Property
+  source:
+    remote:
+      path: C:/Projects/GitHub/Yort.Humm.InStore/src/Infrastructure/RequestBase.cs
+    id: DeviceId
+    path: Infrastructure/RequestBase.cs
+    startLine: 39
+  assemblies:
+  - Yort.Humm.InStore
+  namespace: Yort.Humm.InStore.Infrastructure
+  summary: "\nRequired. Gets or sets the device identifier for the POS making the request, must match the device id used when the <xref href=\"Yort.Humm.InStore.HummClientConfiguration.DeviceKey\" data-throw-if-not-resolved=\"false\"></xref> in use was requested.\n"
+  remarks: "\n<p>Maximum length of 64 characters.</p>\n"
+  example: []
+  syntax:
+    content: >-
+      [JsonProperty("x_device_id")]
+
+      public string DeviceId { get; set; }
+    parameters: []
+    return:
+      type: System.String
+      description: "\nThe device identifier.\n"
+    content.vb: >-
+      <JsonProperty("x_device_id")>
+
+      Public Property DeviceId As String
+  overload: Yort.Humm.InStore.Infrastructure.RequestBase.DeviceId*
+  attributes:
+  - type: Newtonsoft.Json.JsonPropertyAttribute
+    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: x_device_id
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: Yort.Humm.InStore.Infrastructure.RequestBase.PosVersion
+  commentId: P:Yort.Humm.InStore.Infrastructure.RequestBase.PosVersion
+  id: PosVersion
+  parent: Yort.Humm.InStore.Infrastructure.RequestBase
+  langs:
+  - csharp
+  - vb
+  name: PosVersion
+  nameWithType: RequestBase.PosVersion
+  fullName: Yort.Humm.InStore.Infrastructure.RequestBase.PosVersion
+  type: Property
+  source:
+    remote:
+      path: C:/Projects/GitHub/Yort.Humm.InStore/src/Infrastructure/RequestBase.cs
+    id: PosVersion
+    path: Infrastructure/RequestBase.cs
+    startLine: 50
+  assemblies:
+  - Yort.Humm.InStore
+  namespace: Yort.Humm.InStore.Infrastructure
+  summary: "\nRequired. Gets or sets the POS version.\n"
+  remarks: "\n<p>Maximum length of 64 characters.</p>\n"
+  example: []
+  syntax:
+    content: >-
+      [JsonProperty("x_firmware_version")]
+
+      public string PosVersion { get; set; }
+    parameters: []
+    return:
+      type: System.String
+      description: "\nThe POS version.\n"
+    content.vb: >-
+      <JsonProperty("x_firmware_version")>
+
+      Public Property PosVersion As String
+  overload: Yort.Humm.InStore.Infrastructure.RequestBase.PosVersion*
+  attributes:
+  - type: Newtonsoft.Json.JsonPropertyAttribute
+    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: x_firmware_version
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: Yort.Humm.InStore.Infrastructure.RequestBase.OperatorId
+  commentId: P:Yort.Humm.InStore.Infrastructure.RequestBase.OperatorId
+  id: OperatorId
+  parent: Yort.Humm.InStore.Infrastructure.RequestBase
+  langs:
+  - csharp
+  - vb
+  name: OperatorId
+  nameWithType: RequestBase.OperatorId
+  fullName: Yort.Humm.InStore.Infrastructure.RequestBase.OperatorId
+  type: Property
+  source:
+    remote:
+      path: C:/Projects/GitHub/Yort.Humm.InStore/src/Infrastructure/RequestBase.cs
+    id: OperatorId
+    path: Infrastructure/RequestBase.cs
+    startLine: 62
+  assemblies:
+  - Yort.Humm.InStore
+  namespace: Yort.Humm.InStore.Infrastructure
+  summary: "\nGets or sets the unique identifier of the POS operator.\n"
+  remarks: "\n<p>Maximum length of 64 characters.</p>\n"
+  example: []
+  syntax:
+    content: >-
+      [JsonProperty("x_operator_id")]
+
+      public string OperatorId { get; set; }
+    parameters: []
+    return:
+      type: System.String
+      description: "\nThe operator identifier.\n"
+    content.vb: >-
+      <JsonProperty("x_operator_id")>
+
+      Public Property OperatorId As String
+  overload: Yort.Humm.InStore.Infrastructure.RequestBase.OperatorId*
+  attributes:
+  - type: Newtonsoft.Json.JsonPropertyAttribute
+    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: x_operator_id
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: Yort.Humm.InStore.Infrastructure.RequestBase.TrackingData
+  commentId: P:Yort.Humm.InStore.Infrastructure.RequestBase.TrackingData
+  id: TrackingData
+  parent: Yort.Humm.InStore.Infrastructure.RequestBase
+  langs:
+  - csharp
+  - vb
+  name: TrackingData
+  nameWithType: RequestBase.TrackingData
+  fullName: Yort.Humm.InStore.Infrastructure.RequestBase.TrackingData
+  type: Property
+  source:
+    remote:
+      path: C:/Projects/GitHub/Yort.Humm.InStore/src/Infrastructure/RequestBase.cs
+    id: TrackingData
+    path: Infrastructure/RequestBase.cs
+    startLine: 77
+  assemblies:
+  - Yort.Humm.InStore
+  namespace: Yort.Humm.InStore.Infrastructure
+  summary: "\nOptional. Gets or sets custom information to return in the response.\n"
+  remarks: "\n<p>Tracking data can be used by the POS to provide additional information to return with the response, which can be \nuseful for mapping responses back to specific clients/payments or managing other state.</p>\n<p>Can be set to null (and should be if there is no tracking data). Null is the default value unless explicitly initialised to a new dictionary instance.</p>\n<p>Limit of 1000000 items.</p>\n"
+  example: []
+  syntax:
+    content: >-
+      [JsonProperty("tracking_data")]
+
+      public Dictionary<string, string> TrackingData { get; set; }
+    parameters: []
+    return:
+      type: System.Collections.Generic.Dictionary{System.String,System.String}
+      description: "\nA dictionary of strings containing the tracking data.\n"
+    content.vb: >-
+      <JsonProperty("tracking_data")>
+
+      Public Property TrackingData As Dictionary(Of String, String)
+  overload: Yort.Humm.InStore.Infrastructure.RequestBase.TrackingData*
+  attributes:
+  - type: Newtonsoft.Json.JsonPropertyAttribute
+    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: tracking_data
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: Yort.Humm.InStore.Infrastructure.RequestBase.Validate
+  commentId: M:Yort.Humm.InStore.Infrastructure.RequestBase.Validate
+  id: Validate
+  parent: Yort.Humm.InStore.Infrastructure.RequestBase
+  langs:
+  - csharp
+  - vb
+  name: Validate()
+  nameWithType: RequestBase.Validate()
+  fullName: Yort.Humm.InStore.Infrastructure.RequestBase.Validate()
+  type: Method
+  source:
+    remote:
+      path: C:/Projects/GitHub/Yort.Humm.InStore/src/Infrastructure/RequestBase.cs
+    id: Validate
+    path: Infrastructure/RequestBase.cs
+    startLine: 97
+  assemblies:
+  - Yort.Humm.InStore
+  namespace: Yort.Humm.InStore.Infrastructure
+  summary: "\nValidates this instance.\n"
+  remarks: "\n<p>Ensures that <xref href=\"Yort.Humm.InStore.Infrastructure.RequestBase.MerchantId\" data-throw-if-not-resolved=\"false\"></xref>, <xref href=\"Yort.Humm.InStore.Infrastructure.RequestBase.DeviceId\" data-throw-if-not-resolved=\"false\"></xref>, <xref href=\"Yort.Humm.InStore.Infrastructure.RequestBase.PosVersion\" data-throw-if-not-resolved=\"false\"></xref> and <xref href=\"Yort.Humm.InStore.Infrastructure.RequestBase.OperatorId\" data-throw-if-not-resolved=\"false\"></xref> are not null, empty string or only whitespace.\nAlso ensure no property is larger than it&apos;s maximum allowed length (see individual property notes for details).\n</p>\n"
+  example: []
+  syntax:
+    content: public virtual void Validate()
+    content.vb: Public Overridable Sub Validate
+  overload: Yort.Humm.InStore.Infrastructure.RequestBase.Validate*
+  modifiers.csharp:
+  - public
+  - virtual
+  modifiers.vb:
+  - Public
+  - Overridable
+references:
+- uid: Yort.Humm.InStore.HummClientConfiguration
+  commentId: T:Yort.Humm.InStore.HummClientConfiguration
+  parent: Yort.Humm.InStore
+  name: HummClientConfiguration
+  nameWithType: HummClientConfiguration
+  fullName: Yort.Humm.InStore.HummClientConfiguration
+- uid: Yort.Humm.InStore.HummClient
+  commentId: T:Yort.Humm.InStore.HummClient
+  name: HummClient
+  nameWithType: HummClient
+  fullName: Yort.Humm.InStore.HummClient
+- uid: Yort.Humm.InStore.Infrastructure
+  commentId: N:Yort.Humm.InStore.Infrastructure
+  name: Yort.Humm.InStore.Infrastructure
+  nameWithType: Yort.Humm.InStore.Infrastructure
+  fullName: Yort.Humm.InStore.Infrastructure
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Yort.Humm.InStore
+  commentId: N:Yort.Humm.InStore
+  name: Yort.Humm.InStore
+  nameWithType: Yort.Humm.InStore
+  fullName: Yort.Humm.InStore
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: Yort.Humm.InStore.Infrastructure.RequestBase.MerchantId*
+  commentId: Overload:Yort.Humm.InStore.Infrastructure.RequestBase.MerchantId
+  name: MerchantId
+  nameWithType: RequestBase.MerchantId
+  fullName: Yort.Humm.InStore.Infrastructure.RequestBase.MerchantId
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: Yort.Humm.InStore.HummClientConfiguration.DeviceKey
+  commentId: P:Yort.Humm.InStore.HummClientConfiguration.DeviceKey
+  isExternal: true
+- uid: Yort.Humm.InStore.Infrastructure.RequestBase.DeviceId*
+  commentId: Overload:Yort.Humm.InStore.Infrastructure.RequestBase.DeviceId
+  name: DeviceId
+  nameWithType: RequestBase.DeviceId
+  fullName: Yort.Humm.InStore.Infrastructure.RequestBase.DeviceId
+- uid: Yort.Humm.InStore.Infrastructure.RequestBase.PosVersion*
+  commentId: Overload:Yort.Humm.InStore.Infrastructure.RequestBase.PosVersion
+  name: PosVersion
+  nameWithType: RequestBase.PosVersion
+  fullName: Yort.Humm.InStore.Infrastructure.RequestBase.PosVersion
+- uid: Yort.Humm.InStore.Infrastructure.RequestBase.OperatorId*
+  commentId: Overload:Yort.Humm.InStore.Infrastructure.RequestBase.OperatorId
+  name: OperatorId
+  nameWithType: RequestBase.OperatorId
+  fullName: Yort.Humm.InStore.Infrastructure.RequestBase.OperatorId
+- uid: Yort.Humm.InStore.Infrastructure.RequestBase.TrackingData*
+  commentId: Overload:Yort.Humm.InStore.Infrastructure.RequestBase.TrackingData
+  name: TrackingData
+  nameWithType: RequestBase.TrackingData
+  fullName: Yort.Humm.InStore.Infrastructure.RequestBase.TrackingData
+- uid: System.Collections.Generic.Dictionary{System.String,System.String}
+  commentId: T:System.Collections.Generic.Dictionary{System.String,System.String}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.Dictionary`2
+  name: Dictionary<String, String>
+  nameWithType: Dictionary<String, String>
+  fullName: System.Collections.Generic.Dictionary<System.String, System.String>
+  nameWithType.vb: Dictionary(Of String, String)
+  fullName.vb: System.Collections.Generic.Dictionary(Of System.String, System.String)
+  name.vb: Dictionary(Of String, String)
+  spec.csharp:
+  - uid: System.Collections.Generic.Dictionary`2
+    name: Dictionary
+    nameWithType: Dictionary
+    fullName: System.Collections.Generic.Dictionary
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.Dictionary`2
+    name: Dictionary
+    nameWithType: Dictionary
+    fullName: System.Collections.Generic.Dictionary
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Generic.Dictionary`2
+  commentId: T:System.Collections.Generic.Dictionary`2
+  isExternal: true
+  name: Dictionary<TKey, TValue>
+  nameWithType: Dictionary<TKey, TValue>
+  fullName: System.Collections.Generic.Dictionary<TKey, TValue>
+  nameWithType.vb: Dictionary(Of TKey, TValue)
+  fullName.vb: System.Collections.Generic.Dictionary(Of TKey, TValue)
+  name.vb: Dictionary(Of TKey, TValue)
+  spec.csharp:
+  - uid: System.Collections.Generic.Dictionary`2
+    name: Dictionary
+    nameWithType: Dictionary
+    fullName: System.Collections.Generic.Dictionary
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TKey
+    nameWithType: TKey
+    fullName: TKey
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TValue
+    nameWithType: TValue
+    fullName: TValue
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.Dictionary`2
+    name: Dictionary
+    nameWithType: Dictionary
+    fullName: System.Collections.Generic.Dictionary
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TKey
+    nameWithType: TKey
+    fullName: TKey
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TValue
+    nameWithType: TValue
+    fullName: TValue
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: true
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
+- uid: Yort.Humm.InStore.Infrastructure.RequestBase.MerchantId
+  commentId: P:Yort.Humm.InStore.Infrastructure.RequestBase.MerchantId
+  parent: Yort.Humm.InStore.Infrastructure.RequestBase
+  name: MerchantId
+  nameWithType: RequestBase.MerchantId
+  fullName: Yort.Humm.InStore.Infrastructure.RequestBase.MerchantId
+- uid: Yort.Humm.InStore.Infrastructure.RequestBase.DeviceId
+  commentId: P:Yort.Humm.InStore.Infrastructure.RequestBase.DeviceId
+  parent: Yort.Humm.InStore.Infrastructure.RequestBase
+  name: DeviceId
+  nameWithType: RequestBase.DeviceId
+  fullName: Yort.Humm.InStore.Infrastructure.RequestBase.DeviceId
+- uid: Yort.Humm.InStore.Infrastructure.RequestBase.PosVersion
+  commentId: P:Yort.Humm.InStore.Infrastructure.RequestBase.PosVersion
+  parent: Yort.Humm.InStore.Infrastructure.RequestBase
+  name: PosVersion
+  nameWithType: RequestBase.PosVersion
+  fullName: Yort.Humm.InStore.Infrastructure.RequestBase.PosVersion
+- uid: Yort.Humm.InStore.Infrastructure.RequestBase.OperatorId
+  commentId: P:Yort.Humm.InStore.Infrastructure.RequestBase.OperatorId
+  parent: Yort.Humm.InStore.Infrastructure.RequestBase
+  name: OperatorId
+  nameWithType: RequestBase.OperatorId
+  fullName: Yort.Humm.InStore.Infrastructure.RequestBase.OperatorId
+- uid: Yort.Humm.InStore.Infrastructure.RequestBase.Validate*
+  commentId: Overload:Yort.Humm.InStore.Infrastructure.RequestBase.Validate
+  name: Validate
+  nameWithType: RequestBase.Validate
+  fullName: Yort.Humm.InStore.Infrastructure.RequestBase.Validate
+- uid: Yort.Humm.InStore.Infrastructure.RequestBase
+  commentId: T:Yort.Humm.InStore.Infrastructure.RequestBase
+  parent: Yort.Humm.InStore.Infrastructure
+  name: RequestBase
+  nameWithType: RequestBase
+  fullName: Yort.Humm.InStore.Infrastructure.RequestBase

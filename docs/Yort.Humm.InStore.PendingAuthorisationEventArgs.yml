@@ -1,0 +1,683 @@
+### YamlMime:ManagedReference
+items:
+- uid: Yort.Humm.InStore.PendingAuthorisationEventArgs
+  commentId: T:Yort.Humm.InStore.PendingAuthorisationEventArgs
+  id: PendingAuthorisationEventArgs
+  parent: Yort.Humm.InStore
+  children:
+  - Yort.Humm.InStore.PendingAuthorisationEventArgs.#ctor(System.String,System.Int32,System.Collections.Generic.Dictionary{System.String,System.String})
+  - Yort.Humm.InStore.PendingAuthorisationEventArgs.ClientReference
+  - Yort.Humm.InStore.PendingAuthorisationEventArgs.RetryDuration
+  - Yort.Humm.InStore.PendingAuthorisationEventArgs.TrackingData
+  langs:
+  - csharp
+  - vb
+  name: PendingAuthorisationEventArgs
+  nameWithType: PendingAuthorisationEventArgs
+  fullName: Yort.Humm.InStore.PendingAuthorisationEventArgs
+  type: Class
+  source:
+    remote:
+      path: C:/Projects/GitHub/Yort.Humm.InStore/src/PendingAuthorisationEventArgs.cs
+    id: PendingAuthorisationEventArgs
+    path: PendingAuthorisationEventArgs.cs
+    startLine: 10
+  assemblies:
+  - Yort.Humm.InStore
+  namespace: Yort.Humm.InStore
+  summary: "\nArguments for the <xref href=\"Yort.Humm.InStore.HummClient.PendingAuthorisation\" data-throw-if-not-resolved=\"false\"></xref> event.\n"
+  example: []
+  syntax:
+    content: 'public class PendingAuthorisationEventArgs : EventArgs'
+    content.vb: >-
+      Public Class PendingAuthorisationEventArgs
+          Inherits EventArgs
+  seealso:
+  - linkId: System.EventArgs
+    commentId: T:System.EventArgs
+  inheritance:
+  - System.Object
+  - System.EventArgs
+  inheritedMembers:
+  - System.EventArgs.Empty
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: Yort.Humm.InStore.PendingAuthorisationEventArgs.#ctor(System.String,System.Int32,System.Collections.Generic.Dictionary{System.String,System.String})
+  commentId: M:Yort.Humm.InStore.PendingAuthorisationEventArgs.#ctor(System.String,System.Int32,System.Collections.Generic.Dictionary{System.String,System.String})
+  id: '#ctor(System.String,System.Int32,System.Collections.Generic.Dictionary{System.String,System.String})'
+  parent: Yort.Humm.InStore.PendingAuthorisationEventArgs
+  langs:
+  - csharp
+  - vb
+  name: PendingAuthorisationEventArgs(String, Int32, Dictionary<String, String>)
+  nameWithType: PendingAuthorisationEventArgs.PendingAuthorisationEventArgs(String, Int32, Dictionary<String, String>)
+  fullName: Yort.Humm.InStore.PendingAuthorisationEventArgs.PendingAuthorisationEventArgs(System.String, System.Int32, System.Collections.Generic.Dictionary<System.String, System.String>)
+  type: Constructor
+  source:
+    remote:
+      path: C:/Projects/GitHub/Yort.Humm.InStore/src/PendingAuthorisationEventArgs.cs
+    id: .ctor
+    path: PendingAuthorisationEventArgs.cs
+    startLine: 22
+  assemblies:
+  - Yort.Humm.InStore
+  namespace: Yort.Humm.InStore
+  summary: "\nInitializes a new instance of the <xref href=\"Yort.Humm.InStore.PendingAuthorisationEventArgs\" data-throw-if-not-resolved=\"false\"></xref> class.\n"
+  example: []
+  syntax:
+    content: public PendingAuthorisationEventArgs(string clientReference, int retryDuration, Dictionary<string, string> trackingData)
+    parameters:
+    - id: clientReference
+      type: System.String
+      description: The client reference of the request associated with this event.
+    - id: retryDuration
+      type: System.Int32
+      description: The minimum amount of time, in seconds, to wait before re-checking the request status.
+    - id: trackingData
+      type: System.Collections.Generic.Dictionary{System.String,System.String}
+      description: The tracking data associated with the original request, if any (may be null).
+    content.vb: Public Sub New(clientReference As String, retryDuration As Integer, trackingData As Dictionary(Of String, String))
+  overload: Yort.Humm.InStore.PendingAuthorisationEventArgs.#ctor*
+  nameWithType.vb: PendingAuthorisationEventArgs.PendingAuthorisationEventArgs(String, Int32, Dictionary(Of String, String))
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: Yort.Humm.InStore.PendingAuthorisationEventArgs.PendingAuthorisationEventArgs(System.String, System.Int32, System.Collections.Generic.Dictionary(Of System.String, System.String))
+  name.vb: PendingAuthorisationEventArgs(String, Int32, Dictionary(Of String, String))
+- uid: Yort.Humm.InStore.PendingAuthorisationEventArgs.ClientReference
+  commentId: P:Yort.Humm.InStore.PendingAuthorisationEventArgs.ClientReference
+  id: ClientReference
+  parent: Yort.Humm.InStore.PendingAuthorisationEventArgs
+  langs:
+  - csharp
+  - vb
+  name: ClientReference
+  nameWithType: PendingAuthorisationEventArgs.ClientReference
+  fullName: Yort.Humm.InStore.PendingAuthorisationEventArgs.ClientReference
+  type: Property
+  source:
+    remote:
+      path: C:/Projects/GitHub/Yort.Humm.InStore/src/PendingAuthorisationEventArgs.cs
+    id: ClientReference
+    path: PendingAuthorisationEventArgs.cs
+    startLine: 35
+  assemblies:
+  - Yort.Humm.InStore
+  namespace: Yort.Humm.InStore
+  summary: "\nReturns the client reference of the request that caused this event.\n"
+  example: []
+  syntax:
+    content: public string ClientReference { get; }
+    parameters: []
+    return:
+      type: System.String
+      description: "\nThe client reference of the <xref href=\"Yort.Humm.InStore.ProcessAuthorisationRequest\" data-throw-if-not-resolved=\"false\"></xref> that is pending.\n"
+    content.vb: Public ReadOnly Property ClientReference As String
+  overload: Yort.Humm.InStore.PendingAuthorisationEventArgs.ClientReference*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: Yort.Humm.InStore.PendingAuthorisationEventArgs.RetryDuration
+  commentId: P:Yort.Humm.InStore.PendingAuthorisationEventArgs.RetryDuration
+  id: RetryDuration
+  parent: Yort.Humm.InStore.PendingAuthorisationEventArgs
+  langs:
+  - csharp
+  - vb
+  name: RetryDuration
+  nameWithType: PendingAuthorisationEventArgs.RetryDuration
+  fullName: Yort.Humm.InStore.PendingAuthorisationEventArgs.RetryDuration
+  type: Property
+  source:
+    remote:
+      path: C:/Projects/GitHub/Yort.Humm.InStore/src/PendingAuthorisationEventArgs.cs
+    id: RetryDuration
+    path: PendingAuthorisationEventArgs.cs
+    startLine: 42
+  assemblies:
+  - Yort.Humm.InStore
+  namespace: Yort.Humm.InStore
+  summary: "\nReturns the minimum number of seconds to wait until re-checking the request status.\n"
+  example: []
+  syntax:
+    content: public int RetryDuration { get; }
+    parameters: []
+    return:
+      type: System.Int32
+      description: "\nThe duration of the retry interval (in seconds).\n"
+    content.vb: Public ReadOnly Property RetryDuration As Integer
+  overload: Yort.Humm.InStore.PendingAuthorisationEventArgs.RetryDuration*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: Yort.Humm.InStore.PendingAuthorisationEventArgs.TrackingData
+  commentId: P:Yort.Humm.InStore.PendingAuthorisationEventArgs.TrackingData
+  id: TrackingData
+  parent: Yort.Humm.InStore.PendingAuthorisationEventArgs
+  langs:
+  - csharp
+  - vb
+  name: TrackingData
+  nameWithType: PendingAuthorisationEventArgs.TrackingData
+  fullName: Yort.Humm.InStore.PendingAuthorisationEventArgs.TrackingData
+  type: Property
+  source:
+    remote:
+      path: C:/Projects/GitHub/Yort.Humm.InStore/src/PendingAuthorisationEventArgs.cs
+    id: TrackingData
+    path: PendingAuthorisationEventArgs.cs
+    startLine: 49
+  assemblies:
+  - Yort.Humm.InStore
+  namespace: Yort.Humm.InStore
+  summary: "\nReturns the tracking data associated with the original request, if any (may be null).\n"
+  example: []
+  syntax:
+    content: public Dictionary<string, string> TrackingData { get; }
+    parameters: []
+    return:
+      type: System.Collections.Generic.Dictionary{System.String,System.String}
+      description: "\nThe tracking data from the original <xref href=\"Yort.Humm.InStore.ProcessAuthorisationRequest\" data-throw-if-not-resolved=\"false\"></xref>.\n"
+    content.vb: Public ReadOnly Property TrackingData As Dictionary(Of String, String)
+  overload: Yort.Humm.InStore.PendingAuthorisationEventArgs.TrackingData*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+references:
+- uid: Yort.Humm.InStore.HummClient.PendingAuthorisation
+  commentId: E:Yort.Humm.InStore.HummClient.PendingAuthorisation
+  isExternal: true
+- uid: System.EventArgs
+  commentId: T:System.EventArgs
+  parent: System
+  isExternal: true
+  name: EventArgs
+  nameWithType: EventArgs
+  fullName: System.EventArgs
+- uid: Yort.Humm.InStore
+  commentId: N:Yort.Humm.InStore
+  name: Yort.Humm.InStore
+  nameWithType: Yort.Humm.InStore
+  fullName: Yort.Humm.InStore
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: System.EventArgs.Empty
+  commentId: F:System.EventArgs.Empty
+  parent: System.EventArgs
+  isExternal: true
+  name: Empty
+  nameWithType: EventArgs.Empty
+  fullName: System.EventArgs.Empty
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: Yort.Humm.InStore.PendingAuthorisationEventArgs
+  commentId: T:Yort.Humm.InStore.PendingAuthorisationEventArgs
+  name: PendingAuthorisationEventArgs
+  nameWithType: PendingAuthorisationEventArgs
+  fullName: Yort.Humm.InStore.PendingAuthorisationEventArgs
+- uid: Yort.Humm.InStore.PendingAuthorisationEventArgs.#ctor*
+  commentId: Overload:Yort.Humm.InStore.PendingAuthorisationEventArgs.#ctor
+  name: PendingAuthorisationEventArgs
+  nameWithType: PendingAuthorisationEventArgs.PendingAuthorisationEventArgs
+  fullName: Yort.Humm.InStore.PendingAuthorisationEventArgs.PendingAuthorisationEventArgs
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  name: Int32
+  nameWithType: Int32
+  fullName: System.Int32
+- uid: System.Collections.Generic.Dictionary{System.String,System.String}
+  commentId: T:System.Collections.Generic.Dictionary{System.String,System.String}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.Dictionary`2
+  name: Dictionary<String, String>
+  nameWithType: Dictionary<String, String>
+  fullName: System.Collections.Generic.Dictionary<System.String, System.String>
+  nameWithType.vb: Dictionary(Of String, String)
+  fullName.vb: System.Collections.Generic.Dictionary(Of System.String, System.String)
+  name.vb: Dictionary(Of String, String)
+  spec.csharp:
+  - uid: System.Collections.Generic.Dictionary`2
+    name: Dictionary
+    nameWithType: Dictionary
+    fullName: System.Collections.Generic.Dictionary
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.Dictionary`2
+    name: Dictionary
+    nameWithType: Dictionary
+    fullName: System.Collections.Generic.Dictionary
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Generic.Dictionary`2
+  commentId: T:System.Collections.Generic.Dictionary`2
+  isExternal: true
+  name: Dictionary<TKey, TValue>
+  nameWithType: Dictionary<TKey, TValue>
+  fullName: System.Collections.Generic.Dictionary<TKey, TValue>
+  nameWithType.vb: Dictionary(Of TKey, TValue)
+  fullName.vb: System.Collections.Generic.Dictionary(Of TKey, TValue)
+  name.vb: Dictionary(Of TKey, TValue)
+  spec.csharp:
+  - uid: System.Collections.Generic.Dictionary`2
+    name: Dictionary
+    nameWithType: Dictionary
+    fullName: System.Collections.Generic.Dictionary
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TKey
+    nameWithType: TKey
+    fullName: TKey
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TValue
+    nameWithType: TValue
+    fullName: TValue
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.Dictionary`2
+    name: Dictionary
+    nameWithType: Dictionary
+    fullName: System.Collections.Generic.Dictionary
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TKey
+    nameWithType: TKey
+    fullName: TKey
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TValue
+    nameWithType: TValue
+    fullName: TValue
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: true
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
+- uid: Yort.Humm.InStore.ProcessAuthorisationRequest
+  commentId: T:Yort.Humm.InStore.ProcessAuthorisationRequest
+  parent: Yort.Humm.InStore
+  name: ProcessAuthorisationRequest
+  nameWithType: ProcessAuthorisationRequest
+  fullName: Yort.Humm.InStore.ProcessAuthorisationRequest
+- uid: Yort.Humm.InStore.PendingAuthorisationEventArgs.ClientReference*
+  commentId: Overload:Yort.Humm.InStore.PendingAuthorisationEventArgs.ClientReference
+  name: ClientReference
+  nameWithType: PendingAuthorisationEventArgs.ClientReference
+  fullName: Yort.Humm.InStore.PendingAuthorisationEventArgs.ClientReference
+- uid: Yort.Humm.InStore.PendingAuthorisationEventArgs.RetryDuration*
+  commentId: Overload:Yort.Humm.InStore.PendingAuthorisationEventArgs.RetryDuration
+  name: RetryDuration
+  nameWithType: PendingAuthorisationEventArgs.RetryDuration
+  fullName: Yort.Humm.InStore.PendingAuthorisationEventArgs.RetryDuration
+- uid: Yort.Humm.InStore.PendingAuthorisationEventArgs.TrackingData*
+  commentId: Overload:Yort.Humm.InStore.PendingAuthorisationEventArgs.TrackingData
+  name: TrackingData
+  nameWithType: PendingAuthorisationEventArgs.TrackingData
+  fullName: Yort.Humm.InStore.PendingAuthorisationEventArgs.TrackingData

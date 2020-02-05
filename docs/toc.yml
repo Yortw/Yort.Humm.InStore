@@ -1,0 +1,57 @@
+### YamlMime:TableOfContent
+- uid: Yort.Humm.InStore
+  name: Yort.Humm.InStore
+  items:
+  - uid: Yort.Humm.InStore.CreateKeyRequest
+    name: CreateKeyRequest
+  - uid: Yort.Humm.InStore.CreateKeyResponse
+    name: CreateKeyResponse
+  - uid: Yort.Humm.InStore.HummClient
+    name: HummClient
+  - uid: Yort.Humm.InStore.HummClientConfiguration
+    name: HummClientConfiguration
+  - uid: Yort.Humm.InStore.HummEnvironment
+    name: HummEnvironment
+  - uid: Yort.Humm.InStore.HummResponseSignatureException
+    name: HummResponseSignatureException
+  - uid: Yort.Humm.InStore.IHummClient
+    name: IHummClient
+  - uid: Yort.Humm.InStore.InviteRequest
+    name: InviteRequest
+  - uid: Yort.Humm.InStore.InviteResponse
+    name: InviteResponse
+  - uid: Yort.Humm.InStore.PendingAuthorisationEventArgs
+    name: PendingAuthorisationEventArgs
+  - uid: Yort.Humm.InStore.ProcessAuthorisationRequest
+    name: ProcessAuthorisationRequest
+  - uid: Yort.Humm.InStore.ProcessAuthorisationResponse
+    name: ProcessAuthorisationResponse
+  - uid: Yort.Humm.InStore.ProcessSalesAdjustmentRequest
+    name: ProcessSalesAdjustmentRequest
+  - uid: Yort.Humm.InStore.ProcessSalesAdjustmentResponse
+    name: ProcessSalesAdjustmentResponse
+  - uid: Yort.Humm.InStore.ProcessSalesAdjustmentReversalRequest
+    name: ProcessSalesAdjustmentReversalRequest
+  - uid: Yort.Humm.InStore.ProcessSalesAdjustmentReversalResponse
+    name: ProcessSalesAdjustmentReversalResponse
+  - uid: Yort.Humm.InStore.PurchaseItemsCollection
+    name: PurchaseItemsCollection
+  - uid: Yort.Humm.InStore.RequestStates
+    name: RequestStates
+  - uid: Yort.Humm.InStore.SendReceiptRequest
+    name: SendReceiptRequest
+  - uid: Yort.Humm.InStore.SendReceiptResponse
+    name: SendReceiptResponse
+- uid: Yort.Humm.InStore.Infrastructure
+  name: Yort.Humm.InStore.Infrastructure
+  items:
+  - uid: Yort.Humm.InStore.Infrastructure.Hmac256SignatureGenerator
+    name: Hmac256SignatureGenerator
+  - uid: Yort.Humm.InStore.Infrastructure.ISignatureGenerator
+    name: ISignatureGenerator
+  - uid: Yort.Humm.InStore.Infrastructure.RequestBase
+    name: RequestBase
+  - uid: Yort.Humm.InStore.Infrastructure.ResponseBase
+    name: ResponseBase
+  - uid: Yort.Humm.InStore.Infrastructure.SignedRequestWriter
+    name: SignedRequestWriter

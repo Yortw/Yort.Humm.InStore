@@ -1,0 +1,649 @@
+### YamlMime:ManagedReference
+items:
+- uid: Yort.Humm.InStore.Infrastructure.SignedRequestWriter
+  commentId: T:Yort.Humm.InStore.Infrastructure.SignedRequestWriter
+  id: SignedRequestWriter
+  parent: Yort.Humm.InStore.Infrastructure
+  children:
+  - Yort.Humm.InStore.Infrastructure.SignedRequestWriter.#ctor(Yort.Humm.InStore.Infrastructure.ISignatureGenerator)
+  - Yort.Humm.InStore.Infrastructure.SignedRequestWriter.Dispose
+  - Yort.Humm.InStore.Infrastructure.SignedRequestWriter.WriteRequest``1(``0)
+  - Yort.Humm.InStore.Infrastructure.SignedRequestWriter.WriteRequest``1(``0,System.IO.Stream)
+  langs:
+  - csharp
+  - vb
+  name: SignedRequestWriter
+  nameWithType: SignedRequestWriter
+  fullName: Yort.Humm.InStore.Infrastructure.SignedRequestWriter
+  type: Class
+  source:
+    remote:
+      path: C:/Projects/GitHub/Yort.Humm.InStore/src/Infrastructure/SignedRequestWriter.cs
+    id: SignedRequestWriter
+    path: Infrastructure/SignedRequestWriter.cs
+    startLine: 14
+  assemblies:
+  - Yort.Humm.InStore
+  namespace: Yort.Humm.InStore.Infrastructure
+  summary: "\nUsed to write a Humm request as json including the relevant signature in the output.\n"
+  example: []
+  syntax:
+    content: 'public sealed class SignedRequestWriter : IDisposable'
+    content.vb: >-
+      Public NotInheritable Class SignedRequestWriter
+          Implements IDisposable
+  seealso:
+  - linkId: System.IDisposable
+    commentId: T:System.IDisposable
+  inheritance:
+  - System.Object
+  implements:
+  - System.IDisposable
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+  modifiers.csharp:
+  - public
+  - sealed
+  - class
+  modifiers.vb:
+  - Public
+  - NotInheritable
+  - Class
+- uid: Yort.Humm.InStore.Infrastructure.SignedRequestWriter.#ctor(Yort.Humm.InStore.Infrastructure.ISignatureGenerator)
+  commentId: M:Yort.Humm.InStore.Infrastructure.SignedRequestWriter.#ctor(Yort.Humm.InStore.Infrastructure.ISignatureGenerator)
+  id: '#ctor(Yort.Humm.InStore.Infrastructure.ISignatureGenerator)'
+  parent: Yort.Humm.InStore.Infrastructure.SignedRequestWriter
+  langs:
+  - csharp
+  - vb
+  name: SignedRequestWriter(ISignatureGenerator)
+  nameWithType: SignedRequestWriter.SignedRequestWriter(ISignatureGenerator)
+  fullName: Yort.Humm.InStore.Infrastructure.SignedRequestWriter.SignedRequestWriter(Yort.Humm.InStore.Infrastructure.ISignatureGenerator)
+  type: Constructor
+  source:
+    remote:
+      path: C:/Projects/GitHub/Yort.Humm.InStore/src/Infrastructure/SignedRequestWriter.cs
+    id: .ctor
+    path: Infrastructure/SignedRequestWriter.cs
+    startLine: 23
+  assemblies:
+  - Yort.Humm.InStore
+  namespace: Yort.Humm.InStore.Infrastructure
+  summary: "\nInitializes a new instance of the <xref href=\"Yort.Humm.InStore.Infrastructure.SignedRequestWriter\" data-throw-if-not-resolved=\"false\"></xref> class.\n"
+  example: []
+  syntax:
+    content: public SignedRequestWriter(ISignatureGenerator signatureGenerator)
+    parameters:
+    - id: signatureGenerator
+      type: Yort.Humm.InStore.Infrastructure.ISignatureGenerator
+      description: The signature generator.
+    content.vb: Public Sub New(signatureGenerator As ISignatureGenerator)
+  overload: Yort.Humm.InStore.Infrastructure.SignedRequestWriter.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: Yort.Humm.InStore.Infrastructure.SignedRequestWriter.WriteRequest``1(``0)
+  commentId: M:Yort.Humm.InStore.Infrastructure.SignedRequestWriter.WriteRequest``1(``0)
+  id: WriteRequest``1(``0)
+  parent: Yort.Humm.InStore.Infrastructure.SignedRequestWriter
+  langs:
+  - csharp
+  - vb
+  name: WriteRequest<T>(T)
+  nameWithType: SignedRequestWriter.WriteRequest<T>(T)
+  fullName: Yort.Humm.InStore.Infrastructure.SignedRequestWriter.WriteRequest<T>(T)
+  type: Method
+  source:
+    remote:
+      path: C:/Projects/GitHub/Yort.Humm.InStore/src/Infrastructure/SignedRequestWriter.cs
+    id: WriteRequest
+    path: Infrastructure/SignedRequestWriter.cs
+    startLine: 39
+  assemblies:
+  - Yort.Humm.InStore
+  namespace: Yort.Humm.InStore.Infrastructure
+  summary: "\nWrites the specified request as to a string and returns the result.\n"
+  example: []
+  syntax:
+    content: >-
+      public string WriteRequest<T>(T request)
+          where T : class
+    parameters:
+    - id: request
+      type: '{T}'
+      description: The request to write.
+    typeParameters:
+    - id: T
+      description: The type of request to be written, must be a .Net reference type.
+    return:
+      type: System.String
+      description: A string containing the request written as json and containing the required digital signature.
+    content.vb: Public Function WriteRequest(Of T As Class)(request As T) As String
+  overload: Yort.Humm.InStore.Infrastructure.SignedRequestWriter.WriteRequest*
+  exceptions:
+  - type: System.ObjectDisposedException
+    commentId: T:System.ObjectDisposedException
+    description: Thrown if this instance is disposed.
+  - type: System.ArgumentNullException
+    commentId: T:System.ArgumentNullException
+    description: Thrown if <code data-dev-comment-type="paramref" class="paramref">request</code> is null.
+  seealso:
+  - linkId: Yort.Humm.InStore.Infrastructure.SignedRequestWriter.WriteRequest``1(``0,System.IO.Stream)
+    commentId: M:Yort.Humm.InStore.Infrastructure.SignedRequestWriter.WriteRequest``1(``0,System.IO.Stream)
+  - linkId: Yort.Humm.InStore.Infrastructure.SignedRequestWriter.Dispose
+    commentId: M:Yort.Humm.InStore.Infrastructure.SignedRequestWriter.Dispose
+  nameWithType.vb: SignedRequestWriter.WriteRequest(Of T)(T)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: Yort.Humm.InStore.Infrastructure.SignedRequestWriter.WriteRequest(Of T)(T)
+  name.vb: WriteRequest(Of T)(T)
+- uid: Yort.Humm.InStore.Infrastructure.SignedRequestWriter.WriteRequest``1(``0,System.IO.Stream)
+  commentId: M:Yort.Humm.InStore.Infrastructure.SignedRequestWriter.WriteRequest``1(``0,System.IO.Stream)
+  id: WriteRequest``1(``0,System.IO.Stream)
+  parent: Yort.Humm.InStore.Infrastructure.SignedRequestWriter
+  langs:
+  - csharp
+  - vb
+  name: WriteRequest<T>(T, Stream)
+  nameWithType: SignedRequestWriter.WriteRequest<T>(T, Stream)
+  fullName: Yort.Humm.InStore.Infrastructure.SignedRequestWriter.WriteRequest<T>(T, System.IO.Stream)
+  type: Method
+  source:
+    remote:
+      path: C:/Projects/GitHub/Yort.Humm.InStore/src/Infrastructure/SignedRequestWriter.cs
+    id: WriteRequest
+    path: Infrastructure/SignedRequestWriter.cs
+    startLine: 59
+  assemblies:
+  - Yort.Humm.InStore
+  namespace: Yort.Humm.InStore.Infrastructure
+  summary: "\nWrites the specified request to the specified stream.\n"
+  example: []
+  syntax:
+    content: >-
+      public void WriteRequest<T>(T request, [ValidatedNotNull] Stream outputStream)
+          where T : class
+    parameters:
+    - id: request
+      type: '{T}'
+      description: The request to write.
+    - id: outputStream
+      type: System.IO.Stream
+      description: The stream to write to.
+      attributes:
+      - type: Ladon.ValidatedNotNullAttribute
+        ctor: Ladon.ValidatedNotNullAttribute.#ctor
+        arguments: []
+    typeParameters:
+    - id: T
+      description: The type of request to be written, must be a .Net reference type.
+    content.vb: Public Sub WriteRequest(Of T As Class)(request As T, outputStream As Stream)
+  overload: Yort.Humm.InStore.Infrastructure.SignedRequestWriter.WriteRequest*
+  exceptions:
+  - type: System.ObjectDisposedException
+    commentId: T:System.ObjectDisposedException
+    description: Thrown if this instance is disposed.
+  - type: System.ArgumentNullException
+    commentId: T:System.ArgumentNullException
+    description: Thrown if <code data-dev-comment-type="paramref" class="paramref">request</code> or <code data-dev-comment-type="paramref" class="paramref">outputStream</code> is null.
+  seealso:
+  - linkId: Yort.Humm.InStore.Infrastructure.SignedRequestWriter.WriteRequest``1(``0)
+    commentId: M:Yort.Humm.InStore.Infrastructure.SignedRequestWriter.WriteRequest``1(``0)
+  - linkId: Yort.Humm.InStore.Infrastructure.SignedRequestWriter.Dispose
+    commentId: M:Yort.Humm.InStore.Infrastructure.SignedRequestWriter.Dispose
+  nameWithType.vb: SignedRequestWriter.WriteRequest(Of T)(T, Stream)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: Yort.Humm.InStore.Infrastructure.SignedRequestWriter.WriteRequest(Of T)(T, System.IO.Stream)
+  name.vb: WriteRequest(Of T)(T, Stream)
+- uid: Yort.Humm.InStore.Infrastructure.SignedRequestWriter.Dispose
+  commentId: M:Yort.Humm.InStore.Infrastructure.SignedRequestWriter.Dispose
+  id: Dispose
+  parent: Yort.Humm.InStore.Infrastructure.SignedRequestWriter
+  langs:
+  - csharp
+  - vb
+  name: Dispose()
+  nameWithType: SignedRequestWriter.Dispose()
+  fullName: Yort.Humm.InStore.Infrastructure.SignedRequestWriter.Dispose()
+  type: Method
+  source:
+    remote:
+      path: C:/Projects/GitHub/Yort.Humm.InStore/src/Infrastructure/SignedRequestWriter.cs
+    id: Dispose
+    path: Infrastructure/SignedRequestWriter.cs
+    startLine: 114
+  assemblies:
+  - Yort.Humm.InStore
+  namespace: Yort.Humm.InStore.Infrastructure
+  summary: "\nPerforms application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.\n"
+  remarks: "\n<p>Will dispose the <xref href=\"Yort.Humm.InStore.Infrastructure.ISignatureGenerator\" data-throw-if-not-resolved=\"false\"></xref> passed into the constructor when this instance was created.</p>\n"
+  example: []
+  syntax:
+    content: public void Dispose()
+    content.vb: Public Sub Dispose
+  overload: Yort.Humm.InStore.Infrastructure.SignedRequestWriter.Dispose*
+  implements:
+  - System.IDisposable.Dispose
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+references:
+- uid: System.IDisposable
+  commentId: T:System.IDisposable
+  parent: System
+  isExternal: true
+  name: IDisposable
+  nameWithType: IDisposable
+  fullName: System.IDisposable
+- uid: Yort.Humm.InStore.Infrastructure
+  commentId: N:Yort.Humm.InStore.Infrastructure
+  name: Yort.Humm.InStore.Infrastructure
+  nameWithType: Yort.Humm.InStore.Infrastructure
+  fullName: Yort.Humm.InStore.Infrastructure
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: Yort.Humm.InStore.Infrastructure.SignedRequestWriter
+  commentId: T:Yort.Humm.InStore.Infrastructure.SignedRequestWriter
+  name: SignedRequestWriter
+  nameWithType: SignedRequestWriter
+  fullName: Yort.Humm.InStore.Infrastructure.SignedRequestWriter
+- uid: Yort.Humm.InStore.Infrastructure.SignedRequestWriter.#ctor*
+  commentId: Overload:Yort.Humm.InStore.Infrastructure.SignedRequestWriter.#ctor
+  name: SignedRequestWriter
+  nameWithType: SignedRequestWriter.SignedRequestWriter
+  fullName: Yort.Humm.InStore.Infrastructure.SignedRequestWriter.SignedRequestWriter
+- uid: Yort.Humm.InStore.Infrastructure.ISignatureGenerator
+  commentId: T:Yort.Humm.InStore.Infrastructure.ISignatureGenerator
+  parent: Yort.Humm.InStore.Infrastructure
+  name: ISignatureGenerator
+  nameWithType: ISignatureGenerator
+  fullName: Yort.Humm.InStore.Infrastructure.ISignatureGenerator
+- uid: Yort.Humm.InStore.Infrastructure.SignedRequestWriter.WriteRequest``1(``0,System.IO.Stream)
+  commentId: M:Yort.Humm.InStore.Infrastructure.SignedRequestWriter.WriteRequest``1(``0,System.IO.Stream)
+  isExternal: true
+- uid: Yort.Humm.InStore.Infrastructure.SignedRequestWriter.Dispose
+  commentId: M:Yort.Humm.InStore.Infrastructure.SignedRequestWriter.Dispose
+  isExternal: true
+- uid: System.ObjectDisposedException
+  commentId: T:System.ObjectDisposedException
+  isExternal: true
+- uid: System.ArgumentNullException
+  commentId: T:System.ArgumentNullException
+  isExternal: true
+- uid: Yort.Humm.InStore.Infrastructure.SignedRequestWriter.WriteRequest*
+  commentId: Overload:Yort.Humm.InStore.Infrastructure.SignedRequestWriter.WriteRequest
+  name: WriteRequest
+  nameWithType: SignedRequestWriter.WriteRequest
+  fullName: Yort.Humm.InStore.Infrastructure.SignedRequestWriter.WriteRequest
+- uid: '{T}'
+  commentId: '!:T'
+  definition: T
+  name: T
+  nameWithType: T
+  fullName: T
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: T
+  name: T
+  nameWithType: T
+  fullName: T
+- uid: Yort.Humm.InStore.Infrastructure.SignedRequestWriter.WriteRequest``1(``0)
+  commentId: M:Yort.Humm.InStore.Infrastructure.SignedRequestWriter.WriteRequest``1(``0)
+  isExternal: true
+- uid: System.IO.Stream
+  commentId: T:System.IO.Stream
+  parent: System.IO
+  isExternal: true
+  name: Stream
+  nameWithType: Stream
+  fullName: System.IO.Stream
+- uid: System.IO
+  commentId: N:System.IO
+  isExternal: true
+  name: System.IO
+  nameWithType: System.IO
+  fullName: System.IO
+- uid: Yort.Humm.InStore.Infrastructure.SignedRequestWriter.Dispose*
+  commentId: Overload:Yort.Humm.InStore.Infrastructure.SignedRequestWriter.Dispose
+  name: Dispose
+  nameWithType: SignedRequestWriter.Dispose
+  fullName: Yort.Humm.InStore.Infrastructure.SignedRequestWriter.Dispose
+- uid: System.IDisposable.Dispose
+  commentId: M:System.IDisposable.Dispose
+  parent: System.IDisposable
+  isExternal: true
+  name: Dispose()
+  nameWithType: IDisposable.Dispose()
+  fullName: System.IDisposable.Dispose()
+  spec.csharp:
+  - uid: System.IDisposable.Dispose
+    name: Dispose
+    nameWithType: IDisposable.Dispose
+    fullName: System.IDisposable.Dispose
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.IDisposable.Dispose
+    name: Dispose
+    nameWithType: IDisposable.Dispose
+    fullName: System.IDisposable.Dispose
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )

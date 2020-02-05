@@ -1,0 +1,54 @@
+### YamlMime:ManagedReference
+items:
+- uid: Yort.Humm.InStore.Infrastructure
+  commentId: N:Yort.Humm.InStore.Infrastructure
+  id: Yort.Humm.InStore.Infrastructure
+  children:
+  - Yort.Humm.InStore.Infrastructure.Hmac256SignatureGenerator
+  - Yort.Humm.InStore.Infrastructure.ISignatureGenerator
+  - Yort.Humm.InStore.Infrastructure.RequestBase
+  - Yort.Humm.InStore.Infrastructure.ResponseBase
+  - Yort.Humm.InStore.Infrastructure.SignedRequestWriter
+  langs:
+  - csharp
+  - vb
+  name: Yort.Humm.InStore.Infrastructure
+  nameWithType: Yort.Humm.InStore.Infrastructure
+  fullName: Yort.Humm.InStore.Infrastructure
+  type: Namespace
+  assemblies:
+  - Yort.Humm.InStore
+references:
+- uid: Yort.Humm.InStore.Infrastructure.Hmac256SignatureGenerator
+  commentId: T:Yort.Humm.InStore.Infrastructure.Hmac256SignatureGenerator
+  name: Hmac256SignatureGenerator
+  nameWithType: Hmac256SignatureGenerator
+  fullName: Yort.Humm.InStore.Infrastructure.Hmac256SignatureGenerator
+- uid: Yort.Humm.InStore.Infrastructure.ISignatureGenerator
+  commentId: T:Yort.Humm.InStore.Infrastructure.ISignatureGenerator
+  parent: Yort.Humm.InStore.Infrastructure
+  name: ISignatureGenerator
+  nameWithType: ISignatureGenerator
+  fullName: Yort.Humm.InStore.Infrastructure.ISignatureGenerator
+- uid: Yort.Humm.InStore.Infrastructure.RequestBase
+  commentId: T:Yort.Humm.InStore.Infrastructure.RequestBase
+  parent: Yort.Humm.InStore.Infrastructure
+  name: RequestBase
+  nameWithType: RequestBase
+  fullName: Yort.Humm.InStore.Infrastructure.RequestBase
+- uid: Yort.Humm.InStore.Infrastructure.ResponseBase
+  commentId: T:Yort.Humm.InStore.Infrastructure.ResponseBase
+  parent: Yort.Humm.InStore.Infrastructure
+  name: ResponseBase
+  nameWithType: ResponseBase
+  fullName: Yort.Humm.InStore.Infrastructure.ResponseBase
+- uid: Yort.Humm.InStore.Infrastructure.SignedRequestWriter
+  commentId: T:Yort.Humm.InStore.Infrastructure.SignedRequestWriter
+  name: SignedRequestWriter
+  nameWithType: SignedRequestWriter
+  fullName: Yort.Humm.InStore.Infrastructure.SignedRequestWriter
+- uid: Yort.Humm.InStore.Infrastructure
+  commentId: N:Yort.Humm.InStore.Infrastructure
+  name: Yort.Humm.InStore.Infrastructure
+  nameWithType: Yort.Humm.InStore.Infrastructure
+  fullName: Yort.Humm.InStore.Infrastructure

@@ -1,0 +1,712 @@
+### YamlMime:ManagedReference
+items:
+- uid: Yort.Humm.InStore.CreateKeyRequest
+  commentId: T:Yort.Humm.InStore.CreateKeyRequest
+  id: CreateKeyRequest
+  parent: Yort.Humm.InStore
+  children:
+  - Yort.Humm.InStore.CreateKeyRequest.#ctor
+  - Yort.Humm.InStore.CreateKeyRequest.AutoUpdateClientToken
+  - Yort.Humm.InStore.CreateKeyRequest.DeviceToken
+  - Yort.Humm.InStore.CreateKeyRequest.PosVendor
+  - Yort.Humm.InStore.CreateKeyRequest.Validate
+  langs:
+  - csharp
+  - vb
+  name: CreateKeyRequest
+  nameWithType: CreateKeyRequest
+  fullName: Yort.Humm.InStore.CreateKeyRequest
+  type: Class
+  source:
+    remote:
+      path: C:/Projects/GitHub/Yort.Humm.InStore/src/CreateKeyRequest.cs
+    id: CreateKeyRequest
+    path: CreateKeyRequest.cs
+    startLine: 15
+  assemblies:
+  - Yort.Humm.InStore
+  namespace: Yort.Humm.InStore
+  summary: "\nRepresents a request to swap a device (initialisation) token for a device key used to sign future requests.\n"
+  example: []
+  syntax:
+    content: 'public sealed class CreateKeyRequest : RequestBase'
+    content.vb: >-
+      Public NotInheritable Class CreateKeyRequest
+          Inherits RequestBase
+  seealso:
+  - linkId: Yort.Humm.InStore.Infrastructure.RequestBase
+    commentId: T:Yort.Humm.InStore.Infrastructure.RequestBase
+  - linkId: Yort.Humm.InStore.HummClient.CreateKeyAsync(Yort.Humm.InStore.CreateKeyRequest)
+    commentId: M:Yort.Humm.InStore.HummClient.CreateKeyAsync(Yort.Humm.InStore.CreateKeyRequest)
+  - linkId: Yort.Humm.InStore.CreateKeyResponse
+    commentId: T:Yort.Humm.InStore.CreateKeyResponse
+  inheritance:
+  - System.Object
+  - Yort.Humm.InStore.Infrastructure.RequestBase
+  inheritedMembers:
+  - Yort.Humm.InStore.Infrastructure.RequestBase.MerchantId
+  - Yort.Humm.InStore.Infrastructure.RequestBase.DeviceId
+  - Yort.Humm.InStore.Infrastructure.RequestBase.PosVersion
+  - Yort.Humm.InStore.Infrastructure.RequestBase.OperatorId
+  - Yort.Humm.InStore.Infrastructure.RequestBase.TrackingData
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+  modifiers.csharp:
+  - public
+  - sealed
+  - class
+  modifiers.vb:
+  - Public
+  - NotInheritable
+  - Class
+- uid: Yort.Humm.InStore.CreateKeyRequest.#ctor
+  commentId: M:Yort.Humm.InStore.CreateKeyRequest.#ctor
+  id: '#ctor'
+  parent: Yort.Humm.InStore.CreateKeyRequest
+  langs:
+  - csharp
+  - vb
+  name: CreateKeyRequest()
+  nameWithType: CreateKeyRequest.CreateKeyRequest()
+  fullName: Yort.Humm.InStore.CreateKeyRequest.CreateKeyRequest()
+  type: Constructor
+  source:
+    remote:
+      path: C:/Projects/GitHub/Yort.Humm.InStore/src/CreateKeyRequest.cs
+    id: .ctor
+    path: CreateKeyRequest.cs
+    startLine: 21
+  assemblies:
+  - Yort.Humm.InStore
+  namespace: Yort.Humm.InStore
+  summary: "\nInitializes a new instance of the <xref href=\"Yort.Humm.InStore.CreateKeyRequest\" data-throw-if-not-resolved=\"false\"></xref> class.\n"
+  example: []
+  syntax:
+    content: public CreateKeyRequest()
+    content.vb: Public Sub New
+  overload: Yort.Humm.InStore.CreateKeyRequest.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: Yort.Humm.InStore.CreateKeyRequest.DeviceToken
+  commentId: P:Yort.Humm.InStore.CreateKeyRequest.DeviceToken
+  id: DeviceToken
+  parent: Yort.Humm.InStore.CreateKeyRequest
+  langs:
+  - csharp
+  - vb
+  name: DeviceToken
+  nameWithType: CreateKeyRequest.DeviceToken
+  fullName: Yort.Humm.InStore.CreateKeyRequest.DeviceToken
+  type: Property
+  source:
+    remote:
+      path: C:/Projects/GitHub/Yort.Humm.InStore/src/CreateKeyRequest.cs
+    id: DeviceToken
+    path: CreateKeyRequest.cs
+    startLine: 35
+  assemblies:
+  - Yort.Humm.InStore
+  namespace: Yort.Humm.InStore
+  summary: "\nRequired. Gets or sets the one-time use device token generated in the Humm Seller/merchant portal.\n"
+  remarks: "\nMaximum legth of 64 characters.\n"
+  example: []
+  syntax:
+    content: >-
+      [JsonProperty("x_device_token")]
+
+      public string DeviceToken { get; set; }
+    parameters: []
+    return:
+      type: System.String
+      description: "\nThe device token generated in the Humm Seller/merchant portal.\n"
+    content.vb: >-
+      <JsonProperty("x_device_token")>
+
+      Public Property DeviceToken As String
+  overload: Yort.Humm.InStore.CreateKeyRequest.DeviceToken*
+  attributes:
+  - type: Newtonsoft.Json.JsonPropertyAttribute
+    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: x_device_token
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: Yort.Humm.InStore.CreateKeyRequest.PosVendor
+  commentId: P:Yort.Humm.InStore.CreateKeyRequest.PosVendor
+  id: PosVendor
+  parent: Yort.Humm.InStore.CreateKeyRequest
+  langs:
+  - csharp
+  - vb
+  name: PosVendor
+  nameWithType: CreateKeyRequest.PosVendor
+  fullName: Yort.Humm.InStore.CreateKeyRequest.PosVendor
+  type: Property
+  source:
+    remote:
+      path: C:/Projects/GitHub/Yort.Humm.InStore/src/CreateKeyRequest.cs
+    id: PosVendor
+    path: CreateKeyRequest.cs
+    startLine: 47
+  assemblies:
+  - Yort.Humm.InStore
+  namespace: Yort.Humm.InStore
+  summary: "\nRequired. Gets or sets the name of the company that suppliers the POS hardware or software.\n"
+  remarks: "\n<p>Maximum length of 100 characters.</p>\n"
+  example: []
+  syntax:
+    content: >-
+      [JsonProperty("x_pos_vendor")]
+
+      public string PosVendor { get; set; }
+    parameters: []
+    return:
+      type: System.String
+      description: "\nThe company name of the POS supplier.\n"
+    content.vb: >-
+      <JsonProperty("x_pos_vendor")>
+
+      Public Property PosVendor As String
+  overload: Yort.Humm.InStore.CreateKeyRequest.PosVendor*
+  attributes:
+  - type: Newtonsoft.Json.JsonPropertyAttribute
+    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: x_pos_vendor
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: Yort.Humm.InStore.CreateKeyRequest.AutoUpdateClientToken
+  commentId: P:Yort.Humm.InStore.CreateKeyRequest.AutoUpdateClientToken
+  id: AutoUpdateClientToken
+  parent: Yort.Humm.InStore.CreateKeyRequest
+  langs:
+  - csharp
+  - vb
+  name: AutoUpdateClientToken
+  nameWithType: CreateKeyRequest.AutoUpdateClientToken
+  fullName: Yort.Humm.InStore.CreateKeyRequest.AutoUpdateClientToken
+  type: Property
+  source:
+    remote:
+      path: C:/Projects/GitHub/Yort.Humm.InStore/src/CreateKeyRequest.cs
+    id: AutoUpdateClientToken
+    path: CreateKeyRequest.cs
+    startLine: 60
+  assemblies:
+  - Yort.Humm.InStore
+  namespace: Yort.Humm.InStore
+  summary: "\nGets or sets a value indicating whether the client automatically initialises itself with the returned device token (if the request is successful) so it is used on all future requests.\n"
+  remarks: "\n<p>Even when <xref href=\"Yort.Humm.InStore.CreateKeyRequest.AutoUpdateClientToken\" data-throw-if-not-resolved=\"false\"></xref> is true, it is still up to the calling application to persist the device key returned in the response so it can be used in the event of a process/machine restart etc.</p>\n"
+  example: []
+  syntax:
+    content: >-
+      [JsonIgnore]
+
+      public bool AutoUpdateClientToken { get; set; }
+    parameters: []
+    return:
+      type: System.Boolean
+      description: "\n<p>If true the <xref href=\"Yort.Humm.InStore.HummClient\" data-throw-if-not-resolved=\"false\"></xref> performing this request will automatically update itself to use the returned token from a succesful request as well as returning the response to the caller so the token can be persisted for future calls.</p>\n<p>If false the the response is returned to the caller, and <xref href=\"Yort.Humm.InStore.HummClient.SetDeviceKey(System.String)\" data-throw-if-not-resolved=\"false\"></xref> must be manually called on whichever client instance should use the new token.</p>\n"
+    content.vb: >-
+      <JsonIgnore>
+
+      Public Property AutoUpdateClientToken As Boolean
+  overload: Yort.Humm.InStore.CreateKeyRequest.AutoUpdateClientToken*
+  attributes:
+  - type: Newtonsoft.Json.JsonIgnoreAttribute
+    ctor: Newtonsoft.Json.JsonIgnoreAttribute.#ctor
+    arguments: []
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: Yort.Humm.InStore.CreateKeyRequest.Validate
+  commentId: M:Yort.Humm.InStore.CreateKeyRequest.Validate
+  id: Validate
+  parent: Yort.Humm.InStore.CreateKeyRequest
+  langs:
+  - csharp
+  - vb
+  name: Validate()
+  nameWithType: CreateKeyRequest.Validate()
+  fullName: Yort.Humm.InStore.CreateKeyRequest.Validate()
+  type: Method
+  source:
+    remote:
+      path: C:/Projects/GitHub/Yort.Humm.InStore/src/CreateKeyRequest.cs
+    id: Validate
+    path: CreateKeyRequest.cs
+    startLine: 70
+  assemblies:
+  - Yort.Humm.InStore
+  namespace: Yort.Humm.InStore
+  summary: "\nValidates this instance.\n"
+  remarks: "\n<p>Ensures <xref href=\"Yort.Humm.InStore.CreateKeyRequest.DeviceToken\" data-throw-if-not-resolved=\"false\"></xref> and <xref href=\"Yort.Humm.InStore.CreateKeyRequest.PosVendor\" data-throw-if-not-resolved=\"false\"></xref> are not null, empty strings or contain only whitespace. Also ensures they are not longer than allowed.</p>\n<p>Also ensures all base properties are valid, see <xref href=\"Yort.Humm.InStore.Infrastructure.RequestBase.Validate\" data-throw-if-not-resolved=\"false\"></xref>.</p>\n"
+  example: []
+  syntax:
+    content: public override void Validate()
+    content.vb: Public Overrides Sub Validate
+  overridden: Yort.Humm.InStore.Infrastructure.RequestBase.Validate
+  overload: Yort.Humm.InStore.CreateKeyRequest.Validate*
+  modifiers.csharp:
+  - public
+  - override
+  modifiers.vb:
+  - Public
+  - Overrides
+references:
+- uid: Yort.Humm.InStore.Infrastructure.RequestBase
+  commentId: T:Yort.Humm.InStore.Infrastructure.RequestBase
+  parent: Yort.Humm.InStore.Infrastructure
+  name: RequestBase
+  nameWithType: RequestBase
+  fullName: Yort.Humm.InStore.Infrastructure.RequestBase
+- uid: Yort.Humm.InStore.HummClient.CreateKeyAsync(Yort.Humm.InStore.CreateKeyRequest)
+  commentId: M:Yort.Humm.InStore.HummClient.CreateKeyAsync(Yort.Humm.InStore.CreateKeyRequest)
+  isExternal: true
+- uid: Yort.Humm.InStore.CreateKeyResponse
+  commentId: T:Yort.Humm.InStore.CreateKeyResponse
+  name: CreateKeyResponse
+  nameWithType: CreateKeyResponse
+  fullName: Yort.Humm.InStore.CreateKeyResponse
+- uid: Yort.Humm.InStore
+  commentId: N:Yort.Humm.InStore
+  name: Yort.Humm.InStore
+  nameWithType: Yort.Humm.InStore
+  fullName: Yort.Humm.InStore
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: Yort.Humm.InStore.Infrastructure.RequestBase.MerchantId
+  commentId: P:Yort.Humm.InStore.Infrastructure.RequestBase.MerchantId
+  parent: Yort.Humm.InStore.Infrastructure.RequestBase
+  name: MerchantId
+  nameWithType: RequestBase.MerchantId
+  fullName: Yort.Humm.InStore.Infrastructure.RequestBase.MerchantId
+- uid: Yort.Humm.InStore.Infrastructure.RequestBase.DeviceId
+  commentId: P:Yort.Humm.InStore.Infrastructure.RequestBase.DeviceId
+  parent: Yort.Humm.InStore.Infrastructure.RequestBase
+  name: DeviceId
+  nameWithType: RequestBase.DeviceId
+  fullName: Yort.Humm.InStore.Infrastructure.RequestBase.DeviceId
+- uid: Yort.Humm.InStore.Infrastructure.RequestBase.PosVersion
+  commentId: P:Yort.Humm.InStore.Infrastructure.RequestBase.PosVersion
+  parent: Yort.Humm.InStore.Infrastructure.RequestBase
+  name: PosVersion
+  nameWithType: RequestBase.PosVersion
+  fullName: Yort.Humm.InStore.Infrastructure.RequestBase.PosVersion
+- uid: Yort.Humm.InStore.Infrastructure.RequestBase.OperatorId
+  commentId: P:Yort.Humm.InStore.Infrastructure.RequestBase.OperatorId
+  parent: Yort.Humm.InStore.Infrastructure.RequestBase
+  name: OperatorId
+  nameWithType: RequestBase.OperatorId
+  fullName: Yort.Humm.InStore.Infrastructure.RequestBase.OperatorId
+- uid: Yort.Humm.InStore.Infrastructure.RequestBase.TrackingData
+  commentId: P:Yort.Humm.InStore.Infrastructure.RequestBase.TrackingData
+  parent: Yort.Humm.InStore.Infrastructure.RequestBase
+  name: TrackingData
+  nameWithType: RequestBase.TrackingData
+  fullName: Yort.Humm.InStore.Infrastructure.RequestBase.TrackingData
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Yort.Humm.InStore.Infrastructure
+  commentId: N:Yort.Humm.InStore.Infrastructure
+  name: Yort.Humm.InStore.Infrastructure
+  nameWithType: Yort.Humm.InStore.Infrastructure
+  fullName: Yort.Humm.InStore.Infrastructure
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: Yort.Humm.InStore.CreateKeyRequest
+  commentId: T:Yort.Humm.InStore.CreateKeyRequest
+  parent: Yort.Humm.InStore
+  name: CreateKeyRequest
+  nameWithType: CreateKeyRequest
+  fullName: Yort.Humm.InStore.CreateKeyRequest
+- uid: Yort.Humm.InStore.CreateKeyRequest.#ctor*
+  commentId: Overload:Yort.Humm.InStore.CreateKeyRequest.#ctor
+  name: CreateKeyRequest
+  nameWithType: CreateKeyRequest.CreateKeyRequest
+  fullName: Yort.Humm.InStore.CreateKeyRequest.CreateKeyRequest
+- uid: Yort.Humm.InStore.CreateKeyRequest.DeviceToken*
+  commentId: Overload:Yort.Humm.InStore.CreateKeyRequest.DeviceToken
+  name: DeviceToken
+  nameWithType: CreateKeyRequest.DeviceToken
+  fullName: Yort.Humm.InStore.CreateKeyRequest.DeviceToken
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: Yort.Humm.InStore.CreateKeyRequest.PosVendor*
+  commentId: Overload:Yort.Humm.InStore.CreateKeyRequest.PosVendor
+  name: PosVendor
+  nameWithType: CreateKeyRequest.PosVendor
+  fullName: Yort.Humm.InStore.CreateKeyRequest.PosVendor
+- uid: Yort.Humm.InStore.HummClient
+  commentId: T:Yort.Humm.InStore.HummClient
+  name: HummClient
+  nameWithType: HummClient
+  fullName: Yort.Humm.InStore.HummClient
+- uid: Yort.Humm.InStore.HummClient.SetDeviceKey(System.String)
+  commentId: M:Yort.Humm.InStore.HummClient.SetDeviceKey(System.String)
+  isExternal: true
+- uid: Yort.Humm.InStore.CreateKeyRequest.AutoUpdateClientToken
+  commentId: P:Yort.Humm.InStore.CreateKeyRequest.AutoUpdateClientToken
+  isExternal: true
+- uid: Yort.Humm.InStore.CreateKeyRequest.AutoUpdateClientToken*
+  commentId: Overload:Yort.Humm.InStore.CreateKeyRequest.AutoUpdateClientToken
+  name: AutoUpdateClientToken
+  nameWithType: CreateKeyRequest.AutoUpdateClientToken
+  fullName: Yort.Humm.InStore.CreateKeyRequest.AutoUpdateClientToken
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  name: Boolean
+  nameWithType: Boolean
+  fullName: System.Boolean
+- uid: Yort.Humm.InStore.CreateKeyRequest.PosVendor
+  commentId: P:Yort.Humm.InStore.CreateKeyRequest.PosVendor
+  isExternal: true
+- uid: Yort.Humm.InStore.Infrastructure.RequestBase.Validate
+  commentId: M:Yort.Humm.InStore.Infrastructure.RequestBase.Validate
+  parent: Yort.Humm.InStore.Infrastructure.RequestBase
+  name: Validate()
+  nameWithType: RequestBase.Validate()
+  fullName: Yort.Humm.InStore.Infrastructure.RequestBase.Validate()
+  spec.csharp:
+  - uid: Yort.Humm.InStore.Infrastructure.RequestBase.Validate
+    name: Validate
+    nameWithType: RequestBase.Validate
+    fullName: Yort.Humm.InStore.Infrastructure.RequestBase.Validate
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Yort.Humm.InStore.Infrastructure.RequestBase.Validate
+    name: Validate
+    nameWithType: RequestBase.Validate
+    fullName: Yort.Humm.InStore.Infrastructure.RequestBase.Validate
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Yort.Humm.InStore.CreateKeyRequest.DeviceToken
+  commentId: P:Yort.Humm.InStore.CreateKeyRequest.DeviceToken
+  isExternal: true
+- uid: Yort.Humm.InStore.CreateKeyRequest.Validate*
+  commentId: Overload:Yort.Humm.InStore.CreateKeyRequest.Validate
+  name: Validate
+  nameWithType: CreateKeyRequest.Validate
+  fullName: Yort.Humm.InStore.CreateKeyRequest.Validate

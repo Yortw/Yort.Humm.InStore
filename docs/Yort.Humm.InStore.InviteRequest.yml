@@ -1,0 +1,559 @@
+### YamlMime:ManagedReference
+items:
+- uid: Yort.Humm.InStore.InviteRequest
+  commentId: T:Yort.Humm.InStore.InviteRequest
+  id: InviteRequest
+  parent: Yort.Humm.InStore
+  children:
+  - Yort.Humm.InStore.InviteRequest.MobileNumber
+  - Yort.Humm.InStore.InviteRequest.PurchaseAmount
+  langs:
+  - csharp
+  - vb
+  name: InviteRequest
+  nameWithType: InviteRequest
+  fullName: Yort.Humm.InStore.InviteRequest
+  type: Class
+  source:
+    remote:
+      path: C:/Projects/GitHub/Yort.Humm.InStore/src/InviteRequest.cs
+    id: InviteRequest
+    path: InviteRequest.cs
+    startLine: 14
+  assemblies:
+  - Yort.Humm.InStore
+  namespace: Yort.Humm.InStore
+  summary: "\nRepresents a request to send an SMS to a mobile phone number inviting someone to sign up to Humm.\n"
+  example: []
+  syntax:
+    content: 'public sealed class InviteRequest : RequestBase'
+    content.vb: >-
+      Public NotInheritable Class InviteRequest
+          Inherits RequestBase
+  seealso:
+  - linkId: Yort.Humm.InStore.Infrastructure.RequestBase
+    commentId: T:Yort.Humm.InStore.Infrastructure.RequestBase
+  - linkId: Yort.Humm.InStore.HummClient.InviteAsync(Yort.Humm.InStore.InviteRequest)
+    commentId: M:Yort.Humm.InStore.HummClient.InviteAsync(Yort.Humm.InStore.InviteRequest)
+  - linkId: Yort.Humm.InStore.InviteResponse
+    commentId: T:Yort.Humm.InStore.InviteResponse
+  inheritance:
+  - System.Object
+  - Yort.Humm.InStore.Infrastructure.RequestBase
+  inheritedMembers:
+  - Yort.Humm.InStore.Infrastructure.RequestBase.MerchantId
+  - Yort.Humm.InStore.Infrastructure.RequestBase.DeviceId
+  - Yort.Humm.InStore.Infrastructure.RequestBase.PosVersion
+  - Yort.Humm.InStore.Infrastructure.RequestBase.OperatorId
+  - Yort.Humm.InStore.Infrastructure.RequestBase.TrackingData
+  - Yort.Humm.InStore.Infrastructure.RequestBase.Validate
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+  modifiers.csharp:
+  - public
+  - sealed
+  - class
+  modifiers.vb:
+  - Public
+  - NotInheritable
+  - Class
+- uid: Yort.Humm.InStore.InviteRequest.MobileNumber
+  commentId: P:Yort.Humm.InStore.InviteRequest.MobileNumber
+  id: MobileNumber
+  parent: Yort.Humm.InStore.InviteRequest
+  langs:
+  - csharp
+  - vb
+  name: MobileNumber
+  nameWithType: InviteRequest.MobileNumber
+  fullName: Yort.Humm.InStore.InviteRequest.MobileNumber
+  type: Property
+  source:
+    remote:
+      path: C:/Projects/GitHub/Yort.Humm.InStore/src/InviteRequest.cs
+    id: MobileNumber
+    path: InviteRequest.cs
+    startLine: 22
+  assemblies:
+  - Yort.Humm.InStore
+  namespace: Yort.Humm.InStore
+  summary: "\nRequired. Gets or sets the mobile number to send the invitation to.\n"
+  example: []
+  syntax:
+    content: >-
+      [JsonProperty("x_mobile")]
+
+      public string MobileNumber { get; set; }
+    parameters: []
+    return:
+      type: System.String
+      description: "\nThe mobile phone number.\n"
+    content.vb: >-
+      <JsonProperty("x_mobile")>
+
+      Public Property MobileNumber As String
+  overload: Yort.Humm.InStore.InviteRequest.MobileNumber*
+  attributes:
+  - type: Newtonsoft.Json.JsonPropertyAttribute
+    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: x_mobile
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: Yort.Humm.InStore.InviteRequest.PurchaseAmount
+  commentId: P:Yort.Humm.InStore.InviteRequest.PurchaseAmount
+  id: PurchaseAmount
+  parent: Yort.Humm.InStore.InviteRequest
+  langs:
+  - csharp
+  - vb
+  name: PurchaseAmount
+  nameWithType: InviteRequest.PurchaseAmount
+  fullName: Yort.Humm.InStore.InviteRequest.PurchaseAmount
+  type: Property
+  source:
+    remote:
+      path: C:/Projects/GitHub/Yort.Humm.InStore/src/InviteRequest.cs
+    id: PurchaseAmount
+    path: InviteRequest.cs
+    startLine: 31
+  assemblies:
+  - Yort.Humm.InStore
+  namespace: Yort.Humm.InStore
+  summary: "\nGets or sets the amount of a initial purchase amount to generate a pre-approval code for after sign-up is complete.\n"
+  example: []
+  syntax:
+    content: >-
+      [JsonProperty("x_purchase_amount")]
+
+      public decimal PurchaseAmount { get; set; }
+    parameters: []
+    return:
+      type: System.Decimal
+      description: "\nThe purchase amount as a dollar value (i.e $20 would be 20.00).\n"
+    content.vb: >-
+      <JsonProperty("x_purchase_amount")>
+
+      Public Property PurchaseAmount As Decimal
+  overload: Yort.Humm.InStore.InviteRequest.PurchaseAmount*
+  attributes:
+  - type: Newtonsoft.Json.JsonPropertyAttribute
+    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: x_purchase_amount
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+references:
+- uid: Yort.Humm.InStore.Infrastructure.RequestBase
+  commentId: T:Yort.Humm.InStore.Infrastructure.RequestBase
+  parent: Yort.Humm.InStore.Infrastructure
+  name: RequestBase
+  nameWithType: RequestBase
+  fullName: Yort.Humm.InStore.Infrastructure.RequestBase
+- uid: Yort.Humm.InStore.HummClient.InviteAsync(Yort.Humm.InStore.InviteRequest)
+  commentId: M:Yort.Humm.InStore.HummClient.InviteAsync(Yort.Humm.InStore.InviteRequest)
+  isExternal: true
+- uid: Yort.Humm.InStore.InviteResponse
+  commentId: T:Yort.Humm.InStore.InviteResponse
+  name: InviteResponse
+  nameWithType: InviteResponse
+  fullName: Yort.Humm.InStore.InviteResponse
+- uid: Yort.Humm.InStore
+  commentId: N:Yort.Humm.InStore
+  name: Yort.Humm.InStore
+  nameWithType: Yort.Humm.InStore
+  fullName: Yort.Humm.InStore
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: Yort.Humm.InStore.Infrastructure.RequestBase.MerchantId
+  commentId: P:Yort.Humm.InStore.Infrastructure.RequestBase.MerchantId
+  parent: Yort.Humm.InStore.Infrastructure.RequestBase
+  name: MerchantId
+  nameWithType: RequestBase.MerchantId
+  fullName: Yort.Humm.InStore.Infrastructure.RequestBase.MerchantId
+- uid: Yort.Humm.InStore.Infrastructure.RequestBase.DeviceId
+  commentId: P:Yort.Humm.InStore.Infrastructure.RequestBase.DeviceId
+  parent: Yort.Humm.InStore.Infrastructure.RequestBase
+  name: DeviceId
+  nameWithType: RequestBase.DeviceId
+  fullName: Yort.Humm.InStore.Infrastructure.RequestBase.DeviceId
+- uid: Yort.Humm.InStore.Infrastructure.RequestBase.PosVersion
+  commentId: P:Yort.Humm.InStore.Infrastructure.RequestBase.PosVersion
+  parent: Yort.Humm.InStore.Infrastructure.RequestBase
+  name: PosVersion
+  nameWithType: RequestBase.PosVersion
+  fullName: Yort.Humm.InStore.Infrastructure.RequestBase.PosVersion
+- uid: Yort.Humm.InStore.Infrastructure.RequestBase.OperatorId
+  commentId: P:Yort.Humm.InStore.Infrastructure.RequestBase.OperatorId
+  parent: Yort.Humm.InStore.Infrastructure.RequestBase
+  name: OperatorId
+  nameWithType: RequestBase.OperatorId
+  fullName: Yort.Humm.InStore.Infrastructure.RequestBase.OperatorId
+- uid: Yort.Humm.InStore.Infrastructure.RequestBase.TrackingData
+  commentId: P:Yort.Humm.InStore.Infrastructure.RequestBase.TrackingData
+  parent: Yort.Humm.InStore.Infrastructure.RequestBase
+  name: TrackingData
+  nameWithType: RequestBase.TrackingData
+  fullName: Yort.Humm.InStore.Infrastructure.RequestBase.TrackingData
+- uid: Yort.Humm.InStore.Infrastructure.RequestBase.Validate
+  commentId: M:Yort.Humm.InStore.Infrastructure.RequestBase.Validate
+  parent: Yort.Humm.InStore.Infrastructure.RequestBase
+  name: Validate()
+  nameWithType: RequestBase.Validate()
+  fullName: Yort.Humm.InStore.Infrastructure.RequestBase.Validate()
+  spec.csharp:
+  - uid: Yort.Humm.InStore.Infrastructure.RequestBase.Validate
+    name: Validate
+    nameWithType: RequestBase.Validate
+    fullName: Yort.Humm.InStore.Infrastructure.RequestBase.Validate
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Yort.Humm.InStore.Infrastructure.RequestBase.Validate
+    name: Validate
+    nameWithType: RequestBase.Validate
+    fullName: Yort.Humm.InStore.Infrastructure.RequestBase.Validate
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Yort.Humm.InStore.Infrastructure
+  commentId: N:Yort.Humm.InStore.Infrastructure
+  name: Yort.Humm.InStore.Infrastructure
+  nameWithType: Yort.Humm.InStore.Infrastructure
+  fullName: Yort.Humm.InStore.Infrastructure
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: Yort.Humm.InStore.InviteRequest.MobileNumber*
+  commentId: Overload:Yort.Humm.InStore.InviteRequest.MobileNumber
+  name: MobileNumber
+  nameWithType: InviteRequest.MobileNumber
+  fullName: Yort.Humm.InStore.InviteRequest.MobileNumber
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: Yort.Humm.InStore.InviteRequest.PurchaseAmount*
+  commentId: Overload:Yort.Humm.InStore.InviteRequest.PurchaseAmount
+  name: PurchaseAmount
+  nameWithType: InviteRequest.PurchaseAmount
+  fullName: Yort.Humm.InStore.InviteRequest.PurchaseAmount
+- uid: System.Decimal
+  commentId: T:System.Decimal
+  parent: System
+  isExternal: true
+  name: Decimal
+  nameWithType: Decimal
+  fullName: System.Decimal

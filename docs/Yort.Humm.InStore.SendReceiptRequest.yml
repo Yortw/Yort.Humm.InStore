@@ -1,0 +1,565 @@
+### YamlMime:ManagedReference
+items:
+- uid: Yort.Humm.InStore.SendReceiptRequest
+  commentId: T:Yort.Humm.InStore.SendReceiptRequest
+  id: SendReceiptRequest
+  parent: Yort.Humm.InStore
+  children:
+  - Yort.Humm.InStore.SendReceiptRequest.ClientTransactionReference
+  - Yort.Humm.InStore.SendReceiptRequest.ReceiptNumber
+  - Yort.Humm.InStore.SendReceiptRequest.Validate
+  langs:
+  - csharp
+  - vb
+  name: SendReceiptRequest
+  nameWithType: SendReceiptRequest
+  fullName: Yort.Humm.InStore.SendReceiptRequest
+  type: Class
+  source:
+    remote:
+      path: C:/Projects/GitHub/Yort.Humm.InStore/src/SendReceiptRequest.cs
+    id: SendReceiptRequest
+    path: SendReceiptRequest.cs
+    startLine: 9
+  assemblies:
+  - Yort.Humm.InStore
+  namespace: Yort.Humm.InStore
+  syntax:
+    content: 'public sealed class SendReceiptRequest : RequestBase'
+    content.vb: >-
+      Public NotInheritable Class SendReceiptRequest
+          Inherits RequestBase
+  inheritance:
+  - System.Object
+  - Yort.Humm.InStore.Infrastructure.RequestBase
+  inheritedMembers:
+  - Yort.Humm.InStore.Infrastructure.RequestBase.MerchantId
+  - Yort.Humm.InStore.Infrastructure.RequestBase.DeviceId
+  - Yort.Humm.InStore.Infrastructure.RequestBase.PosVersion
+  - Yort.Humm.InStore.Infrastructure.RequestBase.OperatorId
+  - Yort.Humm.InStore.Infrastructure.RequestBase.TrackingData
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+  modifiers.csharp:
+  - public
+  - sealed
+  - class
+  modifiers.vb:
+  - Public
+  - NotInheritable
+  - Class
+- uid: Yort.Humm.InStore.SendReceiptRequest.ClientTransactionReference
+  commentId: P:Yort.Humm.InStore.SendReceiptRequest.ClientTransactionReference
+  id: ClientTransactionReference
+  parent: Yort.Humm.InStore.SendReceiptRequest
+  langs:
+  - csharp
+  - vb
+  name: ClientTransactionReference
+  nameWithType: SendReceiptRequest.ClientTransactionReference
+  fullName: Yort.Humm.InStore.SendReceiptRequest.ClientTransactionReference
+  type: Property
+  source:
+    remote:
+      path: C:/Projects/GitHub/Yort.Humm.InStore/src/SendReceiptRequest.cs
+    id: ClientTransactionReference
+    path: SendReceiptRequest.cs
+    startLine: 12
+  assemblies:
+  - Yort.Humm.InStore
+  namespace: Yort.Humm.InStore
+  syntax:
+    content: >-
+      [JsonProperty("x_pos_transaction_ref")]
+
+      public string ClientTransactionReference { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: >-
+      <JsonProperty("x_pos_transaction_ref")>
+
+      Public Property ClientTransactionReference As String
+  overload: Yort.Humm.InStore.SendReceiptRequest.ClientTransactionReference*
+  attributes:
+  - type: Newtonsoft.Json.JsonPropertyAttribute
+    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: x_pos_transaction_ref
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: Yort.Humm.InStore.SendReceiptRequest.ReceiptNumber
+  commentId: P:Yort.Humm.InStore.SendReceiptRequest.ReceiptNumber
+  id: ReceiptNumber
+  parent: Yort.Humm.InStore.SendReceiptRequest
+  langs:
+  - csharp
+  - vb
+  name: ReceiptNumber
+  nameWithType: SendReceiptRequest.ReceiptNumber
+  fullName: Yort.Humm.InStore.SendReceiptRequest.ReceiptNumber
+  type: Property
+  source:
+    remote:
+      path: C:/Projects/GitHub/Yort.Humm.InStore/src/SendReceiptRequest.cs
+    id: ReceiptNumber
+    path: SendReceiptRequest.cs
+    startLine: 15
+  assemblies:
+  - Yort.Humm.InStore
+  namespace: Yort.Humm.InStore
+  syntax:
+    content: >-
+      [JsonProperty("x_receipt_number")]
+
+      public string ReceiptNumber { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: >-
+      <JsonProperty("x_receipt_number")>
+
+      Public Property ReceiptNumber As String
+  overload: Yort.Humm.InStore.SendReceiptRequest.ReceiptNumber*
+  attributes:
+  - type: Newtonsoft.Json.JsonPropertyAttribute
+    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: x_receipt_number
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: Yort.Humm.InStore.SendReceiptRequest.Validate
+  commentId: M:Yort.Humm.InStore.SendReceiptRequest.Validate
+  id: Validate
+  parent: Yort.Humm.InStore.SendReceiptRequest
+  langs:
+  - csharp
+  - vb
+  name: Validate()
+  nameWithType: SendReceiptRequest.Validate()
+  fullName: Yort.Humm.InStore.SendReceiptRequest.Validate()
+  type: Method
+  source:
+    remote:
+      path: C:/Projects/GitHub/Yort.Humm.InStore/src/SendReceiptRequest.cs
+    id: Validate
+    path: SendReceiptRequest.cs
+    startLine: 18
+  assemblies:
+  - Yort.Humm.InStore
+  namespace: Yort.Humm.InStore
+  syntax:
+    content: public override void Validate()
+    content.vb: Public Overrides Sub Validate
+  overridden: Yort.Humm.InStore.Infrastructure.RequestBase.Validate
+  overload: Yort.Humm.InStore.SendReceiptRequest.Validate*
+  modifiers.csharp:
+  - public
+  - override
+  modifiers.vb:
+  - Public
+  - Overrides
+references:
+- uid: Yort.Humm.InStore
+  commentId: N:Yort.Humm.InStore
+  name: Yort.Humm.InStore
+  nameWithType: Yort.Humm.InStore
+  fullName: Yort.Humm.InStore
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: Yort.Humm.InStore.Infrastructure.RequestBase
+  commentId: T:Yort.Humm.InStore.Infrastructure.RequestBase
+  parent: Yort.Humm.InStore.Infrastructure
+  name: RequestBase
+  nameWithType: RequestBase
+  fullName: Yort.Humm.InStore.Infrastructure.RequestBase
+- uid: Yort.Humm.InStore.Infrastructure.RequestBase.MerchantId
+  commentId: P:Yort.Humm.InStore.Infrastructure.RequestBase.MerchantId
+  parent: Yort.Humm.InStore.Infrastructure.RequestBase
+  name: MerchantId
+  nameWithType: RequestBase.MerchantId
+  fullName: Yort.Humm.InStore.Infrastructure.RequestBase.MerchantId
+- uid: Yort.Humm.InStore.Infrastructure.RequestBase.DeviceId
+  commentId: P:Yort.Humm.InStore.Infrastructure.RequestBase.DeviceId
+  parent: Yort.Humm.InStore.Infrastructure.RequestBase
+  name: DeviceId
+  nameWithType: RequestBase.DeviceId
+  fullName: Yort.Humm.InStore.Infrastructure.RequestBase.DeviceId
+- uid: Yort.Humm.InStore.Infrastructure.RequestBase.PosVersion
+  commentId: P:Yort.Humm.InStore.Infrastructure.RequestBase.PosVersion
+  parent: Yort.Humm.InStore.Infrastructure.RequestBase
+  name: PosVersion
+  nameWithType: RequestBase.PosVersion
+  fullName: Yort.Humm.InStore.Infrastructure.RequestBase.PosVersion
+- uid: Yort.Humm.InStore.Infrastructure.RequestBase.OperatorId
+  commentId: P:Yort.Humm.InStore.Infrastructure.RequestBase.OperatorId
+  parent: Yort.Humm.InStore.Infrastructure.RequestBase
+  name: OperatorId
+  nameWithType: RequestBase.OperatorId
+  fullName: Yort.Humm.InStore.Infrastructure.RequestBase.OperatorId
+- uid: Yort.Humm.InStore.Infrastructure.RequestBase.TrackingData
+  commentId: P:Yort.Humm.InStore.Infrastructure.RequestBase.TrackingData
+  parent: Yort.Humm.InStore.Infrastructure.RequestBase
+  name: TrackingData
+  nameWithType: RequestBase.TrackingData
+  fullName: Yort.Humm.InStore.Infrastructure.RequestBase.TrackingData
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: Yort.Humm.InStore.Infrastructure
+  commentId: N:Yort.Humm.InStore.Infrastructure
+  name: Yort.Humm.InStore.Infrastructure
+  nameWithType: Yort.Humm.InStore.Infrastructure
+  fullName: Yort.Humm.InStore.Infrastructure
+- uid: Yort.Humm.InStore.SendReceiptRequest.ClientTransactionReference*
+  commentId: Overload:Yort.Humm.InStore.SendReceiptRequest.ClientTransactionReference
+  name: ClientTransactionReference
+  nameWithType: SendReceiptRequest.ClientTransactionReference
+  fullName: Yort.Humm.InStore.SendReceiptRequest.ClientTransactionReference
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: Yort.Humm.InStore.SendReceiptRequest.ReceiptNumber*
+  commentId: Overload:Yort.Humm.InStore.SendReceiptRequest.ReceiptNumber
+  name: ReceiptNumber
+  nameWithType: SendReceiptRequest.ReceiptNumber
+  fullName: Yort.Humm.InStore.SendReceiptRequest.ReceiptNumber
+- uid: Yort.Humm.InStore.Infrastructure.RequestBase.Validate
+  commentId: M:Yort.Humm.InStore.Infrastructure.RequestBase.Validate
+  parent: Yort.Humm.InStore.Infrastructure.RequestBase
+  name: Validate()
+  nameWithType: RequestBase.Validate()
+  fullName: Yort.Humm.InStore.Infrastructure.RequestBase.Validate()
+  spec.csharp:
+  - uid: Yort.Humm.InStore.Infrastructure.RequestBase.Validate
+    name: Validate
+    nameWithType: RequestBase.Validate
+    fullName: Yort.Humm.InStore.Infrastructure.RequestBase.Validate
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Yort.Humm.InStore.Infrastructure.RequestBase.Validate
+    name: Validate
+    nameWithType: RequestBase.Validate
+    fullName: Yort.Humm.InStore.Infrastructure.RequestBase.Validate
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Yort.Humm.InStore.SendReceiptRequest.Validate*
+  commentId: Overload:Yort.Humm.InStore.SendReceiptRequest.Validate
+  name: Validate
+  nameWithType: SendReceiptRequest.Validate
+  fullName: Yort.Humm.InStore.SendReceiptRequest.Validate

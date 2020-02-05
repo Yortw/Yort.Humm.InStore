@@ -1,0 +1,981 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class HummClient
+   | Yort.Humm.InStore </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class HummClient
+   | Yort.Humm.InStore ">
+    <meta name="generator" content="docfx 2.48.1.0">
+    
+    <link rel="shortcut icon" href="../images/projecticon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc">
+    <meta property="docfx:tocrel" content="toc">
+    
+    <meta property="docfx:rel" content="../">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../images/projecticon.png" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+                
+                <ul class="nav level1 navbar-nav">
+                      <li>
+                          <a href="../articles/intro.html" title="Articles">Articles</a>
+                      </li>
+                      <li>
+                          <a href="../api/index.html" title="Api Documentation">Api Documentation</a>
+                      </li>
+                </ul>    </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+        
+        <div id="search-results">
+          <div class="search-list"></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination"></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div>
+              <div class="sidefilter">
+                <form class="toc-filter">
+                  <span class="glyphicon glyphicon-filter filter-icon"></span>
+                  <input type="text" id="toc_filter_input" placeholder="Enter here to filter..." onkeypress="if(event.keyCode==13) {return false;}">
+                </form>
+              </div>
+              <div class="sidetoc">
+                <div class="toc" id="toc">
+                  
+                  <ul class="nav level1">
+                    <li class="">
+                      <span class="expand-stub"></span>
+                      <a href="Yort.Humm.InStore.html" title="Yort.Humm.InStore" class="">Yort.Humm.InStore</a>
+                        
+                        <ul class="nav level2">
+                          <li class="">
+                            <a href="Yort.Humm.InStore.CreateKeyRequest.html" title="CreateKeyRequest" class="">CreateKeyRequest</a>
+                          </li>
+                          <li class="">
+                            <a href="Yort.Humm.InStore.CreateKeyResponse.html" title="CreateKeyResponse" class="">CreateKeyResponse</a>
+                          </li>
+                          <li class="">
+                            <a href="Yort.Humm.InStore.HummApiUrlSelector.html" title="HummApiUrlSelector" class="">HummApiUrlSelector</a>
+                          </li>
+                          <li class="active">
+                            <a href="Yort.Humm.InStore.HummClient.html" title="HummClient" class="active">HummClient</a>
+                          </li>
+                          <li class="">
+                            <a href="Yort.Humm.InStore.HummClientConfiguration.html" title="HummClientConfiguration" class="">HummClientConfiguration</a>
+                          </li>
+                          <li class="">
+                            <a href="Yort.Humm.InStore.HummCountry.html" title="HummCountry" class="">HummCountry</a>
+                          </li>
+                          <li class="">
+                            <a href="Yort.Humm.InStore.HummEnvironment.html" title="HummEnvironment" class="">HummEnvironment</a>
+                          </li>
+                          <li class="">
+                            <a href="Yort.Humm.InStore.HummResponseSignatureException.html" title="HummResponseSignatureException" class="">HummResponseSignatureException</a>
+                          </li>
+                          <li class="">
+                            <a href="Yort.Humm.InStore.IHummApiUrlSelector.html" title="IHummApiUrlSelector" class="">IHummApiUrlSelector</a>
+                          </li>
+                          <li class="">
+                            <a href="Yort.Humm.InStore.IHummClient.html" title="IHummClient" class="">IHummClient</a>
+                          </li>
+                          <li class="">
+                            <a href="Yort.Humm.InStore.InviteRequest.html" title="InviteRequest" class="">InviteRequest</a>
+                          </li>
+                          <li class="">
+                            <a href="Yort.Humm.InStore.InviteResponse.html" title="InviteResponse" class="">InviteResponse</a>
+                          </li>
+                          <li class="">
+                            <a href="Yort.Humm.InStore.PendingAuthorisationEventArgs.html" title="PendingAuthorisationEventArgs" class="">PendingAuthorisationEventArgs</a>
+                          </li>
+                          <li class="">
+                            <a href="Yort.Humm.InStore.ProcessAuthorisationRequest.html" title="ProcessAuthorisationRequest" class="">ProcessAuthorisationRequest</a>
+                          </li>
+                          <li class="">
+                            <a href="Yort.Humm.InStore.ProcessAuthorisationResponse.html" title="ProcessAuthorisationResponse" class="">ProcessAuthorisationResponse</a>
+                          </li>
+                          <li class="">
+                            <a href="Yort.Humm.InStore.ProcessSalesAdjustmentRequest.html" title="ProcessSalesAdjustmentRequest" class="">ProcessSalesAdjustmentRequest</a>
+                          </li>
+                          <li class="">
+                            <a href="Yort.Humm.InStore.ProcessSalesAdjustmentResponse.html" title="ProcessSalesAdjustmentResponse" class="">ProcessSalesAdjustmentResponse</a>
+                          </li>
+                          <li class="">
+                            <a href="Yort.Humm.InStore.ProcessSalesAdjustmentReversalRequest.html" title="ProcessSalesAdjustmentReversalRequest" class="">ProcessSalesAdjustmentReversalRequest</a>
+                          </li>
+                          <li class="">
+                            <a href="Yort.Humm.InStore.ProcessSalesAdjustmentReversalResponse.html" title="ProcessSalesAdjustmentReversalResponse" class="">ProcessSalesAdjustmentReversalResponse</a>
+                          </li>
+                          <li class="">
+                            <a href="Yort.Humm.InStore.PurchaseItemsCollection.html" title="PurchaseItemsCollection" class="">PurchaseItemsCollection</a>
+                          </li>
+                          <li class="">
+                            <a href="Yort.Humm.InStore.RequestStates.html" title="RequestStates" class="">RequestStates</a>
+                          </li>
+                          <li class="">
+                            <a href="Yort.Humm.InStore.SendReceiptRequest.html" title="SendReceiptRequest" class="">SendReceiptRequest</a>
+                          </li>
+                          <li class="">
+                            <a href="Yort.Humm.InStore.SendReceiptResponse.html" title="SendReceiptResponse" class="">SendReceiptResponse</a>
+                          </li>
+                        </ul>  </li>
+                    <li class="">
+                      <span class="expand-stub"></span>
+                      <a href="Yort.Humm.InStore.Infrastructure.html" title="Yort.Humm.InStore.Infrastructure" class="">Yort.Humm.InStore.Infrastructure</a>
+                        
+                        <ul class="nav level2">
+                          <li class="">
+                            <a href="Yort.Humm.InStore.Infrastructure.Hmac256SignatureGenerator.html" title="Hmac256SignatureGenerator" class="">Hmac256SignatureGenerator</a>
+                          </li>
+                          <li class="">
+                            <a href="Yort.Humm.InStore.Infrastructure.ISignatureGenerator.html" title="ISignatureGenerator" class="">ISignatureGenerator</a>
+                          </li>
+                          <li class="">
+                            <a href="Yort.Humm.InStore.Infrastructure.RequestBase.html" title="RequestBase" class="">RequestBase</a>
+                          </li>
+                          <li class="">
+                            <a href="Yort.Humm.InStore.Infrastructure.ResponseBase.html" title="ResponseBase" class="">ResponseBase</a>
+                          </li>
+                          <li class="">
+                            <a href="Yort.Humm.InStore.Infrastructure.SignedRequestWriter.html" title="SignedRequestWriter" class="">SignedRequestWriter</a>
+                          </li>
+                        </ul>  </li>
+                  </ul>        </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="Yort.Humm.InStore.HummClient">
+  
+  
+  <h1 id="Yort_Humm_InStore_HummClient" data-uid="Yort.Humm.InStore.HummClient" class="text-break">Class HummClient
+  </h1>
+  <div class="markdown level0 summary"><p>The primary object used to make requests to Humm.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object">Object</a></div>
+    <div class="level1"><span class="xref">HummClient</span></div>
+  </div>
+  <div classs="implements">
+    <h5>Implements</h5>
+    <div><a class="xref" href="Yort.Humm.InStore.IHummClient.html">IHummClient</a></div>
+    <div><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.idisposable">IDisposable</a></div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.equals#System_Object_Equals_System_Object_">Object.Equals(Object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.equals#System_Object_Equals_System_Object_System_Object_">Object.Equals(Object, Object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.gethashcode#System_Object_GetHashCode">Object.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.gettype#System_Object_GetType">Object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.memberwiseclone#System_Object_MemberwiseClone">Object.MemberwiseClone()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.referenceequals#System_Object_ReferenceEquals_System_Object_System_Object_">Object.ReferenceEquals(Object, Object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.tostring#System_Object_ToString">Object.ToString()</a>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="Yort.Humm.InStore.html">Yort.Humm.InStore</a></h6>
+  <h6><strong>Assembly</strong>: Yort.Humm.InStore.dll</h6>
+  <h5 id="Yort_Humm_InStore_HummClient_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public sealed class HummClient : IHummClient, IDisposable</code></pre>
+  </div>
+  <h5 id="Yort_Humm_InStore_HummClient_remarks"><strong>Remarks</strong></h5>
+  <div class="markdown level0 remarks"><p>Each instance of this class represents a single POS device, if being used from a centralised service or a web server then you will need to create an instance for each device, either per-request or pooled as neccesary.</p>
+<p>Details about the device the instance represents are provided via the <a class="xref" href="Yort.Humm.InStore.HummClientConfiguration.html">HummClientConfiguration</a> instance passed into the constructor.</p>
+<p>Note that financial/dollar values should be expressed as <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.decimal">Decimal</a> in their dollar &amp; cents format, i.e $20.50 should be set as 20.50 on 
+a request object, the library will take care of converting this to a cents value for Humm.</p>
+<p>This object makes requests via the REST interface, SOAP is not currently supported by this library.</p>
+<p>See the Humm API documentation at; https://docs.shophumm.com.au/pos/getting-started/ </p>
+</div>
+  <h3 id="constructors">Constructors
+  </h3>
+  
+  
+  <a id="Yort_Humm_InStore_HummClient__ctor_" data-uid="Yort.Humm.InStore.HummClient.#ctor*"></a>
+  <h4 id="Yort_Humm_InStore_HummClient__ctor_Yort_Humm_InStore_HummClientConfiguration_" data-uid="Yort.Humm.InStore.HummClient.#ctor(Yort.Humm.InStore.HummClientConfiguration)">HummClient(HummClientConfiguration)</h4>
+  <div class="markdown level1 summary"><p>Constructs a new instance using the specified configuration.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public HummClient(HummClientConfiguration config)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Yort.Humm.InStore.HummClientConfiguration.html">HummClientConfiguration</a></td>
+        <td><span class="parametername">config</span></td>
+        <td><p>A <a class="xref" href="Yort.Humm.InStore.HummClientConfiguration.html">HummClientConfiguration</a> specifying details of how this instance is configured.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.argumentnullexception">ArgumentNullException</a></td>
+        <td><p>Thrown if <code data-dev-comment-type="paramref" class="paramref">config</code> is null, or <a class="xref" href="Yort.Humm.InStore.HummClientConfiguration.html#Yort_Humm_InStore_HummClientConfiguration_BaseApiUrl">BaseApiUrl</a> is null.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="methods">Methods
+  </h3>
+  
+  
+  <a id="Yort_Humm_InStore_HummClient_CreateKeyAsync_" data-uid="Yort.Humm.InStore.HummClient.CreateKeyAsync*"></a>
+  <h4 id="Yort_Humm_InStore_HummClient_CreateKeyAsync_Yort_Humm_InStore_CreateKeyRequest_" data-uid="Yort.Humm.InStore.HummClient.CreateKeyAsync(Yort.Humm.InStore.CreateKeyRequest)">CreateKeyAsync(CreateKeyRequest)</h4>
+  <div class="markdown level1 summary"><p>Requests a new device key from Humm using the (initialisation) device token created in the Humm Seller (merchant) portal.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task&lt;CreateKeyResponse&gt; CreateKeyAsync(CreateKeyRequest request)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Yort.Humm.InStore.CreateKeyRequest.html">CreateKeyRequest</a></td>
+        <td><span class="parametername">request</span></td>
+        <td><p>A <a class="xref" href="Yort.Humm.InStore.CreateKeyRequest.html">CreateKeyRequest</a> instance containing details of the request to make.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="Yort.Humm.InStore.CreateKeyResponse.html">CreateKeyResponse</a>&gt;</td>
+        <td><p>A <a class="xref" href="Yort.Humm.InStore.CreateKeyResponse.html">CreateKeyResponse</a> instance containing the Humm response.</p>
+<p>See the Humm documentation at https://docs.shophumm.com.au/pos/api/create_key/ </p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Yort_Humm_InStore_HummClient_CreateKeyAsync_Yort_Humm_InStore_CreateKeyRequest__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>If the <a class="xref" href="Yort.Humm.InStore.CreateKeyRequest.html#Yort_Humm_InStore_CreateKeyRequest_AutoUpdateClientToken">AutoUpdateClientToken</a> argument is true and the request is successsful, the client will automatically call <a class="xref" href="Yort.Humm.InStore.HummClient.html#Yort_Humm_InStore_HummClient_SetDeviceKey_System_String_">SetDeviceKey(String)</a> with the value of <a class="xref" href="Yort.Humm.InStore.CreateKeyResponse.html#Yort_Humm_InStore_CreateKeyResponse_Key">Key</a> for you, ensuring all future calls made with this client instance use the new token.</p>
+</div>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.argumentnullexception">ArgumentNullException</a></td>
+        <td><p>Thrown if <code data-dev-comment-type="paramref" class="paramref">request</code>, <a class="xref" href="Yort.Humm.InStore.CreateKeyRequest.html#Yort_Humm_InStore_CreateKeyRequest_DeviceToken">DeviceToken</a> or <a class="xref" href="Yort.Humm.InStore.CreateKeyRequest.html#Yort_Humm_InStore_CreateKeyRequest_PosVendor">PosVendor</a> is null.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.argumentexception">ArgumentException</a></td>
+        <td><p>Thrown if <a class="xref" href="Yort.Humm.InStore.CreateKeyRequest.html#Yort_Humm_InStore_CreateKeyRequest_DeviceToken">DeviceToken</a> or <a class="xref" href="Yort.Humm.InStore.CreateKeyRequest.html#Yort_Humm_InStore_CreateKeyRequest_PosVendor">PosVendor</a> is an empty string or contain only whitespace characters.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.objectdisposedexception">ObjectDisposedException</a></td>
+        <td><p>Thrown if this instance has been disposed.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Yort.Humm.InStore.HummResponseSignatureException.html">HummResponseSignatureException</a></td>
+        <td><p>Thrown if the response signature cannot be validated.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.net.http.httprequestexception">HttpRequestException</a></td>
+        <td><p>Thrown if an HTTP protocol level or <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.net.http.httpclient">HttpClient</a> pipeline error occurs.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Yort_Humm_InStore_HummClient_CreateKeyAsync_Yort_Humm_InStore_CreateKeyRequest__seealso">See Also</h5>
+  <div class="seealso">
+      <div><a class="xref" href="Yort.Humm.InStore.CreateKeyRequest.html">CreateKeyRequest</a></div>
+      <div><a class="xref" href="Yort.Humm.InStore.CreateKeyResponse.html">CreateKeyResponse</a></div>
+      <div><a class="xref" href="Yort.Humm.InStore.HummClient.html#Yort_Humm_InStore_HummClient_SetDeviceKey_System_String_">SetDeviceKey(String)</a></div>
+  </div>
+  
+  
+  <a id="Yort_Humm_InStore_HummClient_Dispose_" data-uid="Yort.Humm.InStore.HummClient.Dispose*"></a>
+  <h4 id="Yort_Humm_InStore_HummClient_Dispose" data-uid="Yort.Humm.InStore.HummClient.Dispose">Dispose()</h4>
+  <div class="markdown level1 summary"><p>Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Dispose()</code></pre>
+  </div>
+  <h5 id="Yort_Humm_InStore_HummClient_Dispose_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>Once disposed, calls to most methods on this object with throw <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.objectdisposedexception">ObjectDisposedException</a>.</p>
+<p>This method is safe to call multiple times in series. It is not guarateed to call in parallel, though no known issues exist.</p>
+</div>
+  
+  
+  <a id="Yort_Humm_InStore_HummClient_InviteAsync_" data-uid="Yort.Humm.InStore.HummClient.InviteAsync*"></a>
+  <h4 id="Yort_Humm_InStore_HummClient_InviteAsync_Yort_Humm_InStore_InviteRequest_" data-uid="Yort.Humm.InStore.HummClient.InviteAsync(Yort.Humm.InStore.InviteRequest)">InviteAsync(InviteRequest)</h4>
+  <div class="markdown level1 summary"><p>Sends an SMS to the customer's mobile phone inviting them to sign-up as a Humm customer.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task&lt;InviteResponse&gt; InviteAsync(InviteRequest request)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Yort.Humm.InStore.InviteRequest.html">InviteRequest</a></td>
+        <td><span class="parametername">request</span></td>
+        <td><p>A <a class="xref" href="Yort.Humm.InStore.InviteRequest.html">InviteRequest</a> instance.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="Yort.Humm.InStore.InviteResponse.html">InviteResponse</a>&gt;</td>
+        <td><p>A <a class="xref" href="Yort.Humm.InStore.InviteResponse.html">InviteResponse</a>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.argumentnullexception">ArgumentNullException</a></td>
+        <td><p>Thrown if <code data-dev-comment-type="paramref" class="paramref">request</code> is null.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Yort.Humm.InStore.HummResponseSignatureException.html">HummResponseSignatureException</a></td>
+        <td><p>Thrown if the response signature cannot be validated.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.objectdisposedexception">ObjectDisposedException</a></td>
+        <td><p>Thrown if this instance has been disposed.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.invalidoperationexception">InvalidOperationException</a></td>
+        <td><p>Thrown if this instance has not been initialised with a non-null device key (<a class="xref" href="Yort.Humm.InStore.HummClient.html#Yort_Humm_InStore_HummClient_SetDeviceKey_System_String_">SetDeviceKey(String)</a> and <a class="xref" href="Yort.Humm.InStore.HummClientConfiguration.html#Yort_Humm_InStore_HummClientConfiguration_DeviceKey">DeviceKey</a>)..</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.net.http.httprequestexception">HttpRequestException</a></td>
+        <td><p>Thrown if an HTTP protocol level or <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.net.http.httpclient">HttpClient</a> pipeline error occurs.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Yort_Humm_InStore_HummClient_InviteAsync_Yort_Humm_InStore_InviteRequest__seealso">See Also</h5>
+  <div class="seealso">
+      <div><a class="xref" href="Yort.Humm.InStore.InviteRequest.html">InviteRequest</a></div>
+      <div><a class="xref" href="Yort.Humm.InStore.InviteResponse.html">InviteResponse</a></div>
+  </div>
+  
+  
+  <a id="Yort_Humm_InStore_HummClient_ProcessAuthorisationAsync_" data-uid="Yort.Humm.InStore.HummClient.ProcessAuthorisationAsync*"></a>
+  <h4 id="Yort_Humm_InStore_HummClient_ProcessAuthorisationAsync_Yort_Humm_InStore_ProcessAuthorisationRequest_" data-uid="Yort.Humm.InStore.HummClient.ProcessAuthorisationAsync(Yort.Humm.InStore.ProcessAuthorisationRequest)">ProcessAuthorisationAsync(ProcessAuthorisationRequest)</h4>
+  <div class="markdown level1 summary"><p>Requests an authorisation (for payment) be processed.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task&lt;ProcessAuthorisationResponse&gt; ProcessAuthorisationAsync(ProcessAuthorisationRequest request)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Yort.Humm.InStore.ProcessAuthorisationRequest.html">ProcessAuthorisationRequest</a></td>
+        <td><span class="parametername">request</span></td>
+        <td><p>A <a class="xref" href="Yort.Humm.InStore.ProcessAuthorisationRequest.html">ProcessAuthorisationRequest</a> instance.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="Yort.Humm.InStore.ProcessAuthorisationResponse.html">ProcessAuthorisationResponse</a>&gt;</td>
+        <td><p>A <a class="xref" href="Yort.Humm.InStore.ProcessAuthorisationResponse.html">ProcessAuthorisationResponse</a> instance.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Yort_Humm_InStore_HummClient_ProcessAuthorisationAsync_Yort_Humm_InStore_ProcessAuthorisationRequest__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>This method is used to request a payment contract be setup for a specified amount using an approval code generated by the customer&apos;s device.
+It is the most common API call made to Humm in a &apos;happy path&apos;.
+</p>
+<p>If the <a class="xref" href="Yort.Humm.InStore.ProcessAuthorisationRequest.html#Yort_Humm_InStore_ProcessAuthorisationRequest_AutoHandlePendingResponse">AutoHandlePendingResponse</a> value is true and the response indicates a <a class="xref" href="Yort.Humm.InStore.RequestStates.html#Yort_Humm_InStore_RequestStates_Pending">Pending</a> status then
+this call will raise the <a class="xref" href="Yort.Humm.InStore.HummClient.html#Yort_Humm_InStore_HummClient_PendingAuthorisation">PendingAuthorisation</a> event, wait for the specified retry interval, and the re-make the request again. This will be repeated until a 
+non-pending status is returned, or an error is thrown from one of the handlers for the <a class="xref" href="Yort.Humm.InStore.HummClient.html#Yort_Humm_InStore_HummClient_PendingAuthorisation">PendingAuthorisation</a> event. In this case the response returned 
+to the caller will be the final status (success/failure/error).
+</p>
+<p>
+If <a class="xref" href="Yort.Humm.InStore.ProcessAuthorisationRequest.html#Yort_Humm_InStore_ProcessAuthorisationRequest_AutoHandlePendingResponse">AutoHandlePendingResponse</a> is false then the first response will be returned to the caller and if the status is <a class="xref" href="Yort.Humm.InStore.RequestStates.html#Yort_Humm_InStore_RequestStates_Pending">Pending</a> 
+it is up to the caller to repeat the request until a final state is reached.
+</p>
+<p>See the Humm documentation at https://docs.shophumm.com.au/pos/api/process_authorisation/ and https://docs.shophumm.com.au/pos/api_information/retries_and_idempotency/ </p>
+</div>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.argumentnullexception">ArgumentNullException</a></td>
+        <td><p>Thrown if <code data-dev-comment-type="paramref" class="paramref">request</code> is null.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Yort.Humm.InStore.HummResponseSignatureException.html">HummResponseSignatureException</a></td>
+        <td><p>Thrown if the response signature cannot be validated.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.objectdisposedexception">ObjectDisposedException</a></td>
+        <td><p>Thrown if this instance has been disposed.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.invalidoperationexception">InvalidOperationException</a></td>
+        <td><p>Thrown if this instance has not been initialised with a non-null device key (<a class="xref" href="Yort.Humm.InStore.HummClient.html#Yort_Humm_InStore_HummClient_SetDeviceKey_System_String_">SetDeviceKey(String)</a> and <a class="xref" href="Yort.Humm.InStore.HummClientConfiguration.html#Yort_Humm_InStore_HummClientConfiguration_DeviceKey">DeviceKey</a>)..</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.net.http.httprequestexception">HttpRequestException</a></td>
+        <td><p>Thrown if an HTTP protocol level or <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.net.http.httpclient">HttpClient</a> pipeline error occurs.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Yort_Humm_InStore_HummClient_ProcessAuthorisationAsync_Yort_Humm_InStore_ProcessAuthorisationRequest__seealso">See Also</h5>
+  <div class="seealso">
+      <div><a class="xref" href="Yort.Humm.InStore.HummClient.html#Yort_Humm_InStore_HummClient_PendingAuthorisation">PendingAuthorisation</a></div>
+      <div><a class="xref" href="Yort.Humm.InStore.ProcessAuthorisationRequest.html">ProcessAuthorisationRequest</a></div>
+      <div><a class="xref" href="Yort.Humm.InStore.ProcessAuthorisationResponse.html">ProcessAuthorisationResponse</a></div>
+  </div>
+  
+  
+  <a id="Yort_Humm_InStore_HummClient_ProcessSalesAdjustmentAsync_" data-uid="Yort.Humm.InStore.HummClient.ProcessSalesAdjustmentAsync*"></a>
+  <h4 id="Yort_Humm_InStore_HummClient_ProcessSalesAdjustmentAsync_Yort_Humm_InStore_ProcessSalesAdjustmentRequest_" data-uid="Yort.Humm.InStore.HummClient.ProcessSalesAdjustmentAsync(Yort.Humm.InStore.ProcessSalesAdjustmentRequest)">ProcessSalesAdjustmentAsync(ProcessSalesAdjustmentRequest)</h4>
+  <div class="markdown level1 summary"><p>A sales adjustment is used to refund money in the case of an item that is returned or fails to ship etc.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task&lt;ProcessSalesAdjustmentResponse&gt; ProcessSalesAdjustmentAsync(ProcessSalesAdjustmentRequest request)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Yort.Humm.InStore.ProcessSalesAdjustmentRequest.html">ProcessSalesAdjustmentRequest</a></td>
+        <td><span class="parametername">request</span></td>
+        <td><p>A <a class="xref" href="Yort.Humm.InStore.ProcessSalesAdjustmentRequest.html">ProcessSalesAdjustmentRequest</a> instance.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="Yort.Humm.InStore.ProcessSalesAdjustmentResponse.html">ProcessSalesAdjustmentResponse</a>&gt;</td>
+        <td><p>A <a class="xref" href="Yort.Humm.InStore.ProcessSalesAdjustmentResponse.html">ProcessSalesAdjustmentResponse</a> instance.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Yort_Humm_InStore_HummClient_ProcessSalesAdjustmentAsync_Yort_Humm_InStore_ProcessSalesAdjustmentRequest__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>A sales adjustment can be used for full or partial refund of previously approved <a class="xref" href="Yort.Humm.InStore.HummClient.html#Yort_Humm_InStore_HummClient_ProcessAuthorisationAsync_Yort_Humm_InStore_ProcessAuthorisationRequest_">ProcessAuthorisationAsync(ProcessAuthorisationRequest)</a>.</p>
+<p>See the Humm documentation at https://docs.shophumm.com.au/pos/api/process_sales_adjustment/ and https://docs.shophumm.com.au/pos/api_information/retries_and_idempotency/ </p>
+</div>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.argumentnullexception">ArgumentNullException</a></td>
+        <td><p>Thrown if <code data-dev-comment-type="paramref" class="paramref">request</code> is null.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Yort.Humm.InStore.HummResponseSignatureException.html">HummResponseSignatureException</a></td>
+        <td><p>Thrown if the response signature cannot be validated.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.objectdisposedexception">ObjectDisposedException</a></td>
+        <td><p>Thrown if this instance has been disposed.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.invalidoperationexception">InvalidOperationException</a></td>
+        <td><p>Thrown if this instance has not been initialised with a non-null device key (<a class="xref" href="Yort.Humm.InStore.HummClient.html#Yort_Humm_InStore_HummClient_SetDeviceKey_System_String_">SetDeviceKey(String)</a> and <a class="xref" href="Yort.Humm.InStore.HummClientConfiguration.html#Yort_Humm_InStore_HummClientConfiguration_DeviceKey">DeviceKey</a>)..</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.net.http.httprequestexception">HttpRequestException</a></td>
+        <td><p>Thrown if an HTTP protocol level or <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.net.http.httpclient">HttpClient</a> pipeline error occurs.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Yort_Humm_InStore_HummClient_ProcessSalesAdjustmentAsync_Yort_Humm_InStore_ProcessSalesAdjustmentRequest__seealso">See Also</h5>
+  <div class="seealso">
+      <div><a class="xref" href="Yort.Humm.InStore.HummClient.html#Yort_Humm_InStore_HummClient_ProcessAuthorisationAsync_Yort_Humm_InStore_ProcessAuthorisationRequest_">ProcessAuthorisationAsync(ProcessAuthorisationRequest)</a></div>
+      <div><a class="xref" href="Yort.Humm.InStore.HummClient.html#Yort_Humm_InStore_HummClient_ProcessSalesAdjustmentReversalAsync_Yort_Humm_InStore_ProcessSalesAdjustmentReversalRequest_">ProcessSalesAdjustmentReversalAsync(ProcessSalesAdjustmentReversalRequest)</a></div>
+  </div>
+  
+  
+  <a id="Yort_Humm_InStore_HummClient_ProcessSalesAdjustmentReversalAsync_" data-uid="Yort.Humm.InStore.HummClient.ProcessSalesAdjustmentReversalAsync*"></a>
+  <h4 id="Yort_Humm_InStore_HummClient_ProcessSalesAdjustmentReversalAsync_Yort_Humm_InStore_ProcessSalesAdjustmentReversalRequest_" data-uid="Yort.Humm.InStore.HummClient.ProcessSalesAdjustmentReversalAsync(Yort.Humm.InStore.ProcessSalesAdjustmentReversalRequest)">ProcessSalesAdjustmentReversalAsync(ProcessSalesAdjustmentReversalRequest)</h4>
+  <div class="markdown level1 summary"><p>This endpoint is used to process a reversal of a <a class="xref" href="Yort.Humm.InStore.HummClient.html#Yort_Humm_InStore_HummClient_ProcessSalesAdjustmentAsync_Yort_Humm_InStore_ProcessSalesAdjustmentRequest_">ProcessSalesAdjustmentAsync(ProcessSalesAdjustmentRequest)</a> at the point-of-sale</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task&lt;ProcessSalesAdjustmentReversalResponse&gt; ProcessSalesAdjustmentReversalAsync(ProcessSalesAdjustmentReversalRequest request)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Yort.Humm.InStore.ProcessSalesAdjustmentReversalRequest.html">ProcessSalesAdjustmentReversalRequest</a></td>
+        <td><span class="parametername">request</span></td>
+        <td><p>A <a class="xref" href="Yort.Humm.InStore.ProcessSalesAdjustmentReversalRequest.html">ProcessSalesAdjustmentReversalRequest</a> instance.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="Yort.Humm.InStore.ProcessSalesAdjustmentReversalResponse.html">ProcessSalesAdjustmentReversalResponse</a>&gt;</td>
+        <td><p>A <a class="xref" href="Yort.Humm.InStore.ProcessSalesAdjustmentReversalResponse.html">ProcessSalesAdjustmentReversalResponse</a> instance.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Yort_Humm_InStore_HummClient_ProcessSalesAdjustmentReversalAsync_Yort_Humm_InStore_ProcessSalesAdjustmentReversalRequest__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>This is typically used to undo a refund in the case where it was made in error, or where the outcome was unknown (due to a network timeout/error) 
+and an idempotent retry is not desirable. See the Humm documentation at; https://docs.shophumm.com.au/pos/api_information/retries_and_idempotency/ </p>
+</div>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.argumentnullexception">ArgumentNullException</a></td>
+        <td><p>Thrown if <code data-dev-comment-type="paramref" class="paramref">request</code> is null.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Yort.Humm.InStore.HummResponseSignatureException.html">HummResponseSignatureException</a></td>
+        <td><p>Thrown if the response signature cannot be validated.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.objectdisposedexception">ObjectDisposedException</a></td>
+        <td><p>Thrown if this instance has been disposed.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.invalidoperationexception">InvalidOperationException</a></td>
+        <td><p>Thrown if this instance has not been initialised with a non-null device key (<a class="xref" href="Yort.Humm.InStore.HummClient.html#Yort_Humm_InStore_HummClient_SetDeviceKey_System_String_">SetDeviceKey(String)</a> and <a class="xref" href="Yort.Humm.InStore.HummClientConfiguration.html#Yort_Humm_InStore_HummClientConfiguration_DeviceKey">DeviceKey</a>)..</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.net.http.httprequestexception">HttpRequestException</a></td>
+        <td><p>Thrown if an HTTP protocol level or <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.net.http.httpclient">HttpClient</a> pipeline error occurs.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Yort_Humm_InStore_HummClient_ProcessSalesAdjustmentReversalAsync_Yort_Humm_InStore_ProcessSalesAdjustmentReversalRequest__seealso">See Also</h5>
+  <div class="seealso">
+      <div><a class="xref" href="Yort.Humm.InStore.HummClient.html#Yort_Humm_InStore_HummClient_ProcessSalesAdjustmentAsync_Yort_Humm_InStore_ProcessSalesAdjustmentRequest_">ProcessSalesAdjustmentAsync(ProcessSalesAdjustmentRequest)</a></div>
+  </div>
+  
+  
+  <a id="Yort_Humm_InStore_HummClient_SendReceiptAsync_" data-uid="Yort.Humm.InStore.HummClient.SendReceiptAsync*"></a>
+  <h4 id="Yort_Humm_InStore_HummClient_SendReceiptAsync_Yort_Humm_InStore_SendReceiptRequest_" data-uid="Yort.Humm.InStore.HummClient.SendReceiptAsync(Yort.Humm.InStore.SendReceiptRequest)">SendReceiptAsync(SendReceiptRequest)</h4>
+  <div class="markdown level1 summary"><p>Registers a POS transaction number against a prior authorisation.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task&lt;SendReceiptResponse&gt; SendReceiptAsync(SendReceiptRequest request)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Yort.Humm.InStore.SendReceiptRequest.html">SendReceiptRequest</a></td>
+        <td><span class="parametername">request</span></td>
+        <td><p>A <a class="xref" href="Yort.Humm.InStore.SendReceiptRequest.html">SendReceiptRequest</a> instance.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="Yort.Humm.InStore.SendReceiptResponse.html">SendReceiptResponse</a>&gt;</td>
+        <td><p>A <a class="xref" href="Yort.Humm.InStore.SendReceiptResponse.html">SendReceiptResponse</a> instance containing the result of the request.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Yort_Humm_InStore_HummClient_SendReceiptAsync_Yort_Humm_InStore_SendReceiptRequest__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>This method is only used if the <a class="xref" href="Yort.Humm.InStore.ProcessAuthorisationRequest.html#Yort_Humm_InStore_ProcessAuthorisationRequest_ClientTransactionReference">ClientTransactionReference</a> was a temporary value and not a POS transaction number.
+In this case, when the POS finally assigns a permanent transaction number this method can be called to update the payment with the relevant reference.</p>
+<p>See the Humm documentation at https://docs.shophumm.com.au/pos/api/send_receipt/ and https://docs.shophumm.com.au/pos/api_information/retries_and_idempotency/ </p>
+</div>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.argumentnullexception">ArgumentNullException</a></td>
+        <td><p>Thrown if <code data-dev-comment-type="paramref" class="paramref">request</code> is null.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Yort.Humm.InStore.HummResponseSignatureException.html">HummResponseSignatureException</a></td>
+        <td><p>Thrown if the response signature cannot be validated.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.objectdisposedexception">ObjectDisposedException</a></td>
+        <td><p>Thrown if this instance has been disposed.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.invalidoperationexception">InvalidOperationException</a></td>
+        <td><p>Thrown if this instance has not been initialised with a non-null device key (<a class="xref" href="Yort.Humm.InStore.HummClient.html#Yort_Humm_InStore_HummClient_SetDeviceKey_System_String_">SetDeviceKey(String)</a> and <a class="xref" href="Yort.Humm.InStore.HummClientConfiguration.html#Yort_Humm_InStore_HummClientConfiguration_DeviceKey">DeviceKey</a>)..</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.net.http.httprequestexception">HttpRequestException</a></td>
+        <td><p>Thrown if an HTTP protocol level or <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.net.http.httpclient">HttpClient</a> pipeline error occurs.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Yort_Humm_InStore_HummClient_SendReceiptAsync_Yort_Humm_InStore_SendReceiptRequest__seealso">See Also</h5>
+  <div class="seealso">
+      <div><a class="xref" href="Yort.Humm.InStore.HummClient.html#Yort_Humm_InStore_HummClient_ProcessAuthorisationAsync_Yort_Humm_InStore_ProcessAuthorisationRequest_">ProcessAuthorisationAsync(ProcessAuthorisationRequest)</a></div>
+  </div>
+  
+  
+  <a id="Yort_Humm_InStore_HummClient_SetDeviceKey_" data-uid="Yort.Humm.InStore.HummClient.SetDeviceKey*"></a>
+  <h4 id="Yort_Humm_InStore_HummClient_SetDeviceKey_System_String_" data-uid="Yort.Humm.InStore.HummClient.SetDeviceKey(System.String)">SetDeviceKey(String)</h4>
+  <div class="markdown level1 summary"><p>Sets the device key used for generating digital signatures.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void SetDeviceKey(string deviceKey)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a></td>
+        <td><span class="parametername">deviceKey</span></td>
+        <td><p>A string containing the device key previously returns by a <a class="xref" href="Yort.Humm.InStore.HummClient.html#Yort_Humm_InStore_HummClient_CreateKeyAsync_Yort_Humm_InStore_CreateKeyRequest_">CreateKeyAsync(CreateKeyRequest)</a> request.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Yort_Humm_InStore_HummClient_SetDeviceKey_System_String__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>The device key is usually provided via the <a class="xref" href="Yort.Humm.InStore.HummClientConfiguration.html">HummClientConfiguration</a> constructor argument if known before client is created. This method is typically used when registering a new device via <a class="xref" href="Yort.Humm.InStore.HummClient.html#Yort_Humm_InStore_HummClient_CreateKeyAsync_Yort_Humm_InStore_CreateKeyRequest_">CreateKeyAsync(CreateKeyRequest)</a> and not electing to have the token automatically applied.</p>
+<p>Null can be provided to clear the currently assigned device key (if any), prior to calling <a class="xref" href="Yort.Humm.InStore.HummClient.html#Yort_Humm_InStore_HummClient_CreateKeyAsync_Yort_Humm_InStore_CreateKeyRequest_">CreateKeyAsync(CreateKeyRequest)</a> to generate a new device key.</p>
+</div>
+  <h5 id="Yort_Humm_InStore_HummClient_SetDeviceKey_System_String__seealso">See Also</h5>
+  <div class="seealso">
+      <div><a class="xref" href="Yort.Humm.InStore.HummClient.html#Yort_Humm_InStore_HummClient_CreateKeyAsync_Yort_Humm_InStore_CreateKeyRequest_">CreateKeyAsync(CreateKeyRequest)</a></div>
+      <div><a class="xref" href="Yort.Humm.InStore.HummClientConfiguration.html">HummClientConfiguration</a></div>
+  </div>
+  <h3 id="events">Events
+  </h3>
+  
+  
+  <h4 id="Yort_Humm_InStore_HummClient_PendingAuthorisation" data-uid="Yort.Humm.InStore.HummClient.PendingAuthorisation">PendingAuthorisation</h4>
+  <div class="markdown level1 summary"><p>Raised when a <a class="xref" href="Yort.Humm.InStore.ProcessAuthorisationResponse.html">ProcessAuthorisationResponse</a> is received with a status of <a class="xref" href="Yort.Humm.InStore.RequestStates.html#Yort_Humm_InStore_RequestStates_Pending">Pending</a> and the <a class="xref" href="Yort.Humm.InStore.ProcessAuthorisationRequest.html#Yort_Humm_InStore_ProcessAuthorisationRequest_AutoHandlePendingResponse">AutoHandlePendingResponse</a> property of the request was true.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public event EventHandler&lt;PendingAuthorisationEventArgs&gt; PendingAuthorisation</code></pre>
+  </div>
+  <h5 class="eventType">Event Type</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.eventhandler-1">EventHandler</a>&lt;<a class="xref" href="Yort.Humm.InStore.PendingAuthorisationEventArgs.html">PendingAuthorisationEventArgs</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Yort_Humm_InStore_HummClient_PendingAuthorisation_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>While the <a class="xref" href="Yort.Humm.InStore.ProcessAuthorisationRequest.html#Yort_Humm_InStore_ProcessAuthorisationRequest_AutoHandlePendingResponse">AutoHandlePendingResponse</a> option frees the client from having to handle the repeat API call logic to Humm in the case of a pending &apos;big things&apos; purchase flow, 
+this event can be used by the client to update it&apos;s UI to indicate the pending status and/or when the next recheck will occur if it desires.</p>
+</div>
+  <h3 id="implements">Implements</h3>
+  <div>
+      <a class="xref" href="Yort.Humm.InStore.IHummClient.html">IHummClient</a>
+  </div>
+  <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.idisposable">System.IDisposable</a>
+  </div>
+  <h3 id="seealso">See Also</h3>
+  <div class="seealso">
+      <div><a class="xref" href="Yort.Humm.InStore.HummClientConfiguration.html">HummClientConfiguration</a></div>
+      <div><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.idisposable">IDisposable</a></div>
+  </div>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            Copyright (c) 2020 Troy Willmot
+            
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

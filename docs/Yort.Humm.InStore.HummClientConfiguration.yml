@@ -1,0 +1,727 @@
+### YamlMime:ManagedReference
+items:
+- uid: Yort.Humm.InStore.HummClientConfiguration
+  commentId: T:Yort.Humm.InStore.HummClientConfiguration
+  id: HummClientConfiguration
+  parent: Yort.Humm.InStore
+  children:
+  - Yort.Humm.InStore.HummClientConfiguration.DeviceId
+  - Yort.Humm.InStore.HummClientConfiguration.DeviceKey
+  - Yort.Humm.InStore.HummClientConfiguration.Environment
+  - Yort.Humm.InStore.HummClientConfiguration.MerchantId
+  - Yort.Humm.InStore.HummClientConfiguration.PosVersion
+  - Yort.Humm.InStore.HummClientConfiguration.UserAgentProductName
+  - Yort.Humm.InStore.HummClientConfiguration.UserAgentProductVersion
+  langs:
+  - csharp
+  - vb
+  name: HummClientConfiguration
+  nameWithType: HummClientConfiguration
+  fullName: Yort.Humm.InStore.HummClientConfiguration
+  type: Class
+  source:
+    remote:
+      path: C:/Projects/GitHub/Yort.Humm.InStore/src/HummClientConfiguration.cs
+    id: HummClientConfiguration
+    path: HummClientConfiguration.cs
+    startLine: 9
+  assemblies:
+  - Yort.Humm.InStore
+  namespace: Yort.Humm.InStore
+  summary: "\nProvides information to a <xref href=\"Yort.Humm.InStore.HummClient\" data-throw-if-not-resolved=\"false\"></xref> about how to operate and default values to use for requests.\n"
+  example: []
+  syntax:
+    content: public sealed class HummClientConfiguration
+    content.vb: Public NotInheritable Class HummClientConfiguration
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+  modifiers.csharp:
+  - public
+  - sealed
+  - class
+  modifiers.vb:
+  - Public
+  - NotInheritable
+  - Class
+- uid: Yort.Humm.InStore.HummClientConfiguration.MerchantId
+  commentId: P:Yort.Humm.InStore.HummClientConfiguration.MerchantId
+  id: MerchantId
+  parent: Yort.Humm.InStore.HummClientConfiguration
+  langs:
+  - csharp
+  - vb
+  name: MerchantId
+  nameWithType: HummClientConfiguration.MerchantId
+  fullName: Yort.Humm.InStore.HummClientConfiguration.MerchantId
+  type: Property
+  source:
+    remote:
+      path: C:/Projects/GitHub/Yort.Humm.InStore/src/HummClientConfiguration.cs
+    id: MerchantId
+    path: HummClientConfiguration.cs
+    startLine: 21
+  assemblies:
+  - Yort.Humm.InStore
+  namespace: Yort.Humm.InStore
+  summary: "\nGets or sets the default merchant identifier for requests.\n"
+  remarks: "\n<p>Any request sent with a null or empty merchant id will have this value used instead.</p>\n"
+  example: []
+  syntax:
+    content: public string MerchantId { get; set; }
+    parameters: []
+    return:
+      type: System.String
+      description: "\nThe merchant identifier.\n"
+    content.vb: Public Property MerchantId As String
+  overload: Yort.Humm.InStore.HummClientConfiguration.MerchantId*
+  seealso:
+  - linkId: Yort.Humm.InStore.Infrastructure.RequestBase.MerchantId
+    commentId: P:Yort.Humm.InStore.Infrastructure.RequestBase.MerchantId
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: Yort.Humm.InStore.HummClientConfiguration.DeviceId
+  commentId: P:Yort.Humm.InStore.HummClientConfiguration.DeviceId
+  id: DeviceId
+  parent: Yort.Humm.InStore.HummClientConfiguration
+  langs:
+  - csharp
+  - vb
+  name: DeviceId
+  nameWithType: HummClientConfiguration.DeviceId
+  fullName: Yort.Humm.InStore.HummClientConfiguration.DeviceId
+  type: Property
+  source:
+    remote:
+      path: C:/Projects/GitHub/Yort.Humm.InStore/src/HummClientConfiguration.cs
+    id: DeviceId
+    path: HummClientConfiguration.cs
+    startLine: 32
+  assemblies:
+  - Yort.Humm.InStore
+  namespace: Yort.Humm.InStore
+  summary: "\nGets or sets the unique device identifier for the POS the <xref href=\"Yort.Humm.InStore.HummClient\" data-throw-if-not-resolved=\"false\"></xref> represents.\n"
+  remarks: "\n<p>Any request sent with a null or empty device id will have this value used instead.</p>\n"
+  example: []
+  syntax:
+    content: public string DeviceId { get; set; }
+    parameters: []
+    return:
+      type: System.String
+      description: "\nThe device identifier.\n"
+    content.vb: Public Property DeviceId As String
+  overload: Yort.Humm.InStore.HummClientConfiguration.DeviceId*
+  seealso:
+  - linkId: Yort.Humm.InStore.Infrastructure.RequestBase.DeviceId
+    commentId: P:Yort.Humm.InStore.Infrastructure.RequestBase.DeviceId
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: Yort.Humm.InStore.HummClientConfiguration.PosVersion
+  commentId: P:Yort.Humm.InStore.HummClientConfiguration.PosVersion
+  id: PosVersion
+  parent: Yort.Humm.InStore.HummClientConfiguration
+  langs:
+  - csharp
+  - vb
+  name: PosVersion
+  nameWithType: HummClientConfiguration.PosVersion
+  fullName: Yort.Humm.InStore.HummClientConfiguration.PosVersion
+  type: Property
+  source:
+    remote:
+      path: C:/Projects/GitHub/Yort.Humm.InStore/src/HummClientConfiguration.cs
+    id: PosVersion
+    path: HummClientConfiguration.cs
+    startLine: 43
+  assemblies:
+  - Yort.Humm.InStore
+  namespace: Yort.Humm.InStore
+  summary: "\nGets or sets the POS version.\n"
+  remarks: "\n<p>Any request sent with a null or empty POS version will have this value used instead.</p>\n"
+  example: []
+  syntax:
+    content: public string PosVersion { get; set; }
+    parameters: []
+    return:
+      type: System.String
+      description: "\nThe POS version.\n"
+    content.vb: Public Property PosVersion As String
+  overload: Yort.Humm.InStore.HummClientConfiguration.PosVersion*
+  seealso:
+  - linkId: Yort.Humm.InStore.Infrastructure.RequestBase.PosVersion
+    commentId: P:Yort.Humm.InStore.Infrastructure.RequestBase.PosVersion
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: Yort.Humm.InStore.HummClientConfiguration.Environment
+  commentId: P:Yort.Humm.InStore.HummClientConfiguration.Environment
+  id: Environment
+  parent: Yort.Humm.InStore.HummClientConfiguration
+  langs:
+  - csharp
+  - vb
+  name: Environment
+  nameWithType: HummClientConfiguration.Environment
+  fullName: Yort.Humm.InStore.HummClientConfiguration.Environment
+  type: Property
+  source:
+    remote:
+      path: C:/Projects/GitHub/Yort.Humm.InStore/src/HummClientConfiguration.cs
+    id: Environment
+    path: HummClientConfiguration.cs
+    startLine: 51
+  assemblies:
+  - Yort.Humm.InStore
+  namespace: Yort.Humm.InStore
+  summary: "\nGets or sets the Humm API environment to use.\n"
+  example: []
+  syntax:
+    content: public HummEnvironment Environment { get; set; }
+    parameters: []
+    return:
+      type: Yort.Humm.InStore.HummEnvironment
+      description: "\nA value from the <xref href=\"Yort.Humm.InStore.HummEnvironment\" data-throw-if-not-resolved=\"false\"></xref> specifying which Humm endpoints should be called by the <xref href=\"Yort.Humm.InStore.HummClient\" data-throw-if-not-resolved=\"false\"></xref>.\n"
+    content.vb: Public Property Environment As HummEnvironment
+  overload: Yort.Humm.InStore.HummClientConfiguration.Environment*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: Yort.Humm.InStore.HummClientConfiguration.DeviceKey
+  commentId: P:Yort.Humm.InStore.HummClientConfiguration.DeviceKey
+  id: DeviceKey
+  parent: Yort.Humm.InStore.HummClientConfiguration
+  langs:
+  - csharp
+  - vb
+  name: DeviceKey
+  nameWithType: HummClientConfiguration.DeviceKey
+  fullName: Yort.Humm.InStore.HummClientConfiguration.DeviceKey
+  type: Property
+  source:
+    remote:
+      path: C:/Projects/GitHub/Yort.Humm.InStore/src/HummClientConfiguration.cs
+    id: DeviceKey
+    path: HummClientConfiguration.cs
+    startLine: 66
+  assemblies:
+  - Yort.Humm.InStore
+  namespace: Yort.Humm.InStore
+  summary: "\nGets or sets the device key issued by Humm for creating digital signatures. \n"
+  remarks: "\n<p>This value is must match the one returned by a prior <xref href=\"Yort.Humm.InStore.CreateKeyRequest\" data-throw-if-not-resolved=\"false\"></xref> for the same <xref href=\"Yort.Humm.InStore.HummClientConfiguration.MerchantId\" data-throw-if-not-resolved=\"false\"></xref> and <xref href=\"Yort.Humm.InStore.HummClientConfiguration.DeviceId\" data-throw-if-not-resolved=\"false\"></xref>.</p>\n<p>If you have not yet initialised the POS device and do not have a device key, use null as the device key property here and then initialise the client instance using a <xref href=\"Yort.Humm.InStore.HummClient.CreateKeyAsync(Yort.Humm.InStore.CreateKeyRequest)\" data-throw-if-not-resolved=\"false\"></xref> call.</p>\n"
+  example: []
+  syntax:
+    content: public string DeviceKey { get; set; }
+    parameters: []
+    return:
+      type: System.String
+      description: "\nThe device key.\n"
+    content.vb: Public Property DeviceKey As String
+  overload: Yort.Humm.InStore.HummClientConfiguration.DeviceKey*
+  seealso:
+  - linkId: Yort.Humm.InStore.HummClient.CreateKeyAsync(Yort.Humm.InStore.CreateKeyRequest)
+    commentId: M:Yort.Humm.InStore.HummClient.CreateKeyAsync(Yort.Humm.InStore.CreateKeyRequest)
+  - linkId: Yort.Humm.InStore.CreateKeyRequest
+    commentId: T:Yort.Humm.InStore.CreateKeyRequest
+  - linkId: Yort.Humm.InStore.CreateKeyResponse
+    commentId: T:Yort.Humm.InStore.CreateKeyResponse
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: Yort.Humm.InStore.HummClientConfiguration.UserAgentProductName
+  commentId: P:Yort.Humm.InStore.HummClientConfiguration.UserAgentProductName
+  id: UserAgentProductName
+  parent: Yort.Humm.InStore.HummClientConfiguration
+  langs:
+  - csharp
+  - vb
+  name: UserAgentProductName
+  nameWithType: HummClientConfiguration.UserAgentProductName
+  fullName: Yort.Humm.InStore.HummClientConfiguration.UserAgentProductName
+  type: Property
+  source:
+    remote:
+      path: C:/Projects/GitHub/Yort.Humm.InStore/src/HummClientConfiguration.cs
+    id: UserAgentProductName
+    path: HummClientConfiguration.cs
+    startLine: 77
+  assemblies:
+  - Yort.Humm.InStore
+  namespace: Yort.Humm.InStore
+  summary: "\nOptional. Gets or sets the name of the &apos;product&apos; to use in the user agent header on HTTP calls to Humm.\n"
+  remarks: "\n<p>If not supplied the Yort.Humm.InStore library name is used instead.</p>\n"
+  example: []
+  syntax:
+    content: public string UserAgentProductName { get; set; }
+    parameters: []
+    return:
+      type: System.String
+      description: "\nThe name of the user agent product.\n"
+    content.vb: Public Property UserAgentProductName As String
+  overload: Yort.Humm.InStore.HummClientConfiguration.UserAgentProductName*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: Yort.Humm.InStore.HummClientConfiguration.UserAgentProductVersion
+  commentId: P:Yort.Humm.InStore.HummClientConfiguration.UserAgentProductVersion
+  id: UserAgentProductVersion
+  parent: Yort.Humm.InStore.HummClientConfiguration
+  langs:
+  - csharp
+  - vb
+  name: UserAgentProductVersion
+  nameWithType: HummClientConfiguration.UserAgentProductVersion
+  fullName: Yort.Humm.InStore.HummClientConfiguration.UserAgentProductVersion
+  type: Property
+  source:
+    remote:
+      path: C:/Projects/GitHub/Yort.Humm.InStore/src/HummClientConfiguration.cs
+    id: UserAgentProductVersion
+    path: HummClientConfiguration.cs
+    startLine: 87
+  assemblies:
+  - Yort.Humm.InStore
+  namespace: Yort.Humm.InStore
+  summary: "\nOptional. Gets or sets the version of the &apos;product&apos; to use in the user agent header on HTTP calls to Humm.\n"
+  remarks: "\n<p>If not supplied the Yort.Humm.InStore library version is used instead.</p>\n"
+  example: []
+  syntax:
+    content: public string UserAgentProductVersion { get; set; }
+    parameters: []
+    return:
+      type: System.String
+      description: "\nThe user agent product version.\n"
+    content.vb: Public Property UserAgentProductVersion As String
+  overload: Yort.Humm.InStore.HummClientConfiguration.UserAgentProductVersion*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+references:
+- uid: Yort.Humm.InStore.HummClient
+  commentId: T:Yort.Humm.InStore.HummClient
+  name: HummClient
+  nameWithType: HummClient
+  fullName: Yort.Humm.InStore.HummClient
+- uid: Yort.Humm.InStore
+  commentId: N:Yort.Humm.InStore
+  name: Yort.Humm.InStore
+  nameWithType: Yort.Humm.InStore
+  fullName: Yort.Humm.InStore
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: Yort.Humm.InStore.Infrastructure.RequestBase.MerchantId
+  commentId: P:Yort.Humm.InStore.Infrastructure.RequestBase.MerchantId
+  parent: Yort.Humm.InStore.Infrastructure.RequestBase
+  name: MerchantId
+  nameWithType: RequestBase.MerchantId
+  fullName: Yort.Humm.InStore.Infrastructure.RequestBase.MerchantId
+- uid: Yort.Humm.InStore.HummClientConfiguration.MerchantId*
+  commentId: Overload:Yort.Humm.InStore.HummClientConfiguration.MerchantId
+  name: MerchantId
+  nameWithType: HummClientConfiguration.MerchantId
+  fullName: Yort.Humm.InStore.HummClientConfiguration.MerchantId
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: Yort.Humm.InStore.Infrastructure.RequestBase
+  commentId: T:Yort.Humm.InStore.Infrastructure.RequestBase
+  parent: Yort.Humm.InStore.Infrastructure
+  name: RequestBase
+  nameWithType: RequestBase
+  fullName: Yort.Humm.InStore.Infrastructure.RequestBase
+- uid: Yort.Humm.InStore.Infrastructure
+  commentId: N:Yort.Humm.InStore.Infrastructure
+  name: Yort.Humm.InStore.Infrastructure
+  nameWithType: Yort.Humm.InStore.Infrastructure
+  fullName: Yort.Humm.InStore.Infrastructure
+- uid: Yort.Humm.InStore.Infrastructure.RequestBase.DeviceId
+  commentId: P:Yort.Humm.InStore.Infrastructure.RequestBase.DeviceId
+  parent: Yort.Humm.InStore.Infrastructure.RequestBase
+  name: DeviceId
+  nameWithType: RequestBase.DeviceId
+  fullName: Yort.Humm.InStore.Infrastructure.RequestBase.DeviceId
+- uid: Yort.Humm.InStore.HummClientConfiguration.DeviceId*
+  commentId: Overload:Yort.Humm.InStore.HummClientConfiguration.DeviceId
+  name: DeviceId
+  nameWithType: HummClientConfiguration.DeviceId
+  fullName: Yort.Humm.InStore.HummClientConfiguration.DeviceId
+- uid: Yort.Humm.InStore.Infrastructure.RequestBase.PosVersion
+  commentId: P:Yort.Humm.InStore.Infrastructure.RequestBase.PosVersion
+  parent: Yort.Humm.InStore.Infrastructure.RequestBase
+  name: PosVersion
+  nameWithType: RequestBase.PosVersion
+  fullName: Yort.Humm.InStore.Infrastructure.RequestBase.PosVersion
+- uid: Yort.Humm.InStore.HummClientConfiguration.PosVersion*
+  commentId: Overload:Yort.Humm.InStore.HummClientConfiguration.PosVersion
+  name: PosVersion
+  nameWithType: HummClientConfiguration.PosVersion
+  fullName: Yort.Humm.InStore.HummClientConfiguration.PosVersion
+- uid: Yort.Humm.InStore.HummEnvironment
+  commentId: T:Yort.Humm.InStore.HummEnvironment
+  parent: Yort.Humm.InStore
+  name: HummEnvironment
+  nameWithType: HummEnvironment
+  fullName: Yort.Humm.InStore.HummEnvironment
+- uid: Yort.Humm.InStore.HummClientConfiguration.Environment*
+  commentId: Overload:Yort.Humm.InStore.HummClientConfiguration.Environment
+  name: Environment
+  nameWithType: HummClientConfiguration.Environment
+  fullName: Yort.Humm.InStore.HummClientConfiguration.Environment
+- uid: Yort.Humm.InStore.CreateKeyRequest
+  commentId: T:Yort.Humm.InStore.CreateKeyRequest
+  parent: Yort.Humm.InStore
+  name: CreateKeyRequest
+  nameWithType: CreateKeyRequest
+  fullName: Yort.Humm.InStore.CreateKeyRequest
+- uid: Yort.Humm.InStore.HummClientConfiguration.MerchantId
+  commentId: P:Yort.Humm.InStore.HummClientConfiguration.MerchantId
+  isExternal: true
+- uid: Yort.Humm.InStore.HummClientConfiguration.DeviceId
+  commentId: P:Yort.Humm.InStore.HummClientConfiguration.DeviceId
+  isExternal: true
+- uid: Yort.Humm.InStore.HummClient.CreateKeyAsync(Yort.Humm.InStore.CreateKeyRequest)
+  commentId: M:Yort.Humm.InStore.HummClient.CreateKeyAsync(Yort.Humm.InStore.CreateKeyRequest)
+  isExternal: true
+- uid: Yort.Humm.InStore.CreateKeyResponse
+  commentId: T:Yort.Humm.InStore.CreateKeyResponse
+  name: CreateKeyResponse
+  nameWithType: CreateKeyResponse
+  fullName: Yort.Humm.InStore.CreateKeyResponse
+- uid: Yort.Humm.InStore.HummClientConfiguration.DeviceKey*
+  commentId: Overload:Yort.Humm.InStore.HummClientConfiguration.DeviceKey
+  name: DeviceKey
+  nameWithType: HummClientConfiguration.DeviceKey
+  fullName: Yort.Humm.InStore.HummClientConfiguration.DeviceKey
+- uid: Yort.Humm.InStore.HummClientConfiguration.UserAgentProductName*
+  commentId: Overload:Yort.Humm.InStore.HummClientConfiguration.UserAgentProductName
+  name: UserAgentProductName
+  nameWithType: HummClientConfiguration.UserAgentProductName
+  fullName: Yort.Humm.InStore.HummClientConfiguration.UserAgentProductName
+- uid: Yort.Humm.InStore.HummClientConfiguration.UserAgentProductVersion*
+  commentId: Overload:Yort.Humm.InStore.HummClientConfiguration.UserAgentProductVersion
+  name: UserAgentProductVersion
+  nameWithType: HummClientConfiguration.UserAgentProductVersion
+  fullName: Yort.Humm.InStore.HummClientConfiguration.UserAgentProductVersion
