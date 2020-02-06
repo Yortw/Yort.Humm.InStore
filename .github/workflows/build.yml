@@ -44,7 +44,7 @@ jobs:
     - name: Build with dotnet (src\Yort.Humm.InStore.sln)
       run: dotnet build src\Yort.Humm.InStore.sln --configuration Release --nologo
     - name: Pack
-      run: dotnet pack src\Yort.Humm.InStore.sln --output ./artifacts --configuration Release -p:PackageVersion=$Env:VERSION
+      run: dotnet pack src\Yort.Humm.InStore.sln --output ./artifacts --configuration Release -p:PackageVersion=$Env:VERSION --include-source --nologo
     - uses: actions/upload-artifact@v1
       with:
         name: artifacts
@@ -60,4 +60,4 @@ jobs:
         name: artifacts
         path: ./artifacts
     - name: Publish packages
-      run: dotnet nuget push ./artifacts/**.nupkg --source nuget.org --api-key ${{secrets.NUGET_TOKEN}} --include-source --nologo
+      run: dotnet nuget push ./artifacts/**.nupkg --source nuget.org --api-key ${{secrets.NUGET_TOKEN}}
