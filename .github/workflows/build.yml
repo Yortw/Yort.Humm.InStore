@@ -31,6 +31,8 @@ jobs:
   pack:
     runs-on: windows-latest
     needs: build
+    env:
+      VERSION: ""
     if: github.event_name == 'push'
     steps:
     - name: Checkout
@@ -41,6 +43,8 @@ jobs:
         dotnet-version: 3.0.101
     - name: Set version
       run: echo "::set-env name=VERSION::$(git describe --tags --dirty)"
+    - name: Echo Version
+      run: echo "$Env:VERSION"      
     - name: Pack
       run: dotnet pack src\Yort.Humm.InStore.sln --output ./artifacts --configuration Release -p:PackageVersion=$Env:VERSION
     - uses: actions/upload-artifact@v1
