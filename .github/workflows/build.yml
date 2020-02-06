@@ -26,11 +26,15 @@ jobs:
     - name: Build with dotnet (src\Yort.Humm.InStore.sln)
       run: dotnet build src\Yort.Humm.InStore.sln --configuration Release --nologo
     - name: Run Tests
-      run: dotnet test src\Yort.Humm.InStore.sln --verbosity normal --collect:"XPlat Code Coverage" /p:CoverletOutputFormat=cobertura /p:CoverletOutput="Tests/TestResults/"
+      run: dotnet test src\Yort.Humm.InStore.sln --verbosity normal --collect:"XPlat Code Coverage" /p:CoverletOutputFormat=opencover /p:CoverletOutput="Tests/TestResults/"
     - name: Install Report Generator
       run: dotnet tool install -g dotnet-reportgenerator-globaltool
     - name: Generate Code Coverage Report
-      run: reportgenerator "-reports:Tests\TestResults\**\coverage.cobertura.xml" "-targetdir:Tests\TestResults\Reports" -reporttypes:HTML;
+      run: reportgenerator "-reports:Tests\TestResults\**\coverage.opencover.xml" "-targetdir:Tests\TestResults\Reports" -reporttypes:HTML;
+    - name: Install Coveralls Upload
+      run: dotnet tool install -g coveralls.net --version 1.0.0
+    - name: Upload coverage to Coveralls.IO
+      run: csmacnz.Coveralls -i "Tests\TestResults\**\coverage.opencover.xml" --useRelativePaths
       
   pack:
     runs-on: windows-latest
