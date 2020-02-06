@@ -29,8 +29,6 @@ jobs:
       run: dotnet test src\Yort.Humm.InStore.sln --verbosity normal
 
   pack:
-    env:
-      Version: $(git describe --tags --dirty)
     runs-on: windows-latest
     needs: build
     if: github.event_name == 'push'
@@ -41,10 +39,8 @@ jobs:
       uses: actions/setup-dotnet@v1
       with:
         dotnet-version: 3.0.101
-    - name: Determine version
-      run: "$Env:Version=$(git describe --tags --dirty)"
-    - name: Echo Version
-      run: "echo $Env:Version"
+    - name: Set version
+      run: echo "::set-env name=VERSION::$(git describe --tags --dirty)"
     - name: Pack
       run: dotnet pack src\Yort.Humm.InStore.sln --output ./artifacts --configuration Release -p:PackageVersion=$Env:VERSION
     - uses: actions/upload-artifact@v1
