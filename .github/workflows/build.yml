@@ -26,7 +26,7 @@ jobs:
     - name: Build with dotnet (src\Yort.Humm.InStore.sln)
       run: dotnet build src\Yort.Humm.InStore.sln --configuration Release --nologo
     - name: Run Tests
-      run: dotnet test src\Yort.Humm.InStore.sln --verbosity normal
+      run: dotnet test src\Yort.Humm.InStore.sln --verbosity normal --collect:"XPlat Code Coverage"
 
   pack:
     runs-on: windows-latest
