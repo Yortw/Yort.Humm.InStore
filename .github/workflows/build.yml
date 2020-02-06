@@ -27,6 +27,8 @@ jobs:
       run: dotnet build src\Yort.Humm.InStore.sln --configuration Release --nologo
     - name: Run Tests
       run: dotnet test src\Yort.Humm.InStore.sln --verbosity normal --collect:"XPlat Code Coverage"
+    - name: Install Report Generator
+      run: dotnet tool install -g dotnet-reportgenerator-globaltool
     - name: Generate Code Coverage Report
       run: dotnet reportgenerator "-reports:TestResults\coverage.cobertura.xml" "-targetdir:TestResults\html" -reporttypes:HTML;
       
