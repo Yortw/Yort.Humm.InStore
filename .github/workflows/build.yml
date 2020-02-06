@@ -15,7 +15,8 @@ jobs:
       Humm_Test_Sandbox_MerchantId: ${{ secrets.Test_Sandbox_MerchantId }}    
       Humm_Test_Sandbox_DeviceId: ${{ secrets.Test_Sandbox_DeviceId }}    
       Humm_Test_Sandbox_DeviceRegistrationKey: ${{ secrets.Test_Sandbox_DeviceRegistrationKey }}    
-      Humm_Test_Sandbox_NewDeviceId: ${{ secrets.Test_Sandbox_NewDeviceId }}    
+      Humm_Test_Sandbox_NewDeviceId: ${{ secrets.Test_Sandbox_NewDeviceId }}
+      Coveralls_Token: ${{ secrets.Coveralls_Token }}   
 
     steps:
     - uses: actions/checkout@v2
