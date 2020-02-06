@@ -350,4 +350,4 @@ MigrationBackup/
 .ionide/
 
 # doc gen log
-log.txt
+src/log.txt
