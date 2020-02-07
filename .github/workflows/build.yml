@@ -35,7 +35,7 @@ jobs:
     - name: Install Coveralls Upload
       run: dotnet tool install -g coveralls.net --version 1.0.0
     - name: Upload coverage to Coveralls.IO
-      run: csmacnz.Coveralls --reportgenerator -i "Tests\TestResults\Reports" -repoTokenVariable Coveralls_Token
+      run: csmacnz.Coveralls --reportgenerator -i "Tests\TestResults\Reports" --repoTokenVariable Coveralls_Token
       
   pack:
     runs-on: windows-latest
