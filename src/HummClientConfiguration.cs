@@ -11,7 +11,7 @@ namespace Yort.Humm.InStore
 	public sealed class HummClientConfiguration
 	{
 		/// <summary>
-		/// Gets or sets the default merchant identifier for requests.
+		/// Optional. Gets or sets the default merchant identifier for requests.
 		/// </summary>
 		/// <value>
 		/// The merchant identifier.
@@ -22,7 +22,7 @@ namespace Yort.Humm.InStore
 		/// <seealso cref="Infrastructure.RequestBase.MerchantId"/>
 		public string? MerchantId { get; set; }
 		/// <summary>
-		/// Gets or sets the unique device identifier for the POS the <see cref="HummClient"/> represents.
+		/// Optional. Gets or sets the unique device identifier for the POS the <see cref="HummClient"/> represents.
 		/// </summary>
 		/// <value>
 		/// The device identifier.
@@ -33,7 +33,7 @@ namespace Yort.Humm.InStore
 		/// <seealso cref="Infrastructure.RequestBase.DeviceId"/>
 		public string? DeviceId { get; set; }
 		/// <summary>
-		/// Gets or sets the POS version.
+		/// Optional. Gets or sets the POS version.
 		/// </summary>
 		/// <value>
 		/// The POS version.
@@ -45,7 +45,7 @@ namespace Yort.Humm.InStore
 		public string? PosVersion { get; set; }
 
 		/// <summary>
-		/// Gets or sets a <see cref="System.Uri"/> which is the base uri of the Humm API to call.
+		/// Required. Gets or sets a <see cref="System.Uri"/> which is the base uri of the Humm API to call.
 		/// </summary>
 		/// <value>
 		/// A <see cref="System.Uri"/> containing the base address to use.
@@ -58,7 +58,7 @@ namespace Yort.Humm.InStore
 		public Uri? BaseApiUrl { get; set; }
 
 		/// <summary>
-		/// Gets or sets the device key issued by Humm for creating digital signatures. 
+		/// Optional (when registering a new device, required otherwise). Gets or sets the device key issued by Humm for creating digital signatures. 
 		/// </summary>
 		/// <value>
 		/// The device key.

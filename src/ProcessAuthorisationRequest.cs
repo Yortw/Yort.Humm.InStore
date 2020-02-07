@@ -120,13 +120,15 @@ namespace Yort.Humm.InStore
 		/// Also ensure no property is larger than it's maximum allowed length (see individual property notes for details).
 		/// Also ensures all base properties are valid, see <see cref="RequestBase.Validate"/>.
 		/// </para>
-		/// <para>Does not validate the pre-approval code or finance amounts, as rules for these are likely to vary over time. It is better to let the API respond with an 
+		/// <para>Does not validate the pre-approval code length or finance amounts, as rules for these are likely to vary over time. It is better to let the API respond with an 
 		/// error result than pre-validate these values.</para>
 		/// </remarks>
 		public override void Validate()
 		{
 			ClientTransactionReference.GuardNullOrWhiteSpace("request", nameof(ClientTransactionReference));
 			ClientTransactionReference.GuardLength("request", nameof(ClientTransactionReference), 64);
+
+			PreapprovalCode.GuardNullOrWhiteSpace("request", nameof(PreapprovalCode));
 
 			base.Validate();
 		}

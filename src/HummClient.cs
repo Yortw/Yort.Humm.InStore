@@ -235,7 +235,7 @@ namespace Yort.Humm.InStore
 		{
 			GuardClientState();
 
-			throw new NotImplementedException();
+			return SendRequest<SendReceiptRequest, SendReceiptResponse>("SendReceipt", request);
 		}
 
 		/// <summary>
@@ -258,7 +258,7 @@ namespace Yort.Humm.InStore
 		{
 			GuardClientState();
 
-			throw new NotImplementedException();
+			return SendRequest<ProcessSalesAdjustmentRequest, ProcessSalesAdjustmentResponse>("ProcessSalesAdjustment", request);
 		}
 
 		/// <summary>
@@ -280,7 +280,7 @@ namespace Yort.Humm.InStore
 		{
 			GuardClientState();
 
-			throw new NotImplementedException();
+			return SendRequest<ProcessSalesAdjustmentReversalRequest, ProcessSalesAdjustmentReversalResponse>("ProcessSalesAdjustmentReversal", request);
 		}
 
 		private void OnPendingAuthorisation(ProcessAuthorisationResponse response, ProcessAuthorisationRequest request)

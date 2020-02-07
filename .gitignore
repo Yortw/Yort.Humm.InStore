@@ -351,3 +351,5 @@ MigrationBackup/
 
 # logs
 **/log.txt
+src/log.txt
+log.txt

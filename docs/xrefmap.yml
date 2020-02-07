@@ -928,6 +928,19 @@ references:
   isSpec: "True"
   fullName: Yort.Humm.InStore.InviteRequest.PurchaseAmount
   nameWithType: InviteRequest.PurchaseAmount
+- uid: Yort.Humm.InStore.InviteRequest.Validate
+  name: Validate()
+  href: api/Yort.Humm.InStore.InviteRequest.html#Yort_Humm_InStore_InviteRequest_Validate
+  commentId: M:Yort.Humm.InStore.InviteRequest.Validate
+  fullName: Yort.Humm.InStore.InviteRequest.Validate()
+  nameWithType: InviteRequest.Validate()
+- uid: Yort.Humm.InStore.InviteRequest.Validate*
+  name: Validate
+  href: api/Yort.Humm.InStore.InviteRequest.html#Yort_Humm_InStore_InviteRequest_Validate_
+  commentId: Overload:Yort.Humm.InStore.InviteRequest.Validate
+  isSpec: "True"
+  fullName: Yort.Humm.InStore.InviteRequest.Validate
+  nameWithType: InviteRequest.Validate
 - uid: Yort.Humm.InStore.InviteResponse
   name: InviteResponse
   href: api/Yort.Humm.InStore.InviteResponse.html

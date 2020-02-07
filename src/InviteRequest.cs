@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using Ladon;
 using Newtonsoft.Json;
 using Yort.Humm.InStore.Infrastructure;
 
@@ -20,6 +21,9 @@ namespace Yort.Humm.InStore
 		/// <value>
 		/// The mobile phone number.
 		/// </value>
+		/// <remarks>
+		/// <para>Maximum length of 10 digits.</para>
+		/// </remarks>
 		[JsonProperty("x_mobile")]
 		public string? MobileNumber { get; set; }
 
@@ -31,5 +35,24 @@ namespace Yort.Humm.InStore
 		/// </value>
 		[JsonProperty("x_purchase_amount")]
 		public decimal PurchaseAmount { get; set; }
+
+		/// <summary>
+		/// Validates this instance.
+		/// </summary>
+		/// <para>
+		/// <remarks>
+		/// <para>
+		/// Ensures that <see cref="MobileNumber" /> is not null, empty string or only whitespace.
+		/// Also ensure no property is larger than it's maximum allowed length (see individual property notes for details).
+		/// Also ensures all base properties are valid, see <see cref="RequestBase.Validate"/>.
+		/// </para>
+		/// </remarks>
+		public override void Validate()
+		{
+			MobileNumber.GuardNullOrWhiteSpace("request", nameof(MobileNumber));
+			MobileNumber.GuardLength("request", nameof(MobileNumber), 0, 10);
+
+			base.Validate();
+		}
 	}
 }

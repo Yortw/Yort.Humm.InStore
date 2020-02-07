@@ -386,7 +386,7 @@
         </member>
         <member name="P:Yort.Humm.InStore.HummClientConfiguration.MerchantId">
             <summary>
-            Gets or sets the default merchant identifier for requests.
+            Optional. Gets or sets the default merchant identifier for requests.
             </summary>
             <value>
             The merchant identifier.
@@ -398,7 +398,7 @@
         </member>
         <member name="P:Yort.Humm.InStore.HummClientConfiguration.DeviceId">
             <summary>
-            Gets or sets the unique device identifier for the POS the <see cref="T:Yort.Humm.InStore.HummClient"/> represents.
+            Optional. Gets or sets the unique device identifier for the POS the <see cref="T:Yort.Humm.InStore.HummClient"/> represents.
             </summary>
             <value>
             The device identifier.
@@ -410,7 +410,7 @@
         </member>
         <member name="P:Yort.Humm.InStore.HummClientConfiguration.PosVersion">
             <summary>
-            Gets or sets the POS version.
+            Optional. Gets or sets the POS version.
             </summary>
             <value>
             The POS version.
@@ -422,7 +422,7 @@
         </member>
         <member name="P:Yort.Humm.InStore.HummClientConfiguration.BaseApiUrl">
             <summary>
-            Gets or sets a <see cref="T:System.Uri"/> which is the base uri of the Humm API to call.
+            Required. Gets or sets a <see cref="T:System.Uri"/> which is the base uri of the Humm API to call.
             </summary>
             <value>
             A <see cref="T:System.Uri"/> containing the base address to use.
@@ -435,7 +435,7 @@
         </member>
         <member name="P:Yort.Humm.InStore.HummClientConfiguration.DeviceKey">
             <summary>
-            Gets or sets the device key issued by Humm for creating digital signatures. 
+            Optional (when registering a new device, required otherwise). Gets or sets the device key issued by Humm for creating digital signatures. 
             </summary>
             <value>
             The device key.
@@ -922,6 +922,9 @@
             <value>
             The mobile phone number.
             </value>
+            <remarks>
+            <para>Maximum length of 10 digits.</para>
+            </remarks>
         </member>
         <member name="P:Yort.Humm.InStore.InviteRequest.PurchaseAmount">
             <summary>
@@ -931,6 +934,7 @@
             The purchase amount as a dollar value (i.e $20 would be 20.00).
             </value>
         </member>
+        <!-- Badly formed XML comment ignored for member "M:Yort.Humm.InStore.InviteRequest.Validate" -->
         <member name="T:Yort.Humm.InStore.InviteResponse">
             <summary>
             Represents a response to a <see cref="T:Yort.Humm.InStore.InviteRequest"/>.
@@ -1091,7 +1095,7 @@
             Also ensure no property is larger than it's maximum allowed length (see individual property notes for details).
             Also ensures all base properties are valid, see <see cref="M:Yort.Humm.InStore.Infrastructure.RequestBase.Validate"/>.
             </para>
-            <para>Does not validate the pre-approval code or finance amounts, as rules for these are likely to vary over time. It is better to let the API respond with an 
+            <para>Does not validate the pre-approval code length or finance amounts, as rules for these are likely to vary over time. It is better to let the API respond with an 
             error result than pre-validate these values.</para>
             </remarks>
         </member>
