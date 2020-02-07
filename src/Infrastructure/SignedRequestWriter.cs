@@ -16,6 +16,7 @@ namespace Yort.Humm.InStore.Infrastructure
 	{
 		private ISignatureGenerator? _SignatureGenerator;
 		private readonly System.Text.Encoding _Encoding;
+		private Newtonsoft.Json.JsonSerializer _Serialiser;
 
 		/// <summary>
 		/// Initializes a new instance of the <see cref="SignedRequestWriter"/> class.
@@ -25,6 +26,10 @@ namespace Yort.Humm.InStore.Infrastructure
 		{
 			_SignatureGenerator = signatureGenerator.GuardNull(nameof(signatureGenerator));
 			_Encoding = new System.Text.UTF8Encoding(false);
+			_Serialiser = new Newtonsoft.Json.JsonSerializer()
+			{
+				Formatting = Newtonsoft.Json.Formatting.None
+			};
 		}
 
 		/// <summary>
@@ -82,8 +87,9 @@ namespace Yort.Humm.InStore.Infrastructure
 					//matters for now.
 					if (kvp.Value is PurchaseItemsCollection items && items != null)
 					{
-						var tmpValue = "{ \"PurchaseItems\":" + Newtonsoft.Json.JsonConvert.SerializeObject(kvp.Value) + "}";
 						//Weird, this is a string containing json, not nested json.
+						var tmpValue = GetPurchaseItemsJsonString(kvp.Value);
+						//var tmpValue = "{ \"PurchaseItems\":" + Newtonsoft.Json.JsonConvert.SerializeObject(kvp.Value) + "}";
 						writer.WriteValue(tmpValue);
 					}
 					else if (kvp.Value is decimal dv)
@@ -103,6 +109,30 @@ namespace Yort.Humm.InStore.Infrastructure
 				writer.Flush();
 				textWriter.Flush();
 				outputStream.Flush();
+			}
+		}
+
+		private string GetPurchaseItemsJsonString(object value)
+		{
+			using (var outputStream = MemoryStreamFactory.CreateStream())
+			using (var writer = new System.IO.StreamWriter(outputStream, _Encoding, 1024, true))
+			using (var jsonWriter = new Newtonsoft.Json.JsonTextWriter(writer))
+			{
+				jsonWriter.ArrayPool = JsonArrayPool.Instance;
+
+				writer.Write("{\"PurchaseItems\":");
+				_Serialiser.Serialize(jsonWriter, value);
+				writer.Write("}");
+
+				jsonWriter.Flush();
+				writer.Flush();
+				outputStream.Flush();
+
+				outputStream.Seek(0, System.IO.SeekOrigin.Begin);
+				using (var reader = new System.IO.StreamReader(outputStream, _Encoding,false, 1024, true))
+				{
+					return reader.ReadToEnd();
+				}
 			}
 		}
 

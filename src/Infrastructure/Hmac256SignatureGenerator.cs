@@ -47,6 +47,7 @@ namespace Yort.Humm.InStore.Infrastructure
 			if (_Hasher == null) throw new ObjectDisposedException(nameof(Hmac256SignatureGenerator));
 
 			var payload = GeneratePayload(properties);
+			if (String.IsNullOrEmpty(payload)) return String.Empty;
 
 			var hashBytes = _Hasher.ComputeHash(Encoding.UTF8.GetBytes(payload));
 			return BytesToHexString(hashBytes);

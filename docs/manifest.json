@@ -42,7 +42,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Yort.Humm.InStore.HummApiUrlSelector.html",
-          "hash": "3+gIVWGB4yjivbg9hB7GcA=="
+          "hash": "HYwuQ+MoBNGkmGROF5tKqw=="
         }
       },
       "is_incremental": false,
@@ -78,7 +78,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Yort.Humm.InStore.HummCountry.html",
-          "hash": "4FDkIrTx4iR8Cu1W2XJSjw=="
+          "hash": "dhL9U796Ati/+OjyYrH+3g=="
         }
       },
       "is_incremental": false,
@@ -90,7 +90,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Yort.Humm.InStore.HummEnvironment.html",
-          "hash": "zmnEkZv7F7WjmluKRSq53Q=="
+          "hash": "FbEulL5LYGex/e00dzamuw=="
         }
       },
       "is_incremental": false,
@@ -138,7 +138,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Yort.Humm.InStore.Infrastructure.Hmac256SignatureGenerator.html",
-          "hash": "uSN/YYdu4Pv8AiR/IO0rkQ=="
+          "hash": "UqgYkyfJZbAJfiohTp5nPw=="
         }
       },
       "is_incremental": false,
@@ -186,7 +186,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Yort.Humm.InStore.Infrastructure.SignedRequestWriter.html",
-          "hash": "4l+uAJ/422X4qD4r63EUMg=="
+          "hash": "X/53nciXwFdZYEEblG7Ckw=="
         }
       },
       "is_incremental": false,
@@ -456,21 +456,12 @@
   "incremental_info": [
     {
       "status": {
-        "can_incremental": false,
-        "details": "Disable incremental build by force rebuild option.",
+        "can_incremental": true,
         "incrementalPhase": "build",
         "total_file_count": 0,
-        "skipped_file_count": 0,
-        "full_build_reason_code": "ForceRebuild"
+        "skipped_file_count": 0
       },
       "processors": {
-        "TocDocumentProcessor": {
-          "can_incremental": false,
-          "details": "Processor TocDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
-          "incrementalPhase": "build",
-          "total_file_count": 0,
-          "skipped_file_count": 0
-        },
         "ResourceDocumentProcessor": {
           "can_incremental": false,
           "details": "Processor ResourceDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
@@ -478,17 +469,24 @@
           "total_file_count": 0,
           "skipped_file_count": 0
         },
-        "ConceptualDocumentProcessor": {
+        "TocDocumentProcessor": {
           "can_incremental": false,
+          "details": "Processor TocDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
           "incrementalPhase": "build",
-          "total_file_count": 3,
+          "total_file_count": 0,
           "skipped_file_count": 0
         },
         "ManagedReferenceDocumentProcessor": {
-          "can_incremental": false,
+          "can_incremental": true,
           "incrementalPhase": "build",
           "total_file_count": 30,
-          "skipped_file_count": 0
+          "skipped_file_count": 30
+        },
+        "ConceptualDocumentProcessor": {
+          "can_incremental": true,
+          "incrementalPhase": "build",
+          "total_file_count": 3,
+          "skipped_file_count": 3
         }
       }
     },

@@ -55,13 +55,13 @@ namespace Yort.Humm.InStore
 #pragma warning restore CS8618 // Non-nullable field is uninitialized. Consider declaring as nullable.
 		{
 			_Config = config.GuardNull(nameof(config));
+			_BaseUrl = config.BaseApiUrl.GuardNull(nameof(config), nameof(config.BaseApiUrl));
 
 			_Serialiser = new Newtonsoft.Json.JsonSerializer()
 			{
 				Formatting = Newtonsoft.Json.Formatting.None,
 			};
 
-			_BaseUrl = config.BaseApiUrl.GuardNull(nameof(config), nameof(config.BaseApiUrl));
 			ConfigureServicePoint();
 
 			CreateHttpClient(config);

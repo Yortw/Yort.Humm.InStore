@@ -126,6 +126,9 @@
   <data name="UnknownApiEnvironment" xml:space="preserve">
     <value>Unknown Humm API environment specified.</value>
   </data>
+  <data name="UnknownApiVersion" xml:space="preserve">
+    <value>Unknown Humm API version specified.</value>
+  </data>
   <data name="UnknownCountry" xml:space="preserve">
     <value>Unknown Humm country specified.</value>
   </data>

@@ -14,6 +14,9 @@
     <Nullable>enable</Nullable>
     <PackageIcon>projecticon128.png</PackageIcon>
     <PackageIconUrl />
+    <RepositoryUrl>https://github.com/Yortw/Yort.Humm.InStore</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageProjectUrl>https://yortw.github.io/Yort.Humm.InStore/</PackageProjectUrl>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|netstandard2.0|AnyCPU'">

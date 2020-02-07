@@ -16,13 +16,25 @@ namespace Yort.Humm.InStore
 		/// A value from the <see cref="HummCountry"/> enum.
 		/// </value>
 		public HummCountry Country { get; set; }
+
 		/// <summary>
 		/// Gets or sets the API environment to use.
 		/// </summary>
 		/// <value>
 		/// A value from the <see cref="HummEnvironment"/> specifying a test or live environment to use.
 		/// </value>
-		public HummEnvironment Environment { get; set; }
+		public HummEnvironment Environment { get; set; } = HummEnvironment.Sandbox;
+
+		/// <summary>
+		/// Gets or sets the version of the API to call.
+		/// </summary>
+		/// <value>
+		/// The API version.
+		/// </value>
+		/// <remarks>
+		/// <para>Currently the only supported version is 1.</para>
+		/// </remarks>
+		public decimal ApiVersion { get; set; } = 1.0M;
 
 		/// <summary>
 		/// Gets the base URL to use for Humm API calls.
@@ -30,9 +42,14 @@ namespace Yort.Humm.InStore
 		/// <returns>
 		/// A <see cref="System.Uri" /> representing the base API address to be used.
 		/// </returns>
-		/// <exception cref="InvalidOperationException">Thrown if a unknown <see cref="Country"/> or <see cref="Environment"/> value is specified..</exception>
+		/// <exception cref="InvalidOperationException">Thrown if a unknown <see cref="Country"/>, <see cref="Environment"/> or <see cref="ApiVersion"/> value is specified.</exception>
+		/// <seealso cref="Environment"/>
+		/// <seealso cref="Country"/>
+		/// <seealso cref="ApiVersion"/>
 		public Uri GetUrl()
 		{
+			if (ApiVersion != 1) throw new InvalidOperationException(ErrorMessages.UnknownApiVersion);
+
 			return Country switch
 			{
 				HummCountry.Australia => GetAUUri(),

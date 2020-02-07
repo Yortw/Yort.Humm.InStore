@@ -88,6 +88,15 @@ namespace Yort.Humm.InStore {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Unknown Humm API version specified..
+        /// </summary>
+        internal static string UnknownApiVersion {
+            get {
+                return ResourceManager.GetString("UnknownApiVersion", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Unknown Humm country specified..
         /// </summary>
         internal static string UnknownCountry {

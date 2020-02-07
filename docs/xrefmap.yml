@@ -103,6 +103,19 @@ references:
   commentId: T:Yort.Humm.InStore.HummApiUrlSelector
   fullName: Yort.Humm.InStore.HummApiUrlSelector
   nameWithType: HummApiUrlSelector
+- uid: Yort.Humm.InStore.HummApiUrlSelector.ApiVersion
+  name: ApiVersion
+  href: api/Yort.Humm.InStore.HummApiUrlSelector.html#Yort_Humm_InStore_HummApiUrlSelector_ApiVersion
+  commentId: P:Yort.Humm.InStore.HummApiUrlSelector.ApiVersion
+  fullName: Yort.Humm.InStore.HummApiUrlSelector.ApiVersion
+  nameWithType: HummApiUrlSelector.ApiVersion
+- uid: Yort.Humm.InStore.HummApiUrlSelector.ApiVersion*
+  name: ApiVersion
+  href: api/Yort.Humm.InStore.HummApiUrlSelector.html#Yort_Humm_InStore_HummApiUrlSelector_ApiVersion_
+  commentId: Overload:Yort.Humm.InStore.HummApiUrlSelector.ApiVersion
+  isSpec: "True"
+  fullName: Yort.Humm.InStore.HummApiUrlSelector.ApiVersion
+  nameWithType: HummApiUrlSelector.ApiVersion
 - uid: Yort.Humm.InStore.HummApiUrlSelector.Country
   name: Country
   href: api/Yort.Humm.InStore.HummApiUrlSelector.html#Yort_Humm_InStore_HummApiUrlSelector_Country

@@ -269,5 +269,77 @@ namespace Yort.Humm.InStore.Tests
 			Assert.AreEqual("1949a14cfdd8e6062a54f28ab3a607637f081afb7b8f4cffa3fb413fadab963b", signature);
 		}
 
+		[TestMethod]
+		public void Disposes_Properly()
+		{
+			var generator = new Hmac256SignatureGenerator("dy33vQhksVsv");
+
+			generator.Dispose();
+		}
+
+		[TestMethod]
+		public void Disposes_Multiple_Times_Without_Error()
+		{
+			var generator = new Hmac256SignatureGenerator("dy33vQhksVsv");
+
+			generator.Dispose();
+			generator.Dispose();
+		}
+
+		[ExpectedException(typeof(System.ObjectDisposedException))]
+		[TestMethod]
+		public void Throws_If_Called_When_Disposed()
+		{
+			var generator = new Hmac256SignatureGenerator("nb4i6ldxuVQC");
+			generator.Dispose();
+
+			var signature = generator.GenerateSignature
+			(
+				new KeyValuePair<string, object>[]
+				{
+					new KeyValuePair<string, object>("x_merchant_id", "30299999"),
+					new KeyValuePair<string, object>("x_device_id", "d555"),
+					new KeyValuePair<string, object>("x_operator_id", "test_operator"),
+					new KeyValuePair<string, object>("x_firmware_version", "123"),
+					new KeyValuePair<string, object>("x_device_token", "nb4i6ldxuVQC"),
+					new KeyValuePair<string, object>("x_pos_vendor", "Pos Provider"),
+				}
+			);
+		}
+
+		[ExpectedException(typeof(System.ArgumentNullException))]
+		[TestMethod]
+		public void Constructor_Throws_If_ApiKey_Null()
+		{
+			var generator = new Hmac256SignatureGenerator(null);
+			generator.Dispose();
+		}
+
+		[ExpectedException(typeof(System.ArgumentException))]
+		[TestMethod]
+		public void Constructor_Throws_If_ApiKey_Empty()
+		{
+			var generator = new Hmac256SignatureGenerator(string.Empty);
+			generator.Dispose();
+		}
+
+		[ExpectedException(typeof(System.ArgumentNullException))]
+		[TestMethod]
+		public void GenerateSignature_Throws_If_Properties_Null()
+		{
+			var generator = new Hmac256SignatureGenerator("dy33vQhksVsv");
+			generator.GenerateSignature(null);
+			generator.Dispose();
+		}
+
+		[TestMethod]
+		public void GenerateSignature_Returns_Empty_If_No_Properties()
+		{
+			var generator = new Hmac256SignatureGenerator("dy33vQhksVsv");
+			var sig = generator.GenerateSignature(new Dictionary<string, object>(0));
+			Assert.AreEqual(string.Empty, sig);
+		}
+
+
 	}
 }

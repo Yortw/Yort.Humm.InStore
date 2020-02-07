@@ -112,6 +112,11 @@
               Looks up a localized string similar to Unknown Humm API environment specified..
             </summary>
         </member>
+        <member name="P:Yort.Humm.InStore.ErrorMessages.UnknownApiVersion">
+            <summary>
+              Looks up a localized string similar to Unknown Humm API version specified..
+            </summary>
+        </member>
         <member name="P:Yort.Humm.InStore.ErrorMessages.UnknownCountry">
             <summary>
               Looks up a localized string similar to Unknown Humm country specified..
@@ -138,6 +143,17 @@
             A value from the <see cref="T:Yort.Humm.InStore.HummEnvironment"/> specifying a test or live environment to use.
             </value>
         </member>
+        <member name="P:Yort.Humm.InStore.HummApiUrlSelector.ApiVersion">
+            <summary>
+            Gets or sets the version of the API to call.
+            </summary>
+            <value>
+            The API version.
+            </value>
+            <remarks>
+            <para>Currently the only supported version is 1.</para>
+            </remarks>
+        </member>
         <member name="M:Yort.Humm.InStore.HummApiUrlSelector.GetUrl">
             <summary>
             Gets the base URL to use for Humm API calls.
@@ -145,7 +161,10 @@
             <returns>
             A <see cref="T:System.Uri" /> representing the base API address to be used.
             </returns>
-            <exception cref="T:System.InvalidOperationException">Thrown if a unknown <see cref="P:Yort.Humm.InStore.HummApiUrlSelector.Country"/> or <see cref="P:Yort.Humm.InStore.HummApiUrlSelector.Environment"/> value is specified..</exception>
+            <exception cref="T:System.InvalidOperationException">Thrown if a unknown <see cref="P:Yort.Humm.InStore.HummApiUrlSelector.Country"/>, <see cref="P:Yort.Humm.InStore.HummApiUrlSelector.Environment"/> or <see cref="P:Yort.Humm.InStore.HummApiUrlSelector.ApiVersion"/> value is specified.</exception>
+            <seealso cref="P:Yort.Humm.InStore.HummApiUrlSelector.Environment"/>
+            <seealso cref="P:Yort.Humm.InStore.HummApiUrlSelector.Country"/>
+            <seealso cref="P:Yort.Humm.InStore.HummApiUrlSelector.ApiVersion"/>
         </member>
         <member name="T:Yort.Humm.InStore.HummCountry">
             <summary>
