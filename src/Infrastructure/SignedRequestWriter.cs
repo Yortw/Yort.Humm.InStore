@@ -16,7 +16,7 @@ namespace Yort.Humm.InStore.Infrastructure
 	{
 		private ISignatureGenerator? _SignatureGenerator;
 		private readonly System.Text.Encoding _Encoding;
-		private Newtonsoft.Json.JsonSerializer _Serialiser;
+		private readonly Newtonsoft.Json.JsonSerializer _Serialiser;
 
 		/// <summary>
 		/// Initializes a new instance of the <see cref="SignedRequestWriter"/> class.

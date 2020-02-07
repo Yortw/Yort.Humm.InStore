@@ -39,7 +39,6 @@ namespace Yort.Humm.InStore
 		/// <summary>
 		/// Validates this instance.
 		/// </summary>
-		/// <para>
 		/// <remarks>
 		/// <para>
 		/// Ensures that <see cref="MobileNumber" /> is not null, empty string or only whitespace.

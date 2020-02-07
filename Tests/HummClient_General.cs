@@ -14,7 +14,7 @@ namespace Yort.Humm.InStore.Tests
 		[TestMethod]
 		public void Constructor_Throws_On_Null_Config()
 		{
-			var client = new HummClient(null);
+			_ = new HummClient(null);
 		}
 
 		[ExpectedException(typeof(ArgumentNullException))]
@@ -22,7 +22,7 @@ namespace Yort.Humm.InStore.Tests
 		public void Constructor_Throws_On_Null_Config_BaseUrl()
 		{
 			var config = new HummClientConfiguration();
-			var client = new HummClient(config);
+			_ = new HummClient(config);
 		}
 
 		[TestMethod]
@@ -36,7 +36,26 @@ namespace Yort.Humm.InStore.Tests
 				MerchantId = Environment.GetEnvironmentVariable("Humm_Test_Sandbox_MerchantId"),
 				PosVersion = "1.0"
 			};
-			var client = new HummClient(config);
+			_ = new HummClient(config);
+		}
+
+		[ExpectedException(typeof(ObjectDisposedException))]
+		[TestMethod]
+		public async Task CreateKeyAsync_Throws_When_Disposed()
+		{
+			var client = CreateTestClient();
+			client.Dispose();
+
+			var request = new CreateKeyRequest()
+			{
+				MerchantId = "30299999",
+				DeviceId = "d555",
+				OperatorId = "test_operator",
+				PosVersion = "123",
+				DeviceToken = "0123456789",
+				PosVendor = "Test Vendor"
+			};
+			_ = await client.CreateKeyAsync(request);
 		}
 
 		[ExpectedException(typeof(InvalidOperationException))]
@@ -55,7 +74,7 @@ namespace Yort.Humm.InStore.Tests
 				MobileNumber = "0400000000",
 				PurchaseAmount = 100M
 			};
-			var response = await client.InviteAsync(request);
+			_ = await client.InviteAsync(request);
 		}
 
 		[ExpectedException(typeof(ObjectDisposedException))]
@@ -74,7 +93,7 @@ namespace Yort.Humm.InStore.Tests
 				MobileNumber = "0400000000",
 				PurchaseAmount = 100M
 			};
-			var response = await client.InviteAsync(request);
+			_ = await client.InviteAsync(request);
 		}
 
 		[ExpectedException(typeof(InvalidOperationException))]
@@ -103,7 +122,7 @@ namespace Yort.Humm.InStore.Tests
 					}
 				)
 			};
-			var response = await client.ProcessAuthorisationAsync(request);
+			_ = await client.ProcessAuthorisationAsync(request);
 		}
 
 		[ExpectedException(typeof(ObjectDisposedException))]
@@ -132,7 +151,7 @@ namespace Yort.Humm.InStore.Tests
 					}
 				)
 			};
-			var response = await client.ProcessAuthorisationAsync(request);
+			_ = await client.ProcessAuthorisationAsync(request);
 		}
 
 		[ExpectedException(typeof(ObjectDisposedException))]
@@ -152,7 +171,7 @@ namespace Yort.Humm.InStore.Tests
 				PurchaseReference = "123456789",
 				Amount = 10
 			};
-			var response = await client.ProcessSalesAdjustmentAsync(request);
+			_ = await client.ProcessSalesAdjustmentAsync(request);
 		}
 
 		[ExpectedException(typeof(InvalidOperationException))]
@@ -172,7 +191,7 @@ namespace Yort.Humm.InStore.Tests
 				PurchaseReference = "123456789",
 				Amount = 10
 			};
-			var response = await client.ProcessSalesAdjustmentAsync(request);
+			_ = await client.ProcessSalesAdjustmentAsync(request);
 		}
 
 		[ExpectedException(typeof(ObjectDisposedException))]
@@ -201,7 +220,7 @@ namespace Yort.Humm.InStore.Tests
 					}
 				)
 			};
-			var response = await client.ProcessAuthorisationAsync(request);
+			_ = await client.ProcessAuthorisationAsync(request);
 		}
 
 		[ExpectedException(typeof(InvalidOperationException))]
@@ -221,7 +240,7 @@ namespace Yort.Humm.InStore.Tests
 				AdjustmentSignature = "ce20e2f1a9fe0d92b3d021ba7f1b372b006778cfab5fc4c09efa60a6d910c471"
 			};
 
-			var response = await client.ProcessSalesAdjustmentReversalAsync(request);
+			_ = await client.ProcessSalesAdjustmentReversalAsync(request);
 		}
 
 		[ExpectedException(typeof(ObjectDisposedException))]
@@ -241,7 +260,7 @@ namespace Yort.Humm.InStore.Tests
 				ReceiptNumber = "NewReceipt"
 			};
 
-			var response = await client.SendReceiptAsync(request);
+			_ = await client.SendReceiptAsync(request);
 		}
 
 		[ExpectedException(typeof(InvalidOperationException))]
@@ -261,7 +280,16 @@ namespace Yort.Humm.InStore.Tests
 				ReceiptNumber = "NewReceipt"
 			};
 
-			var response = await client.SendReceiptAsync(request);
+			_ = await client.SendReceiptAsync(request);
+		}
+
+		[TestMethod]
+		public void Client_Can_Dispose_Multiple_Times_Without_Error()
+		{
+			var client = CreateTestClient();
+			client.Dispose();
+			client.Dispose();
+			client.Dispose();
 		}
 
 		private static HummClient CreateTestClient()

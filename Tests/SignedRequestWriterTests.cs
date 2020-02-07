@@ -1,4 +1,5 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using System;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Newtonsoft.Json;
 using Yort.Humm.InStore.Infrastructure;
 
@@ -160,6 +161,42 @@ namespace Yort.Humm.InStore.Tests
 			//sample signature is now incorrect.
 			Assert.AreEqual("{\"x_pos_transaction_ref\":\"tnx-rev1\",\"x_adjustment_signature\":\"ce20e2f1a9fe0d92b3d021ba7f1b372b006778cfab5fc4c09efa60a6d910c471\",\"x_merchant_id\":\"30299999\",\"x_device_id\":\"d555\",\"x_firmware_version\":\"123\",\"x_operator_id\":\"test_operator\",\"signature\":\"83a8f5b53cbd205474cd8c993f911b465d25a381d3fc09c781fefb9bef18859d\"}", result);
 			Assert.IsTrue(result.Contains("1949a14cfdd8e6062a54f28ab3a607637f081afb7b8f4cffa3fb413fadab963b"));
+		}
+
+		[ExpectedException(typeof(ArgumentNullException))]
+		[TestMethod]
+		public void Constructor_Throws_On_Null_Signature_Generator()
+		{
+			_ = new SignedRequestWriter(null);
+		}
+
+		[ExpectedException(typeof(ArgumentNullException))]
+		[TestMethod]
+		public void Throws_On_Null_Request()
+		{
+			var sigGen = new Hmac256SignatureGenerator("dy33vQhksVsv");
+			var writer = new SignedRequestWriter(sigGen);
+
+			_ = writer.WriteRequest<CreateKeyRequest>(null);
+		}
+
+		[ExpectedException(typeof(ArgumentNullException))]
+		[TestMethod]
+		public void Throws_On_Null_OutputStream()
+		{
+			var sigGen = new Hmac256SignatureGenerator("dy33vQhksVsv");
+			var writer = new SignedRequestWriter(sigGen);
+
+			var request = new ProcessSalesAdjustmentReversalRequest()
+			{
+				MerchantId = "30299999",
+				DeviceId = "d555",
+				OperatorId = "test_operator",
+				PosVersion = "123",
+				ClientTransactionReference = "tnx-rev1",
+				AdjustmentSignature = "ce20e2f1a9fe0d92b3d021ba7f1b372b006778cfab5fc4c09efa60a6d910c471"
+			};
+			writer.WriteRequest(request, null);
 		}
 
 	}

@@ -7,7 +7,7 @@ namespace Yort.Humm.InStore
 	/// <summary>
 	/// Determines the correct base URI for calling Humm based on a country and API enviroment.
 	/// </summary>
-	public class HummApiUrlSelector : IHummApiUrlSelector
+	public sealed class HummApiUrlSelector : IHummApiUrlSelector
 	{
 		/// <summary>
 		/// Gets or sets the country the system is operating in.

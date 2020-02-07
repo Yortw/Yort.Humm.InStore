@@ -8,7 +8,7 @@ namespace Yort.Humm.InStore
 	/// Arguments for the <see cref="HummClient.PendingAuthorisation"/> event.
 	/// </summary>
 	/// <seealso cref="System.EventArgs" />
-	public class PendingAuthorisationEventArgs : EventArgs
+	public sealed class PendingAuthorisationEventArgs : EventArgs
 	{
 		private readonly string? _ClientReference;
 		private readonly int _RetryDuration;
