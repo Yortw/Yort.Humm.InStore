@@ -17,17 +17,9 @@
     <RepositoryUrl>https://github.com/Yortw/Yort.Humm.InStore</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
     <PackageProjectUrl>https://yortw.github.io/Yort.Humm.InStore/</PackageProjectUrl>
-  </PropertyGroup>
-
-  <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|netstandard2.0|AnyCPU'">
-    <DocumentationFile>Yort.Humm.InStore.xml</DocumentationFile>
-    <OutputPath></OutputPath>
-  </PropertyGroup>
-
-  <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|netstandard2.0|AnyCPU'">
     <DocumentationFile>Yort.Humm.InStore.xml</DocumentationFile>
   </PropertyGroup>
-
+  
   <ItemGroup>
     <Compile Remove="api\**" />
     <Compile Remove="articles\**" />
