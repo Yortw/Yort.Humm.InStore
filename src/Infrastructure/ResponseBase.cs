@@ -53,7 +53,7 @@ namespace Yort.Humm.InStore.Infrastructure
 		/// </value>
 		/// <seealso cref="RequestBase.TrackingData"/>
 		[JsonProperty("tracking_data")]
-		public Dictionary<string, string>? TrackingData { get; private set; }
+		public Dictionary<string, string>? TrackingData { get; set; }
 		/// <summary>
 		/// Gets or sets the signature of this response, used to verify the response is authentic.
 		/// </summary>

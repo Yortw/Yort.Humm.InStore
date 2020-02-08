@@ -71,7 +71,7 @@ namespace Yort.Humm.InStore
 
 			ConfigureServicePoint();
 
-			CreateHttpClient(config);
+			CreateOrConfigureHttpClient(config);
 
 			if (!String.IsNullOrEmpty(_Config.DeviceKey))
 				SetDeviceKey(_Config.DeviceKey);
@@ -295,19 +295,25 @@ namespace Yort.Humm.InStore
 			PendingAuthorisation?.Invoke(this, new PendingAuthorisationEventArgs(request.ClientTransactionReference, response.RetryDuration, response.TrackingData));
 		}
 
-		private void CreateHttpClient(HummClientConfiguration config)
+		private void CreateOrConfigureHttpClient(HummClientConfiguration config)
 		{
 			System.Net.Http.HttpClientHandler? handler = null;
 			try
 			{
-				handler = new System.Net.Http.HttpClientHandler();
-				if (handler.SupportsAutomaticDecompression)
-					handler.AutomaticDecompression = System.Net.DecompressionMethods.GZip | System.Net.DecompressionMethods.Deflate;
-
-				_Client = new System.Net.Http.HttpClient(handler)
+				if (config.HttpClient == null)
 				{
-					BaseAddress = _BaseUrl
-				};
+					handler = new System.Net.Http.HttpClientHandler();
+					if (handler.SupportsAutomaticDecompression)
+						handler.AutomaticDecompression = System.Net.DecompressionMethods.GZip | System.Net.DecompressionMethods.Deflate;
+
+					_Client = new System.Net.Http.HttpClient(handler);
+				}
+				else
+				{
+					_Client = config.HttpClient;
+				}
+
+				_Client.BaseAddress = _BaseUrl;
 
 				if (String.IsNullOrEmpty(config.UserAgentProductName) || String.IsNullOrEmpty(config.UserAgentProductVersion))
 					_Client.DefaultRequestHeaders.UserAgent.Add(new System.Net.Http.Headers.ProductInfoHeaderValue("Yort.Humm.Instore", typeof(HummClient).Assembly.GetName().Version.ToString()));
@@ -320,7 +326,8 @@ namespace Yort.Humm.InStore
 			catch
 			{
 				handler?.Dispose();
-				_Client?.Dispose();
+				if (_Config.HttpClient == null) 
+					_Client?.Dispose();
 
 				throw;
 			}
@@ -367,7 +374,6 @@ namespace Yort.Humm.InStore
 					using (var reader = new Newtonsoft.Json.JsonTextReader(sr))
 					{
 						reader.ArrayPool = JsonArrayPool.Instance;
-
 						return _Serialiser.Deserialize<TResponse>(reader);
 					}
 				}

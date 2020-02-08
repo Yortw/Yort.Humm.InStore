@@ -108,5 +108,21 @@ namespace Yort.Humm.InStore
 		///   <c>true</c> to have <see cref="RequestBase.Validate"/> called automatically before sending a request.<c>false</c>.
 		/// </value>
 		public bool AutoValidateRequests { get; set; } = true;
+
+		/// <summary>
+		/// Sets or returns an <see cref="HttpClient"/> instance used to make calls to the Humm API. If null/unset, the system will create it's own instance on first use.
+		/// </summary>
+		/// <remarks>
+		/// <para>The library reserves the right to modify the provided client, such as setting default headers and a base address.
+		/// The primary purpose of this property is to allow a client with injected handlers to be used. If you do not need to inject custom handlers, then leave this blank.</para>
+		/// <para>The client is read from the configuration in the constructor of <see cref="HummClient"/>, changing the <see cref="HttpClient"/> instance assigned to this property 
+		/// after a client is constructed will have no effect.</para>
+		/// <para>Disposing a <see cref="HummClient"/> instance will dispose it's <see cref="HttpClient"/> instance, even if it was provided via this property,
+		/// so do not share clients among instances or with other objects.</para>
+		/// </remarks>
+		public System.Net.Http.HttpClient? HttpClient
+		{
+			get; set;
+		}
 	}
 }

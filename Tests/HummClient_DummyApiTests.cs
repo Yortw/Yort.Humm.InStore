@@ -172,7 +172,7 @@ namespace Yort.Humm.InStore.Tests
 					PreapprovalCode = "Pending",
 					OperatorId = "Yort",
 					PurchaseItems = new PurchaseItemsCollection() { "Item1", "Item2" },
-					BuyerConfirms = false,
+					BuyerConfirms = true,
 					AutoHandlePendingResponse = false
 				}
 			);
@@ -180,6 +180,7 @@ namespace Yort.Humm.InStore.Tests
 			Assert.IsNotNull(response);
 			Assert.AreEqual(RequestStates.Pending, response.Status);
 		}
+
 
 
 		[TestMethod]

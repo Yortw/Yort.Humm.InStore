@@ -400,6 +400,45 @@ version of this library not yet be available.</p>
   </div>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
+    <a href="https://github.com/Yortw/Yort.Humm.InStore/new/master/apiSpec/new?filename=Yort_Humm_InStore_HummClientConfiguration_HttpClient.md&amp;value=---%0Auid%3A%20Yort.Humm.InStore.HummClientConfiguration.HttpClient%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Yortw/Yort.Humm.InStore/blob/master/src/HummClientConfiguration.cs/#L123">View Source</a>
+  </span>
+  <a id="Yort_Humm_InStore_HummClientConfiguration_HttpClient_" data-uid="Yort.Humm.InStore.HummClientConfiguration.HttpClient*"></a>
+  <h4 id="Yort_Humm_InStore_HummClientConfiguration_HttpClient" data-uid="Yort.Humm.InStore.HummClientConfiguration.HttpClient">HttpClient</h4>
+  <div class="markdown level1 summary"><p>Sets or returns an <a class="xref" href="Yort.Humm.InStore.HummClientConfiguration.html#Yort_Humm_InStore_HummClientConfiguration_HttpClient">HttpClient</a> instance used to make calls to the Humm API. If null/unset, the system will create it's own instance on first use.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public HttpClient HttpClient { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.net.http.httpclient">HttpClient</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Yort_Humm_InStore_HummClientConfiguration_HttpClient_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>The library reserves the right to modify the provided client, such as setting default headers and a base address.
+The primary purpose of this property is to allow a client with injected handlers to be used. If you do not need to inject custom handlers, then leave this blank.</p>
+<p>The client is read from the configuration in the constructor of <a class="xref" href="Yort.Humm.InStore.HummClient.html">HummClient</a>, changing the <a class="xref" href="Yort.Humm.InStore.HummClientConfiguration.html#Yort_Humm_InStore_HummClientConfiguration_HttpClient">HttpClient</a> instance assigned to this property 
+after a client is constructed will have no effect.</p>
+<p>Disposing a <a class="xref" href="Yort.Humm.InStore.HummClient.html">HummClient</a> instance will dispose it&apos;s <a class="xref" href="Yort.Humm.InStore.HummClientConfiguration.html#Yort_Humm_InStore_HummClientConfiguration_HttpClient">HttpClient</a> instance, even if it was provided via this property,
+so do not share clients among instances or with other objects.</p>
+</div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
     <a href="https://github.com/Yortw/Yort.Humm.InStore/new/master/apiSpec/new?filename=Yort_Humm_InStore_HummClientConfiguration_MerchantId.md&amp;value=---%0Auid%3A%20Yort.Humm.InStore.HummClientConfiguration.MerchantId%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">

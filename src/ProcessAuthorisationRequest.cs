@@ -148,16 +148,19 @@ namespace Yort.Humm.InStore
 		/// <summary>
 		/// Initializes a new instance of the <see cref="PurchaseItemsCollection"/> class.
 		/// </summary>
+		[ExcludeFromCodeCoverage]
 		public PurchaseItemsCollection() : base() { }
 		/// <summary>
 		/// Initializes a new instance of the <see cref="PurchaseItemsCollection"/> class.
 		/// </summary>
 		/// <param name="capacity">The number of elements that the new list can initially store.</param>
+		[ExcludeFromCodeCoverage]
 		public PurchaseItemsCollection(int capacity) : base(capacity) { }
 		/// <summary>
 		/// Initializes a new instance of the <see cref="PurchaseItemsCollection"/> class.
 		/// </summary>
 		/// <param name="items">A set of items to intialise the collection with.</param>
+		[ExcludeFromCodeCoverage]
 		public PurchaseItemsCollection(IEnumerable<string> items) : base(items) { }
 	}
 }

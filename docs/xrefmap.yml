@@ -342,6 +342,19 @@ references:
   isSpec: "True"
   fullName: Yort.Humm.InStore.HummClientConfiguration.DeviceKey
   nameWithType: HummClientConfiguration.DeviceKey
+- uid: Yort.Humm.InStore.HummClientConfiguration.HttpClient
+  name: HttpClient
+  href: api/Yort.Humm.InStore.HummClientConfiguration.html#Yort_Humm_InStore_HummClientConfiguration_HttpClient
+  commentId: P:Yort.Humm.InStore.HummClientConfiguration.HttpClient
+  fullName: Yort.Humm.InStore.HummClientConfiguration.HttpClient
+  nameWithType: HummClientConfiguration.HttpClient
+- uid: Yort.Humm.InStore.HummClientConfiguration.HttpClient*
+  name: HttpClient
+  href: api/Yort.Humm.InStore.HummClientConfiguration.html#Yort_Humm_InStore_HummClientConfiguration_HttpClient_
+  commentId: Overload:Yort.Humm.InStore.HummClientConfiguration.HttpClient
+  isSpec: "True"
+  fullName: Yort.Humm.InStore.HummClientConfiguration.HttpClient
+  nameWithType: HummClientConfiguration.HttpClient
 - uid: Yort.Humm.InStore.HummClientConfiguration.MerchantId
   name: MerchantId
   href: api/Yort.Humm.InStore.HummClientConfiguration.html#Yort_Humm_InStore_HummClientConfiguration_MerchantId

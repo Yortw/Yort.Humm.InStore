@@ -87,14 +87,23 @@ namespace Yort.Humm.InStore.Infrastructure
 					//matters for now.
 					if (kvp.Value is PurchaseItemsCollection items && items != null)
 					{
-						//Weird, this is a string containing json, not nested json.
+						//Weird, this is required to be a string containing json, not nested json.
 						var tmpValue = GetPurchaseItemsJsonString(kvp.Value);
-						//var tmpValue = "{ \"PurchaseItems\":" + Newtonsoft.Json.JsonConvert.SerializeObject(kvp.Value) + "}";
 						writer.WriteValue(tmpValue);
 					}
 					else if (kvp.Value is decimal dv)
 					{
 						writer.WriteValue(Convert.ToInt32(dv * 100));
+					}
+					else if (kvp.Value is Dictionary<string, string> dict)
+					{
+						writer.WriteStartObject();
+						foreach (var dictEntry in dict)
+						{
+							writer.WritePropertyName(dictEntry.Key);
+							writer.WriteValue(dictEntry.Value);
+						}
+						writer.WriteEndObject();
 					}
 					else
 						writer.WriteValue(kvp.Value);

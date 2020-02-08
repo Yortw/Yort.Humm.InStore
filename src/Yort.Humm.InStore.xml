@@ -486,6 +486,19 @@
               <c>true</c> to have <see cref="M:Yort.Humm.InStore.Infrastructure.RequestBase.Validate"/> called automatically before sending a request.<c>false</c>.
             </value>
         </member>
+        <member name="P:Yort.Humm.InStore.HummClientConfiguration.HttpClient">
+            <summary>
+            Sets or returns an <see cref="P:Yort.Humm.InStore.HummClientConfiguration.HttpClient"/> instance used to make calls to the Humm API. If null/unset, the system will create it's own instance on first use.
+            </summary>
+            <remarks>
+            <para>The library reserves the right to modify the provided client, such as setting default headers and a base address.
+            The primary purpose of this property is to allow a client with injected handlers to be used. If you do not need to inject custom handlers, then leave this blank.</para>
+            <para>The client is read from the configuration in the constructor of <see cref="T:Yort.Humm.InStore.HummClient"/>, changing the <see cref="P:Yort.Humm.InStore.HummClientConfiguration.HttpClient"/> instance assigned to this property 
+            after a client is constructed will have no effect.</para>
+            <para>Disposing a <see cref="T:Yort.Humm.InStore.HummClient"/> instance will dispose it's <see cref="P:Yort.Humm.InStore.HummClientConfiguration.HttpClient"/> instance, even if it was provided via this property,
+            so do not share clients among instances or with other objects.</para>
+            </remarks>
+        </member>
         <member name="T:Yort.Humm.InStore.HummResponseSignatureException">
             <summary>
             Thrown if the signature on a <see cref="T:Yort.Humm.InStore.Infrastructure.ResponseBase"/> did not verify as correct.

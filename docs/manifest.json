@@ -54,7 +54,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Yort.Humm.InStore.HummClient.html",
-          "hash": "aalZZx0ugmbV5G6O/jS3Ww=="
+          "hash": "QfasjqQBh/Z1xFH44DKvJA=="
         }
       },
       "is_incremental": false,
@@ -66,7 +66,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Yort.Humm.InStore.HummClientConfiguration.html",
-          "hash": "rDgrp0jO3CfRN9JHRVWzxQ=="
+          "hash": "tvfQetn/75sOtSZXl49W5g=="
         }
       },
       "is_incremental": false,
@@ -174,7 +174,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Yort.Humm.InStore.Infrastructure.ResponseBase.html",
-          "hash": "B85DeHKNWJnWrGqMwTWdeA=="
+          "hash": "Yt6XfkAQaSGSIaJvDhsi1g=="
         }
       },
       "is_incremental": false,
@@ -186,7 +186,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Yort.Humm.InStore.Infrastructure.SignedRequestWriter.html",
-          "hash": "X/53nciXwFdZYEEblG7Ckw=="
+          "hash": "x580C366KLsgB3uq3XZTIw=="
         }
       },
       "is_incremental": false,
@@ -318,7 +318,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Yort.Humm.InStore.PurchaseItemsCollection.html",
-          "hash": "xMqwykTlO18UEsbM3PTqIg=="
+          "hash": "PlUxIIYLKq7VBuUnamKluA=="
         }
       },
       "is_incremental": false,

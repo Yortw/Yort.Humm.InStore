@@ -623,6 +623,211 @@ namespace Yort.Humm.InStore.Tests
 			request.Validate();
 		}
 
+		[ExpectedException(typeof(ArgumentNullException))]
+		[TestMethod]
+		public void RequestBase_Validates_OperatorId_Not_Null()
+		{
+			var request = new InviteRequest()
+			{
+				DeviceId = Environment.GetEnvironmentVariable("Humm_Test_Sandbox_DeviceId"),
+				MerchantId = Environment.GetEnvironmentVariable("Humm_Test_Sandbox_MerchantId"),
+				PosVersion = "1.0",
+				MobileNumber = "04000000",
+				PurchaseAmount = 10,
+				OperatorId = null
+			};
+
+			request.Validate();
+		}
+
+		[ExpectedException(typeof(ArgumentException))]
+		[TestMethod]
+		public void RequestBase_Validates_OperatorId_Not_Empty()
+		{
+			var request = new InviteRequest()
+			{
+				DeviceId = Environment.GetEnvironmentVariable("Humm_Test_Sandbox_DeviceId"),
+				MerchantId = Environment.GetEnvironmentVariable("Humm_Test_Sandbox_MerchantId"),
+				PosVersion = "1.0",
+				MobileNumber = "04000000",
+				PurchaseAmount = 10,
+				OperatorId = String.Empty
+			};
+
+			request.Validate();
+		}
+
+		[ExpectedException(typeof(ArgumentException))]
+		[TestMethod]
+		public void RequestBase_Validates_OperatorId_Oversize()
+		{
+			var request = new InviteRequest()
+			{
+				DeviceId = Environment.GetEnvironmentVariable("Humm_Test_Sandbox_DeviceId"),
+				MerchantId = Environment.GetEnvironmentVariable("Humm_Test_Sandbox_MerchantId"),
+				PosVersion = "1.0",
+				MobileNumber = "04000000",
+				PurchaseAmount = 10,
+				OperatorId = "0123456789012345678901234567890123456789012345678901234567890123456789"
+			};
+
+			request.Validate();
+		}
+
+		[ExpectedException(typeof(ArgumentNullException))]
+		[TestMethod]
+		public void RequestBase_Validates_MerchantId_Not_Null()
+		{
+			var request = new InviteRequest()
+			{
+				DeviceId = Environment.GetEnvironmentVariable("Humm_Test_Sandbox_DeviceId"),
+				MerchantId = null,
+				PosVersion = "1.0",
+				MobileNumber = "04000000",
+				PurchaseAmount = 10,
+				OperatorId = "Yort"
+			};
+
+			request.Validate();
+		}
+
+		[ExpectedException(typeof(ArgumentException))]
+		[TestMethod]
+		public void RequestBase_Validates_MerchantId_Not_Empty()
+		{
+			var request = new InviteRequest()
+			{
+				DeviceId = Environment.GetEnvironmentVariable("Humm_Test_Sandbox_DeviceId"),
+				MerchantId = String.Empty,
+				PosVersion = "1.0",
+				MobileNumber = "04000000",
+				PurchaseAmount = 10,
+				OperatorId = "Yort"
+			};
+
+			request.Validate();
+		}
+
+		[ExpectedException(typeof(ArgumentException))]
+		[TestMethod]
+		public void RequestBase_Validates_MerchantId_Oversize()
+		{
+			var request = new InviteRequest()
+			{
+				DeviceId = Environment.GetEnvironmentVariable("Humm_Test_Sandbox_DeviceId"),
+				MerchantId = "01234567890123456789",
+				PosVersion = "1.0",
+				MobileNumber = "04000000",
+				PurchaseAmount = 10,
+				OperatorId = "Yort"
+			};
+
+			request.Validate();
+		}
+
+		[ExpectedException(typeof(ArgumentNullException))]
+		[TestMethod]
+		public void RequestBase_Validates_DeviceId_Not_Null()
+		{
+			var request = new InviteRequest()
+			{
+				DeviceId = null,
+				MerchantId = Environment.GetEnvironmentVariable("Humm_Test_Sandbox_MerchantId"),
+				PosVersion = "1.0",
+				MobileNumber = "04000000",
+				PurchaseAmount = 10,
+				OperatorId = "Yort"
+			};
+
+			request.Validate();
+		}
+
+		[ExpectedException(typeof(ArgumentException))]
+		[TestMethod]
+		public void RequestBase_Validates_DeviceId_Not_Empty()
+		{
+			var request = new InviteRequest()
+			{
+				DeviceId = String.Empty,
+				MerchantId = Environment.GetEnvironmentVariable("Humm_Test_Sandbox_MerchantId"),
+				PosVersion = "1.0",
+				MobileNumber = "04000000",
+				PurchaseAmount = 10,
+				OperatorId = "Yort"
+			};
+
+			request.Validate();
+		}
+
+		[ExpectedException(typeof(ArgumentException))]
+		[TestMethod]
+		public void RequestBase_Validates_DeviceId_Oversize()
+		{
+			var request = new InviteRequest()
+			{
+				DeviceId = "0123456789012345678901234567890123456789012345678901234567890123456789",
+				MerchantId = Environment.GetEnvironmentVariable("Humm_Test_Sandbox_MerchantId"),
+				PosVersion = "1.0",
+				MobileNumber = "04000000",
+				PurchaseAmount = 10,
+				OperatorId = "Yort"
+			};
+
+			request.Validate();
+		}
+
+		[ExpectedException(typeof(ArgumentNullException))]
+		[TestMethod]
+		public void RequestBase_Validates_PosVersion_Not_Null()
+		{
+			var request = new InviteRequest()
+			{
+				DeviceId = Environment.GetEnvironmentVariable("Humm_Test_Sandbox_DeviceId"),
+				MerchantId = Environment.GetEnvironmentVariable("Humm_Test_Sandbox_MerchantId"),
+				PosVersion = null,
+				MobileNumber = "04000000",
+				PurchaseAmount = 10,
+				OperatorId = "Yort"
+			};
+
+			request.Validate();
+		}
+
+		[ExpectedException(typeof(ArgumentException))]
+		[TestMethod]
+		public void RequestBase_Validates_PosVersion_Not_Empty()
+		{
+			var request = new InviteRequest()
+			{
+				DeviceId = Environment.GetEnvironmentVariable("Humm_Test_Sandbox_DeviceId"),
+				MerchantId = Environment.GetEnvironmentVariable("Humm_Test_Sandbox_MerchantId"),
+				PosVersion = String.Empty,
+				MobileNumber = "04000000",
+				PurchaseAmount = 10,
+				OperatorId = "Yort"
+			};
+
+			request.Validate();
+		}
+
+		[ExpectedException(typeof(ArgumentException))]
+		[TestMethod]
+		public void RequestBase_Validates_PosVersion_Oversize()
+		{
+			var request = new InviteRequest()
+			{
+				DeviceId = Environment.GetEnvironmentVariable("Humm_Test_Sandbox_DeviceId"),
+				MerchantId = Environment.GetEnvironmentVariable("Humm_Test_Sandbox_MerchantId"),
+				PosVersion = "0123456789012345678901234567890123456789012345678901234567890123456789",
+				MobileNumber = "04000000",
+				PurchaseAmount = 10,
+				OperatorId = "Yort"
+			};
+
+			request.Validate();
+		}
+
+
 
 		private static HummClient CreateTestClient()
 		{
