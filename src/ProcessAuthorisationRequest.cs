@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
 using System.Text;
 using Ladon;
 using Newtonsoft.Json;
@@ -141,6 +142,7 @@ namespace Yort.Humm.InStore
 	/// <para>Each item in the collection is a string providing a simple description of the item purchased.</para>
 	/// </remarks>
 	/// <seealso cref="System.Collections.Generic.List{T}" />
+	[ExcludeFromCodeCoverage]
 	public class PurchaseItemsCollection : List<string>
 	{
 		/// <summary>

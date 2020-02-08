@@ -6,6 +6,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Yort.Humm.InStore.Tests
 {
+	[TestCategory("Integration")]
 	[TestClass]
 	public class HummClient_SandboxTests
 	{

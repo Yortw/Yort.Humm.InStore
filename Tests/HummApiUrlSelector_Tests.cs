@@ -5,6 +5,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Yort.Humm.InStore.Tests
 {
+	[TestCategory("Unit")]
 	[TestClass]
 	public class HummApiUrlSelector_Tests
 	{
@@ -19,9 +20,20 @@ namespace Yort.Humm.InStore.Tests
 
 		[ExpectedException(typeof(InvalidOperationException))]
 		[TestMethod]
-		public void HummApiUrlSelector_Throws_On_Unknown_Api_Environment()
+		public void HummApiUrlSelector_Throws_On_Unknown_AU_Api_Environment()
 		{
 			var selector = new HummApiUrlSelector();
+			selector.Country = HummCountry.Australia;
+			selector.Environment = (HummEnvironment)1000;
+			selector.GetUrl();
+		}
+
+		[ExpectedException(typeof(InvalidOperationException))]
+		[TestMethod]
+		public void HummApiUrlSelector_Throws_On_Unknown_NZ_Api_Environment()
+		{
+			var selector = new HummApiUrlSelector();
+			selector.Country = HummCountry.NewZealand;
 			selector.Environment = (HummEnvironment)1000;
 			selector.GetUrl();
 		}

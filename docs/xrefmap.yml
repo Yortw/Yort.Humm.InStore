@@ -1311,6 +1311,12 @@ references:
   commentId: F:Yort.Humm.InStore.RequestStates.Cancelled
   fullName: Yort.Humm.InStore.RequestStates.Cancelled
   nameWithType: RequestStates.Cancelled
+- uid: Yort.Humm.InStore.RequestStates.Error
+  name: Error
+  href: api/Yort.Humm.InStore.RequestStates.html#Yort_Humm_InStore_RequestStates_Error
+  commentId: F:Yort.Humm.InStore.RequestStates.Error
+  fullName: Yort.Humm.InStore.RequestStates.Error
+  nameWithType: RequestStates.Error
 - uid: Yort.Humm.InStore.RequestStates.Failed
   name: Failed
   href: api/Yort.Humm.InStore.RequestStates.html#Yort_Humm_InStore_RequestStates_Failed

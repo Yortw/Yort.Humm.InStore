@@ -95,6 +95,9 @@ namespace Yort.Humm.InStore.Infrastructure
 		/// Also ensure no property is larger than it's maximum allowed length (see individual property notes for details).
 		/// </para>
 		/// </remarks>
+		/// <exception cref="ArgumentNullException">Thrown if <see cref="MerchantId"/>, <see cref="DeviceId"/>, <see cref="PosVersion"/>, or <see cref="OperatorId"/> is null.</exception>
+		/// <exception cref="ArgumentException">Thrown if <see cref="MerchantId"/>, <see cref="DeviceId"/>, <see cref="PosVersion"/>, or <see cref="OperatorId"/> is empty or only whitespace, or longer than their maximum allowed lengths.</exception>
+		/// <exception cref="ArgumentOutOfRangeException">Thrown if <see cref="TrackingData"/> contains more than 1000000 items.</exception>
 		public virtual void Validate()
 		{
 			MerchantId.GuardNullOrWhiteSpace("request", nameof(MerchantId));

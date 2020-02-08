@@ -35,6 +35,13 @@ namespace Yort.Humm.InStore
 
 		private readonly Newtonsoft.Json.JsonSerializer _Serialiser;
 
+		private static readonly Uri RelativePath_CreateKey = new Uri("CreateKey", UriKind.Relative);
+		private static readonly Uri RelativePath_ProcessAuthorisation = new Uri("ProcessAuthorisation", UriKind.Relative);
+		private static readonly Uri RelativePath_Invite = new Uri("Invite", UriKind.Relative);
+		private static readonly Uri RelativePath_SendReceipt = new Uri("SendReceipt", UriKind.Relative);
+		private static readonly Uri RelativePath_ProcessSalesAdjustment = new Uri("ProcessSalesAdjustment", UriKind.Relative);
+		private static readonly Uri RelativePath_ProcessSalesAdjustmentReversal = new Uri("ProcessSalesAdjustmentReversal", UriKind.Relative);
+
 		/// <summary>
 		/// Raised when a <see cref="ProcessAuthorisationResponse"/> is received with a status of <see cref="RequestStates.Pending"/> and the <see cref="ProcessAuthorisationRequest.AutoHandlePendingResponse"/> property of the request was true.
 		/// </summary>
@@ -130,13 +137,13 @@ namespace Yort.Humm.InStore
 			request.FillFromConfig(_Config);
 			if (_Config.AutoValidateRequests)
 				request.Validate();
-			
+
 #pragma warning disable CS8604 // Possible null reference argument.
 			using (var sigGen = new Hmac256SignatureGenerator(request.DeviceToken))
 #pragma warning restore CS8604 // Possible null reference argument.
 			using (var writer = new SignedRequestWriter(sigGen))
 			{
-				var response = await SendRequest<CreateKeyRequest, CreateKeyResponse>("CreateKey", request, writer, sigGen).ConfigureAwait(false);
+				var response = await SendRequest<CreateKeyRequest, CreateKeyResponse>(RelativePath_CreateKey, request, writer, sigGen).ConfigureAwait(false);
 
 				if (request.AutoUpdateClientToken && !String.IsNullOrEmpty(response.Key) && response.Status == RequestStates.Success)
 					SetDeviceKey(response.Key);
@@ -162,7 +169,7 @@ namespace Yort.Humm.InStore
 		{
 			GuardClientState();
 
-			return SendRequest<InviteRequest, InviteResponse>("Invite", request);
+			return SendRequest<InviteRequest, InviteResponse>(RelativePath_Invite, request);
 		}
 
 		/// <summary>
@@ -199,7 +206,7 @@ namespace Yort.Humm.InStore
 
 			while (true)
 			{
-				var response = await SendRequest<ProcessAuthorisationRequest, ProcessAuthorisationResponse>("ProcessAuthorisation", request).ConfigureAwait(false);
+				var response = await SendRequest<ProcessAuthorisationRequest, ProcessAuthorisationResponse>(RelativePath_ProcessAuthorisation, request).ConfigureAwait(false);
 
 #pragma warning disable CA1062 // Validate arguments of public methods
 				if (request.AutoHandlePendingResponse && response.Status == RequestStates.Pending)
@@ -235,7 +242,7 @@ namespace Yort.Humm.InStore
 		{
 			GuardClientState();
 
-			return SendRequest<SendReceiptRequest, SendReceiptResponse>("SendReceipt", request);
+			return SendRequest<SendReceiptRequest, SendReceiptResponse>(RelativePath_SendReceipt, request);
 		}
 
 		/// <summary>
@@ -258,7 +265,7 @@ namespace Yort.Humm.InStore
 		{
 			GuardClientState();
 
-			return SendRequest<ProcessSalesAdjustmentRequest, ProcessSalesAdjustmentResponse>("ProcessSalesAdjustment", request);
+			return SendRequest<ProcessSalesAdjustmentRequest, ProcessSalesAdjustmentResponse>(RelativePath_ProcessSalesAdjustment, request);
 		}
 
 		/// <summary>
@@ -280,7 +287,7 @@ namespace Yort.Humm.InStore
 		{
 			GuardClientState();
 
-			return SendRequest<ProcessSalesAdjustmentReversalRequest, ProcessSalesAdjustmentReversalResponse>("ProcessSalesAdjustmentReversal", request);
+			return SendRequest<ProcessSalesAdjustmentReversalRequest, ProcessSalesAdjustmentReversalResponse>(RelativePath_ProcessSalesAdjustmentReversal, request);
 		}
 
 		private void OnPendingAuthorisation(ProcessAuthorisationResponse response, ProcessAuthorisationRequest request)
@@ -297,7 +304,11 @@ namespace Yort.Humm.InStore
 				if (handler.SupportsAutomaticDecompression)
 					handler.AutomaticDecompression = System.Net.DecompressionMethods.GZip | System.Net.DecompressionMethods.Deflate;
 
-				_Client = new System.Net.Http.HttpClient(handler);
+				_Client = new System.Net.Http.HttpClient(handler)
+				{
+					BaseAddress = _BaseUrl
+				};
+
 				if (String.IsNullOrEmpty(config.UserAgentProductName) || String.IsNullOrEmpty(config.UserAgentProductVersion))
 					_Client.DefaultRequestHeaders.UserAgent.Add(new System.Net.Http.Headers.ProductInfoHeaderValue("Yort.Humm.Instore", typeof(HummClient).Assembly.GetName().Version.ToString()));
 				else
@@ -315,12 +326,12 @@ namespace Yort.Humm.InStore
 			}
 		}
 
-		private Task<TResponse> SendRequest<TRequest, TResponse>(string relativePath, TRequest request) where TRequest : RequestBase where TResponse : ResponseBase
+		private Task<TResponse> SendRequest<TRequest, TResponse>(Uri relativePath, TRequest request) where TRequest : RequestBase where TResponse : ResponseBase
 		{
 			return SendRequest<TRequest, TResponse>(relativePath, request, _RequestWriter, _SignatureGenerator);
 		}
 
-		private async Task<TResponse> SendRequest<TRequest, TResponse>(string relativePath, TRequest request, [ValidatedNotNull] SignedRequestWriter? requestWriter, [ValidatedNotNull] ISignatureGenerator? signatureGenerator) where TRequest : RequestBase where TResponse : ResponseBase
+		private async Task<TResponse> SendRequest<TRequest, TResponse>(Uri relativePath, TRequest request, [ValidatedNotNull] SignedRequestWriter? requestWriter, [ValidatedNotNull] ISignatureGenerator? signatureGenerator) where TRequest : RequestBase where TResponse : ResponseBase
 		{
 			request.GuardNull(nameof(request));
 			requestWriter.GuardNull(nameof(requestWriter));
@@ -331,27 +342,19 @@ namespace Yort.Humm.InStore
 			if (_Config.AutoValidateRequests)
 				request.Validate();
 
-			try
-			{
 #pragma warning disable CS8604 // Possible null reference argument.
-				using (var content = GetRequestContent(request, requestWriter))
+			using (var content = GetRequestContent(request, requestWriter))
 #pragma warning restore CS8604 // Possible null reference argument.
-				using (var response = await _Client.PostAsync(new Uri(_BaseUrl, relativePath), content).ConfigureAwait(false))
-				{
-					await ThrowIfErrorStatus(response).ConfigureAwait(false);
+			using (var response = await _Client.PostAsync(relativePath, content).ConfigureAwait(false))
+			{
+				await ThrowIfErrorStatus(response).ConfigureAwait(false);
 
-					var retVal = await DeserialiseContentFromJson<TResponse>(response.Content).ConfigureAwait(false);
+				var retVal = await DeserialiseContentFromJson<TResponse>(response.Content).ConfigureAwait(false);
 #pragma warning disable CS8604 // Possible null reference argument.
-					retVal.VerifySignature(signatureGenerator);
+				retVal.VerifySignature(signatureGenerator);
 #pragma warning restore CS8604 // Possible null reference argument.
 
-					return retVal;
-				}
-			}
-			catch (Exception ex)
-			{
-				System.Diagnostics.Debug.WriteLine(ex.ToString());
-				throw;
+				return retVal;
 			}
 		}
 
@@ -458,7 +461,7 @@ namespace Yort.Humm.InStore
 		public void Dispose()
 		{
 			if (_IsDisposed) return;
-		
+
 			_IsDisposed = true;
 			_Client?.Dispose();
 			_RequestWriter?.Dispose();

@@ -6,6 +6,7 @@ using Yort.Humm.InStore.Infrastructure;
 
 namespace Yort.Humm.InStore.Tests
 {
+	[TestCategory("Unit")]
 	[TestClass]
 	public class Test_Hmac256SignatureGenerator
 	{
@@ -293,7 +294,7 @@ namespace Yort.Humm.InStore.Tests
 			var generator = new Hmac256SignatureGenerator("nb4i6ldxuVQC");
 			generator.Dispose();
 
-			var signature = generator.GenerateSignature
+			_ = generator.GenerateSignature
 			(
 				new KeyValuePair<string, object>[]
 				{

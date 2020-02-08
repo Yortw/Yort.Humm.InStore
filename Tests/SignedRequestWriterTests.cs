@@ -5,6 +5,7 @@ using Yort.Humm.InStore.Infrastructure;
 
 namespace Yort.Humm.InStore.Tests
 {
+	[TestCategory("Unit")]
 	[TestClass]
 	public class SignedRequestWriterTests
 	{
@@ -180,6 +181,26 @@ namespace Yort.Humm.InStore.Tests
 			_ = writer.WriteRequest<CreateKeyRequest>(null);
 		}
 
+		[ExpectedException(typeof(ObjectDisposedException))]
+		[TestMethod]
+		public void Throws_On_WriteRequest_When_Disposed()
+		{
+			var sigGen = new Hmac256SignatureGenerator("dy33vQhksVsv");
+			var writer = new SignedRequestWriter(sigGen);
+			writer.Dispose();
+
+			var request = new ProcessSalesAdjustmentReversalRequest()
+			{
+				MerchantId = "30299999",
+				DeviceId = "d555",
+				OperatorId = "test_operator",
+				PosVersion = "123",
+				ClientTransactionReference = "tnx-rev1",
+				AdjustmentSignature = "ce20e2f1a9fe0d92b3d021ba7f1b372b006778cfab5fc4c09efa60a6d910c471"
+			};
+			_ = writer.WriteRequest(request);
+		}
+
 		[ExpectedException(typeof(ArgumentNullException))]
 		[TestMethod]
 		public void Throws_On_Null_OutputStream()
@@ -197,6 +218,81 @@ namespace Yort.Humm.InStore.Tests
 				AdjustmentSignature = "ce20e2f1a9fe0d92b3d021ba7f1b372b006778cfab5fc4c09efa60a6d910c471"
 			};
 			writer.WriteRequest(request, null);
+		}
+
+		[TestMethod]
+		public void Can_Write_Multiple_Requests_With_Signature()
+		{
+			var sigGen = new Hmac256SignatureGenerator("dy33vQhksVsv");
+			var writer = new SignedRequestWriter(sigGen);
+
+			var request = new InviteRequest()
+			{
+				MerchantId = "30299999",
+				DeviceId = "d555",
+				OperatorId = "test_operator",
+				PosVersion = "123",
+				MobileNumber = "0400000000",
+				PurchaseAmount = 100M
+			};
+
+			var result = writer.WriteRequest(request);
+			//Note: The signature expected here is different to the one shown in the Humm sample page (https://docs.shophumm.com.au/pos/api_information/http_examples/).
+			//The sample C# code provided by Humm at (https://docs.shophumm.com.au/pos/security/signature_generation/) generates the same code used here
+			//and this signature gen works with the API endpoints, so it would appear the sample was updated using a different key or something, and the
+			//sample signature is now incorrect.
+			Assert.AreEqual("{\"x_mobile\":\"0400000000\",\"x_purchase_amount\":10000,\"x_merchant_id\":\"30299999\",\"x_device_id\":\"d555\",\"x_firmware_version\":\"123\",\"x_operator_id\":\"test_operator\",\"signature\":\"e8045e8fdd521d9da2b4cd0c00f816680e9ec4d85bddab95c839d91f170f9deb\"}", result);
+			Assert.IsTrue(result.Contains("e8045e8fdd521d9da2b4cd0c00f816680e9ec4d85bddab95c839d91f170f9deb"));
+
+			request = new InviteRequest()
+			{
+				MerchantId = "30299999",
+				DeviceId = "d555",
+				OperatorId = "test_operator",
+				PosVersion = "123",
+				MobileNumber = "0410000000",
+				PurchaseAmount = 10M
+			};
+
+			result = writer.WriteRequest(request);
+			Assert.AreEqual("{\"x_mobile\":\"0410000000\",\"x_purchase_amount\":1000,\"x_merchant_id\":\"30299999\",\"x_device_id\":\"d555\",\"x_firmware_version\":\"123\",\"x_operator_id\":\"test_operator\",\"signature\":\"4e4927bee1ab8e3e5ea354766ba81982ad5da8e65653cb696e140a2e784d6238\"}", result);
+			Assert.IsTrue(result.Contains("4e4927bee1ab8e3e5ea354766ba81982ad5da8e65653cb696e140a2e784d6238"));
+		}
+
+		[TestMethod]
+		public void Can_Dispose_Mutiple_Times_Without_Exception()
+		{
+			var sigGen = new Hmac256SignatureGenerator("dy33vQhksVsv");
+			var writer = new SignedRequestWriter(sigGen);
+
+			writer.Dispose();
+			writer.Dispose();
+			writer.Dispose();
+			writer.Dispose();
+		}
+
+
+		[TestMethod]
+		public void Writes_Full_Request_When_Passed_Base_Type()
+		{
+			var sigGen = new Hmac256SignatureGenerator("dy33vQhksVsv");
+			var writer = new SignedRequestWriter(sigGen);
+
+			RequestBase request = new InviteRequest()
+			{
+				MerchantId = "30299999",
+				DeviceId = "d555",
+				OperatorId = "test_operator",
+				PosVersion = "123",
+				MobileNumber = "0400000000",
+				PurchaseAmount = 100M
+			};
+
+			var result = writer.WriteRequest(request);
+
+			Assert.AreEqual("{\"x_mobile\":\"0400000000\",\"x_purchase_amount\":10000,\"x_merchant_id\":\"30299999\",\"x_device_id\":\"d555\",\"x_firmware_version\":\"123\",\"x_operator_id\":\"test_operator\",\"signature\":\"e8045e8fdd521d9da2b4cd0c00f816680e9ec4d85bddab95c839d91f170f9deb\"}", result);
+			Assert.IsTrue(result.Contains("e8045e8fdd521d9da2b4cd0c00f816680e9ec4d85bddab95c839d91f170f9deb"));
+
 		}
 
 	}

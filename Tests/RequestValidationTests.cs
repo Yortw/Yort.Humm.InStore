@@ -6,6 +6,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Yort.Humm.InStore.Tests
 {
+	[TestCategory("Unit")]
 	[TestClass]
 	public class RequestValidationTests
 	{
@@ -21,7 +22,7 @@ namespace Yort.Humm.InStore.Tests
 				MobileNumber = null,
 				PurchaseAmount = 0
 			};
-			var result = await client.InviteAsync(request);
+			_ = await client.InviteAsync(request);
 		}
 
 		[ExpectedException(typeof(ArgumentException))]
@@ -35,7 +36,7 @@ namespace Yort.Humm.InStore.Tests
 				MobileNumber = String.Empty,
 				PurchaseAmount = 0
 			};
-			var result = await client.InviteAsync(request);
+			_ = await client.InviteAsync(request);
 		}
 
 		[ExpectedException(typeof(ArgumentException))]
@@ -49,7 +50,22 @@ namespace Yort.Humm.InStore.Tests
 				MobileNumber = "01234567890",
 				PurchaseAmount = 0
 			};
-			var result = await client.InviteAsync(request);
+			_ = await client.InviteAsync(request);
+		}
+
+		[TestMethod]
+		public void InviteRequest_Validates_Ok_When_Valid()
+		{
+			var request = new InviteRequest()
+			{
+				OperatorId = "Yort",
+				DeviceId = Environment.GetEnvironmentVariable("Humm_Test_Sandbox_DeviceId"),
+				MerchantId = Environment.GetEnvironmentVariable("Humm_Test_Sandbox_MerchantId"),
+				PosVersion = "1.0",
+				MobileNumber = "0123456789",
+				PurchaseAmount = 10
+			};
+			request.Validate();
 		}
 
 
@@ -64,7 +80,7 @@ namespace Yort.Humm.InStore.Tests
 				DeviceToken = null,
 				PosVendor = "Test Vendor"
 			};
-			var result = await client.CreateKeyAsync(request);
+			_ = await client.CreateKeyAsync(request);
 		}
 
 		[ExpectedException(typeof(ArgumentException))]
@@ -78,7 +94,7 @@ namespace Yort.Humm.InStore.Tests
 				DeviceToken = String.Empty,
 				PosVendor = "Test Vendor"
 			};
-			var result = await client.CreateKeyAsync(request);
+			_ = await client.CreateKeyAsync(request);
 		}
 
 		[ExpectedException(typeof(ArgumentException))]
@@ -92,7 +108,7 @@ namespace Yort.Humm.InStore.Tests
 				DeviceToken = "0123456789012345678901234567890123456789012345678901234567890123456789",
 				PosVendor = "Test Vendor"
 			};
-			var result = await client.CreateKeyAsync(request);
+			_ = await client.CreateKeyAsync(request);
 		}
 
 		[ExpectedException(typeof(ArgumentNullException))]
@@ -106,7 +122,7 @@ namespace Yort.Humm.InStore.Tests
 				DeviceToken = "UyWlQcseYNCC",
 				PosVendor = null
 			};
-			var result = await client.CreateKeyAsync(request);
+			_ = await client.CreateKeyAsync(request);
 		}
 
 		[ExpectedException(typeof(ArgumentException))]
@@ -120,7 +136,7 @@ namespace Yort.Humm.InStore.Tests
 				DeviceToken = "UyWlQcseYNCC",
 				PosVendor = String.Empty
 			};
-			var result = await client.CreateKeyAsync(request);
+			_ = await client.CreateKeyAsync(request);
 		}
 
 		[ExpectedException(typeof(ArgumentException))]
@@ -134,7 +150,22 @@ namespace Yort.Humm.InStore.Tests
 				DeviceToken = "UyWlQcseYNCC",
 				PosVendor = "0123456789001234567890012345678900123456789001234567890012345678900123456789001234567890012345678900123456789001234567890"
 			};
-			var result = await client.CreateKeyAsync(request);
+			_ = await client.CreateKeyAsync(request);
+		}
+
+		[TestMethod]
+		public void CreateKeyRequest_Validates_Ok_When_Valid()
+		{
+			var request = new CreateKeyRequest()
+			{
+				OperatorId = "Yort",
+				DeviceId = Environment.GetEnvironmentVariable("Humm_Test_Sandbox_DeviceId"),
+				MerchantId = Environment.GetEnvironmentVariable("Humm_Test_Sandbox_MerchantId"),
+				PosVersion = "1.0",
+				DeviceToken = "UyWlQcseYNCC",
+				PosVendor = "Test Vendor"
+			}; 
+			request.Validate();
 		}
 
 
@@ -153,7 +184,7 @@ namespace Yort.Humm.InStore.Tests
 				FinanceAmount = 10,
 				PurchaseItems = new PurchaseItemsCollection() { "Item1", "Item2" }
 			};
-			var result = await client.ProcessAuthorisationAsync(request);
+			_ = await client.ProcessAuthorisationAsync(request);
 		}
 
 		[ExpectedException(typeof(ArgumentException))]
@@ -170,7 +201,7 @@ namespace Yort.Humm.InStore.Tests
 				FinanceAmount = 10,
 				PurchaseItems = new PurchaseItemsCollection() { "Item1", "Item2" }
 			};
-			var result = await client.ProcessAuthorisationAsync(request);
+			_ = await client.ProcessAuthorisationAsync(request);
 		}
 
 		[ExpectedException(typeof(ArgumentException))]
@@ -187,7 +218,7 @@ namespace Yort.Humm.InStore.Tests
 				FinanceAmount = 10,
 				PurchaseItems = new PurchaseItemsCollection() { "Item1", "Item2" }
 			};
-			var result = await client.ProcessAuthorisationAsync(request);
+			_ = await client.ProcessAuthorisationAsync(request);
 		}
 
 		[ExpectedException(typeof(ArgumentNullException))]
@@ -204,7 +235,7 @@ namespace Yort.Humm.InStore.Tests
 				FinanceAmount = 10,
 				PurchaseItems = new PurchaseItemsCollection() { "Item1", "Item2" }
 			};
-			var result = await client.ProcessAuthorisationAsync(request);
+			_ = await client.ProcessAuthorisationAsync(request);
 		}
 
 		[ExpectedException(typeof(ArgumentException))]
@@ -221,7 +252,7 @@ namespace Yort.Humm.InStore.Tests
 				FinanceAmount = 10,
 				PurchaseItems = new PurchaseItemsCollection() { "Item1", "Item2" }
 			};
-			var result = await client.ProcessAuthorisationAsync(request);
+			_ = await client.ProcessAuthorisationAsync(request);
 		}
 
 		[ExpectedException(typeof(ArgumentException))]
@@ -238,7 +269,25 @@ namespace Yort.Humm.InStore.Tests
 				FinanceAmount = 10,
 				PurchaseItems = new PurchaseItemsCollection() { "Item1", "Item2" }
 			};
-			var result = await client.ProcessAuthorisationAsync(request);
+			_ = await client.ProcessAuthorisationAsync(request);
+		}
+
+		[TestMethod]
+		public void ProcessAuthorisationRequest_Validates_Ok_When_Valid()
+		{
+			var request = new ProcessAuthorisationRequest()
+			{
+				OperatorId = "Yort",
+				DeviceId = Environment.GetEnvironmentVariable("Humm_Test_Sandbox_DeviceId"),
+				MerchantId = Environment.GetEnvironmentVariable("Humm_Test_Sandbox_MerchantId"),
+				PosVersion = "1.0",
+				ClientTransactionReference = "12345678901234567890",
+				PreapprovalCode = "1234567890",
+				PurchaseAmount = 10,
+				FinanceAmount = 10,
+				PurchaseItems = new PurchaseItemsCollection() { "Item1", "Item2" }
+			};
+			request.Validate();
 		}
 
 
@@ -255,7 +304,7 @@ namespace Yort.Humm.InStore.Tests
 				PurchaseReference = "0123456789",
 				Amount = 10
 			};
-			var result = await client.ProcessSalesAdjustmentAsync(request);
+			_ = await client.ProcessSalesAdjustmentAsync(request);
 		}
 
 		[ExpectedException(typeof(ArgumentException))]
@@ -270,7 +319,7 @@ namespace Yort.Humm.InStore.Tests
 				PurchaseReference = "0123456789",
 				Amount = 10
 			};
-			var result = await client.ProcessSalesAdjustmentAsync(request);
+			_ = await client.ProcessSalesAdjustmentAsync(request);
 		}
 
 		[ExpectedException(typeof(ArgumentException))]
@@ -285,7 +334,7 @@ namespace Yort.Humm.InStore.Tests
 				PurchaseReference = "0123456789",
 				Amount = 10
 			};
-			var result = await client.ProcessSalesAdjustmentAsync(request);
+			_ = await client.ProcessSalesAdjustmentAsync(request);
 		}
 
 		[ExpectedException(typeof(ArgumentNullException))]
@@ -300,7 +349,7 @@ namespace Yort.Humm.InStore.Tests
 				PurchaseReference = null,
 				Amount = 10
 			};
-			var result = await client.ProcessSalesAdjustmentAsync(request);
+			_ = await client.ProcessSalesAdjustmentAsync(request);
 		}
 
 		[ExpectedException(typeof(ArgumentException))]
@@ -315,7 +364,7 @@ namespace Yort.Humm.InStore.Tests
 				PurchaseReference = String.Empty,
 				Amount = 10
 			};
-			var result = await client.ProcessSalesAdjustmentAsync(request);
+			_ = await client.ProcessSalesAdjustmentAsync(request);
 		}
 
 		[ExpectedException(typeof(ArgumentException))]
@@ -330,7 +379,23 @@ namespace Yort.Humm.InStore.Tests
 				PurchaseReference = "0123456789012345678901234567890123456789012345678901234567890123456789",
 				Amount = 10
 			};
-			var result = await client.ProcessSalesAdjustmentAsync(request);
+			_ = await client.ProcessSalesAdjustmentAsync(request);
+		}
+
+		[TestMethod]
+		public void ProcessSalesAdjustmentRequest_Validates_Ok_When_Valid()
+		{
+			var request = new ProcessSalesAdjustmentRequest()
+			{
+				OperatorId = "Yort",
+				DeviceId = Environment.GetEnvironmentVariable("Humm_Test_Sandbox_DeviceId"),
+				MerchantId = Environment.GetEnvironmentVariable("Humm_Test_Sandbox_MerchantId"),
+				PosVersion = "1.0",
+				ClientTransactionReference = "0123456789",
+				PurchaseReference = "012345678901234567890",
+				Amount = 10
+			};
+			request.Validate();
 		}
 
 
@@ -346,7 +411,7 @@ namespace Yort.Humm.InStore.Tests
 				ClientTransactionReference = null,
 				AdjustmentSignature = "0123456789"
 			};
-			var result = await client.ProcessSalesAdjustmentReversalAsync(request);
+			_ = await client.ProcessSalesAdjustmentReversalAsync(request);
 		}
 
 		[ExpectedException(typeof(ArgumentException))]
@@ -360,7 +425,7 @@ namespace Yort.Humm.InStore.Tests
 				ClientTransactionReference = String.Empty,
 				AdjustmentSignature = "0123456789"
 			};
-			var result = await client.ProcessSalesAdjustmentReversalAsync(request);
+			_ = await client.ProcessSalesAdjustmentReversalAsync(request);
 		}
 
 		[ExpectedException(typeof(ArgumentException))]
@@ -374,7 +439,7 @@ namespace Yort.Humm.InStore.Tests
 				ClientTransactionReference = "0123456789012345678901234567890123456789012345678901234567890123456789",
 				AdjustmentSignature = "0123456789"
 			};
-			var result = await client.ProcessSalesAdjustmentReversalAsync(request);
+			_ = await client.ProcessSalesAdjustmentReversalAsync(request);
 		}
 
 		[ExpectedException(typeof(ArgumentNullException))]
@@ -388,7 +453,7 @@ namespace Yort.Humm.InStore.Tests
 				ClientTransactionReference = "0123456789",
 				AdjustmentSignature = null
 			};
-			var result = await client.ProcessSalesAdjustmentReversalAsync(request);
+			_ = await client.ProcessSalesAdjustmentReversalAsync(request);
 		}
 
 		[ExpectedException(typeof(ArgumentException))]
@@ -402,7 +467,7 @@ namespace Yort.Humm.InStore.Tests
 				ClientTransactionReference = "0123456789",
 				AdjustmentSignature = String.Empty
 			};
-			var result = await client.ProcessSalesAdjustmentReversalAsync(request);
+			_ = await client.ProcessSalesAdjustmentReversalAsync(request);
 		}
 
 		[ExpectedException(typeof(ArgumentException))]
@@ -416,8 +481,24 @@ namespace Yort.Humm.InStore.Tests
 				ClientTransactionReference = "0123456789",
 				AdjustmentSignature = "012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789"
 			};
-			var result = await client.ProcessSalesAdjustmentReversalAsync(request);
+			_ = await client.ProcessSalesAdjustmentReversalAsync(request);
 		}
+
+		[TestMethod]
+		public void ProcessSalesAdjustmentReversalRequest_Validates_Ok_When_Valid()
+		{
+			var request = new ProcessSalesAdjustmentReversalRequest()
+			{
+				OperatorId = "Yort",
+				DeviceId = Environment.GetEnvironmentVariable("Humm_Test_Sandbox_DeviceId"),
+				MerchantId = Environment.GetEnvironmentVariable("Humm_Test_Sandbox_MerchantId"),
+				PosVersion = "1.0",
+				ClientTransactionReference = "0123456789",
+				AdjustmentSignature = "012345678901234567890"
+			};
+			request.Validate();
+		}
+
 
 
 		[ExpectedException(typeof(ArgumentNullException))]
@@ -431,7 +512,7 @@ namespace Yort.Humm.InStore.Tests
 				ClientTransactionReference = null,
 				ReceiptNumber = "0123456789"
 			};
-			var result = await client.SendReceiptAsync(request);
+			_ = await client.SendReceiptAsync(request);
 		}
 
 		[ExpectedException(typeof(ArgumentException))]
@@ -445,7 +526,7 @@ namespace Yort.Humm.InStore.Tests
 				ClientTransactionReference = String.Empty,
 				ReceiptNumber = "0123456789"
 			};
-			var result = await client.SendReceiptAsync(request);
+			_ = await client.SendReceiptAsync(request);
 		}
 
 		[ExpectedException(typeof(ArgumentException))]
@@ -459,7 +540,7 @@ namespace Yort.Humm.InStore.Tests
 				ClientTransactionReference = "0123456789012345678901234567890123456789012345678901234567890123456789",
 				ReceiptNumber = "0123456789"
 			};
-			var result = await client.SendReceiptAsync(request);
+			_ = await client.SendReceiptAsync(request);
 		}
 
 		[ExpectedException(typeof(ArgumentNullException))]
@@ -473,7 +554,7 @@ namespace Yort.Humm.InStore.Tests
 				ClientTransactionReference = "0123456789",
 				ReceiptNumber = null
 			};
-			var result = await client.SendReceiptAsync(request);
+			_ = await client.SendReceiptAsync(request);
 		}
 
 		[ExpectedException(typeof(ArgumentException))]
@@ -487,7 +568,7 @@ namespace Yort.Humm.InStore.Tests
 				ClientTransactionReference = "0123456789",
 				ReceiptNumber = String.Empty
 			};
-			var result = await client.SendReceiptAsync(request);
+			_ = await client.SendReceiptAsync(request);
 		}
 
 		[ExpectedException(typeof(ArgumentException))]
@@ -501,9 +582,46 @@ namespace Yort.Humm.InStore.Tests
 				ClientTransactionReference = "0123456789",
 				ReceiptNumber = "0123456789012345678901234567890123456789012345678901234567890123456789"
 			};
-			var result = await client.SendReceiptAsync(request);
+			_ = await client.SendReceiptAsync(request);
 		}
 
+		[TestMethod]
+		public void SendReceiptRequest_Validates_Ok_When_Valid()
+		{
+			var request = new SendReceiptRequest()
+			{
+				OperatorId = "Yort",
+				DeviceId = Environment.GetEnvironmentVariable("Humm_Test_Sandbox_DeviceId"),
+				MerchantId = Environment.GetEnvironmentVariable("Humm_Test_Sandbox_MerchantId"),
+				PosVersion = "1.0",
+				ClientTransactionReference = "0123456789",
+				ReceiptNumber = "01234567890A"
+			};
+			request.Validate();
+		}
+
+		[ExpectedException(typeof(ArgumentOutOfRangeException))]
+		[TestMethod]
+		public void RequestBase_Validates_Max_TrackingItems()
+		{
+			var request = new InviteRequest()
+			{
+				DeviceId = Environment.GetEnvironmentVariable("Humm_Test_Sandbox_DeviceId"),
+				MerchantId = Environment.GetEnvironmentVariable("Humm_Test_Sandbox_MerchantId"),
+				PosVersion = "1.0",
+				MobileNumber = "04000000",
+				PurchaseAmount = 10,
+				OperatorId = "Yort",
+				TrackingData = new Dictionary<string, string>()
+			};
+			
+			for (int cnt = 0; cnt < 1000010; cnt++)
+			{
+				request.TrackingData.Add("Key" + cnt.ToString(), cnt.ToString());
+			}
+
+			request.Validate();
+		}
 
 
 		private static HummClient CreateTestClient()

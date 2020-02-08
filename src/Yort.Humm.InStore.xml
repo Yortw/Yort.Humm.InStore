@@ -794,6 +794,9 @@
             Also ensure no property is larger than it's maximum allowed length (see individual property notes for details).
             </para>
             </remarks>
+            <exception cref="T:System.ArgumentNullException">Thrown if <see cref="P:Yort.Humm.InStore.Infrastructure.RequestBase.MerchantId"/>, <see cref="P:Yort.Humm.InStore.Infrastructure.RequestBase.DeviceId"/>, <see cref="P:Yort.Humm.InStore.Infrastructure.RequestBase.PosVersion"/>, or <see cref="P:Yort.Humm.InStore.Infrastructure.RequestBase.OperatorId"/> is null.</exception>
+            <exception cref="T:System.ArgumentException">Thrown if <see cref="P:Yort.Humm.InStore.Infrastructure.RequestBase.MerchantId"/>, <see cref="P:Yort.Humm.InStore.Infrastructure.RequestBase.DeviceId"/>, <see cref="P:Yort.Humm.InStore.Infrastructure.RequestBase.PosVersion"/>, or <see cref="P:Yort.Humm.InStore.Infrastructure.RequestBase.OperatorId"/> is empty or only whitespace, or longer than their maximum allowed lengths.</exception>
+            <exception cref="T:System.ArgumentOutOfRangeException">Thrown if <see cref="P:Yort.Humm.InStore.Infrastructure.RequestBase.TrackingData"/> contains more than 1000000 items.</exception>
         </member>
         <member name="T:Yort.Humm.InStore.Infrastructure.ResponseBase">
             <summary>
@@ -934,7 +937,18 @@
             The purchase amount as a dollar value (i.e $20 would be 20.00).
             </value>
         </member>
-        <!-- Badly formed XML comment ignored for member "M:Yort.Humm.InStore.InviteRequest.Validate" -->
+        <member name="M:Yort.Humm.InStore.InviteRequest.Validate">
+            <summary>
+            Validates this instance.
+            </summary>
+            <remarks>
+            <para>
+            Ensures that <see cref="P:Yort.Humm.InStore.InviteRequest.MobileNumber" /> is not null, empty string or only whitespace.
+            Also ensure no property is larger than it's maximum allowed length (see individual property notes for details).
+            Also ensures all base properties are valid, see <see cref="M:Yort.Humm.InStore.Infrastructure.RequestBase.Validate"/>.
+            </para>
+            </remarks>
+        </member>
         <member name="T:Yort.Humm.InStore.InviteResponse">
             <summary>
             Represents a response to a <see cref="T:Yort.Humm.InStore.InviteRequest"/>.
@@ -1300,6 +1314,11 @@
         <member name="F:Yort.Humm.InStore.RequestStates.Failed">
             <summary>
             The request failed or was declined.
+            </summary>
+        </member>
+        <member name="F:Yort.Humm.InStore.RequestStates.Error">
+            <summary>
+            The request failed due to an error.
             </summary>
         </member>
         <member name="T:Yort.Humm.InStore.SendReceiptRequest">

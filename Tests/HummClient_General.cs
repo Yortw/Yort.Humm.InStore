@@ -6,6 +6,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Yort.Humm.InStore.Tests
 {
+	[TestCategory("Unit")]
 	[TestClass]
 	public class HummClient_General
 	{

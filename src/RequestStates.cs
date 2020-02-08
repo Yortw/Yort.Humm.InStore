@@ -37,5 +37,9 @@ namespace Yort.Humm.InStore
 		/// The request failed or was declined.
 		/// </summary>
 		public const string Failed = "Failed";
+		/// <summary>
+		/// The request failed due to an error.
+		/// </summary>
+		public const string Error = "Error";
 	}
 }

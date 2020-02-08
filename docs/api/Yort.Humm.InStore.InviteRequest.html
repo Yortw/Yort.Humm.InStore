@@ -331,11 +331,12 @@ public decimal PurchaseAmount { get; set; }</code></pre>
     <a href="https://github.com/Yortw/Yort.Humm.InStore/new/master/apiSpec/new?filename=Yort_Humm_InStore_InviteRequest_Validate.md&amp;value=---%0Auid%3A%20Yort.Humm.InStore.InviteRequest.Validate%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Yortw/Yort.Humm.InStore/blob/master/src/InviteRequest.cs/#L50">View Source</a>
+    <a href="https://github.com/Yortw/Yort.Humm.InStore/blob/master/src/InviteRequest.cs/#L49">View Source</a>
   </span>
   <a id="Yort_Humm_InStore_InviteRequest_Validate_" data-uid="Yort.Humm.InStore.InviteRequest.Validate*"></a>
   <h4 id="Yort_Humm_InStore_InviteRequest_Validate" data-uid="Yort.Humm.InStore.InviteRequest.Validate">Validate()</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Validates this instance.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -343,6 +344,13 @@ public decimal PurchaseAmount { get; set; }</code></pre>
   </div>
   <h5 class="overrides">Overrides</h5>
   <div><a class="xref" href="Yort.Humm.InStore.Infrastructure.RequestBase.html#Yort_Humm_InStore_Infrastructure_RequestBase_Validate">RequestBase.Validate()</a></div>
+  <h5 id="Yort_Humm_InStore_InviteRequest_Validate_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>
+Ensures that <a class="xref" href="Yort.Humm.InStore.InviteRequest.html#Yort_Humm_InStore_InviteRequest_MobileNumber">MobileNumber</a> is not null, empty string or only whitespace.
+Also ensure no property is larger than it&apos;s maximum allowed length (see individual property notes for details).
+Also ensures all base properties are valid, see <a class="xref" href="Yort.Humm.InStore.Infrastructure.RequestBase.html#Yort_Humm_InStore_Infrastructure_RequestBase_Validate">Validate()</a>.
+</p>
+</div>
   <h3 id="seealso">See Also</h3>
   <div class="seealso">
       <div><a class="xref" href="Yort.Humm.InStore.Infrastructure.RequestBase.html">RequestBase</a></div>

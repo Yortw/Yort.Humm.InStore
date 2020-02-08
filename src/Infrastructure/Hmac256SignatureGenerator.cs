@@ -55,7 +55,6 @@ namespace Yort.Humm.InStore.Infrastructure
 
 		private string BytesToHexString([ValidatedNotNull] byte[] hashBytes)
 		{
-			if (hashBytes == null) return String.Empty;
 			if ((hashBytes?.Length ?? 0) == 0) return String.Empty;
 
 #pragma warning disable CS8602 // Dereference of a possibly null reference.
@@ -70,8 +69,6 @@ namespace Yort.Humm.InStore.Infrastructure
 
 		private string GeneratePayload(IEnumerable<KeyValuePair<string, object>> properties)
 		{
-			if (_Hasher == null) throw new ObjectDisposedException(nameof(SignedRequestWriter));
-
 			var sb = new StringBuilder(1024);
 
 			var signatureProperties =

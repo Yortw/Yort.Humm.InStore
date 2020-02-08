@@ -54,7 +54,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Yort.Humm.InStore.HummClient.html",
-          "hash": "zTKrID4aINPRb150qdPGwA=="
+          "hash": "aalZZx0ugmbV5G6O/jS3Ww=="
         }
       },
       "is_incremental": false,
@@ -102,7 +102,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Yort.Humm.InStore.HummResponseSignatureException.html",
-          "hash": "1mtItDYXl5QPF+sKsdfxVQ=="
+          "hash": "jH62A1Fctq5vHYecQsSzpg=="
         }
       },
       "is_incremental": false,
@@ -138,7 +138,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Yort.Humm.InStore.Infrastructure.Hmac256SignatureGenerator.html",
-          "hash": "UqgYkyfJZbAJfiohTp5nPw=="
+          "hash": "VFEhYMgbwCNeaNDd0z4T7w=="
         }
       },
       "is_incremental": false,
@@ -162,7 +162,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Yort.Humm.InStore.Infrastructure.RequestBase.html",
-          "hash": "A9XzhcVF5q2cHw42odfUfQ=="
+          "hash": "Fsvdd6Xj4HgGDLZMDQK5SA=="
         }
       },
       "is_incremental": false,
@@ -210,7 +210,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Yort.Humm.InStore.InviteRequest.html",
-          "hash": "0R5UaBish0HsXSx7G3bVxA=="
+          "hash": "Z05JU+TaeQ/ELuQPbcVnSw=="
         }
       },
       "is_incremental": false,
@@ -246,7 +246,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Yort.Humm.InStore.ProcessAuthorisationRequest.html",
-          "hash": "K76KVopgpIepC+bWl7Hiwg=="
+          "hash": "8QE8lZ0BDQLVV5Cx/Ajs8A=="
         }
       },
       "is_incremental": false,
@@ -318,7 +318,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Yort.Humm.InStore.PurchaseItemsCollection.html",
-          "hash": "+a2CBI5SczRYzSN/bw9hWw=="
+          "hash": "xMqwykTlO18UEsbM3PTqIg=="
         }
       },
       "is_incremental": false,
@@ -330,7 +330,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Yort.Humm.InStore.RequestStates.html",
-          "hash": "y+XVtB7LBiiJpkYUTBv/3A=="
+          "hash": "8Y8or6k7zYw3izmSdXm9uw=="
         }
       },
       "is_incremental": false,
