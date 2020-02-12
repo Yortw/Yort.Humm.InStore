@@ -53,7 +53,9 @@ namespace Yort.Humm.InStore.Infrastructure
 		/// </value>
 		/// <seealso cref="RequestBase.TrackingData"/>
 		[JsonProperty("tracking_data")]
+#pragma warning disable CA2227 // Collection properties should be read only
 		public Dictionary<string, string>? TrackingData { get; set; }
+#pragma warning restore CA2227 // Collection properties should be read only
 		/// <summary>
 		/// Gets or sets the signature of this response, used to verify the response is authentic.
 		/// </summary>
