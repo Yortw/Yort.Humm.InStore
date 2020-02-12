@@ -8,7 +8,7 @@ namespace Yort.Humm.InStore.Tests
 {
 	[TestCategory("Unit")]
 	[TestClass]
-	public class Test_Hmac256SignatureGenerator
+	public class Hmac256SignatureGeneratorTests
 	{
 		[TestMethod]
 		public void Creates_Expected_Signature_For_Sample_CreateKey_Request()
