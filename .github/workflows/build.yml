@@ -25,7 +25,7 @@ jobs:
       with:
         dotnet-version: 3.1.x
     - name: Install dependencies  
-      run: dotnet restore 
+      run: dotnet restore src\Yort.Humm.InStore.sln
     - name: Build with dotnet (src\Yort.Humm.InStore.sln)
       run: dotnet build src\Yort.Humm.InStore.sln --configuration Release --nologo
     - name: Run Tests
