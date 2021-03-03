@@ -210,12 +210,12 @@ namespace Yort.Humm.InStore
 		public const string SendReceiptDuplicateTransactionReference = "FSER01";
 
 		/// <summary>
-		/// The specified POS transaction reference is already in use.
+		/// The specified device registration token was not found.
 		/// </summary>
 		public const string CreateKeyDeviceTokenNotFound = "FCRK01";
 
 		/// <summary>
-		/// The specified POS transaction reference is already in use.
+		/// The specified device registration token has already been used.
 		/// </summary>
 		public const string CreateKeyDeviceTokenAlreadyUsed = "FCRK02";
 
