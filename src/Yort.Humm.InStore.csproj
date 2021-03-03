@@ -18,6 +18,7 @@
     <RepositoryType>git</RepositoryType>
     <PackageProjectUrl>https://yortw.github.io/Yort.Humm.InStore/</PackageProjectUrl>
     <DocumentationFile>Yort.Humm.InStore.xml</DocumentationFile>
+    <Version>0.0.2-prerelease</Version>
   </PropertyGroup>
   
   <ItemGroup>

@@ -530,6 +530,246 @@
             <param name="info">The <see cref="T:System.Runtime.Serialization.SerializationInfo"></see> that holds the serialized object data about the exception being thrown.</param>
             <param name="context">The <see cref="T:System.Runtime.Serialization.StreamingContext"></see> that contains contextual information about the source or destination.</param>
         </member>
+        <member name="T:Yort.Humm.InStore.HummStatusCodes">
+            <summary>
+            Provides constants for known Humm status codes (returned in <see cref="P:Yort.Humm.InStore.Infrastructure.ResponseBase.Code"/>).
+            </summary>
+        </member>
+        <member name="F:Yort.Humm.InStore.HummStatusCodes.CreateKeySuccess">
+            <summary>
+            Success.
+            </summary>
+        </member>
+        <member name="F:Yort.Humm.InStore.HummStatusCodes.InviteSuccess">
+            <summary>
+            Success.
+            </summary>
+        </member>
+        <member name="F:Yort.Humm.InStore.HummStatusCodes.ProcessAuthorisationSuccess">
+            <summary>
+            Success.
+            </summary>
+        </member>
+        <member name="F:Yort.Humm.InStore.HummStatusCodes.ProcessSalesAdjustmentSuccess">
+            <summary>
+            Success.
+            </summary>
+        </member>
+        <member name="F:Yort.Humm.InStore.HummStatusCodes.ProcessSalesAdjustmentReversalSuccess">
+            <summary>
+            Success.
+            </summary>
+        </member>
+        <member name="F:Yort.Humm.InStore.HummStatusCodes.SendReceiptSuccess">
+            <summary>
+            Success.
+            </summary>
+        </member>
+        <member name="F:Yort.Humm.InStore.HummStatusCodes.AuthorisationPending">
+            <summary>
+            Authorisation is pending (big things flow only).
+            </summary>
+        </member>
+        <member name="F:Yort.Humm.InStore.HummStatusCodes.Cancelled">
+            <summary>
+            The payment request was cancelled (big things flow only).
+            </summary>
+        </member>
+        <member name="F:Yort.Humm.InStore.HummStatusCodes.DeclinedDueToCreditRisk">
+            <summary>
+            Declined due to internal risk assessment against the customer.
+            </summary>
+        </member>
+        <member name="F:Yort.Humm.InStore.HummStatusCodes.DeclinedDueToInsufficientFunds">
+            <summary>
+            Declined due to insufficient funds for the deposit.
+            </summary>
+        </member>
+        <member name="F:Yort.Humm.InStore.HummStatusCodes.DeclinedDueToBankUnavailable">
+            <summary>
+            Declined due to bank unavailable (comms issue)
+            </summary>
+        </member>
+        <member name="F:Yort.Humm.InStore.HummStatusCodes.DeclinedDueToCreditLimit">
+            <summary>
+            Declined due to credit limit exceeded.
+            </summary>
+        </member>
+        <member name="F:Yort.Humm.InStore.HummStatusCodes.DeclinedDueToPaymentHistory">
+            <summary>
+            Declined due to payment history.
+            </summary>
+        </member>
+        <member name="F:Yort.Humm.InStore.HummStatusCodes.DeclinedDueToCardExpired">
+            <summary>
+            Declined due to credit card for deposit being expired.
+            </summary>
+        </member>
+        <member name="F:Yort.Humm.InStore.HummStatusCodes.DuplicatePosTransactionReference">
+            <summary>
+            Declined because supplied posTransactionRef has already been processed.
+            </summary>
+        </member>
+        <member name="F:Yort.Humm.InStore.HummStatusCodes.DeclinedDueToInstallmentAmountBelowMinimum">
+            <summary>
+            Declined because the instalment amount was below the minimum threshold.
+            </summary>
+        </member>
+        <member name="F:Yort.Humm.InStore.HummStatusCodes.DeclinedDueToInstallmentAmountExceededPreapprovedAmount">
+            <summary>
+            Declined because purchase amount exceeded pre-approved amount.
+            </summary>
+        </member>
+        <member name="F:Yort.Humm.InStore.HummStatusCodes.BarcodeNotFound">
+            <summary>
+            The Barcode was not found.
+            </summary>
+        </member>
+        <member name="F:Yort.Humm.InStore.HummStatusCodes.BarcodeAlreadyUsed">
+            <summary>
+            The Barcode has already been used.
+            </summary>
+        </member>
+        <member name="F:Yort.Humm.InStore.HummStatusCodes.BarcodeHasExpired">
+            <summary>
+            The Barcode has expired.
+            </summary>
+        </member>
+        <member name="F:Yort.Humm.InStore.HummStatusCodes.BarcodeCancelled">
+            <summary>
+            The Barcode has been cancelled.
+            </summary>
+        </member>
+        <member name="F:Yort.Humm.InStore.HummStatusCodes.Declined">
+            <summary>
+            Declined.
+            </summary>
+        </member>
+        <member name="F:Yort.Humm.InStore.HummStatusCodes.PosTransactionReferenceNotFoundForSalesAdjustment">
+            <summary>
+            Unable to find the specified POS transaction reference
+            </summary>
+        </member>
+        <member name="F:Yort.Humm.InStore.HummStatusCodes.ContractAlreadyCompletedForSalesAdjustment">
+            <summary>
+            This contract has already been completed.
+            </summary>
+        </member>
+        <member name="F:Yort.Humm.InStore.HummStatusCodes.ContractCancelledAndRefundedForSalesAdjustment">
+            <summary>
+            This humm contract has previously been cancelled and all payments collected have been refunded to the customer.
+            </summary>
+        </member>
+        <member name="F:Yort.Humm.InStore.HummStatusCodes.InvalidAmountForSalesAdjustment">
+            <summary>
+            Sales adjustment cannot be processed for this amount.
+            </summary>
+        </member>
+        <member name="F:Yort.Humm.InStore.HummStatusCodes.UnableToProcessSalesAdjustmentForContract">
+            <summary>
+            Unable to process a sales adjustment for this contract. Please contact Merchant Services on [CollectionsPhone] during business hours for further information.
+            </summary>
+        </member>
+        <member name="F:Yort.Humm.InStore.HummStatusCodes.UnableToProcessSalesAdjustment">
+            <summary>
+            Sales adjustment cannot be processed. Please call humm Collections on [CollectionsPhone].
+            </summary>
+        </member>
+        <member name="F:Yort.Humm.InStore.HummStatusCodes.SalesAdjustmentCannotBeProcessedAtThisStore">
+            <summary>
+            Sales adjustment cannot be processed at this store.
+            </summary>
+        </member>
+        <member name="F:Yort.Humm.InStore.HummStatusCodes.SalesAdjustmentCannotBeProcessedDuplicateReceipt">
+            <summary>
+            Sales adjustment cannot be processed for this transaction. Duplicate receipt number found.
+            </summary>
+        </member>
+        <member name="F:Yort.Humm.InStore.HummStatusCodes.SalesAdjustmentAmountMustBeGreaterThanZero">
+            <summary>
+            Sales adjustment cannot be processed for this transaction. Duplicate receipt number found.
+            </summary>
+        </member>
+        <member name="F:Yort.Humm.InStore.HummStatusCodes.ProcessSalesAdjustmentReversal">
+            <summary>
+            Unable to find the specified POS signature.
+            </summary>
+        </member>
+        <member name="F:Yort.Humm.InStore.HummStatusCodes.ContractAlreadyCompletedForProcessSalesAdjustmentReversal">
+            <summary>
+            Contract has already been completed.
+            </summary>
+        </member>
+        <member name="F:Yort.Humm.InStore.HummStatusCodes.ContractCancelledAndRefundedForProcessSalesAdjustmentReversal">
+            <summary>
+            This humm contract has previously been cancelled and all payments collected have been refunded to the customer.
+            </summary>
+        </member>
+        <member name="F:Yort.Humm.InStore.HummStatusCodes.UnableToProcessSalesAdjustmentReversalForContract">
+            <summary>
+            Unable to process a sales adjustment for this contract. Please contact Merchant Services on [CollectionsPhone] during business hours for further information.
+            </summary>
+        </member>
+        <member name="F:Yort.Humm.InStore.HummStatusCodes.UnableToProcessSalesAdjustmentReversal">
+            <summary>
+            Sales adjustment adjustment cannot be processed. Please call humm Collections on [CollectionsPhone].
+            </summary>
+        </member>
+        <member name="F:Yort.Humm.InStore.HummStatusCodes.UnableToProcessSalesAdjustmentReversalAtThisStore">
+            <summary>
+            Sales adjustment adjustment cannot be processed at this store.
+            </summary>
+        </member>
+        <member name="F:Yort.Humm.InStore.HummStatusCodes.UnableToProcessSalesAdjustmentReversalDuplicateSignature">
+            <summary>
+            Sales adjustment adjustment cannot be processed for this transaction. Duplicate signature found.
+            </summary>
+        </member>
+        <member name="F:Yort.Humm.InStore.HummStatusCodes.SendReceiptUnableToFindPosTransactionReference">
+            <summary>
+            Unable to find the specified POS transaction reference.
+            </summary>
+        </member>
+        <member name="F:Yort.Humm.InStore.HummStatusCodes.SendReceiptDuplicateTransactionReference">
+            <summary>
+            The specified POS transaction reference is already in use.
+            </summary>
+        </member>
+        <member name="F:Yort.Humm.InStore.HummStatusCodes.CreateKeyDeviceTokenNotFound">
+            <summary>
+            The specified POS transaction reference is already in use.
+            </summary>
+        </member>
+        <member name="F:Yort.Humm.InStore.HummStatusCodes.CreateKeyDeviceTokenAlreadyUsed">
+            <summary>
+            The specified POS transaction reference is already in use.
+            </summary>
+        </member>
+        <member name="F:Yort.Humm.InStore.HummStatusCodes.ValidationError">
+            <summary>
+            	Validation error.
+            </summary>
+        </member>
+        <member name="F:Yort.Humm.InStore.HummStatusCodes.MinimumFinanceAmount">
+            <summary>
+            Minimum finance amount is $1.
+            </summary>
+        </member>
+        <member name="F:Yort.Humm.InStore.HummStatusCodes.AuthenticationError">
+            <summary>
+            Authentication error.
+            </summary>
+        </member>
+        <member name="F:Yort.Humm.InStore.HummStatusCodes.SignatureMismatchError">
+            <summary>
+            Signature mismatch error.
+            </summary>
+        </member>
+        <member name="F:Yort.Humm.InStore.HummStatusCodes.InternalServerError">
+            <summary>
+            Internal server error.
+            </summary>
+        </member>
         <member name="T:Yort.Humm.InStore.IHummApiUrlSelector">
             <summary>
             An interface for components that can decide on the base URL to call for Humm.

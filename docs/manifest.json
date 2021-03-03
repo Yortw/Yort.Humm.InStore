@@ -18,7 +18,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Yort.Humm.InStore.CreateKeyRequest.html",
-          "hash": "vtahltSfiK710UdnASGgJA=="
+          "hash": "L+GMNE4x+jP1BoY1ZfZL1Q=="
         }
       },
       "is_incremental": false,
@@ -30,7 +30,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Yort.Humm.InStore.CreateKeyResponse.html",
-          "hash": "iGkE5Lm7JXCfFC6V0iDwgA=="
+          "hash": "E7xp4kEQb0F/nh7sT99AmA=="
         }
       },
       "is_incremental": false,
@@ -42,7 +42,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Yort.Humm.InStore.HummApiUrlSelector.html",
-          "hash": "/0Twh8GvzXZVxCeobU2v7g=="
+          "hash": "yAoDmnFv4V9k3x+MZ0HDSw=="
         }
       },
       "is_incremental": false,
@@ -54,7 +54,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Yort.Humm.InStore.HummClient.html",
-          "hash": "QfasjqQBh/Z1xFH44DKvJA=="
+          "hash": "52j6ru3+0Rhw/peFk01Ipg=="
         }
       },
       "is_incremental": false,
@@ -66,7 +66,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Yort.Humm.InStore.HummClientConfiguration.html",
-          "hash": "tvfQetn/75sOtSZXl49W5g=="
+          "hash": "fhY6e5uVwTAvhmS8uTMUQg=="
         }
       },
       "is_incremental": false,
@@ -78,7 +78,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Yort.Humm.InStore.HummCountry.html",
-          "hash": "dhL9U796Ati/+OjyYrH+3g=="
+          "hash": "m43a50Y6wDD3XgKdtwoErA=="
         }
       },
       "is_incremental": false,
@@ -90,7 +90,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Yort.Humm.InStore.HummEnvironment.html",
-          "hash": "FbEulL5LYGex/e00dzamuw=="
+          "hash": "f6tnhqCWdeHOB4GPqfBCDg=="
         }
       },
       "is_incremental": false,
@@ -102,7 +102,19 @@
       "output": {
         ".html": {
           "relative_path": "api/Yort.Humm.InStore.HummResponseSignatureException.html",
-          "hash": "jH62A1Fctq5vHYecQsSzpg=="
+          "hash": "a6ijgZ1A+ht3VBDaHdLwkg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Yort.Humm.InStore.HummStatusCodes.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Yort.Humm.InStore.HummStatusCodes.html",
+          "hash": "F/B88TRpnOvJlKVO8pphsw=="
         }
       },
       "is_incremental": false,
@@ -114,7 +126,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Yort.Humm.InStore.IHummApiUrlSelector.html",
-          "hash": "KvNsX/JCIawX7Z3t+CHccA=="
+          "hash": "DnJB1a9kb9Ws05v5JSJqOg=="
         }
       },
       "is_incremental": false,
@@ -126,7 +138,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Yort.Humm.InStore.IHummClient.html",
-          "hash": "hZnkuy4+s3/QwfEfrlb4wg=="
+          "hash": "nLDp7OcrUlp+1Laujw3q2A=="
         }
       },
       "is_incremental": false,
@@ -138,7 +150,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Yort.Humm.InStore.Infrastructure.Hmac256SignatureGenerator.html",
-          "hash": "VFEhYMgbwCNeaNDd0z4T7w=="
+          "hash": "BYC5h+gVE4BFqWNnTQ/TjA=="
         }
       },
       "is_incremental": false,
@@ -150,7 +162,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Yort.Humm.InStore.Infrastructure.ISignatureGenerator.html",
-          "hash": "DgKFs8QYPYsOfz7aJVAqXQ=="
+          "hash": "UjWTtnlirIAsdro3kVXVMg=="
         }
       },
       "is_incremental": false,
@@ -162,7 +174,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Yort.Humm.InStore.Infrastructure.RequestBase.html",
-          "hash": "Fsvdd6Xj4HgGDLZMDQK5SA=="
+          "hash": "BQQo7WuSixisv1jL5oIxGQ=="
         }
       },
       "is_incremental": false,
@@ -174,7 +186,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Yort.Humm.InStore.Infrastructure.ResponseBase.html",
-          "hash": "wvR10ci7+YCfBG1sGPfEbA=="
+          "hash": "xNOkB2vX01atYqgDWaUsrA=="
         }
       },
       "is_incremental": false,
@@ -186,7 +198,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Yort.Humm.InStore.Infrastructure.SignedRequestWriter.html",
-          "hash": "x580C366KLsgB3uq3XZTIw=="
+          "hash": "b+TbhEmR5a5OdBR3ZaCaoQ=="
         }
       },
       "is_incremental": false,
@@ -198,7 +210,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Yort.Humm.InStore.Infrastructure.html",
-          "hash": "Y3tSOm9LyR9DCNGxyH0fsQ=="
+          "hash": "hcbG6lDvarMBrGC9GmdgdA=="
         }
       },
       "is_incremental": false,
@@ -210,7 +222,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Yort.Humm.InStore.InviteRequest.html",
-          "hash": "Z05JU+TaeQ/ELuQPbcVnSw=="
+          "hash": "UiihtxHiLaWHbuPOto5mGA=="
         }
       },
       "is_incremental": false,
@@ -222,7 +234,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Yort.Humm.InStore.InviteResponse.html",
-          "hash": "S/SEL5x+RRPFlyPv9Kfw8w=="
+          "hash": "6orri8evnYfp+LF97t+0GA=="
         }
       },
       "is_incremental": false,
@@ -234,7 +246,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Yort.Humm.InStore.PendingAuthorisationEventArgs.html",
-          "hash": "NguHWd/hGrvomiInOvqusA=="
+          "hash": "LlafOBNdHCXBcPeHKmV4Tg=="
         }
       },
       "is_incremental": false,
@@ -246,7 +258,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Yort.Humm.InStore.ProcessAuthorisationRequest.html",
-          "hash": "8QE8lZ0BDQLVV5Cx/Ajs8A=="
+          "hash": "HfNOYY/LPO4ZhdYqjsx4jQ=="
         }
       },
       "is_incremental": false,
@@ -258,7 +270,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Yort.Humm.InStore.ProcessAuthorisationResponse.html",
-          "hash": "/0rzQWAuRLRXhUTJlpW/0w=="
+          "hash": "0xuziYk71gnVIZwSi/Ichw=="
         }
       },
       "is_incremental": false,
@@ -270,7 +282,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Yort.Humm.InStore.ProcessSalesAdjustmentRequest.html",
-          "hash": "R9dI9jW+J07pyHfvrZYbow=="
+          "hash": "9qOxxQlULujY0wT9PUmTnA=="
         }
       },
       "is_incremental": false,
@@ -282,7 +294,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Yort.Humm.InStore.ProcessSalesAdjustmentResponse.html",
-          "hash": "oKQeb8qY1QKgA68sTNcQGA=="
+          "hash": "xVfTc3ybIJtZb2OZBTP/UA=="
         }
       },
       "is_incremental": false,
@@ -294,7 +306,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Yort.Humm.InStore.ProcessSalesAdjustmentReversalRequest.html",
-          "hash": "/rQHP3c249sbXznAsc4mvw=="
+          "hash": "HSGuVcDe9g0bUhKSr0tUiw=="
         }
       },
       "is_incremental": false,
@@ -306,7 +318,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Yort.Humm.InStore.ProcessSalesAdjustmentReversalResponse.html",
-          "hash": "QrppZfCdzglt2Q4Lxre66w=="
+          "hash": "XlcepxiI2+ZuESePZXB+cg=="
         }
       },
       "is_incremental": false,
@@ -318,7 +330,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Yort.Humm.InStore.PurchaseItemsCollection.html",
-          "hash": "PlUxIIYLKq7VBuUnamKluA=="
+          "hash": "ZzM9yXSmVJMIHSoVSny1sQ=="
         }
       },
       "is_incremental": false,
@@ -330,7 +342,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Yort.Humm.InStore.RequestStates.html",
-          "hash": "8Y8or6k7zYw3izmSdXm9uw=="
+          "hash": "hg9V074PQqd0sRjIWbk9mg=="
         }
       },
       "is_incremental": false,
@@ -342,7 +354,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Yort.Humm.InStore.SendReceiptRequest.html",
-          "hash": "QRZQG5pBiH3Bka3KiCvpNQ=="
+          "hash": "k3n0QstsfhptcB3llPbqOw=="
         }
       },
       "is_incremental": false,
@@ -354,7 +366,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Yort.Humm.InStore.SendReceiptResponse.html",
-          "hash": "4NteTwnZjvoLDDU3RcT0Gw=="
+          "hash": "i7kA3SEamEo3A3J0h4G10w=="
         }
       },
       "is_incremental": false,
@@ -366,7 +378,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Yort.Humm.InStore.html",
-          "hash": "uobVrOE1oKjcONdGiwGGPA=="
+          "hash": "72vOWRnvLP0W9PqF6jeiBg=="
         }
       },
       "is_incremental": false,
@@ -378,7 +390,7 @@
       "output": {
         ".html": {
           "relative_path": "api/index.html",
-          "hash": "WvX8h/r1gMNv9gT6fym9+Q=="
+          "hash": "4OaiBA+GvRwacu+FKGMfIw=="
         }
       },
       "is_incremental": false,
@@ -456,10 +468,12 @@
   "incremental_info": [
     {
       "status": {
-        "can_incremental": true,
+        "can_incremental": false,
+        "details": "Disable incremental build by force rebuild option.",
         "incrementalPhase": "build",
         "total_file_count": 0,
-        "skipped_file_count": 0
+        "skipped_file_count": 0,
+        "full_build_reason_code": "ForceRebuild"
       },
       "processors": {
         "ResourceDocumentProcessor": {
@@ -469,23 +483,23 @@
           "total_file_count": 0,
           "skipped_file_count": 0
         },
-        "ManagedReferenceDocumentProcessor": {
-          "can_incremental": true,
-          "incrementalPhase": "build",
-          "total_file_count": 30,
-          "skipped_file_count": 30
-        },
-        "ConceptualDocumentProcessor": {
-          "can_incremental": true,
-          "incrementalPhase": "build",
-          "total_file_count": 3,
-          "skipped_file_count": 3
-        },
         "TocDocumentProcessor": {
           "can_incremental": false,
           "details": "Processor TocDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
           "incrementalPhase": "build",
           "total_file_count": 0,
+          "skipped_file_count": 0
+        },
+        "ManagedReferenceDocumentProcessor": {
+          "can_incremental": false,
+          "incrementalPhase": "build",
+          "total_file_count": 31,
+          "skipped_file_count": 0
+        },
+        "ConceptualDocumentProcessor": {
+          "can_incremental": false,
+          "incrementalPhase": "build",
+          "total_file_count": 3,
           "skipped_file_count": 0
         }
       }
