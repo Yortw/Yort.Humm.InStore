@@ -85,6 +85,7 @@ namespace Yort.Humm.InStore
 		public PurchaseItemsCollection? PurchaseItems { get; set; }
 #pragma warning restore CA2227 // Collection properties should be read only
 
+
 		/// <summary>
 		/// Gets or sets a value indicating whether or not the 'big things' flow is supported.
 		/// </summary>

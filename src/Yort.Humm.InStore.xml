@@ -737,12 +737,12 @@
         </member>
         <member name="F:Yort.Humm.InStore.HummStatusCodes.CreateKeyDeviceTokenNotFound">
             <summary>
-            The specified POS transaction reference is already in use.
+            The specified device registration token was not found.
             </summary>
         </member>
         <member name="F:Yort.Humm.InStore.HummStatusCodes.CreateKeyDeviceTokenAlreadyUsed">
             <summary>
-            The specified POS transaction reference is already in use.
+            The specified device registration token has already been used.
             </summary>
         </member>
         <member name="F:Yort.Humm.InStore.HummStatusCodes.ValidationError">

@@ -73,9 +73,9 @@ namespace Yort.Humm.InStore
 		{
 			return Environment switch
 			{
-				HummEnvironment.Dummy => new Uri("https://testpos.oxipay.co.nz/webapi/v1/"),
-				HummEnvironment.Sandbox => new Uri("https://sandboxpos.oxipay.co.nz/webapi/v1/"),
-				HummEnvironment.Production => new Uri("https://pos.oxipay.co.nz/webapi/v1/"),
+				HummEnvironment.Dummy => new Uri("https://integration-pos.shophumm.co.nz/webapi/v1/Test/"),
+				HummEnvironment.Sandbox => new Uri("https://integration-pos.shophumm.co.nz/webapi/v1/"),
+				HummEnvironment.Production => new Uri("https://pos.shophumm.co.nz/webapi/v1/"),
 				_ => throw new InvalidOperationException(ErrorMessages.UnknownApiEnvironment)
 			};
 		}

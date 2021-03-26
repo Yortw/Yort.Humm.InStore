@@ -56,7 +56,7 @@ namespace Yort.Humm.InStore.Tests
 			Assert.AreEqual(response.Status, RequestStates.Success);
 		}
 
-		[Ignore("Requires a current, unused pre-approval code to be set for each run")]
+		//[Ignore("Requires a current, unused pre-approval code to be set for each run")]
 		[TestMethod]
 		public async Task Test_ProcessAuthorisation()
 		{
@@ -67,9 +67,9 @@ namespace Yort.Humm.InStore.Tests
 				new ProcessAuthorisationRequest() 
 				{
 					ClientTransactionReference = System.Guid.NewGuid().ToString(),
-					FinanceAmount = 20,
-					PurchaseAmount = 20,
-					PreapprovalCode = "6199044763",
+					FinanceAmount = 50,
+					PurchaseAmount = 50,
+					PreapprovalCode = "150737",
 					OperatorId = "Yort",
 					PurchaseItems = new PurchaseItemsCollection() { "Item1", "Item2" }
 				}
