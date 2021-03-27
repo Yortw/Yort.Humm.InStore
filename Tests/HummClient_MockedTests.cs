@@ -32,7 +32,7 @@ namespace Yort.Humm.InStore.Tests
 			var request = new InviteRequest() { MobileNumber = "0400000", PurchaseAmount = 10.01M, OperatorId = "Automated" };
 			var response = await client.InviteAsync(request);
 
-			Assert.AreEqual("TestPOS/1.5 (Yort.Humm.Instore/1.0.0.0)", sentUserAgent);
+			Assert.AreEqual($"TestPOS/1.5 (Yort.Humm.Instore/{typeof(HummClientConfiguration).Assembly.GetName().Version.ToString()})", sentUserAgent);
 		}
 
 		[TestCategory("Unit.Mocked")]
@@ -65,7 +65,7 @@ namespace Yort.Humm.InStore.Tests
 			var request = new InviteRequest() { MobileNumber = "0400000", PurchaseAmount = 10.01M, OperatorId = "Automated" };
 			var response = await client.InviteAsync(request);
 
-			Assert.AreEqual("Yort.Humm.Instore/1.0.0.0", sentUserAgent);
+			Assert.AreEqual("Yort.Humm.Instore/" + typeof(HummClientConfiguration).Assembly.GetName().Version.ToString(), sentUserAgent);
 		}
 
 

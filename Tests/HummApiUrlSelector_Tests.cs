@@ -92,7 +92,7 @@ namespace Yort.Humm.InStore.Tests
 			selector.Environment = HummEnvironment.Dummy;
 
 			var result = selector.GetUrl();
-			Assert.AreEqual(new Uri("https://testpos.oxipay.co.nz/webapi/v1/"), result);
+			Assert.AreEqual(new Uri("https://integration-pos.shophumm.co.nz/webapi/v1/Test/"), result);
 		}
 
 		[TestMethod]
@@ -104,7 +104,7 @@ namespace Yort.Humm.InStore.Tests
 			selector.Environment = HummEnvironment.Sandbox;
 
 			var result = selector.GetUrl();
-			Assert.AreEqual(new Uri("https://sandboxpos.oxipay.co.nz/webapi/v1/"), result);
+			Assert.AreEqual(new Uri("https://integration-pos.shophumm.co.nz/webapi/v1/"), result);
 		}
 
 		[TestMethod]
@@ -116,7 +116,7 @@ namespace Yort.Humm.InStore.Tests
 			selector.Environment = HummEnvironment.Production;
 
 			var result = selector.GetUrl();
-			Assert.AreEqual(new Uri("https://pos.oxipay.co.nz/webapi/v1/"), result);
+			Assert.AreEqual(new Uri("https://pos.shophumm.co.nz/webapi/v1/"), result);
 		}
 
 		[TestMethod]
