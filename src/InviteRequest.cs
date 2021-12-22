@@ -22,7 +22,9 @@ namespace Yort.Humm.InStore
 		/// The mobile phone number.
 		/// </value>
 		/// <remarks>
-		/// <para>Maximum length of 10 digits.</para>
+		/// <para>Humm supports a maximum length of 10 digits at the time of writing. However the library will allow up to 11 digits to be passed to Humm, as NZ has valid 11 digit phone numbers. 
+		/// At the time of writing (22/12/2021) passing 11 digits to Humm will result in a signature mismatch error (since they only calclate the signature on the first 10 digits), however the library has been updated 
+		/// to support 11 digits so this works correctly when Humm fix their end.</para>
 		/// </remarks>
 		[JsonProperty("x_mobile")]
 		public string? MobileNumber { get; set; }
