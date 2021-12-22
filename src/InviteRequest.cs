@@ -49,7 +49,7 @@ namespace Yort.Humm.InStore
 		public override void Validate()
 		{
 			MobileNumber.GuardNullOrWhiteSpace("request", nameof(MobileNumber));
-			MobileNumber.GuardLength("request", nameof(MobileNumber), 0, 10);
+			MobileNumber.GuardLength("request", nameof(MobileNumber), 0, 11);
 
 			base.Validate();
 		}
