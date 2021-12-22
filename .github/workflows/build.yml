@@ -5,7 +5,10 @@ on:
     branches: master
     tags: '**'
   pull_request:
-
+  release:
+    types: 
+      - published
+      
 jobs:
   build:
 
@@ -52,8 +55,15 @@ jobs:
       VERSION: ""
     if: github.event_name == 'push'
     steps:
-    - name: Checkout
-      uses: actions/checkout@v1
+    - uses: actions/checkout@v2
+    - name: Setup .NET Core 3.1.x
+      uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: 3.1.x
+    - name: Setup .NET Core 2.1.x
+      uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: 2.1.x
     - name: Set version
       run: echo "VERSION=$(git describe --tags --dirty)" >> $GITHUB_ENV
     - name: Echo Version
