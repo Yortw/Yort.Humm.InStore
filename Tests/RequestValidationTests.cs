@@ -47,7 +47,7 @@ namespace Yort.Humm.InStore.Tests
 
 			var request = new InviteRequest()
 			{
-				MobileNumber = "01234567890",
+				MobileNumber = "012345678900",
 				PurchaseAmount = 0
 			};
 			_ = await client.InviteAsync(request);
